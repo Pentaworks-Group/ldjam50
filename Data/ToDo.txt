@@ -4,8 +4,7 @@ Todo:
  
    
   UI:
- - Background MainMenu
- 
+ - GamoverScene show elapsed time
  
  Audio:
  - Music
@@ -20,7 +19,7 @@ Ideas:
  
 Nice to have:
 ----------------------------------
- - Make palace hitbox != circle
+ - Make palace hitbox != circle (any distance calc)
  
  
 WIP:
@@ -32,3 +31,4 @@ WIP:
 Done:
 ----------------------------------
  - Pause Menu transparency
+ - Background MainMenu

@@ -20,8 +20,10 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     private void CheckForAdjesentRebels()
     {
-        foreach (RebelBehaviour rebel in GameHandler.Rebels)
+
+        for (int i = GameHandler.Rebels.Count - 1; i >= 0; i--)
         {
+            RebelBehaviour rebel = GameHandler.Rebels[i];
             float distance = Vector2.Distance(rebel.MapObject.Location, PoliceTroop.Location);
             if (distance < 0.1f)
             {

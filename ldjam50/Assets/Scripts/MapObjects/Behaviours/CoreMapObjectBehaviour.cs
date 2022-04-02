@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CoreBehaviour : MonoBehaviour
+public abstract class CoreMapObjectBehaviour : MonoBehaviour
 {
     public Image Image { get; set; }
     public RectTransform RectTransform { get; set; }

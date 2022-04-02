@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PalaceBehaviour : CoreBehaviour
+public class PalaceBehaviour : CoreMapObjectBehaviour
 {
     public void InitPalace(CoreMapObject mapObject = default)
     {

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
- public abstract class CoreUnitBehaviour : CoreBehaviour
+ public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
 {
     public CoreUnit CoreUnit { get; private set; }
     private Dictionary<float, Action<float>> distanceActions = new Dictionary<float, Action<float>>();
@@ -47,7 +47,7 @@ using UnityEngine;
     public void DamageUnit(float damage)
     {
         CoreUnit.Health -= damage;
-        Debug.Log("Health: " + CoreUnit.Health + "/" + CoreUnit.MaxHealth + " Damage received: " + damage);
+        //Debug.Log("Health: " + CoreUnit.Health + "/" + CoreUnit.MaxHealth + " Damage received: " + damage);
         if (CoreUnit.Health <= 0)
         {
             KillUnit();
