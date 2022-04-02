@@ -211,7 +211,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5194281991783336649, guid: e0df95721f8e6f94180d7572f8d7dd35, type: 3}
       propertyPath: m_Text
-      value: Back
+      value: Menu
       objectReference: {fileID: 0}
     - target: {fileID: 5452424541030572497, guid: e0df95721f8e6f94180d7572f8d7dd35, type: 3}
       propertyPath: m_Name
