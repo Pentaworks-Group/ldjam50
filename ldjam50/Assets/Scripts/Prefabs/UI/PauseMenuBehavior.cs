@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 using Assets.Scripts.Base;
 
@@ -8,12 +7,16 @@ using UnityEngine.UI;
 
 public class PauseMenuBehavior : MonoBehaviour
 {
+    private Assets.Scripts.Core.GameState[] gameStates;
+
     public GameObject Menu;
     public GameObject GameView;
     public GameObject MenuArea;
     public GameObject OptionsArea;
+    public GameObject SaveGameArea;
     public Button BackButton;
     public Button ContinueButton;
+    public SaveGameSlotBehaviour[] SaveGameSlots;
 
     public void ToggleMenu()
     {
@@ -40,38 +43,11 @@ public class PauseMenuBehavior : MonoBehaviour
         }
     }
 
-    public void SaveGame()
+    public void ShowSavedGames()
     {
-        Debug.Log("Loading saved games");
-        var savedGames = PlayerPrefs.GetString("SavedGames");
+        LoadGameStates();
 
-        var gameStates = default(List<Assets.Scripts.Core.GameState>);
-
-        if (!String.IsNullOrEmpty(savedGames))
-        {
-            try
-            {
-                gameStates = GameFrame.Core.Json.Handler.Deserialize<List<Assets.Scripts.Core.GameState>>(savedGames);
-            }
-            catch (Exception ex)
-            {
-                Debug.LogException(ex);
-            }
-        }
-
-        if (gameStates == null)
-        {
-            Debug.Log("Couldn't parse string or none found.");
-            gameStates = new List<Assets.Scripts.Core.GameState>();
-        }
-
-        Core.Game.State.SavedOn = DateTime.Now;
-        gameStates.Add(Core.Game.State);
-
-        Debug.Log("Serializing gameStates.");
-        savedGames = GameFrame.Core.Json.Handler.Serialize(gameStates);
-
-        PlayerPrefs.SetString("SavedGames", savedGames);
+        SetVisible(saveGame: true);
     }
 
     public void Hide()
@@ -99,6 +75,63 @@ public class PauseMenuBehavior : MonoBehaviour
         this.SetVisible(options: true);
     }
 
+    private void LoadGameStates()
+    {
+        Debug.Log("Loading saved games");
+        var savedGames = PlayerPrefs.GetString("SavedGames");
+
+        if (!String.IsNullOrEmpty(savedGames))
+        {
+            try
+            {
+                gameStates = GameFrame.Core.Json.Handler.Deserialize<Assets.Scripts.Core.GameState[]>(savedGames);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogException(ex);
+            }
+        }
+
+        if (gameStates == null)
+        {
+            Debug.Log("Couldn't parse string or none found.");
+            gameStates = new Assets.Scripts.Core.GameState[5];
+        }
+
+        for (int i = 0; i < 5; i++)
+        {
+            SaveGameSlots[i].GameState = gameStates[i];
+        }
+    }
+
+    public void OnSaveGameSlotClicked(SaveGameSlotBehaviour slot)
+    {
+        var index = 0;
+
+        for (int i = 0; i < 5; i++)
+        {
+            if (SaveGameSlots[i] == slot)
+            {
+                index = i;
+                break;
+            }
+        }
+
+        var serialized = GameFrame.Core.Json.Handler.Serialize(Core.Game.State);
+
+        var gameState = GameFrame.Core.Json.Handler.Deserialize<Assets.Scripts.Core.GameState>(serialized);
+
+        gameState.SavedOn = DateTime.Now;
+
+        slot.GameState = gameState;
+        gameStates[index] = gameState;
+
+        Debug.Log("Serializing gameStates.");
+        var savedGames = GameFrame.Core.Json.Handler.Serialize(gameStates);
+
+        PlayerPrefs.SetString("SavedGames", savedGames);
+    }
+
     public void Quit()
     {
         Core.Game.Stop();
@@ -122,10 +155,11 @@ public class PauseMenuBehavior : MonoBehaviour
         }
     }
 
-    private void SetVisible(Boolean pauseMenu = false, Boolean options = false)
+    private void SetVisible(Boolean pauseMenu = false, Boolean options = false, Boolean saveGame = false)
     {
         this.MenuArea.SetActive(pauseMenu);
         this.OptionsArea.SetActive(options);
+        this.SaveGameArea.SetActive(saveGame);
 
         this.ContinueButton.gameObject.SetActive(pauseMenu);
         this.BackButton.gameObject.SetActive(!pauseMenu);

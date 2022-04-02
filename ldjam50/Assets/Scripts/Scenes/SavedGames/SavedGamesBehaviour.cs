@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 using UnityEngine;
 
@@ -13,11 +12,11 @@ namespace Assets.Scripts.Scenes.SavedGames
 
             if (!String.IsNullOrEmpty(savedGamesJson))
             {
-                var savedGames = GameFrame.Core.Json.Handler.Deserialize<List<Assets.Scripts.Core.GameState>>(savedGamesJson);
+                var savedGames = GameFrame.Core.Json.Handler.Deserialize<Assets.Scripts.Core.GameState[]>(savedGamesJson);
 
-                if (savedGames?.Count > 0)
+                if (savedGames?.Length > 0)
                 {
-                    Debug.Log($"Found GameStates: {savedGames.Count}");
+                    Debug.Log($"Found GameStates: {savedGames.Length}");
 
                     foreach (var gameState in savedGames)
                     {
