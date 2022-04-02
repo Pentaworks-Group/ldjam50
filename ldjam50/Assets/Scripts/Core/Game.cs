@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+
+using UnityEngine;
 
 namespace Assets.Scripts.Core
 {
@@ -6,12 +8,22 @@ namespace Assets.Scripts.Core
     {
         protected override GameState InitializeGameState()
         {
-            return new GameState();
+            return new GameState()
+            {
+                CreatedOn = DateTime.Now,
+                CurrentScene = SceneNames.City
+            };
         }
 
         protected override PlayerOptions InitialzePlayerOptions()
         {
-            return new PlayerOptions();
+            return new PlayerOptions()
+            {
+                AreAnimationsEnabled = true,
+                EffectsVolume = 1f,
+                BackgroundVolume = 0.125f,
+                AmbienceVolume = 0.125f
+            };
         }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
