@@ -1,7 +1,7 @@
 Todo:
 ----------------------------------
  Core:
- - Save / Load Games (Cookies)
+ 
    
   UI:
  - Background MainMenu
@@ -20,15 +20,15 @@ Ideas:
  
 Nice to have:
 ----------------------------------
- - 
+ - Make palace hitbox != circle
  
  
 WIP:
 ----------------------------------
- - 
+ - Save / Load Games (Cookies)
 
 
 
 Done:
 ----------------------------------
- - Pause Menu transparency (R)
+ - Pause Menu transparency
