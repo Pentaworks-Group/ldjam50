@@ -1,6 +1,7 @@
 
+using System;
+
 using Assets.Scripts.Base;
-using Assets.Scripts.Core;
 
 using GameFrame.Core.Audio.Multi;
 using GameFrame.Core.Audio.Single;
@@ -12,6 +13,59 @@ public class MainMenuScript : MonoBehaviour
     public EffectsAudioManager EffectsAudioManager;
     public ContinuousAudioManager AmbienceAudioManager;
     public ContinuousAudioManager BackgroundAudioManager;
+
+    public GameObject MainMenuContainer;
+    public GameObject OptionsMenuContainer;
+
+    public GameObject SavedGamesButton;
+
+    public GameObject BackButton;
+    public GameObject QuitButton;
+
+    public void StartGame()
+    {
+        Core.Game.Start();
+    }
+
+    public void ShowSavedGames()
+    {
+        Core.Game.ChangeScene(SceneNames.SavedGames);
+    }
+
+    public void ShowOptions()
+    {
+        ChangeContainerVisiblity(options: true);   
+    }
+
+    public void ShowCredits()
+    {
+        Core.Game.ChangeScene(SceneNames.Credits);
+    }
+
+    public void Quit()
+    {
+        Assets.Scripts.Base.Core.Game.SaveOptions();
+        Application.Quit();
+    }
+
+    public void Back()
+    {
+        ChangeContainerVisiblity(mainMenu: true);
+    }
+
+    private void ChangeContainerVisiblity(Boolean mainMenu = false, Boolean options = false)
+    {
+        if (!mainMenu && !options)
+        {
+            throw new InvalidOperationException("No visiblity is not allowed!");
+        }
+
+        this.MainMenuContainer.SetActive(mainMenu);
+        this.OptionsMenuContainer.SetActive(options);
+
+        this.QuitButton.SetActive(mainMenu);
+        this.BackButton.SetActive(!mainMenu);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +99,11 @@ public class MainMenuScript : MonoBehaviour
         //{
         //    Core.Game.AmbienceAudioManager.Unmute();
         //}
+
+        if (Core.Game.IsFileAccessPossible)
+        {
+
+        }
     }
 
     // Update is called once per frame
@@ -58,16 +117,4 @@ public class MainMenuScript : MonoBehaviour
 
     }
 
-    public void StartGame()
-    {
-        Core.Game.Start();
-    }
-
-    public void LoadGame(GameState loadedGamestate)
-    {
-        if (loadedGamestate != default)
-        {
-            Core.Game.Start(loadedGamestate);
-        }
-    }
 }
