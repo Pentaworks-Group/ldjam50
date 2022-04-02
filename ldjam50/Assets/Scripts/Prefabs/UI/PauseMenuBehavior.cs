@@ -70,6 +70,8 @@ public class PauseMenuBehavior : MonoBehaviour
     {
         Core.Game.Stop();
         Core.Game.ChangeScene(SceneNames.MainMenu);
+        
+        Time.timeScale = 1;
     }
 
     // Start is called before the first frame update

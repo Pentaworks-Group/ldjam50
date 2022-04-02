@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class RebelBehaviour : CoreUnitBehaviour
 {
-
-
     public void InitRebel(Rebel rebel)
     {
         Init(rebel);
     }
-
-
 }
