@@ -1,7 +1,7 @@
 Todo:
 ----------------------------------
  Core:
- - Save / Load Games (Cookies)
+ 
    
   UI:
  - Background MainMenu
@@ -25,10 +25,10 @@ Nice to have:
  
 WIP:
 ----------------------------------
- - 
+ - Save / Load Games (Cookies)
 
 
 
 Done:
 ----------------------------------
- - Pause Menu transparency (R)
+ - Pause Menu transparency
