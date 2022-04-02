@@ -64,7 +64,7 @@ public class MapObjectSpawner : MonoBehaviour
             Speed = 0,
             MaxSpeed = 0.4f,
             Location = GameHandler.Palace.MapObject.Location,
-            ImageName = "troops_P",
+            ImageName = "Troops_P",
             Base = GameHandler.Palace.MapObject
         };
         GameObject troopOb = Instantiate(PoliceTroopTemplate, new Vector3(0, 0, 0), Quaternion.identity, Map.transform);
