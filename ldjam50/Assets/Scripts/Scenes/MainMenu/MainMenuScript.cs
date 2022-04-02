@@ -18,6 +18,6 @@ public class MainMenuScript : MonoBehaviour
 
     public void StartGame()
     {
-
+        Assets.Scripts.Base.Core.Game.Start();
     }
 }
