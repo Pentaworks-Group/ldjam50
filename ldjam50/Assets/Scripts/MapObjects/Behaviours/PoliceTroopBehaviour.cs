@@ -25,11 +25,11 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
             float distance = Vector2.Distance(rebel.MapObject.Location, PoliceTroop.Location);
             if (distance < 0.1f)
             {
-                rebel.Repel(distance, PoliceTroop);
+                rebel.Repel(distance, this);
             }
             if (distance < 0.08f)
             {
-                rebel.Fight(distance, PoliceTroop);
+                rebel.Fight(distance, this);
             }
         }
     }
@@ -61,10 +61,19 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     private void Heal()
     {
-        if (PoliceTroop.Strength < PoliceTroop.MaxStrength)
+        if (PoliceTroop.Strength < PoliceTroop.MaxHealth)
         {
             PoliceTroop.Strength += 5 * Time.deltaTime;
         }
+    }
+
+    protected override void KillUnit()
+    {
+        if (GameHandler.SelectedTroop == this)
+        {
+            GameHandler.SelectedTroop = null;
+        }
+        GameObject.Destroy(gameObject);
     }
 }
 

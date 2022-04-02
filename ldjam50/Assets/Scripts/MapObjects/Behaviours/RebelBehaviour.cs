@@ -19,11 +19,6 @@ public class RebelBehaviour : CoreUnitBehaviour
         //KillRebel();
     }
 
-    private void KillRebel()
-    {
-        GameHandler.RemoveRebel(this);
-        GameObject.Destroy(gameObject);
-    }
 
     private void CallGameOver(float distance)
     {
@@ -31,17 +26,23 @@ public class RebelBehaviour : CoreUnitBehaviour
         Debug.Log("You have Lost. Looser!! " + distance);
     }
 
-    internal void Repel(float distance, PoliceTroop policeTroop)
+    internal void Repel(float distance, CoreUnitBehaviour opponent)
     {
-        Vector2 direction = MapObject.Location - policeTroop.Location;
+        Vector2 direction = MapObject.Location - opponent.MapObject.Location;
         direction.Normalize();
         direction *= 0.22f * Time.deltaTime;
         MoveInDirection(direction);
     }
 
-    internal void Fight(float distance, PoliceTroop policeTroop)
+    internal void Fight(float distance, CoreUnitBehaviour opponent)
     {
-        throw new NotImplementedException();
+        GameHandler.Fight(opponent, this, distance);
+    }
+
+    protected override void KillUnit()
+    {
+        GameHandler.RemoveRebel(this);
+        GameObject.Destroy(gameObject);
     }
 }
 

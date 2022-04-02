@@ -16,10 +16,8 @@ public class MapObjectSpawner : MonoBehaviour
     public PalaceBehaviour Palace;
 
 
-    private PoliceTroopBehaviour selectedTroop;
-
     private float nextTick = 3;
-    private float spawnInterval = 30;
+    private float spawnInterval = 5;
     private float currentTime = 0;
 
     // Start is called before the first frame update
@@ -27,7 +25,7 @@ public class MapObjectSpawner : MonoBehaviour
     {
         GameHandler.Clear();
         InitPalace();
-        selectedTroop = SpawnTroop();
+        GameHandler.SelectedTroop = SpawnTroop();
     }
 
     // Update is called once per frame
@@ -48,7 +46,7 @@ public class MapObjectSpawner : MonoBehaviour
         PointerEventData pointerData = data as PointerEventData;
         float relPositionX = pointerData.position.x / Screen.width;
         float relPositionY = pointerData.position.y / Screen.height;
-        selectedTroop.SendTroopsToLocation(new Vector2(relPositionX, relPositionY));
+        GameHandler.SelectedTroop.SendTroopsToLocation(new Vector2(relPositionX, relPositionY));
     }
 
     private void UpdateTimeDisplay()
@@ -63,6 +61,9 @@ public class MapObjectSpawner : MonoBehaviour
             Name = "Police Troop",
             Speed = 0,
             MaxSpeed = 0.4f,
+            Strength = 20,
+            Health = 100,
+            MaxHealth = 200,
             Location = GameHandler.Palace.MapObject.Location,
             ImageName = "Troops_P",
             Base = GameHandler.Palace.MapObject
@@ -86,7 +87,9 @@ public class MapObjectSpawner : MonoBehaviour
             Speed = speed,
             Location = GetValidRandomLocation(),
             Target = GameHandler.Palace.MapObject.Location,
-            ImageName = "Protest"
+            ImageName = "Protest",
+            Strength = 10,
+            Health = 25
         };
 
         GameObject rebelOb = Instantiate(RebelTemplate, new Vector3(0, 0, 0), Quaternion.identity, Map.transform);

@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoreUnitBehaviour : CoreBehaviour
+ public abstract class CoreUnitBehaviour : CoreBehaviour
 {
-    protected CoreUnit coreUnit;
+    public CoreUnit CoreUnit { get; private set; }
     private Dictionary<float, Action<float>> distanceActions = new Dictionary<float, Action<float>>();
 
     protected void Update()
@@ -15,13 +15,13 @@ public class CoreUnitBehaviour : CoreBehaviour
 
     protected void Move()
     {
-        if (coreUnit.Speed == 0 || coreUnit.Target == default)
+        if (CoreUnit.Speed == 0 || CoreUnit.Target == default)
         {
             return;
         }
-        Vector2 direction = coreUnit.Target - MapObject.Location;
+        Vector2 direction = CoreUnit.Target - MapObject.Location;
         direction.Normalize();
-        direction *= coreUnit.Speed * Time.deltaTime;
+        direction *= CoreUnit.Speed * Time.deltaTime;
         MoveInDirection(direction);
         //Debug.Log("Move: " + newLocation + " direction: " + direction);
     }
@@ -29,7 +29,7 @@ public class CoreUnitBehaviour : CoreBehaviour
     {
         Vector2 newLocation = MapObject.Location + direction;
         SetLocation(newLocation);
-        DistanzeTriggerCheck(MapObject.Location, coreUnit.Target);
+        DistanzeTriggerCheck(MapObject.Location, CoreUnit.Target);
     }
 
     private void DistanzeTriggerCheck(Vector2 location, Vector2 target)
@@ -44,6 +44,18 @@ public class CoreUnitBehaviour : CoreBehaviour
         }
     }
 
+    public void DamageUnit(float damage)
+    {
+        CoreUnit.Health -= damage;
+        Debug.Log("Health: " + CoreUnit.Health + "/" + CoreUnit.MaxHealth + " Damage received: " + damage);
+        if (CoreUnit.Health <= 0)
+        {
+            KillUnit();
+        }
+    }
+
+    protected abstract void KillUnit();
+
     protected void AddDistanceAction(float distance, Action<float> action)
     {
         distanceActions.Add(distance, action);
@@ -51,7 +63,7 @@ public class CoreUnitBehaviour : CoreBehaviour
 
     public void Init(CoreUnit unit)
     {
-        coreUnit = unit;
+        CoreUnit = unit;
         base.Init(unit);
     }
 }
