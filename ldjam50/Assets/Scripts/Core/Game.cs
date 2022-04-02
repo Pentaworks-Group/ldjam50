@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 using GameFrame.Core.Audio.Multi;
 using GameFrame.Core.Audio.Single;
 
@@ -17,7 +16,6 @@ namespace Assets.Scripts.Core
         {
             return new GameState()
             {
-                CreatedOn = DateTime.Now,
                 CurrentScene = SceneNames.City
             };
         }

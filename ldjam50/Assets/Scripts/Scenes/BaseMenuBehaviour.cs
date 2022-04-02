@@ -3,7 +3,7 @@ using Assets.Scripts.Base;
 
 namespace Assets.Scripts.Scenes
 {
-    public class BaseMenuScript : MonoBehaviour
+    public class BaseMenuBehaviour : MonoBehaviour
     {
         public void Back()
         {

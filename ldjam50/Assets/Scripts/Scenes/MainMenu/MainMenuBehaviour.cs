@@ -8,7 +8,7 @@ using GameFrame.Core.Audio.Single;
 
 using UnityEngine;
 
-public class MainMenuScript : MonoBehaviour
+public class MainMenuBehaviour : MonoBehaviour
 {
     public EffectsAudioManager EffectsAudioManager;
     public ContinuousAudioManager AmbienceAudioManager;
@@ -91,6 +91,22 @@ public class MainMenuScript : MonoBehaviour
             Core.Game.BackgroundAudioManager.Initialize();
         }
 
+        var audioClipList = new System.Collections.Generic.List<AudioClip>()
+        {
+            GameFrame.Base.Resources.Manager.Audio.Get("Background_1"),
+            GameFrame.Base.Resources.Manager.Audio.Get("Background_2"),
+            GameFrame.Base.Resources.Manager.Audio.Get("Background_3"),
+            GameFrame.Base.Resources.Manager.Audio.Get("Background_4"),
+            GameFrame.Base.Resources.Manager.Audio.Get("Background_5"),
+            GameFrame.Base.Resources.Manager.Audio.Get("Background_6"),
+            GameFrame.Base.Resources.Manager.Audio.Get("Background_7"),
+            GameFrame.Base.Resources.Manager.Audio.Get("Background_8"),
+            GameFrame.Base.Resources.Manager.Audio.Get("Background_9"),
+            GameFrame.Base.Resources.Manager.Audio.Get("Background_10"),
+        };
+
+        Core.Game.BackgroundAudioManager.Clips = audioClipList;
+
         //if (!Core.Game.AmbienceAudioManager.IsPlaying)
         //{
         //    Core.Game.AmbienceAudioManager.Resume();
@@ -99,11 +115,6 @@ public class MainMenuScript : MonoBehaviour
         //{
         //    Core.Game.AmbienceAudioManager.Unmute();
         //}
-
-        if (Core.Game.IsFileAccessPossible)
-        {
-
-        }
     }
 
     // Update is called once per frame
