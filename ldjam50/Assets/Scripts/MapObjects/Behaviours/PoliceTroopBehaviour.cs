@@ -27,10 +27,10 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
             {
                 rebel.Repel(distance, PoliceTroop);
             }
-            if (distance < 0.08f)
-            {
-                rebel.Fight(distance, PoliceTroop);
-            }
+            //if (distance < 0.08f)
+            //{
+            //    rebel.Fight(distance, PoliceTroop);
+            //}
         }
     }
 
