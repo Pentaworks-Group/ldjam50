@@ -323,7 +323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8849340443900071137, guid: e0df95721f8e6f94180d7572f8d7dd35, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CreditsMenuScript, Assembly-CSharp
+      value: GameOverBehaviour, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8849340443900071137, guid: e0df95721f8e6f94180d7572f8d7dd35, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -513,7 +513,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1746860736}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac9ba8d6da492604ebcb7b74eb0d1753, type: 3}
+  m_Script: {fileID: 11500000, guid: dd23a5b0d3bc7a644ba3d1bdcd58c61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1891251342
