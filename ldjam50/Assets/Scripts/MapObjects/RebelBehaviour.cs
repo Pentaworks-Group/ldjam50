@@ -10,7 +10,7 @@ public class RebelBehaviour : CoreUnitBehaviour
     public void InitRebel(Rebel rebel)
     {
         sizeScale = 0.2f;
-        AddDistanceAction(0.1f, CallGameOver);
+        AddDistanceAction(0.08f, CallGameOver);
         Init(rebel);
     }
 
@@ -22,7 +22,7 @@ public class RebelBehaviour : CoreUnitBehaviour
     private void CallGameOver(float distance)
     {
         Assets.Scripts.Base.Core.Game.ChangeScene(SceneNames.GameOver);
-        Debug.Log("You have Lost. Looser!!");
+        Debug.Log("You have Lost. Looser!! " + distance);
     }
 }
 
