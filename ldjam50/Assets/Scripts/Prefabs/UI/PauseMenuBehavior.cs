@@ -1,10 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 using Assets.Scripts.Base;
-
-using GameFrame.Core;
 
 using UnityEngine;
 using UnityEngine.UI;
@@ -48,16 +45,13 @@ public class PauseMenuBehavior : MonoBehaviour
         Debug.Log("Loading saved games");
         var savedGames = PlayerPrefs.GetString("SavedGames");
 
-        List<GameState> gameStates = default(List<GameState>);
+        var gameStates = default(List<Assets.Scripts.Core.GameState>);
 
         if (!String.IsNullOrEmpty(savedGames))
         {
-            Debug.Log("Found string...");
-
             try
             {
-                var gameStateContainer = Newtonsoft.Json.JsonConvert.DeserializeObject<GameStateContainer>(savedGames);
-                gameStates = gameStateContainer?.GameStates?.ToList();
+                gameStates = GameFrame.Core.Json.Handler.Deserialize<List<Assets.Scripts.Core.GameState>>(savedGames);
             }
             catch (Exception ex)
             {
@@ -68,25 +62,16 @@ public class PauseMenuBehavior : MonoBehaviour
         if (gameStates == null)
         {
             Debug.Log("Couldn't parse string or none found.");
-            gameStates = new List<GameState>();
+            gameStates = new List<Assets.Scripts.Core.GameState>();
         }
 
-        Debug.Log("Setting SavedOn.");
         Core.Game.State.SavedOn = DateTime.Now;
-        Debug.Log("Adding Gamestate.");
         gameStates.Add(Core.Game.State);
 
-        var newContainer = new GameStateContainer()
-        {
-            GameStates = gameStates.ToArray()
-        };
-
         Debug.Log("Serializing gameStates.");
-        savedGames = Newtonsoft.Json.JsonConvert.SerializeObject(newContainer);
+        savedGames = GameFrame.Core.Json.Handler.Serialize(gameStates);
 
-        Debug.Log("Saving savedGames string.");
         PlayerPrefs.SetString("SavedGames", savedGames);
-        Debug.Log("Done.");
     }
 
     public void Hide()

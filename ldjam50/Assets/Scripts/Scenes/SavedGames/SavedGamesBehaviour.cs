@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using Assets.Scripts.Core;
-
 using UnityEngine;
 
 namespace Assets.Scripts.Scenes.SavedGames
@@ -15,7 +13,7 @@ namespace Assets.Scripts.Scenes.SavedGames
 
             if (!String.IsNullOrEmpty(savedGamesJson))
             {
-                var savedGames = Newtonsoft.Json.JsonConvert.DeserializeObject<List<GameState>>(savedGamesJson);
+                var savedGames = GameFrame.Core.Json.Handler.Deserialize<List<Assets.Scripts.Core.GameState>>(savedGamesJson);
 
                 if (savedGames?.Count > 0)
                 {
