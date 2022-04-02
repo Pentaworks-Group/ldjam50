@@ -22,6 +22,5 @@ public class PalaceBehaviour : CoreBehaviour
             
         }
         Init(mapObject);
-        Debug.Log("PalaceBehaviour");
     }
 }

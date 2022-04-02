@@ -2,14 +2,15 @@ using System;
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class MapObjectSpawner : MonoBehaviour
 {
-    public PalaceBehaviour palace;
-    public GameObject Rebi;
-    public RebelBehaviour rebelTemplate;
-    public GameObject map;
+    public PalaceBehaviour Palace;
+    public GameObject RebelTemplate;
+    public GameObject Map;
+    public Text TimeDisplay;
 
 
     private float nextTick = 2;
@@ -32,13 +33,15 @@ public class MapObjectSpawner : MonoBehaviour
             nextTick = currentTime + spawnInterval;
             spawnInterval *= 0.95f;
         }
-        UpdateMapObjects();
+        UpdateTimeDisplay();
     }
 
-    private void UpdateMapObjects()
+    private void UpdateTimeDisplay()
     {
-
+        TimeDisplay.text = currentTime.ToString("F1");
     }
+
+
 
     private void SpawnRebel()
     {
@@ -49,11 +52,11 @@ public class MapObjectSpawner : MonoBehaviour
             Name = GetRandomRebelName(),
             Speed = speed,
             Location = GetValidRandomLocation(),
-            Target = palace.MapObject.Location,
+            Target = Palace.MapObject.Location,
             ImageName = "Protest"
         };
 
-        GameObject rebelOb = Instantiate(Rebi, new Vector3(0, 0, 0), Quaternion.identity, map.transform);
+        GameObject rebelOb = Instantiate(RebelTemplate, new Vector3(0, 0, 0), Quaternion.identity, Map.transform);
 
         RebelBehaviour rebelBehaviour = rebelOb.GetComponent<RebelBehaviour>();
 
@@ -79,7 +82,6 @@ public class MapObjectSpawner : MonoBehaviour
 
     private void InitPalace()
     {
-        palace.InitPalace();
-        Debug.Log("InitPalace");
+        Palace.InitPalace();
     }
 }
