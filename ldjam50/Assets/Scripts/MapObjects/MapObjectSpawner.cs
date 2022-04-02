@@ -21,13 +21,17 @@ public class MapObjectSpawner : MonoBehaviour
     private float spawnInterval = 2f;
     private float currentTime = 0;
 
+    private float musicChangeTick = 20.0f;
+
     // Start is called before the first frame update
     void Start()
     {
         GameHandler.Clear();
         InitPalace();
         GameHandler.SelectedTroop = SpawnTroop();
+        Core.Game.BackgroundAudioManager.Stop();
         Core.Game.BackgroundAudioManager.Clips = Core.Game.AudioClipListGame1;
+        Core.Game.BackgroundAudioManager.Resume();
     }
 
     // Update is called once per frame
@@ -39,6 +43,10 @@ public class MapObjectSpawner : MonoBehaviour
             SpawnRebel();
             nextTick = currentTime + spawnInterval;
             spawnInterval *= 0.95f;
+        }
+        if (currentTime > musicChangeTick)
+        {
+            Core.Game.BackgroundAudioManager.Clips = Core.Game.AudioClipListGame2;
         }
         UpdateTimeDisplay();
     }
