@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,21 +12,11 @@ public class CoreBehaviour : MonoBehaviour
     private float halfImageSizeRelativeX;
     private float halfImageSizeRealtiveY;
 
-
-    void Start()
+    protected void Init(CoreMapObject mapObject)
     {
         RectTransform = this.gameObject.GetComponent<RectTransform>();
         Image = this.gameObject.GetComponent<Image>();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    protected void Init(CoreMapObject mapObject)
-    {
         Sprite sprite = GameFrame.Base.Resources.Manager.Sprites.Get(mapObject.ImageName);
         Image.sprite = sprite;
         MapObject = mapObject;
@@ -38,17 +26,26 @@ public class CoreBehaviour : MonoBehaviour
         Debug.Log("CoreBehaviour");
     }
 
-
-    void InitScales()
+    protected void InitScales()
     {
         halfImageSizeRelativeX = (Image.sprite.rect.width / 3840) / 2f;
         halfImageSizeRealtiveY = (Image.sprite.rect.height / 2160) / 2f;
     }
 
-    void SetLocation(Vector2 location)
+    protected void SetLocation(Vector2 location)
     {
         RectTransform.anchorMin = new Vector2(location.x - halfImageSizeRelativeX, location.y - halfImageSizeRealtiveY);
         RectTransform.anchorMax = new Vector2(location.x + halfImageSizeRelativeX, location.y + halfImageSizeRealtiveY);
         MapObject.Location = location;
+    }
+
+    void Start()
+    {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
     }
 }
