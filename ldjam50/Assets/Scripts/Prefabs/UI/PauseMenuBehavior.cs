@@ -42,7 +42,7 @@ public class PauseMenuBehavior : MonoBehaviour
     public void Hide()
     {
         Menu.SetActive(false);
-        GameView.SetActive(true);
+        //GameView.SetActive(true);
     }
 
     public void Show()
@@ -53,7 +53,7 @@ public class PauseMenuBehavior : MonoBehaviour
         SetVisible(pauseMenu: true);
 
         Menu.SetActive(true);
-        GameView.SetActive(false);
+        //GameView.SetActive(false);
     }
 
     public void OnBackButtonClicked()
@@ -70,7 +70,7 @@ public class PauseMenuBehavior : MonoBehaviour
     {
         Core.Game.Stop();
         Core.Game.ChangeScene(SceneNames.MainMenu);
-        
+
         Time.timeScale = 1;
     }
 

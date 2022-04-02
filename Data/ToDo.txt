@@ -1,17 +1,34 @@
 Todo:
+----------------------------------
+ Core:
  - Save / Load Games
- - 
-
+   
+  UI:
+ - Background MainMenu
  
+ 
+ Audio:
+ - Music
+ - Effects
+ - Ambience?
 
-Idea:
+
+Ideas:
+----------------------------------
  - 
 
  
 Nice to have:
+----------------------------------
  - 
+ 
+ 
+WIP:
+----------------------------------
+- Pause Menu transparency (R)
+
 
 
 Done:
+----------------------------------
  - 
- 
