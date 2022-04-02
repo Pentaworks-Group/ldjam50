@@ -12,14 +12,19 @@ public class CoreBehaviour : MonoBehaviour
     private float halfImageSizeRelativeX;
     private float halfImageSizeRealtiveY;
 
+    protected float sizeScale = 1f;
+
     protected void Init(CoreMapObject mapObject)
     {
         RectTransform = this.gameObject.GetComponent<RectTransform>();
         Image = this.gameObject.GetComponent<Image>();
 
+        RectTransform.offsetMin = new Vector2(0, 0);
+        RectTransform.offsetMax = new Vector2(0, 0);
+
+
         gameObject.name = mapObject.Name;
 
-        Debug.Log(mapObject.Location);
 
         Sprite sprite = GameFrame.Base.Resources.Manager.Sprites.Get(mapObject.ImageName);
         Image.sprite = sprite;
@@ -27,13 +32,12 @@ public class CoreBehaviour : MonoBehaviour
         InitScales();
 
         SetLocation(mapObject.Location);
-        Debug.Log("CoreBehaviour");
     }
 
     protected void InitScales()
     {
-        halfImageSizeRelativeX = (Image.sprite.rect.width / 3840) / 2f;
-        halfImageSizeRealtiveY = (Image.sprite.rect.height / 2160) / 2f;
+        halfImageSizeRelativeX = sizeScale * (Image.sprite.rect.width / 3840) / 2f;
+        halfImageSizeRealtiveY = sizeScale * (Image.sprite.rect.height / 2160) / 2f;
     }
 
     protected void SetLocation(Vector2 location)

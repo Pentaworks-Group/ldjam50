@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rebel : CoreUnits
+public class Rebel : CoreUnit
 {
-    public float Speed { get; set; }
 }

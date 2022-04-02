@@ -44,7 +44,8 @@ public class MapObjectSpawner : MonoBehaviour
 
     private void SpawnRebel()
     {
-        float speed = UnityEngine.Random.Range(0, 5);
+        float speed = UnityEngine.Random.Range(0.05f, 0.1f);
+        Debug.Log("Speed: " + speed);
         Rebel rebel = new Rebel()
         {
             Name = GetRandomRebelName(),
