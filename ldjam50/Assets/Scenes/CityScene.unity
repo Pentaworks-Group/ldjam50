@@ -308,6 +308,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   palace: {fileID: 2031888669}
+  Rebi: {fileID: 1577795025}
+  rebelTemplate: {fileID: 1577795027}
+  map: {fileID: 281437110}
 --- !u!1 &1052973213
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,7 +539,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1577795025}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1382eab92d5179479120283ef83ad78, type: 3}
+  m_Script: {fileID: 11500000, guid: d9664c01e839dff47943dc40b8cede36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1577795028

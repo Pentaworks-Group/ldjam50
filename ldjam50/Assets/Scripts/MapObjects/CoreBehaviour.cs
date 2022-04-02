@@ -17,6 +17,10 @@ public class CoreBehaviour : MonoBehaviour
         RectTransform = this.gameObject.GetComponent<RectTransform>();
         Image = this.gameObject.GetComponent<Image>();
 
+        gameObject.name = mapObject.Name;
+
+        Debug.Log(mapObject.Location);
+
         Sprite sprite = GameFrame.Base.Resources.Manager.Sprites.Get(mapObject.ImageName);
         Image.sprite = sprite;
         MapObject = mapObject;
