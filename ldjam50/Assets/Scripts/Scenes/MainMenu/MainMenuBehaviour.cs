@@ -91,21 +91,33 @@ public class MainMenuBehaviour : MonoBehaviour
             Core.Game.BackgroundAudioManager.Initialize();
         }
 
-        var audioClipList = new System.Collections.Generic.List<AudioClip>()
+        Core.Game.AudioClipListMenu = new System.Collections.Generic.List<AudioClip>()
         {
-            GameFrame.Base.Resources.Manager.Audio.Get("Background_1"),
+            GameFrame.Base.Resources.Manager.Audio.Get("Background_1")
+        };
+
+        Core.Game.AudioClipListGame1 = new System.Collections.Generic.List<AudioClip>()
+        {
             GameFrame.Base.Resources.Manager.Audio.Get("Background_2"),
             GameFrame.Base.Resources.Manager.Audio.Get("Background_3"),
-            GameFrame.Base.Resources.Manager.Audio.Get("Background_4"),
+            GameFrame.Base.Resources.Manager.Audio.Get("Background_4")
+        };
+
+        Core.Game.AudioClipListGame2 = new System.Collections.Generic.List<AudioClip>()
+        {
             GameFrame.Base.Resources.Manager.Audio.Get("Background_5"),
             GameFrame.Base.Resources.Manager.Audio.Get("Background_6"),
             GameFrame.Base.Resources.Manager.Audio.Get("Background_7"),
             GameFrame.Base.Resources.Manager.Audio.Get("Background_8"),
-            GameFrame.Base.Resources.Manager.Audio.Get("Background_9"),
-            GameFrame.Base.Resources.Manager.Audio.Get("Background_10"),
+            GameFrame.Base.Resources.Manager.Audio.Get("Background_9")
         };
 
-        Core.Game.BackgroundAudioManager.Clips = audioClipList;
+        Core.Game.AudioClipListTransition = new System.Collections.Generic.List<AudioClip>()
+        {
+            GameFrame.Base.Resources.Manager.Audio.Get("Background_10")
+        };
+
+        Core.Game.BackgroundAudioManager.Clips = Core.Game.AudioClipListMenu;
 
         //if (!Core.Game.AmbienceAudioManager.IsPlaying)
         //{
