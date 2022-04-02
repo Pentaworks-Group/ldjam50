@@ -18,7 +18,7 @@ public class MapObjectSpawner : MonoBehaviour
 
 
     private float nextTick = 3;
-    private float spawnInterval = 2f;
+    private float spawnInterval = 3f;
     private float currentTime = 0;
 
     // Start is called before the first frame update
@@ -92,7 +92,8 @@ public class MapObjectSpawner : MonoBehaviour
             Target = GameHandler.Palace.MapObject.Location,
             ImageName = "Protest",
             Strength = 10,
-            Health = 25
+            Health = 25,
+            MaxHealth = 200
         };
 
         GameObject rebelOb = Instantiate(RebelTemplate, new Vector3(0, 0, 0), Quaternion.identity, Map.transform);

@@ -45,7 +45,7 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
     {
         PoliceTroop = policeTroop;
         sizeScale = 0.2f;
-        AddDistanceAction(0.001f, Stop);
+        AddDistanceAction(0.008f, Stop);
         base.Init(policeTroop);
     }
 
@@ -61,9 +61,9 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     private void Heal()
     {
-        if (PoliceTroop.Strength < PoliceTroop.MaxHealth)
+        if (PoliceTroop.Health < PoliceTroop.MaxHealth)
         {
-            PoliceTroop.Strength += 5 * Time.deltaTime;
+            PoliceTroop.Health += 5 * Time.deltaTime;
         }
     }
 

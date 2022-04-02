@@ -30,7 +30,7 @@ public class RebelBehaviour : CoreUnitBehaviour
     {
         Vector2 direction = MapObject.Location - opponent.MapObject.Location;
         direction.Normalize();
-        direction *= 0.22f * Time.deltaTime;
+        direction *= 0.20f * Time.deltaTime;
         MoveInDirection(direction);
     }
 
