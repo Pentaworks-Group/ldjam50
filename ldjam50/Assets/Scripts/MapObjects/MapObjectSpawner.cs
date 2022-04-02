@@ -1,8 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.UI;
 
 
 public class MapObjectSpawner : MonoBehaviour
@@ -35,7 +34,7 @@ public class MapObjectSpawner : MonoBehaviour
             spawnInterval *= 0.95f;
         }
         UpdateMapObjects();
-     }
+    }
 
     private void UpdateMapObjects()
     {
@@ -52,12 +51,16 @@ public class MapObjectSpawner : MonoBehaviour
             Speed = speed,
             Location = GetValidRandomLocation(),
             Target = palace.MapObject.Location,
-            ImageName = "protest"
+            ImageName = "Protest"
         };
-        GameObject rebelOb = Instantiate<GameObject>(Rebi, new Vector3(0, 0, 0), Quaternion.identity, map.transform);
+
+        GameObject rebelOb = Instantiate(Rebi, new Vector3(0, 0, 0), Quaternion.identity, map.transform);
+
         RebelBehaviour rebelBehaviour = rebelOb.GetComponent<RebelBehaviour>();
+
         rebelBehaviour.gameObject.SetActive(true);
         rebelBehaviour.InitRebel(rebel);
+
         rebels.Add(rebelBehaviour);
     }
 
@@ -65,7 +68,6 @@ public class MapObjectSpawner : MonoBehaviour
     {
         return "Dope Rebel Name";
     }
- 
 
     private Vector2 GetValidRandomLocation()
     {
@@ -78,11 +80,7 @@ public class MapObjectSpawner : MonoBehaviour
 
     private void InitPalace()
     {
-        palace.InitPalace();   
+        palace.InitPalace();
         Debug.Log("InitPalace");
     }
-
-
-
-
 }

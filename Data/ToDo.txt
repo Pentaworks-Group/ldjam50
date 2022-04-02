@@ -1,0 +1,17 @@
+Todo:
+ - Save / Load Games
+ - 
+
+ 
+
+Idea:
+ - 
+
+ 
+Nice to have:
+ - 
+
+
+Done:
+ - 
+ 
