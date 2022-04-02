@@ -474,7 +474,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Background volume
+  m_Text: Ambience Volume
 --- !u!1 &3778963547951825377
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,7 +705,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Ambience volume
+  m_Text: Background Volume
 --- !u!1 &5508897733177618364
 GameObject:
   m_ObjectHideFlags: 0

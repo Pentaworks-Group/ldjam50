@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 using GameFrame.Core.Audio.Multi;
 using GameFrame.Core.Audio.Single;
 
@@ -12,12 +11,16 @@ namespace Assets.Scripts.Core
         public ContinuousAudioManager AmbienceAudioManager { get; set; }
         public ContinuousAudioManager BackgroundAudioManager { get; set; }
         public EffectsAudioManager EffectsAudioManager { get; set; }
+        
+        public System.Collections.Generic.List<AudioClip> AudioClipListMenu { get; set; }
+        public System.Collections.Generic.List<AudioClip> AudioClipListGame1 { get; set; }
+        public System.Collections.Generic.List<AudioClip> AudioClipListGame2 { get; set; }
+        public System.Collections.Generic.List<AudioClip> AudioClipListTransition { get; set; }
 
         protected override GameState InitializeGameState()
         {
             return new GameState()
             {
-                CreatedOn = DateTime.Now,
                 CurrentScene = SceneNames.City
             };
         }
