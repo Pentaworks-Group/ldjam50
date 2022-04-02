@@ -1,7 +1,7 @@
 Todo:
 ----------------------------------
  Core:
- - Save / Load Games
+ - Save / Load Games (Cookies)
    
   UI:
  - Background MainMenu

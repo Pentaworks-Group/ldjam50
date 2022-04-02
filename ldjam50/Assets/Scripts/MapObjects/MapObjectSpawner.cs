@@ -11,7 +11,6 @@ public class MapObjectSpawner : MonoBehaviour
     public RebelBehaviour rebelTemplate;
     public GameObject map;
 
-    private List<RebelBehaviour> rebels = new List<RebelBehaviour>();
 
     private float nextTick = 2;
     private float spawnInterval = 3;
@@ -44,7 +43,7 @@ public class MapObjectSpawner : MonoBehaviour
     private void SpawnRebel()
     {
         float speed = UnityEngine.Random.Range(0.05f, 0.1f);
-        Debug.Log("Speed: " + speed);
+        //Debug.Log("Speed: " + speed);
         Rebel rebel = new Rebel()
         {
             Name = GetRandomRebelName(),
@@ -61,7 +60,7 @@ public class MapObjectSpawner : MonoBehaviour
         rebelBehaviour.gameObject.SetActive(true);
         rebelBehaviour.InitRebel(rebel);
 
-        rebels.Add(rebelBehaviour);
+        //rebels.Add(rebelBehaviour);
     }
 
     private String GetRandomRebelName()
