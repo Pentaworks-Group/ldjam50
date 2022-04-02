@@ -25,10 +25,10 @@ Nice to have:
  
 WIP:
 ----------------------------------
-- Pause Menu transparency (R)
+ - 
 
 
 
 Done:
 ----------------------------------
- - 
+ - Pause Menu transparency (R)
