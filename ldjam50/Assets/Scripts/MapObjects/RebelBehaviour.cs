@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Assets.Scripts.Base;
+
 
 public class RebelBehaviour : CoreUnitBehaviour
 {
@@ -19,6 +21,8 @@ public class RebelBehaviour : CoreUnitBehaviour
 
     private void CallGameOver(float distance)
     {
+        Assets.Scripts.Base.Core.Game.ChangeScene(SceneNames.GameOver);
         Debug.Log("You have Lost. Looser!!");
     }
 }
+

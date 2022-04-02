@@ -80,6 +80,5 @@ public class MapObjectSpawner : MonoBehaviour
     private void InitPalace()
     {
         palace.InitPalace();
-        Debug.Log("InitPalace");
     }
 }
