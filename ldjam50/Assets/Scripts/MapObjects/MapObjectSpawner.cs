@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Assets.Scripts.Base;
 
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -17,7 +18,7 @@ public class MapObjectSpawner : MonoBehaviour
 
 
     private float nextTick = 3;
-    private float spawnInterval = 5;
+    private float spawnInterval = 2f;
     private float currentTime = 0;
 
     // Start is called before the first frame update
@@ -26,6 +27,7 @@ public class MapObjectSpawner : MonoBehaviour
         GameHandler.Clear();
         InitPalace();
         GameHandler.SelectedTroop = SpawnTroop();
+        Core.Game.BackgroundAudioManager.Clips = Core.Game.AudioClipListGame1;
     }
 
     // Update is called once per frame
@@ -79,6 +81,7 @@ public class MapObjectSpawner : MonoBehaviour
 
     private void SpawnRebel()
     {
+        //float speed = 0;
         float speed = UnityEngine.Random.Range(0.05f, 0.1f);
         //Debug.Log("Speed: " + speed);
         Rebel rebel = new Rebel()
@@ -109,9 +112,21 @@ public class MapObjectSpawner : MonoBehaviour
 
     private Vector2 GetValidRandomLocation()
     {
-        float locationX = UnityEngine.Random.Range(0f, 1f);
-        float locationY = UnityEngine.Random.Range(0f, 1f);
-        Vector2 location = new Vector2(locationX, locationY);
+        bool valid = false;
+        Vector2 location = default;
+        while (!valid)
+        {
+            float locationX = UnityEngine.Random.Range(0f, 1f);
+            float locationY = UnityEngine.Random.Range(0f, 1f);
+            location = new Vector2(locationX, locationY);
+
+            float distance = Vector2.Distance(location, GameHandler.Palace.MapObject.Location);
+            if (distance > GameHandler.safeZoneRadius)
+            {
+                valid = true;
+            }
+
+        }
 
         return location;
     }

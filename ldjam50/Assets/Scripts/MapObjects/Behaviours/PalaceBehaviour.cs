@@ -10,7 +10,7 @@ public class PalaceBehaviour : CoreBehaviour
         if (mapObject == default)
         {
             float locationX = (1895f / 3840);
-            float locationY = 1 - (1043f / 2160);
+            float locationY = 1f - (1043f / 2160);
             Vector2 location = new Vector2(locationX, locationY);
 
             mapObject = new CoreMapObject()

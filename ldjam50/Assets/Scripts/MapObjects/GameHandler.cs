@@ -9,6 +9,7 @@ public class GameHandler
 
     public static PoliceTroopBehaviour SelectedTroop { get; set; }
 
+
     public static void AddRebel(RebelBehaviour rebel)
     {
         Rebels.Add(rebel);
@@ -30,5 +31,7 @@ public class GameHandler
         oppenent1.DamageUnit(dmgScale * distance * opponent2.CoreUnit.Strength);
         opponent2.DamageUnit(dmgScale * distance * oppenent1.CoreUnit.Strength);
     }
+
+    public static float safeZoneRadius { get; } = 0.25f;
 
 }
