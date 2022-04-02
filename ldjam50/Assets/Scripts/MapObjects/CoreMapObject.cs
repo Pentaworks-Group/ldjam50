@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class CoreMapObject
 {
-    public String Image { get; set; }
+    public String ImageName { get; set; }
     public Vector2 Location { get; set; }
     public String Name { get; set; }
-
+     
 }
