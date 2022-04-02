@@ -213,6 +213,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 648194896}
+  - component: {fileID: 648194897}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -237,6 +238,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &648194897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648194895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1655599501, guid: 97d8095c63fa99e438ec29928a47e06e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &676486496
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,9 +1022,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d03ae328ab1445543b06b74f7b4756a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EffectsAudioManager: {fileID: 0}
-  AmbienceAudioManager: {fileID: 0}
-  BackgroundAudioManager: {fileID: 0}
+  EffectsAudioManager: {fileID: 1801602230}
+  AmbienceAudioManager: {fileID: 1860402831}
+  BackgroundAudioManager: {fileID: 1157664386}
 --- !u!1 &1860402829
 GameObject:
   m_ObjectHideFlags: 0
