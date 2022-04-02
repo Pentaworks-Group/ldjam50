@@ -1,11 +1,18 @@
 ﻿using System;
 
+using GameFrame.Core.Audio.Multi;
+using GameFrame.Core.Audio.Single;
+
 using UnityEngine;
 
 namespace Assets.Scripts.Core
 {
     public class Game : GameFrame.Core.Game<GameState, PlayerOptions>
     {
+        public ContinuousAudioManager AmbienceAudioManager { get; set; }
+        public ContinuousAudioManager BackgroundAudioManager { get; set; }
+        public EffectsAudioManager EffectsAudioManager { get; set; }
+
         protected override GameState InitializeGameState()
         {
             return new GameState()
