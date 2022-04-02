@@ -19,7 +19,6 @@ public class RebelBehaviour : CoreUnitBehaviour
 
     private void CallGameOver(float distance)
     {
-        Core.
         Debug.Log("You have Lost. Looser!!");
     }
 }
