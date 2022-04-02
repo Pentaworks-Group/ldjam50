@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 using UnityEngine;
 
@@ -6,6 +7,8 @@ namespace Assets.Scripts.Scenes.SavedGames
 {
     public class SavedGamesBehaviour : BaseMenuBehaviour
     {
+        public List<SaveGameSlotBehaviour> SaveGameSlots;
+
         void Start()
         {
             var savedGamesJson = PlayerPrefs.GetString("SavedGames");
@@ -18,15 +21,24 @@ namespace Assets.Scripts.Scenes.SavedGames
                 {
                     Debug.Log($"Found GameStates: {savedGames.Length}");
 
-                    foreach (var gameState in savedGames)
+                    for (int i = 0; i < 5; i++)
                     {
-                        Debug.Log($"GameState saved: {gameState.SavedOn}");
+                        SaveGameSlots[i].GameState = savedGames[i];
                     }
                 }
                 else
                 {
                     Debug.Log($"No gamestates found");
                 }
+            }
+        }
+
+
+        public void OnSaveGameSlotClicked(SaveGameSlotBehaviour slot)
+        {
+            if (slot.GameState != default)
+            {
+                Assets.Scripts.Base.Core.Game.Start(slot.GameState);
             }
         }
     }

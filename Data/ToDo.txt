@@ -1,10 +1,11 @@
 Todo:
 ----------------------------------
  Core:
- 
+ - Load variables from json
    
   UI:
  - GamoverScene show elapsed time
+ - Revamp UI for Save / Load (Button / Box / Scene)
  
  Audio:
  - Music
@@ -24,7 +25,7 @@ Nice to have:
  
 WIP:
 ----------------------------------
- - Save / Load Games (Cookies)
+ 
 
 
 
@@ -32,3 +33,4 @@ Done:
 ----------------------------------
  - Pause Menu transparency
  - Background MainMenu
+ - Save / Load Games (Cookies)
