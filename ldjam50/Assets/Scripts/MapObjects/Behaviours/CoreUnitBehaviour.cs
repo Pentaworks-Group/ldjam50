@@ -8,23 +8,28 @@ public class CoreUnitBehaviour : CoreBehaviour
     protected CoreUnit coreUnit;
     private Dictionary<float, Action<float>> distanceActions = new Dictionary<float, Action<float>>();
 
-    private void Update()
+    protected void Update()
     {
-
         Move();
-
     }
 
     protected void Move()
     {
-        DistanzeTriggerCheck(MapObject.Location, coreUnit.Target);
+        if (coreUnit.Speed == 0 || coreUnit.Target == default)
+        {
+            return;
+        }
         Vector2 direction = coreUnit.Target - MapObject.Location;
         direction.Normalize();
         direction *= coreUnit.Speed * Time.deltaTime;
+        MoveInDirection(direction);
+        //Debug.Log("Move: " + newLocation + " direction: " + direction);
+    }
+    protected void MoveInDirection(Vector2 direction)
+    {
         Vector2 newLocation = MapObject.Location + direction;
         SetLocation(newLocation);
-
-        //Debug.Log("Move: " + newLocation + " direction: " + direction);
+        DistanzeTriggerCheck(MapObject.Location, coreUnit.Target);
     }
 
     private void DistanzeTriggerCheck(Vector2 location, Vector2 target)

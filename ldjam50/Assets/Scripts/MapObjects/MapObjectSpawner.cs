@@ -2,25 +2,32 @@ using System;
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 
 public class MapObjectSpawner : MonoBehaviour
 {
-    public PalaceBehaviour Palace;
     public GameObject RebelTemplate;
+    public GameObject PoliceTroopTemplate;
     public GameObject Map;
+
     public Text TimeDisplay;
+    public PalaceBehaviour Palace;
 
 
-    private float nextTick = 2;
-    private float spawnInterval = 3;
+    private PoliceTroopBehaviour selectedTroop;
+
+    private float nextTick = 3;
+    private float spawnInterval = 30;
     private float currentTime = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        GameHandler.Clear();
         InitPalace();
+        selectedTroop = SpawnTroop();
     }
 
     // Update is called once per frame
@@ -36,12 +43,38 @@ public class MapObjectSpawner : MonoBehaviour
         UpdateTimeDisplay();
     }
 
+    public void MoveSelectedTroop(BaseEventData data)
+    {
+        PointerEventData pointerData = data as PointerEventData;
+        float relPositionX = pointerData.position.x / Screen.width;
+        float relPositionY = pointerData.position.y / Screen.height;
+        selectedTroop.SendTroopsToLocation(new Vector2(relPositionX, relPositionY));
+    }
+
     private void UpdateTimeDisplay()
     {
         TimeDisplay.text = currentTime.ToString("F1");
     }
 
+    private PoliceTroopBehaviour SpawnTroop()
+    {
+        PoliceTroop policeTroop = new PoliceTroop()
+        {
+            Name = "Police Troop",
+            Speed = 0,
+            MaxSpeed = 0.4f,
+            Location = GameHandler.Palace.MapObject.Location,
+            ImageName = "troops_P",
+            Base = GameHandler.Palace.MapObject
+        };
+        GameObject troopOb = Instantiate(PoliceTroopTemplate, new Vector3(0, 0, 0), Quaternion.identity, Map.transform);
 
+        PoliceTroopBehaviour troopBehaviour = troopOb.GetComponent<PoliceTroopBehaviour>();
+
+        troopBehaviour.gameObject.SetActive(true);
+        troopBehaviour.Init(policeTroop);
+        return troopBehaviour;
+    }
 
     private void SpawnRebel()
     {
@@ -52,7 +85,7 @@ public class MapObjectSpawner : MonoBehaviour
             Name = GetRandomRebelName(),
             Speed = speed,
             Location = GetValidRandomLocation(),
-            Target = Palace.MapObject.Location,
+            Target = GameHandler.Palace.MapObject.Location,
             ImageName = "Protest"
         };
 
@@ -61,9 +94,9 @@ public class MapObjectSpawner : MonoBehaviour
         RebelBehaviour rebelBehaviour = rebelOb.GetComponent<RebelBehaviour>();
 
         rebelBehaviour.gameObject.SetActive(true);
-        rebelBehaviour.InitRebel(rebel);
+        rebelBehaviour.Init(rebel);
 
-        //rebels.Add(rebelBehaviour);
+        GameHandler.AddRebel(rebelBehaviour);
     }
 
     private String GetRandomRebelName()
@@ -82,6 +115,7 @@ public class MapObjectSpawner : MonoBehaviour
 
     private void InitPalace()
     {
-        Palace.InitPalace();
+        GameHandler.Palace = Palace;
+        GameHandler.Palace.InitPalace();
     }
 }

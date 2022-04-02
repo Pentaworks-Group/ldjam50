@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 281437111}
   - component: {fileID: 281437113}
   - component: {fileID: 281437112}
+  - component: {fileID: 281437114}
   m_Layer: 5
   m_Name: Map
   m_TagString: Untagged
@@ -201,6 +202,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 281437110}
   m_CullTransparentMesh: 1
+--- !u!114 &281437114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281437110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 371468903}
+          m_TargetAssemblyTypeName: MapObjectSpawner, Assembly-CSharp
+          m_MethodName: MoveSelectedTroop
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &371468901
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,10 +274,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f2f5ca864bb134792a151ca4fbf56f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Palace: {fileID: 2031888669}
   RebelTemplate: {fileID: 1577795025}
+  PoliceTroopTemplate: {fileID: 1338677591}
   Map: {fileID: 281437110}
   TimeDisplay: {fileID: 1737547585}
+  Palace: {fileID: 2031888669}
 --- !u!1 &1052973213
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,8 +586,8 @@ GameObject:
   - component: {fileID: 1338677592}
   - component: {fileID: 1338677596}
   - component: {fileID: 1338677595}
-  - component: {fileID: 1338677594}
   - component: {fileID: 1338677593}
+  - component: {fileID: 1338677594}
   m_Layer: 0
   m_Name: Troops
   m_TagString: Untagged
@@ -601,8 +632,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1338677594}
-          m_TargetAssemblyTypeName: RebelBehaviour, Assembly-CSharp
-          m_MethodName: RebelClick
+          m_TargetAssemblyTypeName: PoliceTroopBehaviour, Assembly-CSharp
+          m_MethodName: TroopClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -621,7 +652,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1338677591}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9664c01e839dff47943dc40b8cede36, type: 3}
+  m_Script: {fileID: 11500000, guid: 20b35a4da4c1c6b4c8ad714936343b62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1338677595
@@ -823,7 +854,6 @@ GameObject:
   - component: {fileID: 1577795029}
   - component: {fileID: 1577795028}
   - component: {fileID: 1577795027}
-  - component: {fileID: 1577795030}
   m_Layer: 0
   m_Name: RebelTemplate
   m_TagString: Untagged
@@ -900,35 +930,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577795025}
   m_CullTransparentMesh: 1
---- !u!114 &1577795030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577795025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1577795027}
-          m_TargetAssemblyTypeName: RebelBehaviour, Assembly-CSharp
-          m_MethodName: RebelClick
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &1737547583
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +941,7 @@ GameObject:
   - component: {fileID: 1737547584}
   - component: {fileID: 1737547586}
   - component: {fileID: 1737547585}
+  - component: {fileID: 1737547587}
   m_Layer: 0
   m_Name: TimeDisplay
   m_TagString: Untagged
@@ -1008,6 +1010,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737547583}
   m_CullTransparentMesh: 1
+--- !u!225 &1737547587
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737547583}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &2031888667
 GameObject:
   m_ObjectHideFlags: 0
