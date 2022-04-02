@@ -28,11 +28,8 @@ public class MapObjectSpawner : MonoBehaviour
     {
         GameHandler.Clear();
         InitPalace();
-<<<<<<< Updated upstream
         selectedTroop = SpawnTroop();
-=======
         Core.Game.BackgroundAudioManager.Clips = Core.Game.AudioClipListGame1;
->>>>>>> Stashed changes
     }
 
     // Update is called once per frame
