@@ -56,6 +56,12 @@ public class PauseMenuBehavior : MonoBehaviour
     public void Hide()
     {
         Menu.SetActive(false);
+
+        if (Core.Game.State.Rebels.Count > 0)
+        {
+            Core.Game.AmbienceAudioManager.Resume();
+        }
+
     }
 
     public void Show()
@@ -66,6 +72,8 @@ public class PauseMenuBehavior : MonoBehaviour
         SetVisible(pauseMenu: true);
 
         Menu.SetActive(true);
+
+        Core.Game.AmbienceAudioManager.Stop();
     }
 
     public void OnBackButtonClicked()

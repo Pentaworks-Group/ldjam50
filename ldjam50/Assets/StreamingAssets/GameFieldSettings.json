@@ -2,11 +2,12 @@
     {
         "Name": "Default",
         "FirstTick": 3,
-        "TickInterval": 3,
-        "TickIntervalFactor": 0.97,
+        "TickInterval": 2.8,
+        "TickIntervalFactor": 0.95,
         "PalaceHealing": 50,
         "TroopDefaults": [
             {
+				"Type": "Police",
                 "Names": [
                     "1st Police Corps",
                     "2st Police Corps"
@@ -16,12 +17,13 @@
                 "MaxHealth": 200,
                 "Strength": 30,
                 "Repulsion": 0.001,
-                "Range": 0.085,
+                "Range": 0.055,
                 "ImageName": "Troops"
             }
         ],
         "RebelDefaults": [
             {
+				"Type": "Noobs",
                 "Names": [
                     "Depper Doders",
                     "Hadwi"
@@ -32,7 +34,7 @@
                 "MaxHealth": 100,
                 "Strength": 20,
                 "Repulsion": 0.0005,
-                "Range": 0.08,
+                "Range": 0.05,
                 "ImageName": "Riots"
             }
         ]
@@ -45,6 +47,7 @@
         "PalaceHealing": 50,
         "TroopDefaults": [
             {
+				"Type": "Police",
                 "Names": [
                     "1st Police Corps",
                     "2st Police Corps"
@@ -60,6 +63,7 @@
         ],
         "RebelDefaults": [
             {
+				"Type": "Noobs",
                 "Names": [
                     "Depper Doders",
                     "Hadwi"

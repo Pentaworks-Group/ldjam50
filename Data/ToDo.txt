@@ -1,7 +1,7 @@
 Todo:
 ----------------------------------
  Core:
- - Multiple troops 
+ 
  - Money
  - Fix Time Display when rotated
  - Move Rotatotor & click fix to GameFrame
@@ -12,13 +12,12 @@ Todo:
  - Balancing
    
   UI:
- - Directional Facing of Units
- - Revamp UI for Save / Load (Button / Box / Scene)
+  - Revamp UI for Save / Load (Button / Box / Scene)
  
  Audio:
- 
+ - RebelSound persists in PauseMenu & After Quiting
  - Effects
- - Ambience?
+ - Sound Volume
 
 
 Ideas:
@@ -34,8 +33,9 @@ Nice to have:
  
 WIP:
 ----------------------------------
- - Troop buying
-
+ 
+ 
+ 
 Done:
 ----------------------------------
  - Pause Menu transparency
@@ -45,3 +45,6 @@ Done:
  - load mapSettings from json
  - Screen Rotation
  - Music
+ - Troop buying
+ - Multiple troops (Marker for selected)
+ - Directional Facing of Units
