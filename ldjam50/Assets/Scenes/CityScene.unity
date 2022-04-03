@@ -559,9 +559,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1052973217}
   - component: {fileID: 1052973216}
-  - component: {fileID: 1052973218}
   - component: {fileID: 1052973214}
-  - component: {fileID: 1052973218}
   m_Layer: 0
   m_Name: GameField
   m_TagString: Untagged
@@ -1128,7 +1126,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 200
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 200
     m_Alignment: 1
