@@ -1519,6 +1519,34 @@ PrefabInstance:
       propertyPath: GameView
       value: 
       objectReference: {fileID: 1052973213}
+    - target: {fileID: 1682637802365037447, guid: bc256929ce32ba04598b83f488b7acc5, type: 3}
+      propertyPath: PauseToggled.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682637802365037447, guid: bc256929ce32ba04598b83f488b7acc5, type: 3}
+      propertyPath: PauseToggled.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682637802365037447, guid: bc256929ce32ba04598b83f488b7acc5, type: 3}
+      propertyPath: PauseToggled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 725838284}
+    - target: {fileID: 1682637802365037447, guid: bc256929ce32ba04598b83f488b7acc5, type: 3}
+      propertyPath: PauseToggled.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682637802365037447, guid: bc256929ce32ba04598b83f488b7acc5, type: 3}
+      propertyPath: PauseToggled.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PauseToggled
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682637802365037447, guid: bc256929ce32ba04598b83f488b7acc5, type: 3}
+      propertyPath: PauseToggled.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Assets.Scripts.Scenes.City.CityBehaviour, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682637802365037447, guid: bc256929ce32ba04598b83f488b7acc5, type: 3}
+      propertyPath: PauseToggled.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2307508817974893019, guid: bc256929ce32ba04598b83f488b7acc5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1

@@ -3,11 +3,13 @@ using System;
 using Assets.Scripts.Base;
 
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class PauseMenuBehavior : MonoBehaviour
 {
     private Assets.Scripts.Core.GameState[] gameStates;
+    public UnityEvent<Boolean> PauseToggled = new UnityEvent<Boolean>();
 
     public GameObject Menu;
     public GameObject GameView;
@@ -30,16 +32,15 @@ public class PauseMenuBehavior : MonoBehaviour
             {
                 Core.Game.PlayButtonSound();
                 Hide();
-
-                Time.timeScale = 1;
-                Core.Game.EffectsAudioManager?.Resume();
+                                
+                this.PauseToggled.Invoke(false);
             }
         }
         else
         {
             Core.Game.PlayButtonSound();
-            Time.timeScale = 0;
-            Core.Game.EffectsAudioManager?.Pause();
+            
+            this.PauseToggled.Invoke(true);
 
             Show();
         }
@@ -61,7 +62,6 @@ public class PauseMenuBehavior : MonoBehaviour
         {
             Core.Game.AmbienceAudioManager.Resume();
         }
-
     }
 
     public void Show()

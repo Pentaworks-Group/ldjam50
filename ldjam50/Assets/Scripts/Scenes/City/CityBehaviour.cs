@@ -32,6 +32,7 @@ namespace Assets.Scripts.Scenes.City
             Base.Core.Game.BackgroundAudioManager.Stop();
             Base.Core.Game.BackgroundAudioManager.Clips = Base.Core.Game.AudioClipListGame2;
             Base.Core.Game.BackgroundAudioManager.Resume();
+
             if (Base.Core.Game.State.Rebels.Count > 0)
             {
                 Base.Core.Game.AmbienceAudioManager.Resume();
@@ -39,6 +40,29 @@ namespace Assets.Scripts.Scenes.City
 
             shopOverlay.SetActive(false);
             Time.timeScale = 1;
+        }
+
+        public void PauseToggled(Boolean isPaused)
+        {
+            if (isPaused)
+            {
+                Time.timeScale = 0;
+                Assets.Scripts.Base.Core.Game.EffectsAudioManager?.Pause();
+                Base.Core.Game.AmbienceAudioManager.Stop();
+            }
+            else
+            {
+                if (!shopOverlay.activeSelf)
+                {
+                    Assets.Scripts.Base.Core.Game.EffectsAudioManager?.Resume();
+
+                    if (Base.Core.Game.State.Rebels.Count > 0)
+                    {
+                        Base.Core.Game.AmbienceAudioManager.Resume();
+                    }
+                    Time.timeScale = 1;
+                }
+            }
         }
 
         public void BuySecurityForce(SecurityForceSlotBehaviour selectedForce)

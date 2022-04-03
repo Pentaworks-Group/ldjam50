@@ -15,16 +15,16 @@ Todo:
    
   UI:
   - Revamp UI for Save / Load (Button / Box / Scene)
+  - Fix rotated image for units in "rotated" mode
  
  Audio:
  - RebelSound persists in PauseMenu & After Quiting
  - Effects
  - Sound Volume
 
-
 Ideas:
 ----------------------------------
- - 
+ - Text editor to supply us for JSON data
 
  
 Nice to have:
@@ -50,3 +50,4 @@ Done:
  - Troop buying
  - Multiple troops (Marker for selected)
  - Directional Facing of Units
+ - Fixed bug where game resumed in CityScene when Shop was open and pause toggled twice
