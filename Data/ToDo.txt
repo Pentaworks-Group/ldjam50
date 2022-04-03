@@ -28,12 +28,11 @@ Nice to have:
  
 WIP:
 ----------------------------------
- - GameoverScene show elapsed time
-
-
+ 
 
 Done:
 ----------------------------------
  - Pause Menu transparency
  - Background MainMenu
  - Save / Load Games (Cookies)
+ - GameoverScene show elapsed time
