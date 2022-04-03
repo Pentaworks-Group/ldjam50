@@ -1,4 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using Assets.Scripts.Base;
+using System;
 
 public class RebelBehaviour : CoreUnitBehaviour
 {
@@ -22,6 +27,7 @@ public class RebelBehaviour : CoreUnitBehaviour
         //KillRebel();
     }
 
+
     private void CallGameOver(float distance)
     {
         Assets.Scripts.Base.Core.Game.ChangeScene(SceneNames.GameOver);
@@ -32,7 +38,7 @@ public class RebelBehaviour : CoreUnitBehaviour
     {
         Vector2 direction = MapObject.Location - opponent.MapObject.Location;
         direction.Normalize();
-        direction *= 0.20f * Time.deltaTime;
+        direction *= 0.4f * Time.deltaTime * (distance/CoreUnit.Range);
         MoveInDirection(direction);
     }
 

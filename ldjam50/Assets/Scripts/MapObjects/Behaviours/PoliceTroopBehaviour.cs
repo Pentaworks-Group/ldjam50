@@ -29,11 +29,11 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
         {
             RebelBehaviour rebel = GameHandler.Rebels[i];
             float distance = Vector2.Distance(rebel.MapObject.Location, PoliceTroop.Location);
-            if (distance < 0.1f)
+            if (distance < CoreUnit.Range)
             {
                 rebel.Repel(distance, this);
             }
-            if (distance < 0.08f)
+            if (distance < CoreUnit.Range)
             {
                 rebel.Fight(distance, this);
             }

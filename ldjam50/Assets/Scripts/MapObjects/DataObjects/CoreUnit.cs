@@ -23,6 +23,7 @@ public class CoreUnit : CoreMapObject
 
     public float Strength { get; set; }
     public float Health { get; set; }
+    public float Range { get; set; }
     public float MaxHealth { get; set; }
 
 
