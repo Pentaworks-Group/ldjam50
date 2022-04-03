@@ -59,7 +59,7 @@ public class MapObjectSpawner : MonoBehaviour
         }
         else
         {
-            var troop = SpawnTroop();
+            var troop = SpawnTroop(default);
 
             GameHandler.AddSecurityForce(troop);
             GameHandler.SelectTroop(troop);
@@ -82,6 +82,8 @@ public class MapObjectSpawner : MonoBehaviour
         Core.Game.BackgroundAudioManager.Clips = Core.Game.AudioClipListGame1;
         //        Core.Game.BackgroundAudioManager.Resume();
     }
+
+
 
     // Update is called once per frame
     void Update()
@@ -143,30 +145,23 @@ public class MapObjectSpawner : MonoBehaviour
         }
     }
 
+    public void SpawnTroopFromDefault(TroopDefault securityForceDefault)
+    {
+        var troop = GetTroopFromDefault(securityForceDefault);
+
+        var spawnedTroop = SpawnTroop(troop);
+
+        GameHandler.AddSecurityForce(spawnedTroop);
+        GameHandler.SelectTroop(spawnedTroop);
+    }
+
     private PoliceTroopBehaviour SpawnTroop(PoliceTroop existingTroop = default)
     {
         var policeTroop = existingTroop;
 
         if (policeTroop == default)
         {
-            TroopDefault troopDefault = GameHandler.GameFieldSettings.TroopDefaults.GetRandomEntry();
-
-            policeTroop = new PoliceTroop()
-            {
-                Name = troopDefault.Names.GetRandomEntry(),
-                Speed = 0,
-                MaxSpeed = troopDefault.MaxSpeed,
-                Strength = troopDefault.Strength,
-                Repulsion = troopDefault.Repulsion,
-                Health = troopDefault.Health,
-                MaxHealth = troopDefault.MaxHealth,
-                Location = GameHandler.Palace.MapObject.Location,
-                ImageName = troopDefault.ImageName,
-                Range = troopDefault.Range,
-                Base = GameHandler.Palace.CoreMapBase
-            };
-
-            Core.Game.State.SecurityForces.Add(policeTroop);
+            policeTroop = GetTroopFromDefault(GameHandler.GameFieldSettings.TroopDefaults.GetRandomEntry());
         }
         else
         {
@@ -181,6 +176,28 @@ public class MapObjectSpawner : MonoBehaviour
         troopBehaviour.Init(policeTroop);
 
         return troopBehaviour;
+    }
+
+    private PoliceTroop GetTroopFromDefault(TroopDefault troopDefault)
+    {
+        var policeTroop = new PoliceTroop()
+        {
+            Name = troopDefault.Names.GetRandomEntry(),
+            Speed = 0,
+            MaxSpeed = troopDefault.MaxSpeed,
+            Strength = troopDefault.Strength,
+            Repulsion = troopDefault.Repulsion,
+            Health = troopDefault.Health,
+            MaxHealth = troopDefault.MaxHealth,
+            Location = GameHandler.Palace.MapObject.Location,
+            ImageName = troopDefault.ImageName,
+            Range = troopDefault.Range,
+            Base = GameHandler.Palace.CoreMapBase
+        };
+
+        Core.Game.State.SecurityForces.Add(policeTroop);
+
+        return policeTroop;
     }
 
     private RebelBehaviour SpawnRebel(Rebel existingRebel = default)

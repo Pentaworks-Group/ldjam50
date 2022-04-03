@@ -11,16 +11,17 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
     private KeyValueTextBehaviour strengthKeyValue;
     private KeyValueTextBehaviour maxSpeedKeyValue;
     private KeyValueTextBehaviour maxHealthKeyValue;
+    private KeyValueTextBehaviour rangeKeyValue;
 
-    private PoliceTroop policeTroop;
-    public PoliceTroop PoliceTroop
+    private TroopDefault securityForceDefault;
+    public TroopDefault SecurityForceDefault
     {
-        get { return policeTroop; }
+        get { return securityForceDefault; }
         set
         {
-            if (policeTroop != value)
+            if (securityForceDefault != value)
             {
-                this.policeTroop = value;
+                this.securityForceDefault = value;
                 UpdateUI();
             }
         }
@@ -36,17 +37,19 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
         this.strengthKeyValue = this.gameObject.transform.Find("DescriptionArea/StrengthKeyValue")?.GetComponent<KeyValueTextBehaviour>();
         this.maxSpeedKeyValue = this.gameObject.transform.Find("DescriptionArea/MaxSpeedKeyValue")?.GetComponent<KeyValueTextBehaviour>();
         this.maxHealthKeyValue = this.gameObject.transform.Find("DescriptionArea/MaxHealthKeyValue")?.GetComponent<KeyValueTextBehaviour>();
+        this.rangeKeyValue = this.gameObject.transform.Find("DescriptionArea/RangeKeyValue")?.GetComponent<KeyValueTextBehaviour>();
 
         UpdateUI();
     }
 
     private void UpdateUI()
     {
-        //this.corpsImage.sprite = GetSprite(this.PoliceTroop?.ImageName);
-        this.corpsNameText.text = this.PoliceTroop?.Name;
-        this.strengthKeyValue.Value = this.PoliceTroop?.Strength.ToString("F1");
-        this.maxSpeedKeyValue.Value = this.PoliceTroop?.MaxSpeed.ToString("F1");
-        this.maxHealthKeyValue.Value = this.PoliceTroop?.MaxHealth.ToString("F1");
+        this.corpsImage.sprite = GetSprite(this.SecurityForceDefault?.ImageName);
+        this.corpsNameText.text = this.SecurityForceDefault?.Type;
+        this.strengthKeyValue.Value = this.SecurityForceDefault?.Strength.ToString("F1");
+        this.maxSpeedKeyValue.Value = this.SecurityForceDefault?.MaxSpeed.ToString("F1");
+        this.maxHealthKeyValue.Value = this.SecurityForceDefault?.MaxHealth.ToString("F1");
+        this.rangeKeyValue.Value = this.SecurityForceDefault?.Range.ToString("F1");
     }
 
     private Sprite GetSprite(String resourceName)
