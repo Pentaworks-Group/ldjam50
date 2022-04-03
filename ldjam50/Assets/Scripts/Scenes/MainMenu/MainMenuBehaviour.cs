@@ -1,6 +1,6 @@
 
 using System;
-
+using System.Collections.Generic;
 using Assets.Scripts.Base;
 
 using GameFrame.Core.Audio.Multi;
@@ -32,6 +32,12 @@ public class MainMenuBehaviour : MonoBehaviour
     {
         Core.Game.PlayButtonSound();
         Core.Game.ChangeScene(SceneNames.SavedGames);
+    }
+
+    public void ShowModes()
+    {
+        Core.Game.PlayButtonSound();
+        Core.Game.ChangeScene(SceneNames.GameModeScene);
     }
 
     public void ShowOptions()
@@ -151,11 +157,24 @@ public class MainMenuBehaviour : MonoBehaviour
     {
         String filePath = Application.streamingAssetsPath + "/GameFieldSettings.json";
 
-        StartCoroutine(GameFrame.Core.Json.Handler.DeserializeObjectFromStreamingAssets<GameFieldSettings>(filePath, SetGameFieldSettings));
+        StartCoroutine(GameFrame.Core.Json.Handler.DeserializeObjectFromStreamingAssets<List<GameFieldSettings>>(filePath, SetGameFieldSettings));
     }
-    private GameFieldSettings SetGameFieldSettings(GameFieldSettings gameFieldSettings)
+    private List<GameFieldSettings> SetGameFieldSettings(List<GameFieldSettings> gameFieldSettings)
     {
-        GameHandler.GameFieldSettings = gameFieldSettings;
+        GameHandler.AvailableGameModes = gameFieldSettings;
+        if (GameHandler.GameFieldSettings == default)
+        {
+            foreach (GameFieldSettings gameFieldSetting in gameFieldSettings)
+            {
+                if (gameFieldSetting.Name == "Default")
+                {
+                    GameHandler.GameFieldSettings = gameFieldSetting;
+                    return gameFieldSettings;
+                }
+
+            }
+        }
+
         return gameFieldSettings;
     }
 
