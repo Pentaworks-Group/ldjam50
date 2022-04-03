@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 using Assets.Scripts.Base;
@@ -9,7 +10,7 @@ public class GameHandler
     public static List<RebelBehaviour> Rebels { get; } = new List<RebelBehaviour>();
     public static PalaceBehaviour Palace { get; set; }
 
-    public static PoliceTroopBehaviour SelectedTroop { get; set; }
+    public static PoliceTroopBehaviour SelectedTroop { get; private set; }
 
     public static GameFieldSettings GameFieldSettings { get; set; }
 
@@ -33,6 +34,21 @@ public class GameHandler
     {
         Core.Game.State.SecurityForces.Remove(policeTroopBehaviour.PoliceTroop);
         SecurityForces.Remove(policeTroopBehaviour);
+    }
+
+    public static void SelectTroop(PoliceTroopBehaviour policeTroopBehaviour)
+    {
+        if (SelectedTroop != null)
+        {
+            SelectedTroop.PoliceTroop.IsSelected = false;
+        }
+
+        SelectedTroop = policeTroopBehaviour;
+
+        if (policeTroopBehaviour?.PoliceTroop != default)
+        {
+            policeTroopBehaviour.PoliceTroop.IsSelected = true;
+        }
     }
 
     public static void Clear()

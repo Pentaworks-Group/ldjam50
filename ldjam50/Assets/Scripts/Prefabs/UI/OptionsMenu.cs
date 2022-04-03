@@ -47,6 +47,7 @@ public class OptionsMenu : MonoBehaviour
 
     public void OnRestoreDefaultsClick()
     {
+        Core.Game.PlayButtonSound();
         EffectsVolumeSlider.value = 1f;
         AmbienceVolumeSlider.value = 0.125f;
         BackgroundVolumeSlider.value = 0.125f;

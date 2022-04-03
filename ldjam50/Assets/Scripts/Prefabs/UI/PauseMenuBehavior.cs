@@ -28,6 +28,7 @@ public class PauseMenuBehavior : MonoBehaviour
             }
             else
             {
+                Core.Game.PlayButtonSound();
                 Hide();
 
                 Time.timeScale = 1;
@@ -36,6 +37,7 @@ public class PauseMenuBehavior : MonoBehaviour
         }
         else
         {
+            Core.Game.PlayButtonSound();
             Time.timeScale = 0;
             Core.Game.EffectsAudioManager?.Pause();
 
@@ -45,6 +47,7 @@ public class PauseMenuBehavior : MonoBehaviour
 
     public void ShowSavedGames()
     {
+        Core.Game.PlayButtonSound();
         LoadGameStates();
 
         SetVisible(saveGame: true);
@@ -67,11 +70,13 @@ public class PauseMenuBehavior : MonoBehaviour
 
     public void OnBackButtonClicked()
     {
+        Core.Game.PlayButtonSound();
         SetVisible(pauseMenu: true);
     }
 
     public void ShowOptions()
     {
+        Core.Game.PlayButtonSound();
         this.SetVisible(options: true);
     }
 
@@ -106,6 +111,7 @@ public class PauseMenuBehavior : MonoBehaviour
 
     public void OnSaveGameSlotClicked(SaveGameSlotBehaviour slot)
     {
+        Core.Game.PlayButtonSound();
         var index = 0;
 
         for (int i = 0; i < 5; i++)
@@ -135,6 +141,7 @@ public class PauseMenuBehavior : MonoBehaviour
 
     public void Quit()
     {
+        Core.Game.PlayButtonSound();
         Core.Game.Stop();
         Core.Game.ChangeScene(SceneNames.MainMenu);
 

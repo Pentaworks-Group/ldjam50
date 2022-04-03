@@ -42,6 +42,7 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     public void SendTroopsToLocation(Vector2 target)
     {
+        Core.Game.EffectsAudioManager.Play("Yes_Sir");
         PoliceTroop.Speed = PoliceTroop.MaxSpeed;
         PoliceTroop.Target = target;
     }
@@ -75,7 +76,7 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
     {
         if (GameHandler.SelectedTroop == this)
         {
-            GameHandler.SelectedTroop = null;
+            GameHandler.SelectTroop(null);
         }
 
         Core.Game.State.SecurityForces.Remove(this.PoliceTroop);

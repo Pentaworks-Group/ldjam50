@@ -8,6 +8,7 @@ namespace Assets.Scripts.Scenes
 
         public void Back()
         {
+            Base.Core.Game.PlayButtonSound();
             Base.Core.Game.ChangeScene(SceneNames.MainMenu);
         }
     }

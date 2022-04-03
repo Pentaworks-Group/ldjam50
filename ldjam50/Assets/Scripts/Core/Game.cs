@@ -41,5 +41,11 @@ namespace Assets.Scripts.Core
         {
             Base.Core.Game.Startup();
         }
+
+        public void PlayButtonSound()
+        {
+            EffectsAudioManager.Play("Button");
+        }
+
     }
 }

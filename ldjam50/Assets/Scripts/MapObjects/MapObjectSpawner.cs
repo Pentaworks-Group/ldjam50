@@ -41,23 +41,21 @@ public class MapObjectSpawner : MonoBehaviour
 
                 if (securityForce.IsSelected)
                 {
-                    GameHandler.SelectedTroop = spawnedTroop;
+                    GameHandler.SelectTroop(spawnedTroop);
                 }
             }
 
             if (GameHandler.SelectedTroop == null)
             {
-                GameHandler.SelectedTroop = GameHandler.SecurityForces.FirstOrDefault();
+                GameHandler.SelectTroop(GameHandler.SecurityForces.FirstOrDefault());
             }
         }
         else
         {
             var troop = SpawnTroop();
 
-            troop.PoliceTroop.IsSelected = true;
             GameHandler.AddSecurityForce(troop);
-
-            GameHandler.SelectedTroop = troop;
+            GameHandler.SelectTroop(troop);
         }
 
         if (Core.Game.State.Rebels?.Count > 0)
@@ -67,11 +65,6 @@ public class MapObjectSpawner : MonoBehaviour
                 var spawnedRebel = SpawnRebel(rebel);
 
                 GameHandler.AddRebel(spawnedRebel);
-            }
-
-            if (GameHandler.SelectedTroop == null)
-            {
-                GameHandler.SelectedTroop = GameHandler.SecurityForces.FirstOrDefault();
             }
         }
 
@@ -104,6 +97,14 @@ public class MapObjectSpawner : MonoBehaviour
         }
 
         UpdateTimeDisplay();
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            var troop = SpawnTroop();
+
+            GameHandler.AddSecurityForce(troop);
+            GameHandler.SelectTroop(troop);
+        }
     }
 
     public void MoveSelectedTroop(BaseEventData data)
