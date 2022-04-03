@@ -25,6 +25,7 @@ public class MainMenuBehaviour : MonoBehaviour
     public void StartGame()
     {
         Core.Game.Start();
+        Core.Game.EffectsAudioManager.Play("Button");
     }
 
     public void ShowSavedGames()
