@@ -7,6 +7,8 @@ public class GameHandler
 
     public static PoliceTroopBehaviour SelectedTroop { get; set; }
 
+    public static GameFieldSettings GameFieldSettings { get; set;  }
+
 
     public static void AddRebel(RebelBehaviour rebel)
     {
@@ -31,6 +33,6 @@ public class GameHandler
         opponent2.DamageUnit(dmgScale * distance * oppenent1.CoreUnit.Strength);
     }
 
-    public static float safeZoneRadius { get; } = 0.25f;
+    public static float SafeZoneRadius { get; } = 0.25f;
 
 }

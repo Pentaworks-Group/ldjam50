@@ -1,5 +1,4 @@
 using System;
-
 using Assets.Scripts.Base;
 
 using UnityEngine;
@@ -25,6 +24,8 @@ public class MapObjectSpawner : MonoBehaviour
     void Start()
     {
         GameHandler.Clear();
+
+        Debug.Log("GameFieldSettings: " + GameHandler.GameFieldSettings.Name);
         InitPalace();
         GameHandler.SelectedTroop = SpawnTroop();
         //        Core.Game.BackgroundAudioManager.Stop();
@@ -129,7 +130,7 @@ public class MapObjectSpawner : MonoBehaviour
             location = new Vector2(locationX, locationY);
 
             float distance = Vector2.Distance(location, GameHandler.Palace.MapObject.Location);
-            if (distance > GameHandler.safeZoneRadius)
+            if (distance > GameHandler.SafeZoneRadius)
             {
                 valid = true;
             }
@@ -145,3 +146,5 @@ public class MapObjectSpawner : MonoBehaviour
         GameHandler.Palace.InitPalace();
     }
 }
+
+
