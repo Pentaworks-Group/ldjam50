@@ -8,8 +8,6 @@ public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
 {
     private Dictionary<float, Action<float>> distanceActions = new Dictionary<float, Action<float>>();
 
-    protected Image image;
-
     private CoreUnit unit;
     public CoreUnit CoreUnit
     {
@@ -20,20 +18,14 @@ public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
         private set
         {
             this.unit = value;
+
+            UpdateUI();
         }
     }
 
     protected T GetUnit<T>() where T : CoreUnit
     {
         return (T)this.unit;
-    }
-
-    private void Start()
-    {
-        if (this.image == null)
-        {
-            this.image = GetComponent<Image>();
-        }
     }
 
     protected void Update()
@@ -43,7 +35,7 @@ public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
 
     protected void Move()
     {
-        if (CoreUnit.Speed == 0)
+        if (CoreUnit.Speed == 0 || MapObject == null)
         {
             return;
         }
@@ -56,6 +48,7 @@ public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
         MoveInDirection(direction);
         //Debug.Log("Move: " + newLocation + " direction: " + direction);
     }
+
     public void MoveInDirection(Vector2 direction)
     {
         var unityLocation = MapObject.Location;
@@ -64,11 +57,11 @@ public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
 
         if (direction.x < 0)
         {
-            this.image.transform.localScale = new Vector3(-1, 1, 1);
+            this.Image.transform.localScale = new Vector3(-1, 1, 1);
         }
         else
         {
-            this.image.transform.localScale = new Vector3(1, 1, 1);
+            this.Image.transform.localScale = new Vector3(1, 1, 1);
         }
 
         SetLocation(newLocation);
@@ -102,6 +95,24 @@ public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
     protected void AddDistanceAction(float distance, Action<float> action)
     {
         distanceActions.Add(distance, action);
+    }
+
+    protected virtual void UpdateUI()
+    {
+        if (this.Image != null)
+        {
+            this.Image.sprite = this.GetSprite(this.CoreUnit?.ImageName);
+        }
+    }
+
+    protected Sprite GetSprite(String imageName)
+    {
+        if( !String.IsNullOrEmpty(imageName))
+        {
+            return GameFrame.Base.Resources.Manager.Sprites.Get(imageName);
+        }
+
+        return null;
     }
 
     public void Init(CoreUnit unit)

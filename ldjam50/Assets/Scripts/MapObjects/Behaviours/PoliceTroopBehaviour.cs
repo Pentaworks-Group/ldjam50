@@ -75,7 +75,6 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     private void Start()
     {
-        this.image = GetComponent<Image>();
     }
 
     private new void Update()
@@ -101,9 +100,9 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     private void CheckImageColor(Color colorToCheck)
     {
-        if (this.image?.color != colorToCheck)
+        if (this.Image?.color != colorToCheck)
         {
-            this.image.color = colorToCheck;
+            this.Image.color = colorToCheck;
         }
     }
 

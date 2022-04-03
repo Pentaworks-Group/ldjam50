@@ -57,7 +57,7 @@ public class PauseMenuBehavior : MonoBehaviour
     {
         Menu.SetActive(false);
 
-        if (Core.Game.State.Rebels.Count > 0)
+        if (Core.Game.State?.Rebels?.Count > 0)
         {
             Core.Game.AmbienceAudioManager.Resume();
         }

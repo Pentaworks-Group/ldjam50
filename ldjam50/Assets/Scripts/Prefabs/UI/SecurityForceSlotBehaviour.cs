@@ -46,6 +46,7 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
     private void UpdateUI()
     {
         this.corpsImage.sprite = GetSprite(this.SecurityForceDefault?.ImageName);
+
         this.corpsNameText.text = this.SecurityForceDefault?.Type;
         this.strengthKeyValue.Value = this.SecurityForceDefault?.Strength.ToString("F1");
         this.maxSpeedKeyValue.Value = this.SecurityForceDefault?.MaxSpeed.ToString("F1");

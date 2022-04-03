@@ -18,8 +18,8 @@ public class MapObjectSpawner : MonoBehaviour
     public Text TimeDisplay;
     public PalaceBehaviour Palace;
 
-    private float nextTick = GameHandler.GameFieldSettings.FirstTick;
-    private float spawnInterval = GameHandler.GameFieldSettings.TickInterval;
+    private float nextTick = 0f;
+    private float spawnInterval = 0f;
     private float currentTime = 0;
 
     private float musicChangeTick = 20.0f;
@@ -33,6 +33,9 @@ public class MapObjectSpawner : MonoBehaviour
             Core.Game.ChangeScene(SceneNames.MainMenu);
             return;
         }
+
+        this.nextTick = GameHandler.GameFieldSettings.FirstTick;
+        this.spawnInterval = GameHandler.GameFieldSettings.TickInterval;
 
         GameHandler.Clear();
 
@@ -89,6 +92,11 @@ public class MapObjectSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Core.Game.State == default)
+        {
+            return;
+        }
+
         currentTime += Time.deltaTime;
 
         if (currentTime > nextTick)
