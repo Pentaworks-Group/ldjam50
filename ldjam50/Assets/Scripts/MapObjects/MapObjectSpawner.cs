@@ -193,7 +193,8 @@ public class MapObjectSpawner : MonoBehaviour
             Location = GameHandler.Palace.MapObject.Location,
             ImageName = troopDefault.ImageName,
             Range = troopDefault.Range,
-            Base = GameHandler.Palace.CoreMapBase
+            Base = GameHandler.Palace.CoreMapBase,
+            MarchSounds = troopDefault.MarchSounds
         };
 
         Core.Game.State.SecurityForces.Add(policeTroop);
