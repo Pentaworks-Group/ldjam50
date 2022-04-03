@@ -7,7 +7,7 @@ Todo:
  - 
    
   UI:
- - GamoverScene show elapsed time
+ 
  - Revamp UI for Save / Load (Button / Box / Scene)
  
  Audio:
@@ -30,10 +30,9 @@ WIP:
 ----------------------------------
  
 
-
-
 Done:
 ----------------------------------
  - Pause Menu transparency
  - Background MainMenu
  - Save / Load Games (Cookies)
+ - GameoverScene show elapsed time

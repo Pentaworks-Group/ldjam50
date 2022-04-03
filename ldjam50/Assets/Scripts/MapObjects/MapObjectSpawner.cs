@@ -60,7 +60,23 @@ public class MapObjectSpawner : MonoBehaviour
             GameHandler.SelectedTroop = troop;
         }
 
+        if (Core.Game.State.Rebels?.Count > 0)
+        {
+            foreach (var rebel in Core.Game.State.Rebels)
+            {
+                var spawnedRebel = SpawnRebel(rebel);
+
+                GameHandler.AddRebel(spawnedRebel);
+            }
+
+            if (GameHandler.SelectedTroop == null)
+            {
+                GameHandler.SelectedTroop = GameHandler.SecurityForces.FirstOrDefault();
+            }
+        }
+
         currentTime = Core.Game.State.ElapsedTime;
+        nextTick = Core.Game.State.NextSpawn;
 
         //        Core.Game.BackgroundAudioManager.Stop();
         Core.Game.BackgroundAudioManager.Clips = Core.Game.AudioClipListGame1;
@@ -76,6 +92,9 @@ public class MapObjectSpawner : MonoBehaviour
         {
             SpawnRebel();
             nextTick = currentTime + spawnInterval;
+
+            Core.Game.State.NextSpawn = nextTick;
+
             spawnInterval *= 0.95f;
         }
 
@@ -144,25 +163,31 @@ public class MapObjectSpawner : MonoBehaviour
         return troopBehaviour;
     }
 
-    private void SpawnRebel()
+    private RebelBehaviour SpawnRebel(Rebel existingRebel = default)
     {
-        //float speed = 0;
-        RebelDefault rebelDefault = GameHandler.GameFieldSettings.RebelDefaults.GetRandomEntry();
-        float speed = UnityEngine.Random.Range(rebelDefault.Speed, 0.1f);
-        //Debug.Log("Speed: " + speed);
-        Rebel rebel = new Rebel()
-        {
-            Name = GetRandomRebelName(),
-            Speed = speed,
-            Location = GetValidRandomLocation(),
-            Target = GameHandler.Palace.MapObject.Location,
-            ImageName = "Protest",
-            Strength = 10,
-            Health = 25,
-            MaxHealth = 200
-        };
+        var rebel = existingRebel;
 
-        Core.Game.State.Rebels.Add(rebel);
+        if (rebel == null)
+        {
+            //float speed = 0;
+            RebelDefault rebelDefault = GameHandler.GameFieldSettings.RebelDefaults.GetRandomEntry();
+            float speed = UnityEngine.Random.Range(rebelDefault.Speed, 0.1f);
+            //Debug.Log("Speed: " + speed);
+            Rebel rebel = new Rebel()
+            {
+                Name = GetRandomRebelName(),
+                Speed = speed,
+                Location = GetValidRandomLocation(),
+                Target = GameHandler.Palace.MapObject.Location,
+                ImageName = "Protest",
+                Strength = 10,
+                Health = 25,
+                MaxHealth = 200
+            };
+
+            Core.Game.State.Rebels.Add(rebel);
+        }
+    }
 
         GameObject rebelOb = Instantiate(RebelTemplate, new Vector3(0, 0, 0), Quaternion.identity, Map.transform);
 
@@ -172,6 +197,8 @@ public class MapObjectSpawner : MonoBehaviour
         rebelBehaviour.Init(rebel);
 
         GameHandler.AddRebel(rebelBehaviour);
+
+        return rebelBehaviour;
     }
 
     private String GetRandomRebelName()

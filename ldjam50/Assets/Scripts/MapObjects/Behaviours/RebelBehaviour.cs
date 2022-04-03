@@ -1,9 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using Assets.Scripts.Base;
-using System;
 
 public class RebelBehaviour : CoreUnitBehaviour
 {
@@ -26,7 +21,6 @@ public class RebelBehaviour : CoreUnitBehaviour
     {
         //KillRebel();
     }
-
 
     private void CallGameOver(float distance)
     {

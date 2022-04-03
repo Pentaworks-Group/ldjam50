@@ -12,7 +12,6 @@ public class GameHandler
 
     public static GameFieldSettings GameFieldSettings { get; set;  }
 
-
     public static void AddRebel(RebelBehaviour rebel)
     {
         Rebels.Add(rebel);
