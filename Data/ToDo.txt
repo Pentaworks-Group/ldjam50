@@ -7,6 +7,7 @@ Todo:
  - Move Rotatotor & click fix to GameFrame
  - Fix Method & var Names
  - SpawnSounds for different types
+ - display mode & exit selection on click
  
  GamePlay:
  - Balancing
