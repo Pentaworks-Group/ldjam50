@@ -32,5 +32,4 @@ public class GameOverBehaviour : MonoBehaviour
 
         Core.Game.ChangeScene(SceneNames.MainMenu);
     }
-
 }
