@@ -7,27 +7,38 @@ namespace Assets.Scripts.Scenes.SavedGames
 {
     public class SavedGamesBehaviour : BaseMenuBehaviour
     {
+        public List<SaveGameSlotBehaviour> SaveGameSlots;
+
         void Start()
         {
             var savedGamesJson = PlayerPrefs.GetString("SavedGames");
 
             if (!String.IsNullOrEmpty(savedGamesJson))
             {
-                var savedGames = GameFrame.Core.Json.Handler.Deserialize<List<Assets.Scripts.Core.GameState>>(savedGamesJson);
+                var savedGames = GameFrame.Core.Json.Handler.Deserialize<Assets.Scripts.Core.GameState[]>(savedGamesJson);
 
-                if (savedGames?.Count > 0)
+                if (savedGames?.Length > 0)
                 {
-                    Debug.Log($"Found GameStates: {savedGames.Count}");
+                    Debug.Log($"Found GameStates: {savedGames.Length}");
 
-                    foreach (var gameState in savedGames)
+                    for (int i = 0; i < 5; i++)
                     {
-                        Debug.Log($"GameState saved: {gameState.SavedOn}");
+                        SaveGameSlots[i].GameState = savedGames[i];
                     }
                 }
                 else
                 {
                     Debug.Log($"No gamestates found");
                 }
+            }
+        }
+
+
+        public void OnSaveGameSlotClicked(SaveGameSlotBehaviour slot)
+        {
+            if (slot.GameState != default)
+            {
+                Assets.Scripts.Base.Core.Game.Start(slot.GameState);
             }
         }
     }
