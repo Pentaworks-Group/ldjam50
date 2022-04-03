@@ -7,5 +7,6 @@ namespace Assets.Scripts.Core
         public float ElapsedTime { get; set; }
         public List<Rebel> Rebels { get; set; } = new List<Rebel>();
         public List<PoliceTroop> SecurityForces { get; set; } = new List<PoliceTroop>();
+        public float NextSpawn { get; set; }
     }
 }
