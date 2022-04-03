@@ -28,6 +28,7 @@ public class GameOverBehaviour : MonoBehaviour
 
     public void Back()
     {
+        Core.Game.PlayButtonSound();
         Assets.Scripts.Base.Core.Game.Stop();
 
         Core.Game.ChangeScene(SceneNames.MainMenu);
