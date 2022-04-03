@@ -98,5 +98,4 @@ public class GameHandler
         float distance = Vector2.Distance(loc1, loc2) / Mathf.Sqrt(Mathf.Pow(Screen.width, 2) + Mathf.Pow(Screen.height, 2));
         return distance;
     }
-
 }

@@ -3,7 +3,7 @@ using System;
 using Assets.Scripts.Base;
 
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class PoliceTroopBehaviour : CoreUnitBehaviour
 {
@@ -24,39 +24,16 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     protected static float sendSoundTick = 0;
 
+    private static Color selectedColor = new Color(0,0,0,125);
+    private static Color defaultColor = new Color(0,0,0,125);
+
+    private Image image;
 
     public PoliceTroop PoliceTroop
     {
         get
         {
             return this.GetUnit<PoliceTroop>();
-        }
-    }
-
-    private new void Update()
-    {
-        if (Vector2.Distance(PoliceTroop.Location, PoliceTroop.Base.Location) < 0.08f)
-        {
-            Heal();
-        }
-        CheckForAdjesentRebels();
-        base.Update();
-    }
-
-    private void CheckForAdjesentRebels()
-    {
-        for (int i = GameHandler.Rebels.Count - 1; i >= 0; i--)
-        {
-            RebelBehaviour rebel = GameHandler.Rebels[i];
-            float distance = GameHandler.GetDistance(rebel.MapObject.Location, PoliceTroop.Location);
-            if (distance < CoreUnit.Range)
-            {
-                rebel.Repel(distance, this);
-            }
-            if (distance < CoreUnit.Range)
-            {
-                rebel.Fight(distance, this);
-            }
         }
     }
 
@@ -81,14 +58,9 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     public void TroopClick()
     {
-        Debug.Log("Selected");
-    }
-
-    private void Heal()
-    {
-        if (PoliceTroop.Health < PoliceTroop.MaxHealth)
+        if (GameHandler.SelectedTroop != this)
         {
-            PoliceTroop.Health += PoliceTroop.Base.Healing * Time.deltaTime;
+            GameHandler.SelectTroop(this);
         }
     }
 
@@ -116,6 +88,61 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
         {
             sendSoundTick = Time.time + duration;
             Core.Game.EffectsAudioManager.Play(audioClip);
+        }
+    }
+
+    private void Start()
+    {
+        this.image = GetComponent<Image>();
+
+        defaultColor = this.image.color;
+    }
+
+    private new void Update()
+    {
+        if (Vector2.Distance(PoliceTroop.Location, PoliceTroop.Base.Location) < 0.08f)
+        {
+            Heal();
+        }
+
+        if (this.PoliceTroop.IsSelected)
+        {
+            this.image.color = selectedColor;
+        }
+        else if (this.image.color != null)
+        {
+            this.image.color = defaultColor;
+        }
+
+        CheckForAdjesentRebels();
+
+        base.Update();
+    }
+
+    private void CheckForAdjesentRebels()
+    {
+        for (int i = GameHandler.Rebels.Count - 1; i >= 0; i--)
+        {
+            RebelBehaviour rebel = GameHandler.Rebels[i];
+
+            float distance = GameHandler.GetDistance(rebel.MapObject.Location, PoliceTroop.Location);
+
+            if (distance < CoreUnit.Range)
+            {
+                rebel.Repel(distance, this);
+            }
+            if (distance < CoreUnit.Range)
+            {
+                rebel.Fight(distance, this);
+            }
+        }
+    }
+
+    private void Heal()
+    {
+        if (PoliceTroop.Health < PoliceTroop.MaxHealth)
+        {
+            PoliceTroop.Health += PoliceTroop.Base.Healing * Time.deltaTime;
         }
     }
 }
