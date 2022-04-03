@@ -26,10 +26,6 @@ namespace Assets.Scripts.Scenes.SavedGames
                         SaveGameSlots[i].GameState = savedGames[i];
                     }
                 }
-                else
-                {
-                    Debug.Log($"No gamestates found");
-                }
             }
         }
 

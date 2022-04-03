@@ -1,11 +1,10 @@
 using System;
-using System.Collections.Generic;
+
 using Assets.Scripts.Base;
 
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-
 
 public class MapObjectSpawner : MonoBehaviour
 {
@@ -15,7 +14,6 @@ public class MapObjectSpawner : MonoBehaviour
 
     public Text TimeDisplay;
     public PalaceBehaviour Palace;
-
 
     private float nextTick = 3;
     private float spawnInterval = 3f;
@@ -29,9 +27,9 @@ public class MapObjectSpawner : MonoBehaviour
         GameHandler.Clear();
         InitPalace();
         GameHandler.SelectedTroop = SpawnTroop();
-//        Core.Game.BackgroundAudioManager.Stop();
+        //        Core.Game.BackgroundAudioManager.Stop();
         Core.Game.BackgroundAudioManager.Clips = Core.Game.AudioClipListGame1;
-//        Core.Game.BackgroundAudioManager.Resume();
+        //        Core.Game.BackgroundAudioManager.Resume();
     }
 
     // Update is called once per frame
@@ -62,6 +60,7 @@ public class MapObjectSpawner : MonoBehaviour
     private void UpdateTimeDisplay()
     {
         TimeDisplay.text = currentTime.ToString("F1");
+        Core.Game.State.ElapsedTime = currentTime;
     }
 
     private PoliceTroopBehaviour SpawnTroop()

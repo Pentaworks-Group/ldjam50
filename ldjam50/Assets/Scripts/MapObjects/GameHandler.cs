@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class GameHandler
 {
@@ -26,7 +24,8 @@ public class GameHandler
         Palace = null;
     }
 
-    public static void Fight(CoreUnitBehaviour oppenent1, CoreUnitBehaviour opponent2, float distance) {
+    public static void Fight(CoreUnitBehaviour oppenent1, CoreUnitBehaviour opponent2, float distance)
+    {
         float dmgScale = distance / 0.08f;
         oppenent1.DamageUnit(dmgScale * distance * opponent2.CoreUnit.Strength);
         opponent2.DamageUnit(dmgScale * distance * oppenent1.CoreUnit.Strength);
