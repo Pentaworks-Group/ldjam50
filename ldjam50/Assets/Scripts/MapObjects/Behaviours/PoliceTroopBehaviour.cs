@@ -5,6 +5,21 @@ using UnityEngine;
 
 public class PoliceTroopBehaviour : CoreUnitBehaviour
 {
+    protected static System.Collections.Generic.List<AudioClip> sendSounds = new System.Collections.Generic.List<AudioClip>()
+    {
+        GameFrame.Base.Resources.Manager.Audio.Get("Fanfare_1"),
+        GameFrame.Base.Resources.Manager.Audio.Get("March_1"),
+        GameFrame.Base.Resources.Manager.Audio.Get("March_2"),
+        GameFrame.Base.Resources.Manager.Audio.Get("March_3"),
+        GameFrame.Base.Resources.Manager.Audio.Get("March_4"),
+        GameFrame.Base.Resources.Manager.Audio.Get("March_5"),
+        GameFrame.Base.Resources.Manager.Audio.Get("Yes_Sir"),
+        GameFrame.Base.Resources.Manager.Audio.Get("Yes_Sir_2")
+    };
+
+    protected static float sendSoundTick = 0;
+
+
     public PoliceTroop PoliceTroop
     {
         get
@@ -42,7 +57,7 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     public void SendTroopsToLocation(Vector2 target)
     {
-        Core.Game.EffectsAudioManager.Play("Yes_Sir");
+        playSendSound();
         PoliceTroop.Speed = PoliceTroop.MaxSpeed;
         PoliceTroop.Target = target;
     }
@@ -82,6 +97,18 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
         Core.Game.State.SecurityForces.Remove(this.PoliceTroop);
 
         GameObject.Destroy(gameObject);
+    }
+
+    protected void playSendSound()
+    {
+        int index = (int) Mathf.Floor(Random.Range(0, 7.99f));
+        float duration = (float)sendSounds[index].samples / sendSounds[index].frequency;
+
+        if(Time.time > sendSoundTick)
+        {
+            sendSoundTick = Time.time + duration;
+            Core.Game.EffectsAudioManager.Play(sendSounds[index]);
+        }
     }
 }
 
