@@ -75,7 +75,7 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
     {
         if (GameHandler.SelectedTroop == this)
         {
-            GameHandler.SelectedTroop = null;
+            GameHandler.SelectTroop(null);
         }
 
         Core.Game.State.SecurityForces.Remove(this.PoliceTroop);
