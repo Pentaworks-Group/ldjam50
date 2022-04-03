@@ -25,8 +25,8 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     protected static float sendSoundTick = 0;
 
-    private static Color selectedColor = new Color(1f, 0.85f, 0f, 1f);
-    private static Color defaultColor = Color.white;
+    private static Color selectedColor = Color.white;
+    private static Color defaultColor = new Color(0.5f, 0.5f, 0.5f, 1f);
 
     private Image image;
 

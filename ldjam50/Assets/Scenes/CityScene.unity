@@ -449,6 +449,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9199526047750111619, guid: bc256929ce32ba04598b83f488b7acc5, type: 3}
   m_PrefabInstance: {fileID: 1421005287}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &607228902 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5855686543308266902, guid: 8a70c0aca0d26424a9890bb1d223b1b4, type: 3}
+  m_PrefabInstance: {fileID: 1097909355}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46e50182ec5e9043887630fb0f0bdb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &720204739
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,6 +1098,38 @@ PrefabInstance:
     - target: {fileID: 796294459915641767, guid: 8a70c0aca0d26424a9890bb1d223b1b4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133407443450126039, guid: 8a70c0aca0d26424a9890bb1d223b1b4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133407443450126039, guid: 8a70c0aca0d26424a9890bb1d223b1b4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133407443450126039, guid: 8a70c0aca0d26424a9890bb1d223b1b4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 725838284}
+    - target: {fileID: 4133407443450126039, guid: 8a70c0aca0d26424a9890bb1d223b1b4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133407443450126039, guid: 8a70c0aca0d26424a9890bb1d223b1b4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuySecurityForce
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133407443450126039, guid: 8a70c0aca0d26424a9890bb1d223b1b4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Assets.Scripts.Scenes.City.CityBehaviour, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133407443450126039, guid: 8a70c0aca0d26424a9890bb1d223b1b4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 607228902}
+    - target: {fileID: 4133407443450126039, guid: 8a70c0aca0d26424a9890bb1d223b1b4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: SecurityForceSlotBehaviour, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5120083340989132320, guid: 8a70c0aca0d26424a9890bb1d223b1b4, type: 3}
       propertyPath: m_SizeDelta.x
