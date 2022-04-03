@@ -171,15 +171,15 @@ public class MapObjectSpawner : MonoBehaviour
         {
             //float speed = 0;
             RebelDefault rebelDefault = GameHandler.GameFieldSettings.RebelDefaults.GetRandomEntry();
-            float speed = UnityEngine.Random.Range(rebelDefault.Speed, 0.1f);
+            float speed = UnityEngine.Random.Range(rebelDefault.MinSpeed, rebelDefault.MaxSpeed);
             //Debug.Log("Speed: " + speed);
-            Rebel rebel = new Rebel()
+            rebel = new Rebel()
             {
                 Name = GetRandomRebelName(),
                 Speed = speed,
                 Location = GetValidRandomLocation(),
                 Target = GameHandler.Palace.MapObject.Location,
-                ImageName = "Protest",
+                ImageName = rebelDefault.ImageName,
                 Strength = 10,
                 Health = 25,
                 MaxHealth = 200
@@ -187,7 +187,7 @@ public class MapObjectSpawner : MonoBehaviour
 
             Core.Game.State.Rebels.Add(rebel);
         }
-    }
+    
 
         GameObject rebelOb = Instantiate(RebelTemplate, new Vector3(0, 0, 0), Quaternion.identity, Map.transform);
 

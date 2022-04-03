@@ -19,7 +19,7 @@
                 "Depper Doders",
                 "Hadwi"
             ],
-            "Speed": 0.05,
+            "MinSpeed": 0.05,
             "MaxSpeed": 0.1,
             "Health": 25,
             "MaxHealth": 25,
