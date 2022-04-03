@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 using Assets.Scripts.Base;
 
@@ -33,17 +34,25 @@ public class MapObjectSpawner : MonoBehaviour
             {
                 var spawnedTroop = SpawnTroop(securityForce);
 
+                GameHandler.AddSecurityForce(spawnedTroop);
+
                 if (securityForce.IsSelected)
                 {
                     GameHandler.SelectedTroop = spawnedTroop;
                 }
             }
+
+            if (GameHandler.SelectedTroop == null)
+            {
+                GameHandler.SelectedTroop = GameHandler.SecurityForces.FirstOrDefault();
+            }
         }
         else
         {
-            var troop  = SpawnTroop();
+            var troop = SpawnTroop();
 
             troop.PoliceTroop.IsSelected = true;
+            GameHandler.AddSecurityForce(troop);
 
             GameHandler.SelectedTroop = troop;
         }
@@ -88,7 +97,11 @@ public class MapObjectSpawner : MonoBehaviour
     private void UpdateTimeDisplay()
     {
         TimeDisplay.text = currentTime.ToString("F1");
-        Core.Game.State.ElapsedTime = currentTime;
+
+        if (Core.Game.State != default)
+        {
+            Core.Game.State.ElapsedTime = currentTime;
+        }
     }
 
     private PoliceTroopBehaviour SpawnTroop(PoliceTroop existingTroop = default)

@@ -4,6 +4,7 @@ using Assets.Scripts.Base;
 
 public class GameHandler
 {
+    public static List<PoliceTroopBehaviour> SecurityForces { get; } = new List<PoliceTroopBehaviour>();
     public static List<RebelBehaviour> Rebels { get; } = new List<RebelBehaviour>();
     public static PalaceBehaviour Palace { get; set; }
 
@@ -20,9 +21,22 @@ public class GameHandler
         Rebels.Remove(rebel);
     }
 
+    public static void AddSecurityForce(PoliceTroopBehaviour policeTroopBehaviour)
+    {
+        SecurityForces.Add(policeTroopBehaviour);
+    }
+
+    public static void RemoveSecurityForce(PoliceTroopBehaviour policeTroopBehaviour)
+    {
+        Core.Game.State.SecurityForces.Remove(policeTroopBehaviour.PoliceTroop);
+        SecurityForces.Remove(policeTroopBehaviour);
+    }
+
     public static void Clear()
     {
         Rebels.Clear();
+        SecurityForces.Clear();
+        SelectedTroop = null;
         Palace = null;
     }
 
@@ -34,5 +48,4 @@ public class GameHandler
     }
 
     public static float safeZoneRadius { get; } = 0.25f;
-
 }
