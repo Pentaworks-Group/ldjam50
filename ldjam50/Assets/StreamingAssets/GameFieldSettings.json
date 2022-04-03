@@ -2,8 +2,8 @@
     {
         "Name": "Default",
         "FirstTick": 3,
-        "TickInterval": 3,
-        "TickIntervalFactor": 0.97,
+        "TickInterval": 2.8,
+        "TickIntervalFactor": 0.95,
         "PalaceHealing": 50,
         "TroopDefaults": [
             {
