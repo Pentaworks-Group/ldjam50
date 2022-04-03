@@ -1,9 +1,10 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 using Assets.Scripts.Base;
+
 using GameFrame.Core.Extensions;
+
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -26,6 +27,12 @@ public class MapObjectSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (Core.Game.State == default)
+        {
+            Core.Game.ChangeScene(SceneNames.MainMenu);
+            return;
+        }
+
         GameHandler.Clear();
 
         Debug.Log("GameFieldSettings: " + GameHandler.GameFieldSettings.Name);
@@ -143,6 +150,7 @@ public class MapObjectSpawner : MonoBehaviour
         if (policeTroop == default)
         {
             TroopDefault troopDefault = GameHandler.GameFieldSettings.TroopDefaults.GetRandomEntry();
+
             policeTroop = new PoliceTroop()
             {
                 Name = troopDefault.Names.GetRandomEntry(),

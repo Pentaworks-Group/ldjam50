@@ -55,7 +55,7 @@ public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
 
     private void DistanzeTriggerCheck(Vector2 location, Vector2 target)
     {
-        float distanceValue = Vector2.Distance(location, target);
+        float distanceValue = getDistance(location, target);
         foreach (KeyValuePair<float, Action<float>> entry in distanceActions)
         {
             if (entry.Key > distanceValue)
