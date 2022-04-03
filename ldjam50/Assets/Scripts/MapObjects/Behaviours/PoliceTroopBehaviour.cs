@@ -42,6 +42,7 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     public void SendTroopsToLocation(Vector2 target)
     {
+        Core.Game.EffectsAudioManager.Play("Yes_Sir");
         PoliceTroop.Speed = PoliceTroop.MaxSpeed;
         PoliceTroop.Target = target;
     }
