@@ -12,7 +12,7 @@
                     "1st Police Corps",
                     "2st Police Corps"
                 ],
-                "MaxSpeed": 0.2,
+                "MaxSpeed": 0.4,
                 "Health": 150,
                 "MaxHealth": 200,
                 "Strength": 30,
