@@ -24,9 +24,8 @@ namespace Assets.Scripts.Scenes.City
 
         private void Start()
         {
-            var policeSlot = ShopOverlay.Find("ContentArea/PoliceSecurityForceSlot").GetComponent<SecurityForceSlotBehaviour>();
+            var policeSlot = ShopOverlay.transform.Find("ContentArea/PoliceSecurityForceSlot").GetComponent<SecurityForceSlotBehaviour>();
 
-            policeSlot.PoliceTroop = 
         }
 
         void Update()

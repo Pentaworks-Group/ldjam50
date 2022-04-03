@@ -518,7 +518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5865278983240936799, guid: e0df95721f8e6f94180d7572f8d7dd35, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 125.439995
       objectReference: {fileID: 0}
     - target: {fileID: 5865278983240936799, guid: e0df95721f8e6f94180d7572f8d7dd35, type: 3}
       propertyPath: m_LocalPosition.x
@@ -819,7 +819,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5120083340989132320, guid: 8a70c0aca0d26424a9890bb1d223b1b4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 45.15842
       objectReference: {fileID: 0}
     - target: {fileID: 5120083340989132320, guid: 8a70c0aca0d26424a9890bb1d223b1b4, type: 3}
       propertyPath: m_SizeDelta.y
@@ -883,7 +883,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8562241870849693574, guid: 8a70c0aca0d26424a9890bb1d223b1b4, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -355.4131
       objectReference: {fileID: 0}
     - target: {fileID: 8562241870849693574, guid: 8a70c0aca0d26424a9890bb1d223b1b4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1462,7 +1462,7 @@ PrefabInstance:
     - target: {fileID: 5186305691340195087, guid: e0df95721f8e6f94180d7572f8d7dd35, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d205a3a46021b2d418d0d0c1c6c6c685, type: 3}
+      objectReference: {fileID: 21300000, guid: 1ba39a3e03ea206448f5ebafdd387700, type: 3}
     - target: {fileID: 5194281991783336649, guid: e0df95721f8e6f94180d7572f8d7dd35, type: 3}
       propertyPath: m_Text
       value: Shop
@@ -1690,7 +1690,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2022324660
 RectTransform:
   m_ObjectHideFlags: 0
