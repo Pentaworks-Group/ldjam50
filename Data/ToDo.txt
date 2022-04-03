@@ -8,6 +8,7 @@ Todo:
  - Fix Method & var Names
  - SpawnSounds for different types
  - display mode & exit selection on click
+ - disable shop per gamesettings
  
  GamePlay:
  - Balancing
