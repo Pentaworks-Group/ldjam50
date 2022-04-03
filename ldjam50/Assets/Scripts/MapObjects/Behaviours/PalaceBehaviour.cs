@@ -48,6 +48,6 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
             float distance = GameHandler.GetDistance(rebel.MapObject.Location, new Vector2(location.X, location.Y));
             min_distance = Math.Min(distance, min_distance);
         }
-        Core.Game.AmbienceAudioManager.Volume = 1.0f - 2*min_distance;
+        Core.Game.AmbienceAudioManager.Volume = (1.0f - 2*min_distance)*Core.Game.Options.AmbienceVolume;
     }
 }
