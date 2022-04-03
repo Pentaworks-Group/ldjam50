@@ -2,10 +2,13 @@ using System;
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
 {
     private Dictionary<float, Action<float>> distanceActions = new Dictionary<float, Action<float>>();
+
+    protected Image image;
 
     private CoreUnit unit;
     public CoreUnit CoreUnit
@@ -25,6 +28,14 @@ public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
         return (T)this.unit;
     }
 
+    private void Start()
+    {
+        if (this.image == null)
+        {
+            this.image = GetComponent<Image>();
+        }
+    }
+
     protected void Update()
     {
         Move();
@@ -40,6 +51,7 @@ public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
         Vector2 direction = CoreUnit.Target - MapObject.Location;
 
         direction.Normalize();
+
         direction *= CoreUnit.Speed * Time.deltaTime;
         MoveInDirection(direction);
         //Debug.Log("Move: " + newLocation + " direction: " + direction);
@@ -49,6 +61,16 @@ public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
         var unityLocation = MapObject.Location;
 
         Vector2 newLocation = unityLocation + direction;
+
+        if (direction.x < 0)
+        {
+            this.image.transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else
+        {
+            this.image.transform.localScale = new Vector3(1, 1, 1);
+        }
+
         SetLocation(newLocation);
         DistanzeTriggerCheck(unityLocation, CoreUnit.Target);
     }

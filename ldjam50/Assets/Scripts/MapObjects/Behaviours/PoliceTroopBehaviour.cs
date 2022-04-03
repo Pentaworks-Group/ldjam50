@@ -1,6 +1,7 @@
 using System;
 
 using Assets.Scripts.Base;
+
 using GameFrame.Core.Extensions;
 
 using UnityEngine;
@@ -27,8 +28,6 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     private static Color selectedColor = Color.white;
     private static Color defaultColor = new Color(0.5f, 0.5f, 0.5f, 1f);
-
-    private Image image;
 
     public PoliceTroop PoliceTroop
     {
@@ -117,7 +116,7 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     private void CheckImageColor(Color colorToCheck)
     {
-        if (this.image.color != colorToCheck)
+        if (this.image?.color != colorToCheck)
         {
             this.image.color = colorToCheck;
         }
