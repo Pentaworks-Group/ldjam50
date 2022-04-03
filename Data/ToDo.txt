@@ -16,9 +16,7 @@ Todo:
  - Revamp UI for Save / Load (Button / Box / Scene)
  
  Audio:
- - RebelSound persists in PauseMenu & After Quiting
  - Effects
- - Sound Volume
 
 
 Ideas:
@@ -46,3 +44,5 @@ Done:
  - Screen Rotation
  - Music
  - Troop buying
+ - RebelSound persists in PauseMenu & After Quiting
+ - Sound Volume
