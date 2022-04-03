@@ -25,6 +25,7 @@ public class MainMenuBehaviour : MonoBehaviour
     public void StartGame()
     {
         Core.Game.Start();
+        LoadGameFieldSettings();
     }
 
     public void ShowSavedGames()
@@ -34,7 +35,7 @@ public class MainMenuBehaviour : MonoBehaviour
 
     public void ShowOptions()
     {
-        ChangeContainerVisiblity(options: true);   
+        ChangeContainerVisiblity(options: true);
     }
 
     public void ShowCredits()
@@ -128,6 +129,20 @@ public class MainMenuBehaviour : MonoBehaviour
         //    Core.Game.AmbienceAudioManager.Unmute();
         //}
     }
+
+    private void LoadGameFieldSettings()
+    {
+        String filePath = Application.streamingAssetsPath + "/GameFieldSettings.json";
+
+        StartCoroutine(GameFrame.Core.Json.Handler.DeserializeObjectFromStreamingAssets<GameFieldSettings>(filePath, SetGameFieldSettings));
+    }
+    private GameFieldSettings SetGameFieldSettings(GameFieldSettings gameFieldSettings)
+    {
+        GameHandler.GameFieldSettings = gameFieldSettings;
+        Debug.Log("GameFieldSettings: " + gameFieldSettings.Name);
+        return gameFieldSettings;
+    }
+
 
     // Update is called once per frame
     void Update()
