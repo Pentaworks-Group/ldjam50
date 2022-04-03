@@ -4,9 +4,23 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using Assets.Scripts.Base;
 using System;
+using GameFrame.Core.Extensions;
 
 public class RebelBehaviour : CoreUnitBehaviour
 {
+
+    protected static Lazy<System.Collections.Generic.List<AudioClip>> lazyKillSounds = new Lazy<System.Collections.Generic.List<AudioClip>>(() =>
+    {
+        return new System.Collections.Generic.List<AudioClip>()
+        {
+            GameFrame.Base.Resources.Manager.Audio.Get("Aww"),
+            GameFrame.Base.Resources.Manager.Audio.Get("Daeng"),
+            GameFrame.Base.Resources.Manager.Audio.Get("Nuts"),
+            GameFrame.Base.Resources.Manager.Audio.Get("Aaah"),
+            GameFrame.Base.Resources.Manager.Audio.Get("Oops")
+        };
+    });
+
     public void Init(Rebel rebel)
     {
         sizeScale = 0.2f;
@@ -51,7 +65,8 @@ public class RebelBehaviour : CoreUnitBehaviour
     {
         GameHandler.RemoveRebel(this);
         GameObject.Destroy(gameObject);
-        Core.Game.EffectsAudioManager.Play("Aww");
+        
+        Core.Game.EffectsAudioManager.Play(lazyKillSounds.Value.GetRandomEntry());
         if (Core.Game.State.Rebels.Count <= 0)
         {
             Core.Game.AmbienceAudioManager.Stop();
