@@ -5,22 +5,29 @@ using UnityEngine;
 
 public class PalaceBehaviour : CoreMapObjectBehaviour
 {
-    public void InitPalace(CoreMapObject mapObject = default)
+
+    public CoreMapBase CoreMapBase { get; set; }
+
+    public float Healing { get; set; }
+
+    public void InitPalace(CoreMapBase mapBaseObject = default)
     {
-        if (mapObject == default)
+        if (mapBaseObject == default)
         {
             float locationX = (1895f / 3840);
             float locationY = 1f - (1043f / 2160);
             GameFrame.Core.Math.Vector2 location = new GameFrame.Core.Math.Vector2(locationX, locationY);
 
-            mapObject = new CoreMapObject()
+            mapBaseObject = new CoreMapBase()
             {
                 Name = "Palace",
                 ActualLocation = location,
-                ImageName = "Palace"
+                ImageName = "Palace",
+                Healing = GameHandler.GameFieldSettings.PalaceHealing
             };
             
         }
-        Init(mapObject);
+        CoreMapBase = mapBaseObject;
+        Init(mapBaseObject);
     }
 }

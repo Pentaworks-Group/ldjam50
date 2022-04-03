@@ -1,8 +1,9 @@
 {
     "Name": "Default",
     "FirstTick": 2,
-    "TickInterval": 1,
+    "TickInterval": 10,
     "TickIntervalFactor": 0.97,
+    "PalaceHealing" : 50,
     "TroopDefaults": [
         {
             "Names": [
@@ -12,7 +13,8 @@
             "MaxSpeed": 0.2,
             "Health": 200,
             "MaxHealth": 500,
-            "Strength": 15,
+            "Strength": 50,
+            "Repulsion": 0.02,
             "Range": 0.10,
             "ImageName": "Troops"
         }
@@ -27,8 +29,9 @@
             "MaxSpeed": 0.05,
             "Health": 100,
             "MaxHealth": 100,
-            "Strength": 10,
-            "Range": 0.07,
+            "Strength": 20,
+            "Repulsion": 0.01,
+            "Range": 0.08,
             "ImageName": "Riots"
         }
     ]

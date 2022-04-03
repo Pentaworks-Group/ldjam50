@@ -10,7 +10,7 @@ public class RebelBehaviour : CoreUnitBehaviour
     public void Init(Rebel rebel)
     {
         sizeScale = 0.2f;
-        AddDistanceAction(0.08f, CallGameOver);
+        AddDistanceAction(rebel.Range, CallGameOver);
         base.Init(rebel);
     }
 
@@ -34,12 +34,11 @@ public class RebelBehaviour : CoreUnitBehaviour
         Debug.Log("You have Lost. Looser!! " + distance);
     }
 
+   
+
     internal void Repel(float distance, CoreUnitBehaviour opponent)
     {
-        Vector2 direction = MapObject.Location - opponent.MapObject.Location;
-        direction.Normalize();
-        direction *= 0.4f * Time.deltaTime * (distance/CoreUnit.Range);
-        MoveInDirection(direction);
+        GameHandler.Repel(opponent, this, distance);
     }
 
     internal void Fight(float distance, CoreUnitBehaviour opponent)

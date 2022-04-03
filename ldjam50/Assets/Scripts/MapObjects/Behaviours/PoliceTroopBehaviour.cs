@@ -67,7 +67,7 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
     {
         if (PoliceTroop.Health < PoliceTroop.MaxHealth)
         {
-            PoliceTroop.Health += 5 * Time.deltaTime;
+            PoliceTroop.Health += PoliceTroop.Base.Healing * Time.deltaTime;
         }
     }
 

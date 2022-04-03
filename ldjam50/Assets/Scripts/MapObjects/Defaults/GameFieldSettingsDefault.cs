@@ -11,6 +11,7 @@ public class GameFieldSettings
     public float FirstTick { get; set; }
     public float TickInterval { get; set; }
     public float TickIntervalFactor { get; set; }
+    public float PalaceHealing { get; set; }
 
 
 
