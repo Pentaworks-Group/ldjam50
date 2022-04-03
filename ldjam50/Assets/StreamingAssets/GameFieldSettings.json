@@ -82,7 +82,7 @@
     {
         "Name": "Rebell Collect",
         "FirstTick": 3,
-        "TickInterval": 10,
+        "TickInterval": 5,
         "TickIntervalFactor": 0.97,
         "PalaceHealing": 50,
         "TroopDefaults": [
@@ -91,7 +91,7 @@
                     "1st Police Corps",
                     "2st Police Corps"
                 ],
-                "MaxSpeed": 0.6,
+                "MaxSpeed": 0.4,
                 "Health": 200,
                 "MaxHealth": 200,
                 "Strength": 0,
@@ -111,7 +111,7 @@
                 "Health": 100,
                 "MaxHealth": 100,
                 "Strength": 0,
-                "Repulsion": 0.0005,
+                "Repulsion": 0.00005,
                 "Range": 0.05,
                 "ImageName": "Riots"
             }
