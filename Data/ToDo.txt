@@ -1,7 +1,10 @@
 Todo:
 ----------------------------------
  Core:
- - Load variables from json
+ - Multiple troops 
+ - Troop buying
+ - load mapSettings from json
+ - 
    
   UI:
  - GamoverScene show elapsed time
