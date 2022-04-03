@@ -45,7 +45,7 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
         for(int i = 0; i < GameHandler.Rebels.Count; i++)
         {
             RebelBehaviour rebel = GameHandler.Rebels[i];
-            float distance = getDistance(rebel.MapObject.Location, new Vector2(location.X, location.Y));
+            float distance = GameHandler.GetDistance(rebel.MapObject.Location, new Vector2(location.X, location.Y));
             min_distance = Math.Min(distance, min_distance);
         }
         Core.Game.AmbienceAudioManager.Volume = 1.0f - 2*min_distance;
