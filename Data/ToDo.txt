@@ -5,7 +5,7 @@ Todo:
  - Money
  - Fix Time Display when rotated
  - Move Rotatotor & click fix to GameFrame
- - Fix Names
+ - Fix Method & var Names
  - SpawnSounds for different types
  
  GamePlay:
