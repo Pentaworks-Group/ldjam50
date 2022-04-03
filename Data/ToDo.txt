@@ -7,7 +7,7 @@ Todo:
  - 
    
   UI:
- - GamoverScene show elapsed time
+ 
  - Revamp UI for Save / Load (Button / Box / Scene)
  
  Audio:
@@ -28,7 +28,7 @@ Nice to have:
  
 WIP:
 ----------------------------------
- 
+ - GameoverScene show elapsed time
 
 
 
