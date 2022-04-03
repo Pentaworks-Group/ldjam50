@@ -14,12 +14,12 @@ Todo:
    
   UI:
   - Revamp UI for Save / Load (Button / Box / Scene)
-  - Fix rotated image for units in "rotated" mode
  
  Audio:
  - RebelSound persists in PauseMenu & After Quiting
  - Effects
  - Sound Volume
+ 
 
 Ideas:
 ----------------------------------
@@ -29,12 +29,13 @@ Ideas:
 Nice to have:
 ----------------------------------
  - Move Rotatotor & click fix to GameFrame
+ - InstantiateGameObject: alternatives turn templates? move to central code location
+ - replace if (Screen.width < ..hight) with global call
  
  
 WIP:
 ----------------------------------
  EG:
- - Fix rotated image for units in "rotated" mode
  
  
 Done:
@@ -52,3 +53,4 @@ Done:
  - Fixed bug where game resumed in CityScene when Shop was open and pause toggled twice
  - Make palace hitbox != circle (any distance calc)
  - Multiple Modes (Only Push, Fast, Clicker,...?)
+  - Fix rotated image for units in "rotated" mode

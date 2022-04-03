@@ -177,7 +177,7 @@ public class MapObjectSpawner : MonoBehaviour
             policeTroop.Base = GameHandler.Palace.CoreMapBase; // this should be loaded correctly
         }
 
-        GameObject troopOb = Instantiate(PoliceTroopTemplate, new Vector3(0, 0, 0), Quaternion.identity, Map.transform);
+        GameObject troopOb = InstantiateGameObject(PoliceTroopTemplate, Map.transform);
 
         PoliceTroopBehaviour troopBehaviour = troopOb.GetComponent<PoliceTroopBehaviour>();
 
@@ -185,6 +185,26 @@ public class MapObjectSpawner : MonoBehaviour
         troopBehaviour.Init(policeTroop);
 
         return troopBehaviour;
+    }
+
+    private GameObject InstantiateGameObject(GameObject template, Transform parent)
+    {
+        Quaternion rotation;
+        if (Screen.width < Screen.height)
+        {
+            Quaternion rotateY = new Quaternion(0, 0, 1f, 1f);
+            if (template.transform.rotation.z != template.transform.rotation.w)
+            {
+                rotation = Quaternion.identity;
+            } else
+            {
+                rotation = rotateY;
+            }
+        } else
+        {
+            rotation = Quaternion.identity;
+        }
+        return Instantiate(template, new Vector3(0, 0, 0), rotation, parent);
     }
 
     private PoliceTroop GetTroopFromDefault(TroopDefault troopDefault)
@@ -243,7 +263,7 @@ public class MapObjectSpawner : MonoBehaviour
         }
 
 
-        GameObject rebelOb = Instantiate(RebelTemplate, new Vector3(0, 0, 0), Quaternion.identity, Map.transform);
+        GameObject rebelOb = InstantiateGameObject(RebelTemplate, Map.transform);
 
         RebelBehaviour rebelBehaviour = rebelOb.GetComponent<RebelBehaviour>();
 
