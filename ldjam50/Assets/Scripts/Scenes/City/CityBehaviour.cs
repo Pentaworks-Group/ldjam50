@@ -3,7 +3,6 @@ using System;
 using System.Linq;
 
 using UnityEngine;
-using Assets.Scripts.Base;
 
 namespace Assets.Scripts.Scenes.City
 {
@@ -31,7 +30,7 @@ namespace Assets.Scripts.Scenes.City
             Base.Core.Game.BackgroundAudioManager.Stop();
             Base.Core.Game.BackgroundAudioManager.Clips = Base.Core.Game.AudioClipListGame2;
             Base.Core.Game.BackgroundAudioManager.Resume();
-            if(Base.Core.Game.State.Rebels.Count > 0)
+            if (Base.Core.Game.State.Rebels.Count > 0)
             {
                 Base.Core.Game.AmbienceAudioManager.Resume();
             }
@@ -50,11 +49,14 @@ namespace Assets.Scripts.Scenes.City
 
         private void Start()
         {
-            this.mapObjectSpawner = this.transform.Find("MapObjectSpawner").gameObject.GetComponent<MapObjectSpawner>();
-            this.shopOverlay = this.transform.Find("HUD/ShopOverlay").gameObject;
+            this.mapObjectSpawner = this.transform.Find("Rotatotor/MapObjectSpawner").gameObject.GetComponent<MapObjectSpawner>();
+            this.shopOverlay = this.transform.Find("Rotatotor/HUD/ShopOverlay").gameObject;
             this.policeSlot = shopOverlay.transform.Find("ContentArea/PoliceSecurityForceSlot").GetComponent<SecurityForceSlotBehaviour>();
 
-            this.policeSlot.SecurityForceDefault = GameHandler.GameFieldSettings.TroopDefaults.FirstOrDefault(d => d.Type == "Police");
+            if (GameHandler.GameFieldSettings != default)
+            {
+                this.policeSlot.SecurityForceDefault = GameHandler.GameFieldSettings.TroopDefaults.FirstOrDefault(d => d.Type == "Police");
+            }
         }
 
         void Update()
