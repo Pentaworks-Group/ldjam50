@@ -33,8 +33,9 @@ Nice to have:
  
 WIP:
 ----------------------------------
- - Directional Facing of Units
-
+ 
+ 
+ 
 Done:
 ----------------------------------
  - Pause Menu transparency
@@ -46,3 +47,4 @@ Done:
  - Music
  - Troop buying
  - Multiple troops (Marker for selected)
+ - Directional Facing of Units
