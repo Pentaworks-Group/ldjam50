@@ -18,7 +18,17 @@
                 "Strength": 30,
                 "Repulsion": 0.001,
                 "Range": 0.055,
-                "ImageName": "Troops"
+              "ImageName": "Troops",
+              "MarchSounds": [
+                "Fanfare_1",
+                "March_1",
+                "March_2",
+                "March_3",
+                "March_4",
+                "March_5",
+                "Yes_Sir",
+                "Yes_Sir_2"
+              ]
             }
         ],
         "RebelDefaults": [

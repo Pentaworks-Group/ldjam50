@@ -9,21 +9,6 @@ using UnityEngine.UI;
 
 public class PoliceTroopBehaviour : CoreUnitBehaviour
 {
-    protected static Lazy<System.Collections.Generic.List<AudioClip>> lazySendSounds = new Lazy<System.Collections.Generic.List<AudioClip>>(() =>
-    {
-        return new System.Collections.Generic.List<AudioClip>()
-        {
-            GameFrame.Base.Resources.Manager.Audio.Get("Fanfare_1"),
-            GameFrame.Base.Resources.Manager.Audio.Get("March_1"),
-            GameFrame.Base.Resources.Manager.Audio.Get("March_2"),
-            GameFrame.Base.Resources.Manager.Audio.Get("March_3"),
-            GameFrame.Base.Resources.Manager.Audio.Get("March_4"),
-            GameFrame.Base.Resources.Manager.Audio.Get("March_5"),
-            GameFrame.Base.Resources.Manager.Audio.Get("Yes_Sir"),
-            GameFrame.Base.Resources.Manager.Audio.Get("Yes_Sir_2")
-        };
-    });
-
     protected static float sendSoundTick = 0;
 
     private static Color selectedColor = Color.white;
@@ -78,7 +63,7 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     protected void playSendSound()
     {
-        AudioClip audioClip = lazySendSounds.Value.GetRandomEntry();
+        AudioClip audioClip = GameFrame.Base.Resources.Manager.Audio.Get(PoliceTroop.MarchSounds.GetRandomEntry());
         float duration = (float)audioClip.samples / audioClip.frequency;
 
         if (Time.time > sendSoundTick)
