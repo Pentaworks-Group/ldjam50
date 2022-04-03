@@ -34,7 +34,7 @@ public class SaveGameSlotBehaviour : MonoBehaviour
         if (gameState != null)
         {
             this.SavedOnText.text = string.Format("{0:G}", this.GameState.SavedOn);
-            this.ElapsedOnText.text = string.Format("{0}s", this.GameState.ElapsedTime);
+            this.ElapsedOnText.text = string.Format("{0:F1}s", this.GameState.ElapsedTime);
 
             EmptyContainer.SetActive(false);
             UsedContainer.SetActive(true);

@@ -130,6 +130,7 @@ public class PauseMenuBehavior : MonoBehaviour
         var savedGames = GameFrame.Core.Json.Handler.Serialize(gameStates);
 
         PlayerPrefs.SetString("SavedGames", savedGames);
+        PlayerPrefs.Save();
     }
 
     public void Quit()

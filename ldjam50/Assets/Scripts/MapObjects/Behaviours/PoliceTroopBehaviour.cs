@@ -1,17 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.EventSystems;
 using Assets.Scripts.Base;
+
+using UnityEngine;
 
 
 public class PoliceTroopBehaviour : CoreUnitBehaviour
 {
-    private PoliceTroop PoliceTroop;
+    public PoliceTroop PoliceTroop
+    {
+        get
+        {
+            return this.GetUnit<PoliceTroop>();
+        }
+    }
 
     private new void Update()
     {
-        if (Vector2.Distance(PoliceTroop.Location, PoliceTroop.Base.Location) < 0.08f) {
+        if (Vector2.Distance(PoliceTroop.Location, PoliceTroop.Base.Location) < 0.08f)
+        {
             Heal();
         }
         CheckForAdjesentRebels();
@@ -20,7 +25,6 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     private void CheckForAdjesentRebels()
     {
-
         for (int i = GameHandler.Rebels.Count - 1; i >= 0; i--)
         {
             RebelBehaviour rebel = GameHandler.Rebels[i];
@@ -40,12 +44,10 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
     {
         PoliceTroop.Speed = PoliceTroop.MaxSpeed;
         PoliceTroop.Target = target;
-       
     }
 
     public void Init(PoliceTroop policeTroop)
     {
-        PoliceTroop = policeTroop;
         sizeScale = 0.2f;
         AddDistanceAction(0.008f, Stop);
         base.Init(policeTroop);
@@ -75,6 +77,9 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
         {
             GameHandler.SelectedTroop = null;
         }
+
+        Core.Game.State.SecurityForces.Remove(this.PoliceTroop);
+
         GameObject.Destroy(gameObject);
     }
 }

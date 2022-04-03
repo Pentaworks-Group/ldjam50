@@ -14,6 +14,14 @@ public class RebelBehaviour : CoreUnitBehaviour
         base.Init(rebel);
     }
 
+    public Rebel Rebel
+    {
+        get
+        {
+            return this.GetUnit<Rebel>();
+        }
+    }
+
     public void RebelClick()
     {
         //KillRebel();
