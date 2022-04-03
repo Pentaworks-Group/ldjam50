@@ -3,6 +3,7 @@ Todo:
  Core:
  - Multiple troops 
  - Money
+ - Fix Time Display when rotated
  
  GamePlay:
  - Balancing
