@@ -22,9 +22,7 @@ public abstract class CoreMapObjectBehaviour : MonoBehaviour
         RectTransform.offsetMin = new Vector2(0, 0);
         RectTransform.offsetMax = new Vector2(0, 0);
 
-
         gameObject.name = mapObject.Name;
-
 
         Sprite sprite = GameFrame.Base.Resources.Manager.Sprites.Get(mapObject.ImageName);
         Image.sprite = sprite;

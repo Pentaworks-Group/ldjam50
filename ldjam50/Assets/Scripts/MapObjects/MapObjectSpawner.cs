@@ -26,7 +26,30 @@ public class MapObjectSpawner : MonoBehaviour
     {
         GameHandler.Clear();
         InitPalace();
-        GameHandler.SelectedTroop = SpawnTroop();
+
+        if (Core.Game.State.SecurityForces?.Count > 0)
+        {
+            foreach (var securityForce in Core.Game.State.SecurityForces)
+            {
+                var spawnedTroop = SpawnTroop(securityForce);
+
+                if (securityForce.IsSelected)
+                {
+                    GameHandler.SelectedTroop = spawnedTroop;
+                }
+            }
+        }
+        else
+        {
+            var troop  = SpawnTroop();
+
+            troop.PoliceTroop.IsSelected = true;
+
+            GameHandler.SelectedTroop = troop;
+        }
+
+        currentTime = Core.Game.State.ElapsedTime;
+
         //        Core.Game.BackgroundAudioManager.Stop();
         Core.Game.BackgroundAudioManager.Clips = Core.Game.AudioClipListGame1;
         //        Core.Game.BackgroundAudioManager.Resume();
@@ -36,24 +59,29 @@ public class MapObjectSpawner : MonoBehaviour
     void Update()
     {
         currentTime += Time.deltaTime;
+
         if (currentTime > nextTick)
         {
             SpawnRebel();
             nextTick = currentTime + spawnInterval;
             spawnInterval *= 0.95f;
         }
+
         if (currentTime > musicChangeTick)
         {
             Core.Game.BackgroundAudioManager.Clips = Core.Game.AudioClipListGame2;
         }
+
         UpdateTimeDisplay();
     }
 
     public void MoveSelectedTroop(BaseEventData data)
     {
         PointerEventData pointerData = data as PointerEventData;
+
         float relPositionX = pointerData.position.x / Screen.width;
         float relPositionY = pointerData.position.y / Screen.height;
+
         GameHandler.SelectedTroop.SendTroopsToLocation(new Vector2(relPositionX, relPositionY));
     }
 
@@ -63,26 +91,39 @@ public class MapObjectSpawner : MonoBehaviour
         Core.Game.State.ElapsedTime = currentTime;
     }
 
-    private PoliceTroopBehaviour SpawnTroop()
+    private PoliceTroopBehaviour SpawnTroop(PoliceTroop existingTroop = default)
     {
-        PoliceTroop policeTroop = new PoliceTroop()
+        var policeTroop = existingTroop;
+
+        if (policeTroop == default)
         {
-            Name = "Police Troop",
-            Speed = 0,
-            MaxSpeed = 0.4f,
-            Strength = 20,
-            Health = 100,
-            MaxHealth = 200,
-            Location = GameHandler.Palace.MapObject.Location,
-            ImageName = "Troops_P",
-            Base = GameHandler.Palace.MapObject
-        };
+            policeTroop = new PoliceTroop()
+            {
+                Name = "Police Troop",
+                Speed = 0,
+                MaxSpeed = 0.4f,
+                Strength = 20,
+                Health = 100,
+                MaxHealth = 200,
+                Location = GameHandler.Palace.MapObject.Location,
+                ImageName = "Troops_P",
+                Base = GameHandler.Palace.MapObject
+            };
+
+            Core.Game.State.SecurityForces.Add(policeTroop);
+        }
+        else
+        {
+            policeTroop.Base = GameHandler.Palace.MapObject; // this should be loaded correctly
+        }
+
         GameObject troopOb = Instantiate(PoliceTroopTemplate, new Vector3(0, 0, 0), Quaternion.identity, Map.transform);
 
         PoliceTroopBehaviour troopBehaviour = troopOb.GetComponent<PoliceTroopBehaviour>();
 
         troopBehaviour.gameObject.SetActive(true);
         troopBehaviour.Init(policeTroop);
+
         return troopBehaviour;
     }
 
@@ -102,6 +143,8 @@ public class MapObjectSpawner : MonoBehaviour
             Health = 25,
             MaxHealth = 200
         };
+
+        Core.Game.State.Rebels.Add(rebel);
 
         GameObject rebelOb = Instantiate(RebelTemplate, new Vector3(0, 0, 0), Quaternion.identity, Map.transform);
 

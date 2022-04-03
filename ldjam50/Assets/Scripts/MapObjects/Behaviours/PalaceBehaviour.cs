@@ -11,12 +11,12 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
         {
             float locationX = (1895f / 3840);
             float locationY = 1f - (1043f / 2160);
-            Vector2 location = new Vector2(locationX, locationY);
+            GameFrame.Core.Math.Vector2 location = new GameFrame.Core.Math.Vector2(locationX, locationY);
 
             mapObject = new CoreMapObject()
             {
                 Name = "Palace",
-                Location = location,
+                ActualLocation = location,
                 ImageName = "Palace"
             };
             

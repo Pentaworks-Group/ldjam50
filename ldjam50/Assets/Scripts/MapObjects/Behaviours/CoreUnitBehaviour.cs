@@ -1,12 +1,29 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
- public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
+public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
 {
-    public CoreUnit CoreUnit { get; private set; }
     private Dictionary<float, Action<float>> distanceActions = new Dictionary<float, Action<float>>();
+
+    private CoreUnit unit;
+    public CoreUnit CoreUnit
+    {
+        get
+        {
+            return this.GetUnit<CoreUnit>();
+        }
+        private set
+        {
+            this.unit = value;
+        }
+    }
+
+    protected T GetUnit<T>() where T : CoreUnit
+    {
+        return (T)this.unit;
+    }
 
     protected void Update()
     {
@@ -15,11 +32,13 @@ using UnityEngine;
 
     protected void Move()
     {
-        if (CoreUnit.Speed == 0 || CoreUnit.Target == default)
+        if (CoreUnit.Speed == 0)
         {
             return;
         }
+
         Vector2 direction = CoreUnit.Target - MapObject.Location;
+
         direction.Normalize();
         direction *= CoreUnit.Speed * Time.deltaTime;
         MoveInDirection(direction);
@@ -27,9 +46,11 @@ using UnityEngine;
     }
     protected void MoveInDirection(Vector2 direction)
     {
-        Vector2 newLocation = MapObject.Location + direction;
+        var unityLocation = MapObject.Location;
+
+        Vector2 newLocation = unityLocation + direction;
         SetLocation(newLocation);
-        DistanzeTriggerCheck(MapObject.Location, CoreUnit.Target);
+        DistanzeTriggerCheck(unityLocation, CoreUnit.Target);
     }
 
     private void DistanzeTriggerCheck(Vector2 location, Vector2 target)

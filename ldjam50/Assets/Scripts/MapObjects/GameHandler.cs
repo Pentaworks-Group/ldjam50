@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 
+using Assets.Scripts.Base;
+
 public class GameHandler
 {
     public static List<RebelBehaviour> Rebels { get; } = new List<RebelBehaviour>();
     public static PalaceBehaviour Palace { get; set; }
 
     public static PoliceTroopBehaviour SelectedTroop { get; set; }
-
 
     public static void AddRebel(RebelBehaviour rebel)
     {
@@ -15,6 +16,7 @@ public class GameHandler
 
     public static void RemoveRebel(RebelBehaviour rebel)
     {
+        Core.Game.State.Rebels.Remove(rebel.Rebel);
         Rebels.Remove(rebel);
     }
 
