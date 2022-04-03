@@ -89,7 +89,7 @@ public class GameHandler
         }
     }
 
-    public static float SafeZoneRadius { get; } = 0.25f;
+    public static float SafeZoneRadius { get; } = 0.06f;
 
     public static float GetDistance(Vector2 location1, Vector2 location2)
     {
