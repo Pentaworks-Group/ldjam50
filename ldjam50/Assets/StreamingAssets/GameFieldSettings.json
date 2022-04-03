@@ -57,7 +57,7 @@
                 "MaxHealth": 200,
                 "Strength": 0,
                 "Repulsion": 0.01,
-                "Range": 0.06,
+                "Range": 0.05,
                 "ImageName": "Troops"
             }
         ],
@@ -74,7 +74,7 @@
                 "MaxHealth": 100,
                 "Strength": 0,
                 "Repulsion": 0.0005,
-                "Range": 0.06,
+                "Range": 0.05,
                 "ImageName": "Riots"
             }
         ]
@@ -96,7 +96,7 @@
                 "MaxHealth": 200,
                 "Strength": 0,
                 "Repulsion": -0.002,
-                "Range": 0.06,
+                "Range": 0.05,
                 "ImageName": "Troops"
             }
         ],
@@ -112,7 +112,7 @@
                 "MaxHealth": 100,
                 "Strength": 0,
                 "Repulsion": 0.0005,
-                "Range": 0.06,
+                "Range": 0.05,
                 "ImageName": "Riots"
             }
         ]
