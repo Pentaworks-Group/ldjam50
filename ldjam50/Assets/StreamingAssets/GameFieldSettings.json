@@ -22,21 +22,33 @@
             }
         ],
         "RebelDefaults": [
-            {
-				"Type": "Noobs",
-                "Names": [
-                    "Depper Doders",
-                    "Hadwi"
-                ],
-                "MinSpeed": 0.025,
-                "MaxSpeed": 0.05,
-                "Health": 100,
-                "MaxHealth": 100,
-                "Strength": 20,
-                "Repulsion": 0.0005,
-                "Range": 0.05,
-                "ImageName": "Riots"
-            }
+          {
+            "Type": "Noobs",
+            "Names": [
+              "Depper Doders",
+              "Hadwi"
+            ],
+            "MinSpeed": 0.025,
+            "MaxSpeed": 0.05,
+            "Health": 100,
+            "MaxHealth": 100,
+            "Strength": 20,
+            "Repulsion": 0.0005,
+            "Range": 0.05,
+            "ImageName": "Riots",
+            "KillSounds": [
+              "Aaah",
+              "Aww",
+              "Daeng",
+              "Nuts"
+            ],
+            "SpawnSounds": [
+              "Whistle",
+              "Whistle_2",
+              "Whistle_3",
+              "Whistle_4"
+            ]
+          }
         ]
     },
     {

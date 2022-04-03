@@ -24,17 +24,6 @@ public class MapObjectSpawner : MonoBehaviour
 
     private float musicChangeTick = 20.0f;
 
-    protected static Lazy<System.Collections.Generic.List<AudioClip>> whistleSounds = new Lazy<System.Collections.Generic.List<AudioClip>>(() =>
-    {
-        return new System.Collections.Generic.List<AudioClip>()
-        {
-            GameFrame.Base.Resources.Manager.Audio.Get("Whistle"),
-            GameFrame.Base.Resources.Manager.Audio.Get("Whistle_2"),
-            GameFrame.Base.Resources.Manager.Audio.Get("Whistle_3"),
-            GameFrame.Base.Resources.Manager.Audio.Get("Whistle_4")
-        };
-    });
-
 
     // Start is called before the first frame update
     void Start()
@@ -218,7 +207,6 @@ public class MapObjectSpawner : MonoBehaviour
 
         if (rebel == null)
         {
-            Core.Game.EffectsAudioManager.Play(whistleSounds.Value.GetRandomEntry());
             //float speed = 0;
             RebelDefault rebelDefault = GameHandler.GameFieldSettings.RebelDefaults.GetRandomEntry();
             float speed = UnityEngine.Random.Range(rebelDefault.MinSpeed, rebelDefault.MaxSpeed);
@@ -234,11 +222,15 @@ public class MapObjectSpawner : MonoBehaviour
                 Repulsion = rebelDefault.Repulsion,
                 Range = rebelDefault.Range,
                 Health = rebelDefault.Health,
-                MaxHealth = rebelDefault.MaxHealth
+                MaxHealth = rebelDefault.MaxHealth,
+                KillSound = rebelDefault.KillSounds.GetRandomEntry(),
+                SpawnSound = rebelDefault.SpawnSounds.GetRandomEntry()
             };
 
             Core.Game.State.Rebels.Add(rebel);
             Core.Game.AmbienceAudioManager.Resume();
+            AudioClip spawnAudio = GameFrame.Base.Resources.Manager.Audio.Get(rebel.SpawnSound);
+            Core.Game.EffectsAudioManager.Play(spawnAudio);
         }
 
 

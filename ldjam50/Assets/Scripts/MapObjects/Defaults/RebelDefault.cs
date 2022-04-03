@@ -13,4 +13,6 @@ public class RebelDefault
     public float Repulsion { get; set; }
     public float Range { get; set; }
     public String ImageName { get; set; }
+    public List<String> KillSounds { get; set; }
+    public List<String> SpawnSounds { get; set; }
 }

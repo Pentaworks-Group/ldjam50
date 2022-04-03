@@ -65,8 +65,9 @@ public class RebelBehaviour : CoreUnitBehaviour
     {
         GameHandler.RemoveRebel(this);
         GameObject.Destroy(gameObject);
-        
-        Core.Game.EffectsAudioManager.Play(lazyKillSounds.Value.GetRandomEntry());
+
+        AudioClip clip = GameFrame.Base.Resources.Manager.Audio.Get(Rebel.KillSound);
+        Core.Game.EffectsAudioManager.Play(clip);
         if (Core.Game.State.Rebels.Count <= 0)
         {
             Core.Game.AmbienceAudioManager.Stop();
