@@ -22,7 +22,8 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
             if (securityForceDefault != value)
             {
                 this.securityForceDefault = value;
-                UpdateUI();
+                if (this.corpsImage != null)   
+                    UpdateUI();
             }
         }
     }
