@@ -48,7 +48,7 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
         for (int i = GameHandler.Rebels.Count - 1; i >= 0; i--)
         {
             RebelBehaviour rebel = GameHandler.Rebels[i];
-            float distance = getDistance(rebel.MapObject.Location, PoliceTroop.Location);
+            float distance = GameHandler.GetDistance(rebel.MapObject.Location, PoliceTroop.Location);
             if (distance < CoreUnit.Range)
             {
                 rebel.Repel(distance, this);

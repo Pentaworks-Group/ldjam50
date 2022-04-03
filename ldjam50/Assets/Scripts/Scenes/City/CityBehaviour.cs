@@ -3,13 +3,14 @@ using System;
 using System.Linq;
 
 using UnityEngine;
-using Assets.Scripts.Base;
 
 namespace Assets.Scripts.Scenes.City
 {
     public class CityBehaviour : MonoBehaviour
     {
-        public GameObject ShopOverlay;
+        private MapObjectSpawner mapObjectSpawner;
+        private GameObject shopOverlay;
+        private SecurityForceSlotBehaviour policeSlot;
 
         public void ShowShop()
         {
@@ -21,7 +22,7 @@ namespace Assets.Scripts.Scenes.City
             Base.Core.Game.BackgroundAudioManager.Resume();
             Base.Core.Game.AmbienceAudioManager.Stop();
 
-            ShopOverlay.SetActive(true);
+            shopOverlay.SetActive(true);
         }
 
         public void CloseShop()
@@ -29,19 +30,33 @@ namespace Assets.Scripts.Scenes.City
             Base.Core.Game.BackgroundAudioManager.Stop();
             Base.Core.Game.BackgroundAudioManager.Clips = Base.Core.Game.AudioClipListGame2;
             Base.Core.Game.BackgroundAudioManager.Resume();
-            if(Base.Core.Game.State.Rebels.Count > 0)
+            if (Base.Core.Game.State.Rebels.Count > 0)
             {
                 Base.Core.Game.AmbienceAudioManager.Resume();
             }
 
-            ShopOverlay.SetActive(false);
+            shopOverlay.SetActive(false);
             Time.timeScale = 1;
+        }
+
+        public void BuySecurityForce(SecurityForceSlotBehaviour selectedForce)
+        {
+            if (selectedForce?.SecurityForceDefault != default)
+            {
+                mapObjectSpawner.SpawnTroopFromDefault(selectedForce.SecurityForceDefault);
+            }
         }
 
         private void Start()
         {
-            var policeSlot = ShopOverlay.transform.Find("ContentArea/PoliceSecurityForceSlot").GetComponent<SecurityForceSlotBehaviour>();
+            this.mapObjectSpawner = this.transform.Find("Rotatotor/MapObjectSpawner").gameObject.GetComponent<MapObjectSpawner>();
+            this.shopOverlay = this.transform.Find("Rotatotor/HUD/ShopOverlay").gameObject;
+            this.policeSlot = shopOverlay.transform.Find("ContentArea/PoliceSecurityForceSlot").GetComponent<SecurityForceSlotBehaviour>();
 
+            if (GameHandler.GameFieldSettings != default)
+            {
+                this.policeSlot.SecurityForceDefault = GameHandler.GameFieldSettings.TroopDefaults.FirstOrDefault(d => d.Type == "Police");
+            }
         }
 
         void Update()

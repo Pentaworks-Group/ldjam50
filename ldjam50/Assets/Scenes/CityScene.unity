@@ -575,7 +575,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae8d61e019a2944c96048f2ff328e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShopOverlay: {fileID: 2022324659}
 --- !u!1 &905187230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,6 +1041,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 494562046786384782, guid: 8a70c0aca0d26424a9890bb1d223b1b4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 796294459915641767, guid: 8a70c0aca0d26424a9890bb1d223b1b4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
