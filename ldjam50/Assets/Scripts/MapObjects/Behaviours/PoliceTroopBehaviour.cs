@@ -1,6 +1,7 @@
 using System;
 
 using Assets.Scripts.Base;
+using GameFrame.Core.Extensions;
 
 using UnityEngine;
 using UnityEngine.UI;
@@ -78,10 +79,7 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     protected void playSendSound()
     {
-        int index = (int)Mathf.Floor(UnityEngine.Random.Range(0, 7.99f));
-
-        var audioClip = lazySendSounds.Value[index];
-
+        AudioClip audioClip = lazySendSounds.Value.GetRandomEntry();
         float duration = (float)audioClip.samples / audioClip.frequency;
 
         if (Time.time > sendSoundTick)
