@@ -45,6 +45,15 @@ public abstract class CoreMapObjectBehaviour : MonoBehaviour
         MapObject.Location = location;
     }
 
+    protected float getDistance(Vector2 location1, Vector2 location2)
+    {
+        Vector2 loc1 = new Vector2(location1.x * Screen.width, location1.y * Screen.height);
+        Vector2 loc2 = new Vector2(location2.x * Screen.width, location2.y * Screen.height);
+        float distance = Vector2.Distance(loc1, loc2) / Mathf.Sqrt(Mathf.Pow(Screen.width, 2) + Mathf.Pow(Screen.height, 2));
+        return distance;
+    }
+
+
     void Start()
     {
     }
