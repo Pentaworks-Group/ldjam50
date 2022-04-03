@@ -49,12 +49,12 @@
                     "1st Police Corps",
                     "2st Police Corps"
                 ],
-                "MaxSpeed": 0.2,
-                "Health": 150,
+                "MaxSpeed": 0.6,
+                "Health": 200,
                 "MaxHealth": 200,
                 "Strength": 0,
-                "Repulsion": 0.001,
-                "Range": 0.085,
+                "Repulsion": 0.01,
+                "Range": 0.06,
                 "ImageName": "Troops"
             }
         ],
@@ -70,7 +70,45 @@
                 "MaxHealth": 100,
                 "Strength": 0,
                 "Repulsion": 0.0005,
-                "Range": 0.08,
+                "Range": 0.06,
+                "ImageName": "Riots"
+            }
+        ]
+    },
+    {
+        "Name": "Rebell Collect",
+        "FirstTick": 3,
+        "TickInterval": 10,
+        "TickIntervalFactor": 0.97,
+        "PalaceHealing": 50,
+        "TroopDefaults": [
+            {
+                "Names": [
+                    "1st Police Corps",
+                    "2st Police Corps"
+                ],
+                "MaxSpeed": 0.6,
+                "Health": 200,
+                "MaxHealth": 200,
+                "Strength": 0,
+                "Repulsion": -0.002,
+                "Range": 0.06,
+                "ImageName": "Troops"
+            }
+        ],
+        "RebelDefaults": [
+            {
+                "Names": [
+                    "Depper Doders",
+                    "Hadwi"
+                ],
+                "MinSpeed": 0.025,
+                "MaxSpeed": 0.05,
+                "Health": 100,
+                "MaxHealth": 100,
+                "Strength": 0,
+                "Repulsion": 0.0005,
+                "Range": 0.06,
                 "ImageName": "Riots"
             }
         ]
