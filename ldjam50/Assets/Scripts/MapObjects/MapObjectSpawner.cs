@@ -180,9 +180,9 @@ public class MapObjectSpawner : MonoBehaviour
                 Location = GetValidRandomLocation(),
                 Target = GameHandler.Palace.MapObject.Location,
                 ImageName = rebelDefault.ImageName,
-                Strength = 10,
-                Health = 25,
-                MaxHealth = 200
+                Strength = rebelDefault.Strength,
+                Health = rebelDefault.Health,
+                MaxHealth = rebelDefault.MaxHealth
             };
 
             Core.Game.State.Rebels.Add(rebel);

@@ -10,7 +10,7 @@
             "Health": 100,
             "MaxHealth": 200,
             "Strength": 20,
-            "ImageName": "Troops_P"
+            "ImageName": "Troops"
         }
     ],
     "RebelDefaults": [
@@ -24,7 +24,7 @@
             "Health": 25,
             "MaxHealth": 25,
             "Strength": 10,
-            "ImageName": "Protest"
+            "ImageName": "Riots"
         }
     ]
 }
