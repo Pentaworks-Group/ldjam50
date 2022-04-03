@@ -1,3 +1,5 @@
+using System;
+
 using Assets.Scripts.Base;
 
 using UnityEngine;
@@ -5,17 +7,20 @@ using UnityEngine;
 
 public class PoliceTroopBehaviour : CoreUnitBehaviour
 {
-    protected static System.Collections.Generic.List<AudioClip> sendSounds = new System.Collections.Generic.List<AudioClip>()
+    protected static Lazy<System.Collections.Generic.List<AudioClip>> lazySendSounds = new Lazy<System.Collections.Generic.List<AudioClip>>(() =>
     {
-        GameFrame.Base.Resources.Manager.Audio.Get("Fanfare_1"),
-        GameFrame.Base.Resources.Manager.Audio.Get("March_1"),
-        GameFrame.Base.Resources.Manager.Audio.Get("March_2"),
-        GameFrame.Base.Resources.Manager.Audio.Get("March_3"),
-        GameFrame.Base.Resources.Manager.Audio.Get("March_4"),
-        GameFrame.Base.Resources.Manager.Audio.Get("March_5"),
-        GameFrame.Base.Resources.Manager.Audio.Get("Yes_Sir"),
-        GameFrame.Base.Resources.Manager.Audio.Get("Yes_Sir_2")
-    };
+        return new System.Collections.Generic.List<AudioClip>()
+        {
+            GameFrame.Base.Resources.Manager.Audio.Get("Fanfare_1"),
+            GameFrame.Base.Resources.Manager.Audio.Get("March_1"),
+            GameFrame.Base.Resources.Manager.Audio.Get("March_2"),
+            GameFrame.Base.Resources.Manager.Audio.Get("March_3"),
+            GameFrame.Base.Resources.Manager.Audio.Get("March_4"),
+            GameFrame.Base.Resources.Manager.Audio.Get("March_5"),
+            GameFrame.Base.Resources.Manager.Audio.Get("Yes_Sir"),
+            GameFrame.Base.Resources.Manager.Audio.Get("Yes_Sir_2")
+        };
+    });
 
     protected static float sendSoundTick = 0;
 
@@ -101,13 +106,16 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     protected void playSendSound()
     {
-        int index = (int) Mathf.Floor(Random.Range(0, 7.99f));
-        float duration = (float)sendSounds[index].samples / sendSounds[index].frequency;
+        int index = (int)Mathf.Floor(UnityEngine.Random.Range(0, 7.99f));
 
-        if(Time.time > sendSoundTick)
+        var audioClip = lazySendSounds.Value[index];
+
+        float duration = (float)audioClip.samples / audioClip.frequency;
+
+        if (Time.time > sendSoundTick)
         {
             sendSoundTick = Time.time + duration;
-            Core.Game.EffectsAudioManager.Play(sendSounds[index]);
+            Core.Game.EffectsAudioManager.Play(audioClip);
         }
     }
 }
