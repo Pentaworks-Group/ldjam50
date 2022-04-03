@@ -16,9 +16,9 @@ Todo:
  - Revamp UI for Save / Load (Button / Box / Scene)
  
  Audio:
- - Music
+ - RebelSound persists in PauseMenu & After Quiting
  - Effects
- - Ambience?
+ - Sound Volume
 
 
 Ideas:
