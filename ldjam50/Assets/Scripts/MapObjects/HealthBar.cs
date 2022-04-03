@@ -11,14 +11,28 @@ public class HealthBar : MonoBehaviour
 
     void Start()
     {
-        RectTransformBar = this.gameObject.transform.GetChild(0).GetComponent<RectTransform>();
+        RectTransformBar = this.gameObject.transform.GetChild(0).GetChild(0).GetComponent<RectTransform>();
         CoreUnitBehaviour coreUnitBehaviour = this.gameObject.GetComponentInParent<CoreUnitBehaviour>();
         CoreUnit = coreUnitBehaviour.CoreUnit;
     }
 
     void Update()
     {
-        float percentage = CoreUnit.Health / CoreUnit.MaxHealth;
-        RectTransformBar.anchorMax = new Vector2(percentage, 1);
+        GameObject display = gameObject.transform.GetChild(0).gameObject;
+        if (CoreUnit.Health >= CoreUnit.MaxHealth)
+        {
+            if (display.activeSelf)
+            {
+                display.SetActive(false);
+            }
+        } else
+        {
+            if (!display.activeSelf)
+            {
+                display.SetActive(true);
+            }
+            float percentage = CoreUnit.Health / CoreUnit.MaxHealth;
+            RectTransformBar.anchorMax = new Vector2(percentage, 1);
+        }
     }
 }
