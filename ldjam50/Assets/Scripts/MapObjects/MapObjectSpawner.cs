@@ -26,6 +26,8 @@ public class MapObjectSpawner : MonoBehaviour
     void Start()
     {
         GameHandler.Clear();
+
+        Debug.Log("GameFieldSettings: " + GameHandler.GameFieldSettings.Name);
         InitPalace();
 
         if (Core.Game.State.SecurityForces?.Count > 0)
@@ -185,7 +187,7 @@ public class MapObjectSpawner : MonoBehaviour
             location = new Vector2(locationX, locationY);
 
             float distance = Vector2.Distance(location, GameHandler.Palace.MapObject.Location);
-            if (distance > GameHandler.safeZoneRadius)
+            if (distance > GameHandler.SafeZoneRadius)
             {
                 valid = true;
             }
@@ -201,3 +203,5 @@ public class MapObjectSpawner : MonoBehaviour
         GameHandler.Palace.InitPalace();
     }
 }
+
+

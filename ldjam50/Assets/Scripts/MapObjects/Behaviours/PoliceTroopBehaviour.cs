@@ -5,7 +5,13 @@ using UnityEngine;
 
 public class PoliceTroopBehaviour : CoreUnitBehaviour
 {
-    public PoliceTroop PoliceTroop { get; private set; }
+    public PoliceTroop PoliceTroop
+    {
+        get
+        {
+            return this.GetUnit<PoliceTroop>();
+        }
+    }
 
     private new void Update()
     {
@@ -42,7 +48,6 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     public void Init(PoliceTroop policeTroop)
     {
-        PoliceTroop = policeTroop;
         sizeScale = 0.2f;
         AddDistanceAction(0.008f, Stop);
         base.Init(policeTroop);
