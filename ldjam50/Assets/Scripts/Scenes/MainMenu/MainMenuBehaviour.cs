@@ -108,7 +108,7 @@ public class MainMenuBehaviour : MonoBehaviour
             GameFrame.Base.Resources.Manager.Audio.Get("Background_5"),
             GameFrame.Base.Resources.Manager.Audio.Get("Background_6"),
             GameFrame.Base.Resources.Manager.Audio.Get("Background_7"),
-            GameFrame.Base.Resources.Manager.Audio.Get("Background_8"),
+//            GameFrame.Base.Resources.Manager.Audio.Get("Background_8"),
             GameFrame.Base.Resources.Manager.Audio.Get("Background_9")
         };
 

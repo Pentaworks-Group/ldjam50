@@ -29,9 +29,9 @@ public class MapObjectSpawner : MonoBehaviour
         GameHandler.Clear();
         InitPalace();
         GameHandler.SelectedTroop = SpawnTroop();
-        Core.Game.BackgroundAudioManager.Stop();
+//        Core.Game.BackgroundAudioManager.Stop();
         Core.Game.BackgroundAudioManager.Clips = Core.Game.AudioClipListGame1;
-        Core.Game.BackgroundAudioManager.Resume();
+//        Core.Game.BackgroundAudioManager.Resume();
     }
 
     // Update is called once per frame
