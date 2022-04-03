@@ -1,15 +1,19 @@
 {
     "Name": "Default",
+    "FirstTick": 2,
+    "TickInterval": 1,
+    "TickIntervalFactor": 0.97,
     "TroopDefaults": [
         {
             "Names": [
                 "1st Police Corps",
                 "2st Police Corps"
             ],
-            "MaxSpeed": 0.4,
-            "Health": 100,
-            "MaxHealth": 200,
-            "Strength": 20,
+            "MaxSpeed": 0.2,
+            "Health": 200,
+            "MaxHealth": 500,
+            "Strength": 15,
+            "Range": 0.10,
             "ImageName": "Troops"
         }
     ],
@@ -19,11 +23,12 @@
                 "Depper Doders",
                 "Hadwi"
             ],
-            "MinSpeed": 0.05,
-            "MaxSpeed": 0.1,
-            "Health": 25,
-            "MaxHealth": 25,
+            "MinSpeed": 0.025,
+            "MaxSpeed": 0.05,
+            "Health": 100,
+            "MaxHealth": 100,
             "Strength": 10,
+            "Range": 0.07,
             "ImageName": "Riots"
         }
     ]

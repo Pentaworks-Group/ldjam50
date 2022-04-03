@@ -11,5 +11,6 @@ public class RebelDefault
     public float Health { get; set; }
     public float MaxHealth { get; set; }
     public float Strength { get; set; }
+    public float Range { get; set; }
     public String ImageName { get; set; }
 }

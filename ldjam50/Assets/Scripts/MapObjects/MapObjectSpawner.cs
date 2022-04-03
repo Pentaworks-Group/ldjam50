@@ -17,8 +17,8 @@ public class MapObjectSpawner : MonoBehaviour
     public Text TimeDisplay;
     public PalaceBehaviour Palace;
 
-    private float nextTick = 3;
-    private float spawnInterval = 3f;
+    private float nextTick = GameHandler.GameFieldSettings.FirstTick;
+    private float spawnInterval = GameHandler.GameFieldSettings.TickInterval;
     private float currentTime = 0;
 
     private float musicChangeTick = 20.0f;
@@ -95,7 +95,7 @@ public class MapObjectSpawner : MonoBehaviour
 
             Core.Game.State.NextSpawn = nextTick;
 
-            spawnInterval *= 0.95f;
+            spawnInterval *= GameHandler.GameFieldSettings.TickIntervalFactor;
         }
 
         if (currentTime > musicChangeTick)
@@ -143,6 +143,7 @@ public class MapObjectSpawner : MonoBehaviour
                 MaxHealth = troopDefault.MaxHealth,
                 Location = GameHandler.Palace.MapObject.Location,
                 ImageName = troopDefault.ImageName,
+                Range = troopDefault.Range,
                 Base = GameHandler.Palace.MapObject
             };
 
@@ -181,6 +182,7 @@ public class MapObjectSpawner : MonoBehaviour
                 Target = GameHandler.Palace.MapObject.Location,
                 ImageName = rebelDefault.ImageName,
                 Strength = rebelDefault.Strength,
+                Range = rebelDefault.Range,
                 Health = rebelDefault.Health,
                 MaxHealth = rebelDefault.MaxHealth
             };

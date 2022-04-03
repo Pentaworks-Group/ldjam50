@@ -135,7 +135,7 @@ public class MainMenuBehaviour : MonoBehaviour
         //}
     }
 
-    private void LoadGameFieldSettings()
+    public void LoadGameFieldSettings()
     {
         String filePath = Application.streamingAssetsPath + "/GameFieldSettings.json";
 
@@ -144,7 +144,6 @@ public class MainMenuBehaviour : MonoBehaviour
     private GameFieldSettings SetGameFieldSettings(GameFieldSettings gameFieldSettings)
     {
         GameHandler.GameFieldSettings = gameFieldSettings;
-        Debug.Log("GameFieldSettings: " + gameFieldSettings.Name);
         return gameFieldSettings;
     }
 

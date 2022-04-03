@@ -68,7 +68,7 @@ public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
     public void DamageUnit(float damage)
     {
         CoreUnit.Health -= damage;
-        //Debug.Log("Health: " + CoreUnit.Health + "/" + CoreUnit.MaxHealth + " Damage received: " + damage);
+        Debug.Log("Health: " + CoreUnit.Health + "/" + CoreUnit.MaxHealth + " Damage received: " + damage);
         if (CoreUnit.Health <= 0)
         {
             KillUnit();

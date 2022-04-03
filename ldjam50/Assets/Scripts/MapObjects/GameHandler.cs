@@ -42,11 +42,16 @@ public class GameHandler
         Palace = null;
     }
 
-    public static void Fight(CoreUnitBehaviour oppenent1, CoreUnitBehaviour opponent2, float distance)
+    public static void Fight(CoreUnitBehaviour opponent1, CoreUnitBehaviour opponent2, float distance)
     {
-        float dmgScale = distance / 0.08f;
-        oppenent1.DamageUnit(dmgScale * distance * opponent2.CoreUnit.Strength);
-        opponent2.DamageUnit(dmgScale * distance * oppenent1.CoreUnit.Strength);
+        if (distance < opponent2.CoreUnit.Range)
+        {
+            opponent1.DamageUnit((distance / opponent2.CoreUnit.Range) * opponent2.CoreUnit.Strength);
+        }
+        if (distance < opponent1.CoreUnit.Range)
+        {
+            opponent2.DamageUnit((distance / opponent1.CoreUnit.Range) * opponent1.CoreUnit.Strength);
+        }
     }
 
     public static float SafeZoneRadius { get; } = 0.25f;
