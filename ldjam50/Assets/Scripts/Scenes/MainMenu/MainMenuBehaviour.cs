@@ -24,33 +24,38 @@ public class MainMenuBehaviour : MonoBehaviour
 
     public void StartGame()
     {
+        Core.Game.PlayButtonSound();
         Core.Game.Start();
-        Core.Game.EffectsAudioManager.Play("Button");
     }
 
     public void ShowSavedGames()
     {
+        Core.Game.PlayButtonSound();
         Core.Game.ChangeScene(SceneNames.SavedGames);
     }
 
     public void ShowOptions()
     {
+        Core.Game.PlayButtonSound();
         ChangeContainerVisiblity(options: true);
     }
 
     public void ShowCredits()
     {
+        Core.Game.PlayButtonSound();
         Core.Game.ChangeScene(SceneNames.Credits);
     }
 
     public void Quit()
     {
+        Core.Game.PlayButtonSound();
         Assets.Scripts.Base.Core.Game.SaveOptions();
         Application.Quit();
     }
 
     public void Back()
     {
+        Core.Game.PlayButtonSound();
         ChangeContainerVisiblity(mainMenu: true);
     }
 
