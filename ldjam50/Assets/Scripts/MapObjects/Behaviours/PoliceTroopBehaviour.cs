@@ -1,3 +1,5 @@
+using System;
+
 using Assets.Scripts.Base;
 
 using UnityEngine;
@@ -5,6 +7,24 @@ using UnityEngine;
 
 public class PoliceTroopBehaviour : CoreUnitBehaviour
 {
+    protected static Lazy<System.Collections.Generic.List<AudioClip>> lazySendSounds = new Lazy<System.Collections.Generic.List<AudioClip>>(() =>
+    {
+        return new System.Collections.Generic.List<AudioClip>()
+        {
+            GameFrame.Base.Resources.Manager.Audio.Get("Fanfare_1"),
+            GameFrame.Base.Resources.Manager.Audio.Get("March_1"),
+            GameFrame.Base.Resources.Manager.Audio.Get("March_2"),
+            GameFrame.Base.Resources.Manager.Audio.Get("March_3"),
+            GameFrame.Base.Resources.Manager.Audio.Get("March_4"),
+            GameFrame.Base.Resources.Manager.Audio.Get("March_5"),
+            GameFrame.Base.Resources.Manager.Audio.Get("Yes_Sir"),
+            GameFrame.Base.Resources.Manager.Audio.Get("Yes_Sir_2")
+        };
+    });
+
+    protected static float sendSoundTick = 0;
+
+
     public PoliceTroop PoliceTroop
     {
         get
@@ -42,6 +62,7 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     public void SendTroopsToLocation(Vector2 target)
     {
+        playSendSound();
         PoliceTroop.Speed = PoliceTroop.MaxSpeed;
         PoliceTroop.Target = target;
     }
@@ -67,7 +88,7 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
     {
         if (PoliceTroop.Health < PoliceTroop.MaxHealth)
         {
-            PoliceTroop.Health += 5 * Time.deltaTime;
+            PoliceTroop.Health += PoliceTroop.Base.Healing * Time.deltaTime;
         }
     }
 
@@ -81,6 +102,21 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
         Core.Game.State.SecurityForces.Remove(this.PoliceTroop);
 
         GameObject.Destroy(gameObject);
+    }
+
+    protected void playSendSound()
+    {
+        int index = (int)Mathf.Floor(UnityEngine.Random.Range(0, 7.99f));
+
+        var audioClip = lazySendSounds.Value[index];
+
+        float duration = (float)audioClip.samples / audioClip.frequency;
+
+        if (Time.time > sendSoundTick)
+        {
+            sendSoundTick = Time.time + duration;
+            Core.Game.EffectsAudioManager.Play(audioClip);
+        }
     }
 }
 

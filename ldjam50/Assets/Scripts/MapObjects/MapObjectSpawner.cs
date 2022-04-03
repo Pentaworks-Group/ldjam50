@@ -1,9 +1,10 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 using Assets.Scripts.Base;
+
 using GameFrame.Core.Extensions;
+
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -26,6 +27,12 @@ public class MapObjectSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (Core.Game.State == default)
+        {
+            Core.Game.ChangeScene(SceneNames.MainMenu);
+            return;
+        }
+
         GameHandler.Clear();
 
         Debug.Log("GameFieldSettings: " + GameHandler.GameFieldSettings.Name);
@@ -110,9 +117,18 @@ public class MapObjectSpawner : MonoBehaviour
     public void MoveSelectedTroop(BaseEventData data)
     {
         PointerEventData pointerData = data as PointerEventData;
-
-        float relPositionX = pointerData.position.x / Screen.width;
-        float relPositionY = pointerData.position.y / Screen.height;
+        float relPositionX;
+        float relPositionY;
+        if (Screen.width < Screen.height)
+        {
+            relPositionX = pointerData.position.y / Screen.height;
+            relPositionY = 1 - (pointerData.position.x / Screen.width);
+        }
+        else
+        {
+            relPositionX = pointerData.position.x / Screen.width;
+            relPositionY = pointerData.position.y / Screen.height;
+        }
 
         GameHandler.SelectedTroop.SendTroopsToLocation(new Vector2(relPositionX, relPositionY));
     }
@@ -134,25 +150,27 @@ public class MapObjectSpawner : MonoBehaviour
         if (policeTroop == default)
         {
             TroopDefault troopDefault = GameHandler.GameFieldSettings.TroopDefaults.GetRandomEntry();
+
             policeTroop = new PoliceTroop()
             {
                 Name = troopDefault.Names.GetRandomEntry(),
                 Speed = 0,
                 MaxSpeed = troopDefault.MaxSpeed,
                 Strength = troopDefault.Strength,
+                Repulsion = troopDefault.Repulsion,
                 Health = troopDefault.Health,
                 MaxHealth = troopDefault.MaxHealth,
                 Location = GameHandler.Palace.MapObject.Location,
                 ImageName = troopDefault.ImageName,
                 Range = troopDefault.Range,
-                Base = GameHandler.Palace.MapObject
+                Base = GameHandler.Palace.CoreMapBase
             };
 
             Core.Game.State.SecurityForces.Add(policeTroop);
         }
         else
         {
-            policeTroop.Base = GameHandler.Palace.MapObject; // this should be loaded correctly
+            policeTroop.Base = GameHandler.Palace.CoreMapBase; // this should be loaded correctly
         }
 
         GameObject troopOb = Instantiate(PoliceTroopTemplate, new Vector3(0, 0, 0), Quaternion.identity, Map.transform);
@@ -171,6 +189,7 @@ public class MapObjectSpawner : MonoBehaviour
 
         if (rebel == null)
         {
+            Core.Game.EffectsAudioManager.Play("Whistle");
             //float speed = 0;
             RebelDefault rebelDefault = GameHandler.GameFieldSettings.RebelDefaults.GetRandomEntry();
             float speed = UnityEngine.Random.Range(rebelDefault.MinSpeed, rebelDefault.MaxSpeed);
@@ -183,14 +202,16 @@ public class MapObjectSpawner : MonoBehaviour
                 Target = GameHandler.Palace.MapObject.Location,
                 ImageName = rebelDefault.ImageName,
                 Strength = rebelDefault.Strength,
+                Repulsion = rebelDefault.Repulsion,
                 Range = rebelDefault.Range,
                 Health = rebelDefault.Health,
                 MaxHealth = rebelDefault.MaxHealth
             };
 
             Core.Game.State.Rebels.Add(rebel);
+            Core.Game.AmbienceAudioManager.Resume();
         }
-    
+
 
         GameObject rebelOb = Instantiate(RebelTemplate, new Vector3(0, 0, 0), Quaternion.identity, Map.transform);
 
@@ -232,6 +253,7 @@ public class MapObjectSpawner : MonoBehaviour
 
     private void InitPalace()
     {
+        Palace.Healing = GameHandler.GameFieldSettings.PalaceHealing;
         GameHandler.Palace = Palace;
         GameHandler.Palace.InitPalace();
     }

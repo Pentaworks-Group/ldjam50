@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 
 using Assets.Scripts.Base;
+using UnityEngine;
 
 public class GameHandler
 {
@@ -11,7 +12,7 @@ public class GameHandler
 
     public static PoliceTroopBehaviour SelectedTroop { get; private set; }
 
-    public static GameFieldSettings GameFieldSettings { get; set;  }
+    public static GameFieldSettings GameFieldSettings { get; set; }
 
     public static void AddRebel(RebelBehaviour rebel)
     {
@@ -62,11 +63,28 @@ public class GameHandler
     {
         if (distance < opponent2.CoreUnit.Range)
         {
-            opponent1.DamageUnit((distance / opponent2.CoreUnit.Range) * opponent2.CoreUnit.Strength);
+            opponent1.DamageUnit((1 - distance / opponent2.CoreUnit.Range) * opponent2.CoreUnit.Strength);
         }
         if (distance < opponent1.CoreUnit.Range)
         {
-            opponent2.DamageUnit((distance / opponent1.CoreUnit.Range) * opponent1.CoreUnit.Strength);
+            opponent2.DamageUnit((1 - distance / opponent1.CoreUnit.Range) * opponent1.CoreUnit.Strength);
+        }
+    }
+
+    public static void Repel(CoreUnitBehaviour opponent1, CoreUnitBehaviour opponent2, float distance)
+    {
+        Vector2 direction = opponent1.MapObject.Location - opponent2.MapObject.Location;
+        direction.Normalize();
+        if (distance < opponent2.CoreUnit.Range)        {
+            float repulsionStrength = (1 - distance / opponent2.CoreUnit.Range) * opponent2.CoreUnit.Repulsion;
+            Vector2 repulsion = new Vector2(direction.x, direction.y) * repulsionStrength;
+            opponent1.MoveInDirection(repulsion);
+        }
+        if (distance < opponent1.CoreUnit.Range)
+        {
+            float repulsionStrength = (1 - distance / opponent1.CoreUnit.Range) * opponent1.CoreUnit.Repulsion;
+            Vector2 repulsion = direction * repulsionStrength * -1;
+            opponent2.MoveInDirection(repulsion);
         }
     }
 

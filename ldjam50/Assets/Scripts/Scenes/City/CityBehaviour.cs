@@ -3,11 +3,47 @@ using System;
 using System.Linq;
 
 using UnityEngine;
+using Assets.Scripts.Base;
 
 namespace Assets.Scripts.Scenes.City
 {
     public class CityBehaviour : MonoBehaviour
     {
+        public GameObject ShopOverlay;
+
+        public void ShowShop()
+        {
+            Time.timeScale = 0;
+
+            Debug.Log("Play Sound: ");
+            Base.Core.Game.BackgroundAudioManager.Stop();
+            Base.Core.Game.BackgroundAudioManager.Clips = Base.Core.Game.ShopClipList;
+            Base.Core.Game.BackgroundAudioManager.Resume();
+            Base.Core.Game.AmbienceAudioManager.Stop();
+
+            ShopOverlay.SetActive(true);
+        }
+
+        public void CloseShop()
+        {
+            Base.Core.Game.BackgroundAudioManager.Stop();
+            Base.Core.Game.BackgroundAudioManager.Clips = Base.Core.Game.AudioClipListGame2;
+            Base.Core.Game.BackgroundAudioManager.Resume();
+            if(Base.Core.Game.State.Rebels.Count > 0)
+            {
+                Base.Core.Game.AmbienceAudioManager.Resume();
+            }
+
+            ShopOverlay.SetActive(false);
+            Time.timeScale = 1;
+        }
+
+        private void Start()
+        {
+            var policeSlot = ShopOverlay.transform.Find("ContentArea/PoliceSecurityForceSlot").GetComponent<SecurityForceSlotBehaviour>();
+
+        }
+
         void Update()
         {
             if (Assets.Scripts.Base.Core.Game.State != default)

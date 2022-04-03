@@ -131,6 +131,17 @@ public class MainMenuBehaviour : MonoBehaviour
 
         Core.Game.BackgroundAudioManager.Clips = Core.Game.AudioClipListMenu;
 
+        Core.Game.AmbientClipList = new System.Collections.Generic.List<AudioClip>()
+        {
+            GameFrame.Base.Resources.Manager.Audio.Get("Protest_long")
+        };
+        Core.Game.AmbienceAudioManager.Clips = Core.Game.AmbientClipList;
+
+        Core.Game.ShopClipList = new System.Collections.Generic.List<AudioClip>()
+        {
+            GameFrame.Base.Resources.Manager.Audio.Get("Shop_Music")
+        };
+
         //if (!Core.Game.AmbienceAudioManager.IsPlaying)
         //{
         //    Core.Game.AmbienceAudioManager.Resume();

@@ -2,25 +2,52 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Scripts.Base;
+
 
 public class PalaceBehaviour : CoreMapObjectBehaviour
 {
-    public void InitPalace(CoreMapObject mapObject = default)
+
+    public CoreMapBase CoreMapBase { get; set; }
+
+    public float Healing { get; set; }
+
+    private GameFrame.Core.Math.Vector2 location;
+
+    public void InitPalace(CoreMapBase mapBaseObject = default)
     {
-        if (mapObject == default)
+        if (mapBaseObject == default)
         {
             float locationX = (1895f / 3840);
             float locationY = 1f - (1043f / 2160);
-            GameFrame.Core.Math.Vector2 location = new GameFrame.Core.Math.Vector2(locationX, locationY);
+            location = new GameFrame.Core.Math.Vector2(locationX, locationY);
 
-            mapObject = new CoreMapObject()
+            mapBaseObject = new CoreMapBase()
             {
                 Name = "Palace",
                 ActualLocation = location,
-                ImageName = "Palace"
+                ImageName = "Palace",
+                Healing = GameHandler.GameFieldSettings.PalaceHealing
             };
             
         }
-        Init(mapObject);
+        CoreMapBase = mapBaseObject;
+        Init(mapBaseObject);
+    }
+
+    public void Update()
+    {
+        updateRebelDistance();       
+    }
+    private void updateRebelDistance()
+    {
+        float min_distance = 1000.0f;
+        for(int i = 0; i < GameHandler.Rebels.Count; i++)
+        {
+            RebelBehaviour rebel = GameHandler.Rebels[i];
+            float distance = Vector2.Distance(rebel.MapObject.Location, new Vector2(location.X, location.Y));
+            min_distance = Math.Min(distance, min_distance);
+        }
+        Core.Game.AmbienceAudioManager.Volume = 1.0f - 2*min_distance;
     }
 }
