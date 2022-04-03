@@ -181,6 +181,7 @@ public class MapObjectSpawner : MonoBehaviour
 
         if (rebel == null)
         {
+            Core.Game.EffectsAudioManager.Play("Whistle");
             //float speed = 0;
             RebelDefault rebelDefault = GameHandler.GameFieldSettings.RebelDefaults.GetRandomEntry();
             float speed = UnityEngine.Random.Range(rebelDefault.MinSpeed, rebelDefault.MaxSpeed);
@@ -200,6 +201,7 @@ public class MapObjectSpawner : MonoBehaviour
             };
 
             Core.Game.State.Rebels.Add(rebel);
+            Core.Game.AmbienceAudioManager.Resume();
         }
 
 

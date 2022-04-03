@@ -30,6 +30,7 @@ public class RebelBehaviour : CoreUnitBehaviour
 
     private void CallGameOver(float distance)
     {
+        Core.Game.AmbienceAudioManager.Stop();
         Assets.Scripts.Base.Core.Game.ChangeScene(SceneNames.GameOver);
         Debug.Log("You have Lost. Looser!! " + distance);
     }
@@ -50,6 +51,11 @@ public class RebelBehaviour : CoreUnitBehaviour
     {
         GameHandler.RemoveRebel(this);
         GameObject.Destroy(gameObject);
+        Core.Game.EffectsAudioManager.Play("Aww");
+        if (Core.Game.State.Rebels.Count <= 0)
+        {
+            Core.Game.AmbienceAudioManager.Stop();
+        }
     }
 }
 

@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Scripts.Base;
+
 
 public class PalaceBehaviour : CoreMapObjectBehaviour
 {
@@ -10,13 +12,15 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
 
     public float Healing { get; set; }
 
+    private GameFrame.Core.Math.Vector2 location;
+
     public void InitPalace(CoreMapBase mapBaseObject = default)
     {
         if (mapBaseObject == default)
         {
             float locationX = (1895f / 3840);
             float locationY = 1f - (1043f / 2160);
-            GameFrame.Core.Math.Vector2 location = new GameFrame.Core.Math.Vector2(locationX, locationY);
+            location = new GameFrame.Core.Math.Vector2(locationX, locationY);
 
             mapBaseObject = new CoreMapBase()
             {
@@ -29,5 +33,21 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
         }
         CoreMapBase = mapBaseObject;
         Init(mapBaseObject);
+    }
+
+    public void Update()
+    {
+        updateRebelDistance();       
+    }
+    private void updateRebelDistance()
+    {
+        float min_distance = 1000.0f;
+        for(int i = 0; i < GameHandler.Rebels.Count; i++)
+        {
+            RebelBehaviour rebel = GameHandler.Rebels[i];
+            float distance = Vector2.Distance(rebel.MapObject.Location, new Vector2(location.X, location.Y));
+            min_distance = Math.Min(distance, min_distance);
+        }
+        Core.Game.AmbienceAudioManager.Volume = 1.0f - 2*min_distance;
     }
 }
