@@ -12,11 +12,12 @@ Todo:
  - Balancing
    
   UI:
- - Directional Facing of Units
- - Revamp UI for Save / Load (Button / Box / Scene)
+  - Revamp UI for Save / Load (Button / Box / Scene)
  
  Audio:
+ - RebelSound persists in PauseMenu & After Quiting
  - Effects
+ - Sound Volume
 
 
 Ideas:
@@ -32,7 +33,7 @@ Nice to have:
  
 WIP:
 ----------------------------------
- - Multiple troops (Marker for selected)
+ - Directional Facing of Units
 
 Done:
 ----------------------------------
@@ -44,5 +45,4 @@ Done:
  - Screen Rotation
  - Music
  - Troop buying
- - RebelSound persists in PauseMenu & After Quiting
- - Sound Volume
+ - Multiple troops (Marker for selected)
