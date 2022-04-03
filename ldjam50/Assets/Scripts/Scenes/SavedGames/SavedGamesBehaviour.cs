@@ -34,7 +34,6 @@ namespace Assets.Scripts.Scenes.SavedGames
         {
             if (slot.GameState != default)
             {
-                Base.Core.Game.PlayButtonSound();
                 Assets.Scripts.Base.Core.Game.Start(slot.GameState);
             }
         }

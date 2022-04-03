@@ -1,38 +1,78 @@
-{
-    "Name": "Default",
-    "FirstTick": 3,
-    "TickInterval": 3,
-    "TickIntervalFactor": 0.97,
-    "PalaceHealing" : 50,
-    "TroopDefaults": [
-        {
-            "Names": [
-                "1st Police Corps",
-                "2st Police Corps"
-            ],
-            "MaxSpeed": 0.2,
-            "Health": 150,
-            "MaxHealth": 200,
-            "Strength": 30,
-            "Repulsion": 0.001,
-            "Range": 0.085,
-            "ImageName": "Troops"
-        }
-    ],
-    "RebelDefaults": [
-        {
-            "Names": [
-                "Depper Doders",
-                "Hadwi"
-            ],
-            "MinSpeed": 0.025,
-            "MaxSpeed": 0.05,
-            "Health": 100,
-            "MaxHealth": 100,
-            "Strength": 20,
-            "Repulsion": 0.0005,
-            "Range": 0.08,
-            "ImageName": "Riots"
-        }
-    ]
-}
+[
+    {
+        "Name": "Default",
+        "FirstTick": 3,
+        "TickInterval": 3,
+        "TickIntervalFactor": 0.97,
+        "PalaceHealing": 50,
+        "TroopDefaults": [
+            {
+                "Names": [
+                    "1st Police Corps",
+                    "2st Police Corps"
+                ],
+                "MaxSpeed": 0.2,
+                "Health": 150,
+                "MaxHealth": 200,
+                "Strength": 30,
+                "Repulsion": 0.001,
+                "Range": 0.085,
+                "ImageName": "Troops"
+            }
+        ],
+        "RebelDefaults": [
+            {
+                "Names": [
+                    "Depper Doders",
+                    "Hadwi"
+                ],
+                "MinSpeed": 0.025,
+                "MaxSpeed": 0.05,
+                "Health": 100,
+                "MaxHealth": 100,
+                "Strength": 20,
+                "Repulsion": 0.0005,
+                "Range": 0.08,
+                "ImageName": "Riots"
+            }
+        ]
+    },
+    {
+        "Name": "Push",
+        "FirstTick": 3,
+        "TickInterval": 10,
+        "TickIntervalFactor": 0.97,
+        "PalaceHealing": 50,
+        "TroopDefaults": [
+            {
+                "Names": [
+                    "1st Police Corps",
+                    "2st Police Corps"
+                ],
+                "MaxSpeed": 0.2,
+                "Health": 150,
+                "MaxHealth": 200,
+                "Strength": 0,
+                "Repulsion": 0.001,
+                "Range": 0.085,
+                "ImageName": "Troops"
+            }
+        ],
+        "RebelDefaults": [
+            {
+                "Names": [
+                    "Depper Doders",
+                    "Hadwi"
+                ],
+                "MinSpeed": 0.025,
+                "MaxSpeed": 0.05,
+                "Health": 100,
+                "MaxHealth": 100,
+                "Strength": 0,
+                "Repulsion": 0.0005,
+                "Range": 0.08,
+                "ImageName": "Riots"
+            }
+        ]
+    }
+]
