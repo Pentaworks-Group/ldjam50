@@ -25,7 +25,6 @@ public class MainMenuBehaviour : MonoBehaviour
     public void StartGame()
     {
         Core.Game.Start();
-        LoadGameFieldSettings();
     }
 
     public void ShowSavedGames()
@@ -70,6 +69,12 @@ public class MainMenuBehaviour : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
+    {
+        StartAudioManagers();
+        LoadGameFieldSettings();
+    }
+
+    private void StartAudioManagers()
     {
         if (Core.Game.EffectsAudioManager == default)
         {

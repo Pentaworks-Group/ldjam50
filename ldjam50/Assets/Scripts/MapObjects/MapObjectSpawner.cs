@@ -1,8 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using Assets.Scripts.Base;
-
+using GameFrame.Core.Extensions;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -112,16 +113,17 @@ public class MapObjectSpawner : MonoBehaviour
 
         if (policeTroop == default)
         {
+            TroopDefault troopDefault = GameHandler.GameFieldSettings.TroopDefaults.GetRandomEntry();
             policeTroop = new PoliceTroop()
             {
-                Name = "Police Troop",
+                Name = troopDefault.Names.GetRandomEntry(),
                 Speed = 0,
-                MaxSpeed = 0.4f,
-                Strength = 20,
-                Health = 100,
-                MaxHealth = 200,
+                MaxSpeed = troopDefault.MaxSpeed,
+                Strength = troopDefault.Strength,
+                Health = troopDefault.Health,
+                MaxHealth = troopDefault.MaxHealth,
                 Location = GameHandler.Palace.MapObject.Location,
-                ImageName = "Troops_P",
+                ImageName = troopDefault.ImageName,
                 Base = GameHandler.Palace.MapObject
             };
 
@@ -145,7 +147,8 @@ public class MapObjectSpawner : MonoBehaviour
     private void SpawnRebel()
     {
         //float speed = 0;
-        float speed = UnityEngine.Random.Range(0.05f, 0.1f);
+        RebelDefault rebelDefault = GameHandler.GameFieldSettings.RebelDefaults.GetRandomEntry();
+        float speed = UnityEngine.Random.Range(rebelDefault.Speed, 0.1f);
         //Debug.Log("Speed: " + speed);
         Rebel rebel = new Rebel()
         {

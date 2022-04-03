@@ -1,3 +1,30 @@
 {
-  "Name":"Blob"
+    "Name": "Default",
+    "TroopDefaults": [
+        {
+            "Names": [
+                "1st Police Corps",
+                "2st Police Corps"
+            ],
+            "MaxSpeed": 0.4,
+            "Health": 100,
+            "MaxHealth": 200,
+            "Strength": 20,
+            "ImageName": "Troops_P"
+        }
+    ],
+    "RebelDefaults": [
+        {
+            "Names": [
+                "Depper Doders",
+                "Hadwi"
+            ],
+            "Speed": 0.05,
+            "MaxSpeed": 0.1,
+            "Health": 25,
+            "MaxHealth": 25,
+            "Strength": 10,
+            "ImageName": "Protest"
+        }
+    ]
 }
