@@ -18,6 +18,8 @@ namespace Assets.Scripts.Core
         public System.Collections.Generic.List<AudioClip> AudioClipListTransition { get; set; }
         public System.Collections.Generic.List<AudioClip> AmbientClipList { get; set; }
 
+        public System.Collections.Generic.List<AudioClip> ShopClipList { get; set;}
+
         protected override GameState InitializeGameState()
         {
             return new GameState()
