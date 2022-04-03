@@ -8,6 +8,27 @@ namespace Assets.Scripts.Scenes.City
 {
     public class CityBehaviour : MonoBehaviour
     {
+        public GameObject ShopOverlay;
+
+        public void ShowShop()
+        {
+            Time.timeScale = 0;
+            ShopOverlay.SetActive(true);
+        }
+
+        public void CloseShop()
+        {
+            ShopOverlay.SetActive(false);
+            Time.timeScale = 1;
+        }
+
+        private void Start()
+        {
+            var policeSlot = ShopOverlay.Find("ContentArea/PoliceSecurityForceSlot").GetComponent<SecurityForceSlotBehaviour>();
+
+            policeSlot.PoliceTroop = 
+        }
+
         void Update()
         {
             if (Assets.Scripts.Base.Core.Game.State != default)
