@@ -24,8 +24,8 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     protected static float sendSoundTick = 0;
 
-    private static Color selectedColor = new Color(0,0,0,125);
-    private static Color defaultColor = new Color(0,0,0,125);
+    private static Color selectedColor = new Color(1f, 0.85f, 0f, 1f);
+    private static Color defaultColor = Color.white;
 
     private Image image;
 
@@ -94,8 +94,6 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
     private void Start()
     {
         this.image = GetComponent<Image>();
-
-        defaultColor = this.image.color;
     }
 
     private new void Update()
@@ -107,16 +105,24 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
         if (this.PoliceTroop.IsSelected)
         {
-            this.image.color = selectedColor;
+            CheckImageColor(selectedColor);
         }
-        else if (this.image.color != null)
+        else
         {
-            this.image.color = defaultColor;
+            CheckImageColor(defaultColor);
         }
 
         CheckForAdjesentRebels();
 
         base.Update();
+    }
+
+    private void CheckImageColor(Color colorToCheck)
+    {
+        if (this.image.color != colorToCheck)
+        {
+            this.image.color = colorToCheck;
+        }
     }
 
     private void CheckForAdjesentRebels()
