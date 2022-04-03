@@ -12,6 +12,8 @@ namespace Assets.Scripts.Scenes.City
         private GameObject shopOverlay;
         private SecurityForceSlotBehaviour policeSlot;
 
+
+
         public void ShowShop()
         {
             Time.timeScale = 0;
@@ -50,13 +52,17 @@ namespace Assets.Scripts.Scenes.City
         private void Start()
         {
             this.mapObjectSpawner = this.transform.Find("Rotatotor/MapObjectSpawner").gameObject.GetComponent<MapObjectSpawner>();
+
+            if (GameHandler.GameFieldSettings.DisableShop)
+            {
+                GameObject shopButton = this.transform.Find("Rotatotor/HUD/ShowShopButton").gameObject;
+                shopButton.SetActive(false);
+            }
             this.shopOverlay = this.transform.Find("Rotatotor/HUD/ShopOverlay").gameObject;
             this.policeSlot = shopOverlay.transform.Find("ContentArea/PoliceSecurityForceSlot").GetComponent<SecurityForceSlotBehaviour>();
 
-            if (GameHandler.GameFieldSettings != default)
-            {
-                this.policeSlot.SecurityForceDefault = GameHandler.GameFieldSettings.TroopDefaults.FirstOrDefault(d => d.Type == "Police");
-            }
+            this.policeSlot.SecurityForceDefault = GameHandler.GameFieldSettings.TroopDefaults.FirstOrDefault(d => d.Type == "Police");
+            
         }
 
         void Update()

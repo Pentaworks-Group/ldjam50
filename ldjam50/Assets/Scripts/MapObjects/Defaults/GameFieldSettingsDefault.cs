@@ -13,7 +13,7 @@ public class GameFieldSettings
     public float TickIntervalFactor { get; set; }
     public float PalaceHealing { get; set; }
 
-
+    public bool DisableShop { get; set; }
 
     public List<RebelDefault> RebelDefaults { get; set; }
     public List<TroopDefault> TroopDefaults { get; set; }
