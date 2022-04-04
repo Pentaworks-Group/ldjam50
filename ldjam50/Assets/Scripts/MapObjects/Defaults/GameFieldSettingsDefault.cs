@@ -48,6 +48,7 @@ public class GameFieldSettings
         Range = 0.04f,
         Repulsion = 1.0f,
         ObjectSize = 0.02f,
+        SafeZoneRadius = 0.06f,
         Pos_x = 0.721f,
         Pos_y = 0.9175f
     };
