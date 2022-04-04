@@ -109,7 +109,7 @@ public class MapObjectSpawner : MonoBehaviour
             Core.Game.State.NextRebelSpawn = nextSpawnTick;
             spawnInterval = GameHandler.GameFieldSettings.TickIntervalFactor * GameHandler.GameFieldSettings.TickInterval / Mathf.Log(currentTime, GameHandler.GameFieldSettings.TickIntervalLogBase);
             nextSpawnTick = currentTime + spawnInterval;
-            Debug.Log("Next Spawn: " + nextSpawnTick + "  interval: " + spawnInterval);
+            //Debug.Log("Next Spawn: " + nextSpawnTick + "  interval: " + spawnInterval);
         }
 
         if (!GameHandler.GameFieldSettings.DisableShop)
@@ -303,7 +303,7 @@ public class MapObjectSpawner : MonoBehaviour
             location = new Vector2(locationX, locationY);
 
             float distance = GameHandler.GetDistance(location, GameHandler.Palace.MapObject.Location);
-            if (distance > GameHandler.GameFieldSettings.SafeZoneRadius)
+            if (distance > GameHandler.GameFieldSettings.PalaceDefault.SafeZoneRadius)
             {
                 valid = true;
             }
@@ -315,7 +315,6 @@ public class MapObjectSpawner : MonoBehaviour
 
     private void InitPalace()
     {
-        Palace.Healing = GameHandler.GameFieldSettings.PalaceHealing;
         GameHandler.Palace = Palace;
         GameHandler.Palace.InitPalace();
     }

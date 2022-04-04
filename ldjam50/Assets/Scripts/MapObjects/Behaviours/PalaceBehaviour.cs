@@ -17,20 +17,17 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
     {
         if (mapBaseObject == default)
         {
-            float locationX = (1895f / 3840);
-            float locationY = 1f - (1043f / 2160);
-            location = new GameFrame.Core.Math.Vector2(locationX, locationY);
+            location = new GameFrame.Core.Math.Vector2(GameHandler.GameFieldSettings.PalaceDefault.Pos_x, GameHandler.GameFieldSettings.PalaceDefault.Pos_y);
 
             mapBaseObject = new CoreMapBase()
             {
                 Name = "Palace",
                 ActualLocation = location,
                 ImageName = "Palace",
-                Healing = GameHandler.GameFieldSettings.PalaceHealing,
-                Health = 10,
-                MaxHealth = 10
+                Healing = GameHandler.GameFieldSettings.PalaceDefault.Healing,
+                Health = GameHandler.GameFieldSettings.PalaceDefault.Health,
+                MaxHealth = GameHandler.GameFieldSettings.PalaceDefault.MaxHealth
             };
-
         }
         CoreMapBase = mapBaseObject;
         Init(mapBaseObject);
