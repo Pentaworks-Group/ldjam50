@@ -23,7 +23,6 @@ Todo:
  - PauseMenuButton sprite
  
  Audio:
- - RebelSound persists in PauseMenu & After Quiting
  - Effects
  - Sound Volume
  
@@ -69,3 +68,4 @@ Done:
  - Make palace hitbox != circle (any distance calc)
  - Multiple Modes (Only Push, Fast, Clicker,...?)
   - Fix rotated image for units in "rotated" mode
+ - RebelSound persists in PauseMenu & After Quiting
