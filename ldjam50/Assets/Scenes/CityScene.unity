@@ -448,6 +448,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 6
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 371468903}
+          m_TargetAssemblyTypeName: MapObjectSpawner, Assembly-CSharp
+          m_MethodName: MoveSelectedTroop
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &371468901
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,6 +1474,38 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1130397468}
           m_TargetAssemblyTypeName: PoliceTroopBehaviour, Assembly-CSharp
+          m_MethodName: TroopClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 371468903}
+          m_TargetAssemblyTypeName: MapObjectSpawner, Assembly-CSharp
+          m_MethodName: MoveSelectedTroop
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1130397468}
+          m_TargetAssemblyTypeName: SecurityForceBehaviour, Assembly-CSharp
           m_MethodName: TroopClick
           m_Mode: 1
           m_Arguments:

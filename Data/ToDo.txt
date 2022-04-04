@@ -1,6 +1,10 @@
 Todo:
 ----------------------------------
+ Exceptions:
+ - Saving Circular Serialization
+
  Core:
+ - Save & Load GameMode
  - SpawnSounds for different types
  - display mode & exit selection on click 
  - setting for default mode
@@ -10,6 +14,9 @@ Todo:
  - Blockade/Palisade (#possible movments counter)
  - Base/Palace Health
  - Change interval calculation to baseIntervall * factor / time 
+ 
+ 
+ 
  
  GamePlay:
  - Balancing
@@ -49,6 +56,7 @@ Ideas:
  - Wave Spawn
  - Unit Movement Queue
  - Restrict Movement Range (eg. Palace Guards)
+ - Buy Health Packages For Palace
  
 Nice to have:
 ----------------------------------
