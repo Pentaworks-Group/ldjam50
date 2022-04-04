@@ -26,9 +26,9 @@
         "Repulsion": 0.001,
         "Range": 0.055,
         "Color": {
-          "Red": 0.251424,
-          "Green": 0.3966849,
-          "Blue": 0.7075472,
+          "Red": 1,
+          "Green": 0,
+          "Blue": 0,
           "Alpha": 0.95
         },
         "ImageName": "SGuard",
@@ -102,9 +102,9 @@
         "Repulsion": 0.001,
         "Range": 0.055,
         "Color": {
-          "Red": 0.251424,
-          "Green": 0.3966849,
-          "Blue": 0.7075472,
+          "Red": 0.5,
+          "Green": 0.5,
+          "Blue": 0.5,
           "Alpha": 0.95
         },
         "ImageName": "Tower",
@@ -200,15 +200,15 @@
   {
     "Name": "Push",
     "FirstTick": 3,
-    "TickInterval": 10,
+    "TickInterval": 5,
     "TickIntervalFactor": 0.97,
     "MoneyInterval": 1000,
     "MoneyFirstTick": 1000,
     "MoneyGainPerInterval": 0,
     "PalaceDefault":{
     "Healing": 50,
-    "Health": 100000,
-    "MaxHealth": 100000
+    "Health": 10,
+    "MaxHealth": 10
 	},
     "DisableShop": true,
     "TroopDefaults": [
@@ -225,8 +225,8 @@
           "Alpha": 0.95
         },
         "MaxSpeed": 0.6,
-        "Health": 200,
-        "MaxHealth": 200,
+        "Health": 100000000,
+        "MaxHealth": 100000000,
         "Strength": 0,
         "Repulsion": 0.01,
         "Range": 0.05,
@@ -258,13 +258,13 @@
           "Depper Doders",
           "Hadwi"
         ],
-        "MinSpeed": 0.01,
+        "MinSpeed": 0.001,
         "MaxSpeed": 0.01,
         "Health": 100,
         "MaxHealth": 100,
-        "Strength": 0,
+        "Strength": 1,
         "Repulsion": 0.0005,
-        "Range": 0.05,
+        "Range": 0.0002,
         "ImageName": "Riots",
         "KillSounds": [
           "Aaah",
@@ -347,7 +347,7 @@
         "MaxHealth": 100,
         "Strength": 0.0001,
         "Repulsion": 0.00005,
-        "Range": 0.05,
+        "Range": 0.002,
         "ImageName": "Riots",
         "KillSounds": [
           "Aaah",
@@ -477,9 +477,9 @@
         "Repulsion": 0.001,
         "Range": 0.05,
         "Color": {
-          "Red": 0.251424,
-          "Green": 0.3966849,
-          "Blue": 0.7075472,
+          "Red": 1,
+          "Green": 0,
+          "Blue": 0,
           "Alpha": 0.95
         },
         "ImageName": "SGuard",
