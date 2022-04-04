@@ -72,20 +72,22 @@ public class GameHandler
         }
     }
 
-    public static void Repel(CoreUnitBehaviour opponent1, CoreUnitBehaviour opponent2, float distance)
+    public static void Repel(CoreMapObjectBehaviour opponent1, CoreMapObjectBehaviour opponent2, float distance)
     {
         Vector2 direction = opponent1.MapObject.Location - opponent2.MapObject.Location;
         direction.Normalize();
-        if (distance < opponent2.CoreUnit.Range)        {
-            float repulsionStrength = (1 - distance / opponent2.CoreUnit.Range) * opponent2.CoreUnit.Repulsion;
+        if (distance < opponent2.MapObject.Range)        {
+            float repulsionStrength = (1 - distance / opponent2.MapObject.Range) * opponent2.MapObject.Repulsion;
             Vector2 repulsion = new Vector2(direction.x, direction.y) * repulsionStrength;
-            opponent1.MoveInDirection(repulsion);
+            if (opponent1.IsMoveable())
+                opponent1.MoveInDirection(repulsion);
         }
-        if (distance < opponent1.CoreUnit.Range)
+        if (distance < opponent1.MapObject.Range)
         {
-            float repulsionStrength = (1 - distance / opponent1.CoreUnit.Range) * opponent1.CoreUnit.Repulsion;
+            float repulsionStrength = (1 - distance / opponent1.MapObject.Range) * opponent1.MapObject.Repulsion;
             Vector2 repulsion = direction * repulsionStrength * -1;
-            opponent2.MoveInDirection(repulsion);
+            if (opponent2.IsMoveable())
+                opponent2.MoveInDirection(repulsion);
         }
     }
 
