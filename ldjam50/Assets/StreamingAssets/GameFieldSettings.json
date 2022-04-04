@@ -21,15 +21,16 @@
                 "Range": 0.055,
                 "ImageName": "Troops",
                 "MarchSounds": [
-                    "Fanfare_1",
-                    "March_1",
-                    "March_2",
-                    "March_3",
-                    "March_4",
-                    "March_5",
-                    "Yes_Sir",
-                    "Yes_Sir_2"
-                ]
+                  "Fanfare_1",
+                  "March_1",
+                  "March_2",
+                  "March_3",
+                  "March_4",
+                  "March_5",
+                  "Yes_Sir",
+                  "Yes_Sir_2"
+                ],
+                "UnitCost":  100
             }
         ],
         "RebelDefaults": [
@@ -71,30 +72,31 @@
         "PalaceHealing": 50,
         "DisableShop": true,
         "TroopDefaults": [
-            {
-                "Type": "Police",
-                "Names": [
-                    "1st Police Corps",
-                    "2st Police Corps"
-                ],
-                "MaxSpeed": 0.6,
-                "Health": 200,
-                "MaxHealth": 200,
-                "Strength": 0,
-                "Repulsion": 0.01,
-                "Range": 0.05,
-                "ImageName": "Troops",
-                "MarchSounds": [
-                    "Fanfare_1",
-                    "March_1",
-                    "March_2",
-                    "March_3",
-                    "March_4",
-                    "March_5",
-                    "Yes_Sir",
-                    "Yes_Sir_2"
-                ]
-            }
+          {
+              "Type": "Police",
+              "Names": [
+                "1st Police Corps",
+                "2st Police Corps"
+              ],
+              "MaxSpeed": 0.6,
+              "Health": 200,
+              "MaxHealth": 200,
+              "Strength": 0,
+              "Repulsion": 0.01,
+              "Range": 0.05,
+              "ImageName": "Troops",
+              "MarchSounds": [
+                "Fanfare_1",
+                "March_1",
+                "March_2",
+                "March_3",
+                "March_4",
+                "March_5",
+                "Yes_Sir",
+                "Yes_Sir_2"
+              ],
+              "UnitCost": 100
+          }
         ],
         "RebelDefaults": [
             {
@@ -135,29 +137,30 @@
         "PalaceHealing": 50,
         "DisableShop": true,
         "TroopDefaults": [
-            {
-                "Names": [
-                    "1st Police Corps",
-                    "2st Police Corps"
-                ],
-                "MaxSpeed": 0.4,
-                "Health": 200,
-                "MaxHealth": 200,
-                "Strength": 0,
-                "Repulsion": -0.002,
-                "Range": 0.05,
-                "ImageName": "Troops",
-                "MarchSounds": [
-                    "Fanfare_1",
-                    "March_1",
-                    "March_2",
-                    "March_3",
-                    "March_4",
-                    "March_5",
-                    "Yes_Sir",
-                    "Yes_Sir_2"
-                ]
-            }
+          {
+              "Names": [
+                "1st Police Corps",
+                "2st Police Corps"
+              ],
+              "MaxSpeed": 0.4,
+              "Health": 200,
+              "MaxHealth": 200,
+              "Strength": 0,
+              "Repulsion": -0.002,
+              "Range": 0.05,
+              "ImageName": "Troops",
+              "MarchSounds": [
+                "Fanfare_1",
+                "March_1",
+                "March_2",
+                "March_3",
+                "March_4",
+                "March_5",
+                "Yes_Sir",
+                "Yes_Sir_2"
+              ],
+              "UnitCost": 100
+          }
         ],
         "RebelDefaults": [
             {
@@ -197,29 +200,30 @@
         "PalaceHealing": 50,
         "DisableShop": true,
         "TroopDefaults": [
-            {
-                "Names": [
-                    "1st Police Corps",
-                    "2st Police Corps"
-                ],
-                "MaxSpeed": 0.6,
-                "Health": 200,
-                "MaxHealth": 200,
-                "Strength": 100,
-                "Repulsion": -0.002,
-                "Range": 0.05,
-                "ImageName": "Troops",
-                "MarchSounds": [
-                    "Fanfare_1",
-                    "March_1",
-                    "March_2",
-                    "March_3",
-                    "March_4",
-                    "March_5",
-                    "Yes_Sir",
-                    "Yes_Sir_2"
-                ]
-            }
+          {
+            "Names": [
+              "1st Police Corps",
+              "2st Police Corps"
+            ],
+            "MaxSpeed": 0.6,
+            "Health": 200,
+            "MaxHealth": 200,
+            "Strength": 100,
+            "Repulsion": -0.002,
+            "Range": 0.05,
+            "ImageName": "Troops",
+            "MarchSounds": [
+              "Fanfare_1",
+              "March_1",
+              "March_2",
+              "March_3",
+              "March_4",
+              "March_5",
+              "Yes_Sir",
+              "Yes_Sir_2"
+            ],
+            "UnitCost": 100
+          }
         ],
         "RebelDefaults": [
             {
