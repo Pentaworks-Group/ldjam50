@@ -1,13 +1,14 @@
 using Assets.Scripts.Core;
 
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class SaveGameSlotBehaviour : MonoBehaviour
 {
     public Text SavedOnText;
     public Text ElapsedOnText;
+    public Text CreditsText;
+    public Text GameModeText;
     public GameObject EmptyContainer;
     public GameObject UsedContainer;
 
@@ -34,6 +35,9 @@ public class SaveGameSlotBehaviour : MonoBehaviour
         if (gameState != null)
         {
             this.SavedOnText.text = string.Format("{0:G}", this.GameState.SavedOn);
+            this.GameModeText.text = this.GameState.Mode.Name;
+
+            this.CreditsText.text = string.Format("{0:F2}", this.GameState.AvailableCredits);
             this.ElapsedOnText.text = string.Format("{0:F1}s", this.GameState.ElapsedTime);
 
             EmptyContainer.SetActive(false);
@@ -42,6 +46,9 @@ public class SaveGameSlotBehaviour : MonoBehaviour
         else
         {
             this.SavedOnText.text = "";
+            this.GameModeText.text = "";
+
+            this.CreditsText.text = "";
             this.ElapsedOnText.text = "";
 
             EmptyContainer.SetActive(true);
