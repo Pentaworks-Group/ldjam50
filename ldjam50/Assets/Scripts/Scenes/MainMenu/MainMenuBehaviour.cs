@@ -77,7 +77,11 @@ public class MainMenuBehaviour : MonoBehaviour
         this.OptionsMenuContainer.SetActive(options);
 
         this.QuitButton.SetActive(mainMenu);
-        this.BackButton.SetActive(!mainMenu);
+
+        if (Application.platform != RuntimePlatform.WebGLPlayer)
+        {
+            this.QuitButton.SetActive(!mainMenu);
+        }
     }
 
     // Start is called before the first frame update
@@ -85,6 +89,15 @@ public class MainMenuBehaviour : MonoBehaviour
     {
         StartAudioManagers();
         LoadGameFieldSettings();
+        HideIfWGL();
+    }
+
+    private void HideIfWGL()
+    {
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            QuitButton.SetActive(false);
+        }
     }
 
     private void StartAudioManagers()
@@ -159,7 +172,6 @@ public class MainMenuBehaviour : MonoBehaviour
         //}
     }
 
-
     public void LoadGameFieldSettings()
     {
         String filePath = Application.streamingAssetsPath + "/GameFieldSettings.json";
@@ -179,14 +191,12 @@ public class MainMenuBehaviour : MonoBehaviour
         return gameFieldSettings;
     }
 
-
-    public void ReloadSettings()
+    public void ReloadSettingsClick()
     {
+        Core.Game.PlayButtonSound();
         String filePath = Application.streamingAssetsPath + "/GameFieldSettings.json";
-
         StartCoroutine(GameFrame.Core.Json.Handler.DeserializeObjectFromStreamingAssets<List<GameFieldSettings>>(filePath, SetGameFieldSettingsForce));
     }
-
 
     private List<GameFieldSettings> SetGameFieldSettingsForce(List<GameFieldSettings> gameFieldSettings)
     {

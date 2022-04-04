@@ -1,7 +1,7 @@
-using System;
 using System.Collections.Generic;
 
 using Assets.Scripts.Base;
+
 using UnityEngine;
 
 public class GameHandler
@@ -78,16 +78,20 @@ public class GameHandler
     {
         Vector2 direction = opponent1.MapObject.Location - opponent2.MapObject.Location;
         direction.Normalize();
-        if (distance < opponent2.MapObject.Range)        {
+
+        if (distance < opponent2.MapObject.Range)
+        {
             float repulsionStrength = (1 - distance / opponent2.MapObject.Range) * opponent2.MapObject.Repulsion;
             Vector2 repulsion = new Vector2(direction.x, direction.y) * repulsionStrength;
             if (opponent1.IsMoveable())
                 opponent1.MoveInDirection(repulsion);
         }
+
         if (distance < opponent1.MapObject.Range)
         {
             float repulsionStrength = (1 - distance / opponent1.MapObject.Range) * opponent1.MapObject.Repulsion;
             Vector2 repulsion = direction * repulsionStrength * -1;
+
             if (opponent2.IsMoveable())
                 opponent2.MoveInDirection(repulsion);
         }

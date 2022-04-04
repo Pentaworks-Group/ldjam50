@@ -2,6 +2,8 @@ using System;
 
 using Assets.Scripts.Base;
 
+using GameFrame.Core.Extensions;
+using UnityEngine;
 
 public class PalaceBehaviour : CoreMapObjectBehaviour
 {
@@ -32,13 +34,13 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
 
     private CoreMapBase GetCoreMapBaseFromDefault(PalaceDefault baseDefault)
     {
-        location = new GameFrame.Core.Math.Vector2(baseDefault.Pos_x, baseDefault.Pos_y);
+        location = baseDefault.Position;
 
         return new CoreMapBase()
         {
             Name = baseDefault.Name,
             ActualLocation = location,
-            ImageName = baseDefault.ImageName,
+            ImageName = baseDefault.ImageNames.GetRandomEntry(),
             Healing = baseDefault.Healing,
             Health = baseDefault.Health,
             MaxHealth = baseDefault.MaxHealth,
@@ -84,6 +86,21 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
 
     protected override void KillObject()
     {
+        CoreMapBase.Destroyed = true;
+        this.transform.Find("Active").gameObject.SetActive(false);
+        this.transform.Find("Destroyed").gameObject.SetActive(true);
+
+        for (int i = GameHandler.Rebels.Count - 1; i >= 0; i--)
+        {
+            RebelBehaviour rebel = GameHandler.Rebels[i];
+
+            if (rebel.Rebel.Target.Equals(MapObject.Location))
+            {
+                rebel.Rebel.Target = MapObjectSpawner.GetRandomTarget();
+            }
+        }
+
+
         if (CoreMapBase.GameOverOnDestruction)
         {
             CallGameOver();

@@ -1,40 +1,35 @@
 Todo:
 ----------------------------------
  Exceptions:
- 
+ - If base is under attack and game is paused, base is destroyed => gameOver. Next game time does not start
 
  Core:
  - UnitTypes (Rebel & Troops)
- - SpawnSounds for different types
- - setting for default mode 
- - Multiple Bases (MilitaryBase)
- - Blockade/Palisade (#possible movments counter)
- - Base/Palace Health
  - Change interval calculation to baseIntervall * factor / time 
- - Deactivate Destroyed MilitaryBase (no interaction, no healthbar, destroyed image)
- - Button Sounds in GameModeMenu
- 
- 
+  
  GamePlay:
  - Balancing
    
  UI:
  - Revamp UI for Save / Load (Button / Box / Scene)
- - Revamp MainMenu (eg. protest shield with game mode for starting new game)
- - Display Unit Strength (hover over? Strenght Symbol?)
- - CityScene HUD overhaul (eg. Buttons same size, image background)
- - display mode & exit selection on click 
+ - Background for Menues: GameMode, SaveLoad ...
  
  Audio:
- - Effects
  - Sound Volume
- - Sound onButtonclick in Main Menu for ReloadSettings, Modes (and all Modes)
+ - SpawnSounds for different types
+ - Kill Sounds for Troops
  
  Itch.io:
  - Add description
  - Add ldjam link
  - Revamp style
  - Change name
+ 
+ LDJam.com:
+ - Add description 
+ - Revamp style
+ - Change name
+ - Add itch.io link
  
 Refactoring:
 ----------------------------------
@@ -45,7 +40,18 @@ Refactoring:
  - Remove hardcoded references to mapsize (mostly unit scaling)
  - UnitScaling with targetSize (relative width, keep ratio?)
  - Change Pos_x & Pos_y in defaults to GameFrame.Core.Math.Vector2
+ 
+WIP:
+----------------------------------
 
+ 
+Nice to have:
+----------------------------------
+ - Text editor to supply us for JSON data
+ - Variable Rebel Strength 
+ - Bases in json (linked via unique ID to troops)
+ - Display Unit Strength (hover over? Strenght Symbol?)
+ 
 Ideas:
 ----------------------------------
  - Power Ups
@@ -56,16 +62,6 @@ Ideas:
  - Unit Movement Queue
  - Restrict Movement Range (eg. Palace Guards)
  - Buy Health Packages For Palace
- 
-Nice to have:
-----------------------------------
- - Text editor to supply us for JSON data
- - Variable Rebel Strength 
- - Bases in json (linked via unique ID to troops)
- 
-WIP:
-----------------------------------
- - use different sprites for rebels (change RebelDefault.ImageName to list) (Same for troops)
  
  
 Done:
@@ -97,3 +93,16 @@ Done:
  - Saving Circular Serialization
  - Handling of GetRandomEntry on emtpy list?
  - Save & Load GameMode
+ - use different sprites for rebels (change RebelDefault.ImageName to list) (Same for troops)
+ - Base/Palace Health
+ - Multiple Bases (MilitaryBase)
+ - Button Sounds in GameModeMenu
+ - Revamp MainMenu (eg. protest shield with game mode for starting new game)
+ - display mode & exit selection on click 
+ - setting for default mode 
+ - Sound onButtonclick in Main Menu for ReloadSettings, Modes (and all Modes)
+ - Blockade/Palisade (#possible movments counter)
+ - Deactivate Destroyed MilitaryBase (no interaction, no healthbar, destroyed image)
+ - Only Allow Military Units if base alive
+ - CityScene HUD overhaul (eg. Buttons same size, image background)
+ - Save Palace & Military Base

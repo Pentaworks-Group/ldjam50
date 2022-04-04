@@ -28,6 +28,21 @@ namespace Assets.Scripts.Scenes.City
             Base.Core.Game.AmbienceAudioManager.Stop();
 
             shopOverlay.SetActive(true);
+
+            if (!Base.Core.Game.State.Mode.DisableMilitaryBase && GameHandler.MilitaryBase.CoreMapBase.Destroyed)
+            {
+                foreach (Transform child in shopOverlay.transform.Find("ContentArea"))
+                {
+                    if (child.gameObject.name != "SecurityForceSlotTemplate")
+                    {
+                        SecurityForceSlotBehaviour behaviour = child.GetComponent<SecurityForceSlotBehaviour>();
+                        if (behaviour.SecurityForceDefault?.Type == "Army")
+                        {
+                            child.Find("NotAvailable").gameObject.SetActive(true);
+                        }
+                    }
+                }
+            }
         }
 
         public void CloseShop()
@@ -80,9 +95,14 @@ namespace Assets.Scripts.Scenes.City
                 }
                 else
                 {
-                    Base.Core.Game.EffectsAudioManager.Play("Daeng");
+                    Base.Core.Game.EffectsAudioManager.Play("Error");
                 }
             }
+        }
+
+        public void PlayError()
+        {
+            Base.Core.Game.EffectsAudioManager.Play("Error");
         }
 
         private void Start()
@@ -95,18 +115,18 @@ namespace Assets.Scripts.Scenes.City
             var gameState = Base.Core.Game.State;
 
             this.mapObjectSpawner = this.transform.Find("Rotatotor/MapObjectSpawner").gameObject.GetComponent<MapObjectSpawner>();
-            this.moneyDisplay = this.transform.Find("Rotatotor/HUD/MoneyDisplay").gameObject;
+            this.moneyDisplay = this.transform.Find("Rotatotor/HUD/Top/MoneyDisplay").gameObject;
 
             if (gameState.Mode.DisableShop)
             {
-                GameObject shopButton = this.transform.Find("Rotatotor/HUD/ShowShopButton").gameObject;
+                GameObject shopButton = this.transform.Find("Rotatotor/HUD/Top/ShowShopButton").gameObject;
                 shopButton.SetActive(false);
 
                 moneyDisplay.SetActive(false);
             }
             else
             {
-                this.moneyText = moneyDisplay.transform.Find("MoneyText").GetComponent<Text>();
+                this.moneyText = moneyDisplay.transform.Find("Fitter/MoneyText").GetComponent<Text>();
             }
 
             this.shopOverlay = this.transform.Find("Rotatotor/HUD/ShopOverlay").gameObject;
@@ -211,24 +231,41 @@ namespace Assets.Scripts.Scenes.City
         private void LoopSecurityForce(Boolean isForward)
         {
             var index = GameHandler.SecurityForces.IndexOf(GameHandler.SelectedTroop);
+            var startIndex = index;
 
             if (isForward)
             {
-                index++;
-
-                if (index > GameHandler.SecurityForces.Count - 1)
+                do
                 {
-                    index = 0;
+                    index++;
+                    if (index > GameHandler.SecurityForces.Count - 1)
+                    {
+                        index = 0;
+                    }
+                    if (index == startIndex)
+                    {
+                        break;
+                    }
                 }
+                while (!GameHandler.SecurityForces[index].IsMoveable());
+
             }
             else
             {
-                index--;
-
-                if (index < 0)
+                do
                 {
-                    index = GameHandler.SecurityForces.Count - 1;
+                    index--;
+
+                    if (index < 0)
+                    {
+                        index = GameHandler.SecurityForces.Count - 1;
+                    }
+                    if (index == startIndex)
+                    {
+                        break;
+                    }
                 }
+                while (!GameHandler.SecurityForces[index].IsMoveable());
             }
 
             if (index >= 0 && GameHandler.SecurityForces.Count > index)
@@ -253,14 +290,17 @@ namespace Assets.Scripts.Scenes.City
         {
             var securityForce = GameHandler.SelectedTroop;
 
-            securityForce.SecurityForce.AssignedKey = key;
+            if (securityForce.IsMoveable())
+            {
+                securityForce.SecurityForce.AssignedKey = key;
 
-            this.boundSecurityForces[key] = securityForce;
+                this.boundSecurityForces[key] = securityForce;
+            }
         }
 
         private void SelectBoundSecurityForce(Int32 keyNumber)
         {
-            if (boundSecurityForces.TryGetValue(keyNumber, out SecurityForceBehaviour securityForce))
+            if (boundSecurityForces.TryGetValue(keyNumber, out SecurityForceBehaviour securityForce) && securityForce.IsMoveable())
             {
                 GameHandler.SelectTroop(securityForce);
             }

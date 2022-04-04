@@ -289,6 +289,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0022145afc2f07488ca405a608b9da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PauseToggled:
+    m_PersistentCalls:
+      m_Calls: []
   Menu: {fileID: 7451514606345876462}
   GameView: {fileID: 0}
   MenuArea: {fileID: 6866482383246554470}

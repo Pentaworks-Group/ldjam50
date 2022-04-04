@@ -1,17 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.EventSystems;
 using Assets.Scripts.Base;
-using System;
-using GameFrame.Core.Extensions;
+
+using UnityEngine;
 
 public class RebelBehaviour : CoreUnitBehaviour
 {
     public void Init(Rebel rebel)
     {
         sizeScale = 0.2f;
-//        AddDistanceAction(rebel.Range, CallGameOver);
+        //        AddDistanceAction(rebel.Range, CallGameOver);
         base.Init(rebel);
     }
 
@@ -41,7 +37,6 @@ public class RebelBehaviour : CoreUnitBehaviour
     protected override void KillObject()
     {
         GameHandler.RemoveRebel(this);
-        GameObject.Destroy(gameObject);
 
         if (Rebel.KillSound != default)
         {
@@ -52,6 +47,12 @@ public class RebelBehaviour : CoreUnitBehaviour
         {
             Core.Game.AmbienceAudioManager.Stop();
         }
+
+        try
+        {
+            Destroy(gameObject);
+        }
+        catch { }
     }
 
     public override bool IsMoveable()
