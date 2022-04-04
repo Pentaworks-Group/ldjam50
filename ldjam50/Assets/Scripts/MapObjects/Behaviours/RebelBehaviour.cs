@@ -41,7 +41,6 @@ public class RebelBehaviour : CoreUnitBehaviour
     protected override void KillObject()
     {
         GameHandler.RemoveRebel(this);
-        GameObject.Destroy(gameObject);
 
         if (Rebel.KillSound != default)
         {
@@ -52,6 +51,8 @@ public class RebelBehaviour : CoreUnitBehaviour
         {
             Core.Game.AmbienceAudioManager.Stop();
         }
+
+        GameObject.Destroy(gameObject);
     }
 
     public override bool IsMoveable()

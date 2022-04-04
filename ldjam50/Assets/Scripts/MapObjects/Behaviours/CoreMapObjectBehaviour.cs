@@ -45,9 +45,13 @@ public abstract class CoreMapObjectBehaviour : MonoBehaviour
 
     protected void SetLocation(Vector2 location)
     {
-        RectTransform.anchorMin = new Vector2(location.x - halfImageSizeRelativeX, location.y - halfImageSizeRealtiveY);
-        RectTransform.anchorMax = new Vector2(location.x + halfImageSizeRelativeX, location.y + halfImageSizeRealtiveY);
-        MapObject.Location = location;
+        if (RectTransform != null)
+        {
+            RectTransform.anchorMin = new Vector2(location.x - halfImageSizeRelativeX, location.y - halfImageSizeRealtiveY);
+            RectTransform.anchorMax = new Vector2(location.x + halfImageSizeRelativeX, location.y + halfImageSizeRealtiveY);
+
+            MapObject.Location = location;
+        }
     }
 
     void Start()
