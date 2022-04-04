@@ -10,6 +10,7 @@ Todo:
  - Change interval calculation to baseIntervall * factor / time 
  - shortkey for shop
  - new shortkey for pause to not conflict with fullscreen
+ - Buttons for shortkey (Q)
   
  GamePlay:
  - Balancing
@@ -57,6 +58,8 @@ Nice to have:
  - Display Unit Strength (hover over? Strenght Symbol?)
  - Mark Unit not Available if not enought money
  - statistics which mode was played how often
+ - buttons for 0-9 keys (doubleClick for setting, singleClick for selecting)
+ 
  
 Ideas:
 ----------------------------------
