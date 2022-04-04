@@ -12,5 +12,6 @@ public class TroopDefault
     public float Repulsion { get; set; }
     public float Range { get; set; }
     public String ImageName { get; set; }
+    public Decimal UnitCost { get; set; }
     public List<String> MarchSounds { get; set; }
 }

@@ -1,258 +1,270 @@
 [
-    {
-        "Name": "Default",
-        "FirstTick": 3,
-        "TickInterval": 2.8,
-        "TickIntervalFactor": 0.95,
-        "PalaceHealing": 50,
-        "DisableShop": false,
-        "TroopDefaults": [
-            {
-                "Type": "Police",
-                "Names": [
-                    "1st Police Corps",
-                    "2st Police Corps"
-                ],
-                "MaxSpeed": 0.4,
-                "Health": 150,
-                "MaxHealth": 200,
-                "Strength": 30,
-                "Repulsion": 0.001,
-                "Range": 0.055,
-                "ImageName": "Troops",
-                "MarchSounds": [
-                  "Fanfare_1",
-                  "March_1",
-                  "March_2",
-                  "March_3",
-                  "March_4",
-                  "March_5",
-                  "Yes_Sir",
-                  "Yes_Sir_2"
-                ],
-                "UnitCost":  100
-            }
+  {
+    "Name": "Default",
+    "FirstTick": 3,
+    "TickInterval": 2.8,
+    "TickIntervalFactor": 0.95,
+    "MoneyInterval": 3,
+    "MoneyFirstTick": 5,
+    "MoneyGainPerInterval": 50,
+    "PalaceHealing": 50,
+    "DisableShop": false,
+    "TroopDefaults": [
+      {
+        "Type": "Police",
+        "Names": [
+          "1st Police Corps",
+          "2st Police Corps"
         ],
-        "RebelDefaults": [
-            {
-                "Type": "Noobs",
-                "Names": [
-                    "Depper Doders",
-                    "Hadwi"
-                ],
-                "MinSpeed": 0.025,
-                "MaxSpeed": 0.05,
-                "Health": 100,
-                "MaxHealth": 100,
-                "Strength": 20,
-                "Repulsion": 0.0005,
-                "Range": 0.05,
-                "ImageName": "Riots",
-                "KillSounds": [
-                    "Aaah",
-                    "Aww",
-                    "Daeng",
-                    "Nuts",
-                    "Oops"
-                ],
-                "SpawnSounds": [
-                    "Whistle",
-                    "Whistle_2",
-                    "Whistle_3",
-                    "Whistle_4"
-                ]
-            }
-        ]
-    },
-    {
-        "Name": "Push",
-        "FirstTick": 3,
-        "TickInterval": 10,
-        "TickIntervalFactor": 0.97,
-        "PalaceHealing": 50,
-        "DisableShop": true,
-        "TroopDefaults": [
-          {
-              "Type": "Police",
-              "Names": [
-                "1st Police Corps",
-                "2st Police Corps"
-              ],
-              "MaxSpeed": 0.6,
-              "Health": 200,
-              "MaxHealth": 200,
-              "Strength": 0,
-              "Repulsion": 0.01,
-              "Range": 0.05,
-              "ImageName": "Troops",
-              "MarchSounds": [
-                "Fanfare_1",
-                "March_1",
-                "March_2",
-                "March_3",
-                "March_4",
-                "March_5",
-                "Yes_Sir",
-                "Yes_Sir_2"
-              ],
-              "UnitCost": 100
-          }
+        "MaxSpeed": 0.4,
+        "Health": 150,
+        "MaxHealth": 200,
+        "Strength": 30,
+        "Repulsion": 0.001,
+        "Range": 0.055,
+        "ImageName": "Troops",
+        "MarchSounds": [
+          "Fanfare_1",
+          "March_1",
+          "March_2",
+          "March_3",
+          "March_4",
+          "March_5",
+          "Yes_Sir",
+          "Yes_Sir_2"
         ],
-        "RebelDefaults": [
-            {
-                "Type": "Noobs",
-                "Names": [
-                    "Depper Doders",
-                    "Hadwi"
-                ],
-                "MinSpeed": 0.025,
-                "MaxSpeed": 0.05,
-                "Health": 100,
-                "MaxHealth": 100,
-                "Strength": 0,
-                "Repulsion": 0.0005,
-                "Range": 0.05,
-                "ImageName": "Riots",
-                "KillSounds": [
-                    "Aaah",
-                    "Aww",
-                    "Daeng",
-                    "Nuts",
-                    "Oops"
-                ],
-                "SpawnSounds": [
-                    "Whistle",
-                    "Whistle_2",
-                    "Whistle_3",
-                    "Whistle_4"
-                ]
-            }
-        ]
-    },
-    {
-        "Name": "Rebell Collect",
-        "FirstTick": 3,
-        "TickInterval": 5,
-        "TickIntervalFactor": 0.97,
-        "PalaceHealing": 50,
-        "DisableShop": true,
-        "TroopDefaults": [
-          {
-              "Names": [
-                "1st Police Corps",
-                "2st Police Corps"
-              ],
-              "MaxSpeed": 0.4,
-              "Health": 200,
-              "MaxHealth": 200,
-              "Strength": 0,
-              "Repulsion": -0.002,
-              "Range": 0.05,
-              "ImageName": "Troops",
-              "MarchSounds": [
-                "Fanfare_1",
-                "March_1",
-                "March_2",
-                "March_3",
-                "March_4",
-                "March_5",
-                "Yes_Sir",
-                "Yes_Sir_2"
-              ],
-              "UnitCost": 100
-          }
+        "UnitCost": 100
+      }
+    ],
+    "RebelDefaults": [
+      {
+        "Type": "Noobs",
+        "Names": [
+          "Depper Doders",
+          "Hadwi"
         ],
-        "RebelDefaults": [
-            {
-                "Names": [
-                    "Depper Doders",
-                    "Hadwi"
-                ],
-                "MinSpeed": 0.025,
-                "MaxSpeed": 0.05,
-                "Health": 100,
-                "MaxHealth": 100,
-                "Strength": 0,
-                "Repulsion": 0.00005,
-                "Range": 0.05,
-                "ImageName": "Riots",
-                "KillSounds": [
-                    "Aaah",
-                    "Aww",
-                    "Daeng",
-                    "Nuts",
-                    "Oops"
-                ],
-                "SpawnSounds": [
-                    "Whistle",
-                    "Whistle_2",
-                    "Whistle_3",
-                    "Whistle_4"
-                ]
-            }
-        ]
-    },
-    {
-        "Name": "Instant Kill",
-        "FirstTick": 3,
-        "TickInterval": 2,
-        "TickIntervalFactor": 0.97,
-        "PalaceHealing": 50,
-        "DisableShop": true,
-        "TroopDefaults": [
-          {
-            "Names": [
-              "1st Police Corps",
-              "2st Police Corps"
-            ],
-            "MaxSpeed": 0.6,
-            "Health": 200,
-            "MaxHealth": 200,
-            "Strength": 100,
-            "Repulsion": -0.002,
-            "Range": 0.05,
-            "ImageName": "Troops",
-            "MarchSounds": [
-              "Fanfare_1",
-              "March_1",
-              "March_2",
-              "March_3",
-              "March_4",
-              "March_5",
-              "Yes_Sir",
-              "Yes_Sir_2"
-            ],
-            "UnitCost": 100
-          }
+        "MinSpeed": 0.025,
+        "MaxSpeed": 0.05,
+        "Health": 100,
+        "MaxHealth": 100,
+        "Strength": 20,
+        "Repulsion": 0.0005,
+        "Range": 0.05,
+        "ImageName": "Riots",
+        "KillSounds": [
+          "Aaah",
+          "Aww",
+          "Daeng",
+          "Nuts",
+          "Oops"
         ],
-        "RebelDefaults": [
-            {
-                "Names": [
-                    "Depper Doders",
-                    "Hadwi"
-                ],
-                "MinSpeed": 0.025,
-                "MaxSpeed": 0.05,
-                "Health": 1,
-                "MaxHealth": 100,
-                "Strength": 0,
-                "Repulsion": 0.00005,
-                "Range": 0.05,
-                "ImageName": "Riots",
-                "KillSounds": [
-                    "Aaah",
-                    "Aww",
-                    "Daeng",
-                    "Nuts",
-                    "Oops"
-                ],
-                "SpawnSounds": [
-                    "Whistle",
-                    "Whistle_2",
-                    "Whistle_3",
-                    "Whistle_4"
-                ]
-            }
+        "SpawnSounds": [
+          "Whistle",
+          "Whistle_2",
+          "Whistle_3",
+          "Whistle_4"
         ]
-    }
+      }
+    ]
+  },
+  {
+    "Name": "Push",
+    "FirstTick": 3,
+    "TickInterval": 10,
+    "TickIntervalFactor": 0.97,    
+    "MoneyInterval": 1000,
+    "MoneyFirstTick": 1000,
+    "MoneyGainPerInterval": 0,
+    "PalaceHealing": 50,
+    "DisableShop": true,
+    "TroopDefaults": [
+      {
+        "Type": "Police",
+        "Names": [
+          "1st Police Corps",
+          "2st Police Corps"
+        ],
+        "MaxSpeed": 0.6,
+        "Health": 200,
+        "MaxHealth": 200,
+        "Strength": 0,
+        "Repulsion": 0.01,
+        "Range": 0.05,
+        "ImageName": "Troops",
+        "MarchSounds": [
+          "Fanfare_1",
+          "March_1",
+          "March_2",
+          "March_3",
+          "March_4",
+          "March_5",
+          "Yes_Sir",
+          "Yes_Sir_2"
+        ],
+        "UnitCost": 100
+      }
+    ],
+    "RebelDefaults": [
+      {
+        "Type": "Noobs",
+        "Names": [
+          "Depper Doders",
+          "Hadwi"
+        ],
+        "MinSpeed": 0.025,
+        "MaxSpeed": 0.05,
+        "Health": 100,
+        "MaxHealth": 100,
+        "Strength": 0,
+        "Repulsion": 0.0005,
+        "Range": 0.05,
+        "ImageName": "Riots",
+        "KillSounds": [
+          "Aaah",
+          "Aww",
+          "Daeng",
+          "Nuts",
+          "Oops"
+        ],
+        "SpawnSounds": [
+          "Whistle",
+          "Whistle_2",
+          "Whistle_3",
+          "Whistle_4"
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "Rebell Collect",
+    "FirstTick": 3,
+    "TickInterval": 5,
+    "TickIntervalFactor": 0.97,
+    "MoneyInterval": 1000,
+    "MoneyFirstTick": 1000,
+    "MoneyGainPerInterval": 0,
+    "PalaceHealing": 50,
+    "DisableShop": true,
+    "TroopDefaults": [
+      {
+        "Names": [
+          "1st Police Corps",
+          "2st Police Corps"
+        ],
+        "MaxSpeed": 0.4,
+        "Health": 200,
+        "MaxHealth": 200,
+        "Strength": 0,
+        "Repulsion": -0.002,
+        "Range": 0.05,
+        "ImageName": "Troops",
+        "MarchSounds": [
+          "Fanfare_1",
+          "March_1",
+          "March_2",
+          "March_3",
+          "March_4",
+          "March_5",
+          "Yes_Sir",
+          "Yes_Sir_2"
+        ],
+        "UnitCost": 100
+      }
+    ],
+    "RebelDefaults": [
+      {
+        "Names": [
+          "Depper Doders",
+          "Hadwi"
+        ],
+        "MinSpeed": 0.025,
+        "MaxSpeed": 0.05,
+        "Health": 100,
+        "MaxHealth": 100,
+        "Strength": 0,
+        "Repulsion": 0.00005,
+        "Range": 0.05,
+        "ImageName": "Riots",
+        "KillSounds": [
+          "Aaah",
+          "Aww",
+          "Daeng",
+          "Nuts",
+          "Oops"
+        ],
+        "SpawnSounds": [
+          "Whistle",
+          "Whistle_2",
+          "Whistle_3",
+          "Whistle_4"
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "Instant Kill",
+    "FirstTick": 3,
+    "TickInterval": 2,
+    "TickIntervalFactor": 0.97,
+    "MoneyInterval": 1000,
+    "MoneyFirstTick": 1000,
+    "MoneyGainPerInterval": 0,
+    "PalaceHealing": 50,
+    "DisableShop": true,
+    "TroopDefaults": [
+      {
+        "Names": [
+          "1st Police Corps",
+          "2st Police Corps"
+        ],
+        "MaxSpeed": 0.6,
+        "Health": 200,
+        "MaxHealth": 200,
+        "Strength": 100,
+        "Repulsion": -0.002,
+        "Range": 0.05,
+        "ImageName": "Troops",
+        "MarchSounds": [
+          "Fanfare_1",
+          "March_1",
+          "March_2",
+          "March_3",
+          "March_4",
+          "March_5",
+          "Yes_Sir",
+          "Yes_Sir_2"
+        ],
+        "UnitCost": 100
+      }
+    ],
+    "RebelDefaults": [
+      {
+        "Names": [
+          "Depper Doders",
+          "Hadwi"
+        ],
+        "MinSpeed": 0.025,
+        "MaxSpeed": 0.05,
+        "Health": 1,
+        "MaxHealth": 100,
+        "Strength": 0,
+        "Repulsion": 0.00005,
+        "Range": 0.05,
+        "ImageName": "Riots",
+        "KillSounds": [
+          "Aaah",
+          "Aww",
+          "Daeng",
+          "Nuts",
+          "Oops"
+        ],
+        "SpawnSounds": [
+          "Whistle",
+          "Whistle_2",
+          "Whistle_3",
+          "Whistle_4"
+        ]
+      }
+    ]
+  }
 ]
