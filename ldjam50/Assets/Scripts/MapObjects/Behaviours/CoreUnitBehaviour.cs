@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 
 using UnityEngine;
-using UnityEngine.UI;
 
 public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
 {
@@ -56,13 +55,16 @@ public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
 
         Vector2 newLocation = unityLocation + direction;
 
-        if (direction.x < 0)
+        if (this.Image != null)
         {
-            this.Image.transform.localScale = new Vector3(-1, 1, 1);
-        }
-        else
-        {
-            this.Image.transform.localScale = new Vector3(1, 1, 1);
+            if (direction.x < 0)
+            {
+                this.Image.transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else
+            {
+                this.Image.transform.localScale = new Vector3(1, 1, 1);
+            }
         }
 
         SetLocation(newLocation);
@@ -81,7 +83,7 @@ public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
         }
     }
 
-//    protected abstract void KillObject();
+    //    protected abstract void KillObject();
 
     protected void AddDistanceAction(float distance, Action<float> action)
     {
@@ -98,7 +100,7 @@ public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
 
     protected Sprite GetSprite(String imageName)
     {
-        if( !String.IsNullOrEmpty(imageName))
+        if (!String.IsNullOrEmpty(imageName))
         {
             return GameFrame.Base.Resources.Manager.Sprites.Get(imageName);
         }

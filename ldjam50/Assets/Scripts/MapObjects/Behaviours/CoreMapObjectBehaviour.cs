@@ -36,8 +36,11 @@ public abstract class CoreMapObjectBehaviour : MonoBehaviour
 
     protected void InitScales()
     {
-        halfImageSizeRelativeX = sizeScale * (Image.sprite.rect.width / 3840) / 2f;
-        halfImageSizeRealtiveY = sizeScale * (Image.sprite.rect.height / 2160) / 2f;
+        if (Image?.sprite != null)
+        {
+            halfImageSizeRelativeX = sizeScale * (Image.sprite.rect.width / 3840) / 2f;
+            halfImageSizeRealtiveY = sizeScale * (Image.sprite.rect.height / 2160) / 2f;
+        }
     }
 
     protected void SetLocation(Vector2 location)
