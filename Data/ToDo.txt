@@ -4,7 +4,6 @@ Todo:
  
 
  Core:
- - Save & Load GameMode
  - SpawnSounds for different types
  - display mode & exit selection on click 
  - setting for default mode
@@ -65,7 +64,7 @@ Nice to have:
  
 WIP:
 ----------------------------------
-  - Saving Circular Serialization
+ - Save & Load GameMode
  
 Done:
 ----------------------------------
@@ -93,3 +92,4 @@ Done:
  - fix Tab selection (killed troops)
  - allow setting troop binding (0-9)
  - troop number overlay (0-9 for selecting this unit)
+ - Saving Circular Serialization
