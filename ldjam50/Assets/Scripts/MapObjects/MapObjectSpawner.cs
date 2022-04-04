@@ -171,7 +171,7 @@ public class MapObjectSpawner : MonoBehaviour
         GameHandler.SelectTroop(spawnedTroop);
     }
 
-    private PoliceTroopBehaviour SpawnTroop(PoliceTroop existingTroop = default)
+    private SecurityForceBehaviour SpawnTroop(SecurityForce existingTroop = default)
     {
         var policeTroop = existingTroop;
 
@@ -186,7 +186,7 @@ public class MapObjectSpawner : MonoBehaviour
 
         GameObject troopOb = InstantiateGameObject(PoliceTroopTemplate, Map.transform);
 
-        PoliceTroopBehaviour troopBehaviour = troopOb.GetComponent<PoliceTroopBehaviour>();
+        SecurityForceBehaviour troopBehaviour = troopOb.GetComponent<SecurityForceBehaviour>();
 
         troopBehaviour.gameObject.SetActive(true);
         troopBehaviour.Init(policeTroop);
@@ -217,11 +217,11 @@ public class MapObjectSpawner : MonoBehaviour
         return Instantiate(template, new Vector3(0, 0, 0), rotation, parent);
     }
 
-    private PoliceTroop GetTroopFromDefault(TroopDefault troopDefault)
+    private SecurityForce GetTroopFromDefault(TroopDefault troopDefault)
     {
         BaseDefault troopBase = troopDefault.Bases.GetRandomEntry();
 
-        var policeTroop = new PoliceTroop()
+        var policeTroop = new SecurityForce()
         {
             Name = troopDefault.Names.GetRandomEntry(),
             Speed = 0,

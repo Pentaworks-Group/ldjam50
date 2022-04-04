@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-public class PoliceTroop : CoreUnit
+public class SecurityForce : CoreUnit
 {
     public CoreMapBase Base { get; set; }
     public bool IsSelected { get; internal set; }
