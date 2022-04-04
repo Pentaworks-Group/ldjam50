@@ -8,6 +8,7 @@
     "MoneyInterval": 3,
     "MoneyFirstTick": 5,
     "MoneyGainPerInterval": 50,
+	"MoneyStart": 100,
     "PalaceDefault": {
       "Healing": 50,
       "Health": 100000,

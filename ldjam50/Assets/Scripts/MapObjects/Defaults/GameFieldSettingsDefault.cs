@@ -15,8 +15,7 @@ public class GameFieldSettings
     public Decimal MoneyGainPerInterval { get; set; }
     public float MoneyInterval { get; set; }
     public float MoneyFirstTick { get; set; }
-
-
+    public Decimal MoneyStart { get; set; }
 
     public PalaceDefault PalaceDefault { get; set; } = new PalaceDefault()
     {

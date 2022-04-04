@@ -29,7 +29,8 @@ namespace Assets.Scripts.Core
                 CurrentScene = SceneNames.City,
                 Mode = gameMode,
                 NextRebelSpawn = gameMode.FirstTick,
-                NextMoneySpawn = gameMode.MoneyFirstTick,                
+                NextMoneySpawn = gameMode.MoneyFirstTick,
+                AvailableCredits = gameMode.MoneyStart
             };
         }
 
