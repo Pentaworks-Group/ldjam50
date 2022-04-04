@@ -126,7 +126,7 @@ namespace Assets.Scripts.Scenes.City
             }
             else
             {
-                this.moneyText = moneyDisplay.transform.Find("Fitter/MoneyText").GetComponent<Text>();
+                this.moneyText = moneyDisplay.transform.Find("MoneyText").GetComponent<Text>();
             }
 
             this.shopOverlay = this.transform.Find("Rotatotor/HUD/ShopOverlay").gameObject;
