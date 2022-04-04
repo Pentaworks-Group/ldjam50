@@ -11,7 +11,6 @@ public class SecurityForceBehaviour : CoreUnitBehaviour
     protected static float sendSoundTick = 0;
 
     private static Color selectedColor = Color.white;
-    private static Color defaultColor = new Color(0.5f, 0.5f, 0.5f, 1f);
 
     public SecurityForce SecurityForce
     {
@@ -59,6 +58,7 @@ public class SecurityForceBehaviour : CoreUnitBehaviour
 
         GameObject.Destroy(gameObject);
     }
+
     public override bool IsMoveable()
     {
         return true;
@@ -94,14 +94,12 @@ public class SecurityForceBehaviour : CoreUnitBehaviour
                 SendTroopsToLocation(SecurityForce.Base.Location);
             }
 
-            CheckImageColor(this.Image, selectedColor);
+            CheckImageColor(this.BackgroundImage, selectedColor);
         }
         else
         {
-            CheckImageColor(this.Image, defaultColor);
+            CheckImageColor(this.BackgroundImage, this.SecurityForce.Color);
         }
-
-        CheckImageColor(this.BackgroundImage, this.SecurityForce.Color);
 
         CheckForAdjesentRebels();
 
