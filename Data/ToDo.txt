@@ -8,22 +8,36 @@ Todo:
  - SpawnSounds for different types
  - display mode & exit selection on click
  - disable shop per gamesettings
+ - troop number overlay (0-9 for selecting this unit)
+ - setting for default mode
+ - use different sprites for rebels (change RebelDefault.ImageName to list)
+ - allow setting troop binding (0-9)
+ 
  
  GamePlay:
  - Balancing
    
-  UI:
-  - Revamp UI for Save / Load (Button / Box / Scene)
+ UI:
+ - Revamp UI for Save / Load (Button / Box / Scene)
+ - Revamp MainMenu (eg. protest shield with game mode for starting new game)
+ - PauseMenuButton sprite
  
  Audio:
  - RebelSound persists in PauseMenu & After Quiting
  - Effects
  - Sound Volume
  
+ Itch.io:
+ - Add description
+ - Add ldjam link
+ - Revamp style
+ - Change name
 
 Ideas:
 ----------------------------------
  - Text editor to supply us for JSON data
+ - Power Ups
+ - Upload/Download/Sending GameModes (to collect from "Modders")
 
  
 Nice to have:
@@ -31,7 +45,8 @@ Nice to have:
  - Move Rotatotor & click fix to GameFrame
  - InstantiateGameObject: alternatives turn templates? move to central code location
  - replace if (Screen.width < ..hight) with global call
- 
+ - Remove hardcoded references to mapsize (mostly unit scaling)
+ - UnitScaling with targetSize (relative width, keep ratio?)
  
 WIP:
 ----------------------------------
