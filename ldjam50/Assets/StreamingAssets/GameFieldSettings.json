@@ -31,6 +31,12 @@
           "Blue": 0,
           "Alpha": 0.95
         },
+		"SelectedColor": {
+          "Red": 1,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 0.45
+        },
         "ImageName": "SGuard",
         "MarchSounds": [
           "Fanfare_1",
@@ -68,6 +74,12 @@
           "Green": 0.3966849,
           "Blue": 0.7075472,
           "Alpha": 0.95
+        },
+		"SelectedColor": {
+          "Red": 0.251424,
+          "Green": 0.3966849,
+          "Blue": 0.7075472,
+          "Alpha": 0.45
         },
         "ImageName": "Police",
         "MarchSounds": [
@@ -107,6 +119,12 @@
           "Blue": 0.5,
           "Alpha": 0.95
         },
+		"SelectedColor": {
+          "Red": 0.5,
+          "Green": 0.5,
+          "Blue": 0.5,
+          "Alpha": 0.45
+        },
         "ImageName": "Tower",
         "MarchSounds": [
           "Fanfare_1",
@@ -145,6 +163,12 @@
           "Blue": 0,
           "Alpha": 0.95
         },
+		"SelectedColor": {
+          "Red": 0,
+          "Green": 0.5,
+          "Blue": 0,
+          "Alpha": 0.45
+		},
         "ImageName": "Riot_M2",
         "MarchSounds": [
           "Fanfare_1",
@@ -223,6 +247,12 @@
           "Green": 0.3966849,
           "Blue": 0.7075472,
           "Alpha": 0.95
+        },
+		"SelectedColor": {
+          "Red": 0.251424,
+          "Green": 0.3966849,
+          "Blue": 0.7075472,
+          "Alpha": 0.45
         },
         "MaxSpeed": 0.6,
         "Health": 100000000,
@@ -308,6 +338,12 @@
           "Blue": 0.7075472,
           "Alpha": 0.95
         },
+		 "SelectedColor": {
+          "Red": 0.251424,
+          "Green": 0.3966849,
+          "Blue": 0.7075472,
+          "Alpha": 0.45
+        },
         "MaxSpeed": 0.4,
         "Health": 200,
         "MaxHealth": 200,
@@ -345,7 +381,7 @@
         "MaxSpeed": 0.01,
         "Health": 100,
         "MaxHealth": 100,
-        "Strength": 0,
+        "Strength": 1,
         "Repulsion": 0.00005,
         "Range": 0.002,
         "ImageName": "Riots",
@@ -375,8 +411,8 @@
     "MoneyGainPerInterval": 0,
     "PalaceDefault":{
     "Healing": 50,
-    "Health": 100000,
-    "MaxHealth": 100000
+    "Health": 10,
+    "MaxHealth": 10
 	},
     "DisableShop": true,
     "TroopDefaults": [
@@ -390,6 +426,12 @@
           "Green": 0.3966849,
           "Blue": 0.7075472,
           "Alpha": 0.95
+        },
+		"SelectedColor": {
+          "Red": 0.251424,
+          "Green": 0.3966849,
+          "Blue": 0.7075472,
+          "Alpha": 0.45
         },
         "MaxSpeed": 0.6,
         "Health": 1000000,
@@ -430,7 +472,7 @@
         "MaxHealth": 1,
         "Strength": 1,
         "Repulsion": 0.00005,
-        "Range": 0.05,
+        "Range": 0.002,
         "ImageName": "Riots",
         "KillSounds": [
           "Aaah",
@@ -480,6 +522,12 @@
           "Green": 0,
           "Blue": 0,
           "Alpha": 0.95
+        },
+		 "SelectedColor": {
+          "Red": 1,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 0.45
         },
         "ImageName": "SGuard",
         "MarchSounds": [

@@ -2,8 +2,6 @@ using System;
 
 using Assets.Scripts.Base;
 
-using UnityEngine;
-
 
 public class PalaceBehaviour : CoreMapObjectBehaviour
 {

@@ -171,9 +171,9 @@ public class MainMenuBehaviour : MonoBehaviour
     {
         GameHandler.AvailableGameModes = gameFieldSettings;
 
-        if (GameHandler.GameFieldSettings == default)
+        if (Assets.Scripts.Base.Core.SelectedGameMode == default)
         {
-            GameHandler.GameFieldSettings = gameFieldSettings[0];
+            Assets.Scripts.Base.Core.SelectedGameMode = gameFieldSettings[0];
         }
 
         return gameFieldSettings;
@@ -192,8 +192,7 @@ public class MainMenuBehaviour : MonoBehaviour
     {
         GameHandler.AvailableGameModes = gameFieldSettings;
 
-        GameHandler.GameFieldSettings = gameFieldSettings[0];
-
+        Assets.Scripts.Base.Core.SelectedGameMode = gameFieldSettings[0];
 
         return gameFieldSettings;
     }

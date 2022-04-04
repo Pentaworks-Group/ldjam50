@@ -87,7 +87,7 @@ namespace Assets.Scripts.Scenes.City
 
         private void Start()
         {
-            if (Base.Core.Game.State.Mode == null)
+            if (Base.Core.Game.State?.Mode == null)
             {
                 return;
             }

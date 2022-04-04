@@ -236,7 +236,8 @@ public class MapObjectSpawner : MonoBehaviour
             Range = troopDefault.Range,
             Base = GameHandler.Palace.CoreMapBase,
             MarchSounds = troopDefault.MarchSounds,
-            Color = troopDefault.Color
+            Color = troopDefault.Color,
+            SelectedColor = troopDefault.SelectedColor
         };
 
         Core.Game.State.SecurityForces.Add(policeTroop);
@@ -319,14 +320,14 @@ public class MapObjectSpawner : MonoBehaviour
 
     private void InitMilitaryBase()
     {
-        if (GameHandler.GameFieldSettings.DisableMilitaryBase)
+        if (Core.Game.State.Mode.DisableMilitaryBase)
         {
             MilitaryBase.gameObject.SetActive(false);
         }
         else
         {
             GameHandler.MilitaryBase = MilitaryBase;
-            GameHandler.MilitaryBase.InitPalaceWithDefault(GameHandler.GameFieldSettings.MilitaryBaseDefault);
+            GameHandler.MilitaryBase.InitPalaceWithDefault(Core.Game.State.Mode.MilitaryBaseDefault);
         }
     }
     private void InitPalace()
