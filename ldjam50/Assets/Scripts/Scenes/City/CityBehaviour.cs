@@ -232,6 +232,18 @@ namespace Assets.Scripts.Scenes.City
                 if (!Base.Core.Game.State.Mode.DisableShop)
                 {
                     moneyText.text = Base.Core.Game.State.AvailableCredits.ToString("F2");
+
+                    if (Input.GetKeyDown(KeyCode.S))
+                    {
+                        if (shopOverlay.activeSelf)
+                        {
+                            CloseShop();
+                        }
+                        else
+                        {
+                            ShowShop();
+                        }
+                    }
                 }
             }
         }
