@@ -40,6 +40,8 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
         }
     }
 
+    public Boolean IsPurchasable { get; private set; } = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,9 +70,10 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
             this.corpsBackgroundImage.color = this.SecurityForceDefault.SelectedColor.ToUnity();
             this.backgroundImage.color = new Color(color.r, color.g, color.b, 0.4f);
 
-            if (!Core.Game.State.Mode.DisableMilitaryBase && Core.Game.State.MilitaryBase.Destroyed)
+            if ((this.SecurityForceDefault.Type == "Army") && Core.Game.State.Mode.DisableMilitaryBase && Core.Game.State.MilitaryBase.Destroyed)
             {
                 this.notAvailableOverlay.SetActive(true);
+                IsPurchasable = false;
             }
             else
             {
@@ -105,10 +108,11 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
 
     private void Update()
     {
-        if (this.SecurityForceDefault != null && Core.Game.State != default)
+        if (this.SecurityForceDefault != null && Core.Game.State != default && this.IsPurchasable)
         {
             if (Core.Game.State.AvailableCredits < this.SecurityForceDefault.UnitCost)
             {
+                IsPurchasable = false;
                 this.notEnoughMoneyText.SetActive(true);
             }
             else
