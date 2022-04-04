@@ -8,6 +8,7 @@
     "MoneyInterval": 3,
     "MoneyFirstTick": 5,
     "MoneyGainPerInterval": 50,
+	"MoneyStart": 100,
     "PalaceDefault": {
       "Healing": 50,
       "Health": 100000,
@@ -54,7 +55,7 @@
           "Yes_Sir",
           "Yes_Sir_2"
         ],
-        "UnitCost": 200,
+        "UnitCost": 1000,
         "Bases": [
           {
             "Pos_x": 0.495,
