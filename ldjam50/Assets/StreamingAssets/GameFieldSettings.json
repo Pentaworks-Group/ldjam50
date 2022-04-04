@@ -136,6 +136,12 @@
           "1st Police Corps",
           "2st Police Corps"
         ],
+        "Color": {
+          "Red": 0.251424,
+          "Green": 0.3966849,
+          "Blue": 0.7075472,
+          "Alpha": 0.8196079
+        },
         "MaxSpeed": 0.6,
         "Health": 200,
         "MaxHealth": 200,
@@ -210,6 +216,12 @@
           "1st Police Corps",
           "2st Police Corps"
         ],
+        "Color": {
+          "Red": 0.251424,
+          "Green": 0.3966849,
+          "Blue": 0.7075472,
+          "Alpha": 0.8196079
+        },
         "MaxSpeed": 0.4,
         "Health": 200,
         "MaxHealth": 200,
@@ -283,6 +295,12 @@
           "1st Police Corps",
           "2st Police Corps"
         ],
+        "Color": {
+          "Red": 0.251424,
+          "Green": 0.3966849,
+          "Blue": 0.7075472,
+          "Alpha": 0.8196079
+        },
         "MaxSpeed": 0.6,
         "Health": 200,
         "MaxHealth": 200,
