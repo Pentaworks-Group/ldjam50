@@ -287,7 +287,7 @@
     "MoneyInterval": 1000,
     "MoneyFirstTick": 1000,
     "MoneyGainPerInterval": 0,
-    "PalaceHealing": 50,
+    "PalaceHealing": 500,
     "DisableShop": true,
     "TroopDefaults": [
       {
@@ -302,8 +302,8 @@
           "Alpha": 0.8196079
         },
         "MaxSpeed": 0.6,
-        "Health": 200,
-        "MaxHealth": 200,
+        "Health": 1000000,
+        "MaxHealth": 1000000,
         "Strength": 100,
         "Repulsion": -0.002,
         "Range": 0.05,
@@ -338,7 +338,7 @@
         "MaxSpeed": 0.01,
         "Health": 1,
         "MaxHealth": 1,
-        "Strength": 0,
+        "Strength": 1,
         "Repulsion": 0.00005,
         "Range": 0.05,
         "ImageName": "Riots",
