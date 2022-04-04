@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.Scenes.City
 {
@@ -10,6 +11,8 @@ namespace Assets.Scripts.Scenes.City
     {
         private MapObjectSpawner mapObjectSpawner;
         private GameObject shopOverlay;
+        private GameObject moneyDisplay;
+        private Text moneyText;
         private SecurityForceSlotBehaviour policeSlot;
 
         public void ShowShop()
@@ -83,11 +86,18 @@ namespace Assets.Scripts.Scenes.City
         private void Start()
         {
             this.mapObjectSpawner = this.transform.Find("Rotatotor/MapObjectSpawner").gameObject.GetComponent<MapObjectSpawner>();
+            this.moneyDisplay = this.transform.Find("Rotatotor/HUD/MoneyDisplay").gameObject;
 
             if (GameHandler.GameFieldSettings.DisableShop)
             {
                 GameObject shopButton = this.transform.Find("Rotatotor/HUD/ShowShopButton").gameObject;
                 shopButton.SetActive(false);
+                                
+                moneyDisplay.SetActive(false);
+            }
+            else
+            {
+                this.moneyText = moneyDisplay.transform.Find("MoneyText").GetComponent<Text>();
             }
 
             this.shopOverlay = this.transform.Find("Rotatotor/HUD/ShopOverlay").gameObject;
@@ -160,6 +170,11 @@ namespace Assets.Scripts.Scenes.City
                 if (IsAnyDown(KeyCode.Alpha9, KeyCode.Keypad9))
                 {
                     SelectSecurityForce(8);
+                }
+
+                if (!GameHandler.GameFieldSettings.DisableShop)
+                {
+                    moneyText.text = Base.Core.Game.State.AvailableCredits.ToString("F2");
                 }
             }
         }
