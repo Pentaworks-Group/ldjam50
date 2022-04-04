@@ -9,7 +9,6 @@ using UnityEngine.UI;
 public class SecurityForceBehaviour : CoreUnitBehaviour
 {
     protected static float sendSoundTick = 0;
-    private static Color selectedColor = Color.white;
 
     private GameObject keyNumberArea;
     private Text keyNumberText;
@@ -98,7 +97,7 @@ public class SecurityForceBehaviour : CoreUnitBehaviour
                 SendTroopsToLocation(SecurityForce.Base.Location);
             }
 
-            CheckImageColor(this.BackgroundImage, selectedColor);
+            CheckImageColor(this.BackgroundImage, this.SecurityForce.SelectedColor.ToUnity());
         }
         else
         {
