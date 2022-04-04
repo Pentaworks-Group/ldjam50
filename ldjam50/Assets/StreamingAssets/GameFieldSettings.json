@@ -27,7 +27,7 @@
           "Palace Guard"
         ],
         "MaxSpeed": 0.02,
-        "Health": 150,
+        "Health": 200,
         "MaxHealth": 200,
         "Strength": 100,
         "Repulsion": 0.001,
@@ -81,9 +81,9 @@
           "1st Police Corps",
           "2st Police Corps"
         ],
-        "MaxSpeed": 0.6,
+        "MaxSpeed": 0.4,
         "Health": 150,
-        "MaxHealth": 200,
+        "MaxHealth": 150,
         "Strength": 30,
         "Repulsion": 0.001,
         "Range": 0.055,
@@ -164,9 +164,9 @@
           "1st Army Corps",
           "2st Army Corps"
         ],
-        "MaxSpeed": 0.2,
-        "Health": 200,
-        "MaxHealth": 200,
+        "MaxSpeed": 0.15,
+        "Health": 300,
+        "MaxHealth": 300,
         "Strength": 30,
         "Repulsion": 0.001,
         "Range": 0.055,

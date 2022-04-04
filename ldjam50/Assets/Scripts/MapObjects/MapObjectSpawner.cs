@@ -250,7 +250,8 @@ public class MapObjectSpawner : MonoBehaviour
             MarchSounds = troopDefault.MarchSounds,
             ForegroundColor = troopDefault.ForegroundColor,
             BackgroundColor = troopDefault.BackgroundColor,
-            SelectedColor = troopDefault.SelectedColor
+            SelectedColor = troopDefault.SelectedColor,
+            MoveJustOnce = troopDefault.MoveJustOnce
         };
 
         Core.Game.State.SecurityForces.Add(policeTroop);
@@ -281,7 +282,7 @@ public class MapObjectSpawner : MonoBehaviour
                 Health = rebelDefault.Health,
                 MaxHealth = rebelDefault.MaxHealth,
                 KillSound = rebelDefault.KillSounds.GetRandomEntry(),
-                SpawnSound = rebelDefault.SpawnSounds.GetRandomEntry()
+                SpawnSound = rebelDefault.SpawnSounds.GetRandomEntry(),
             };
 
             Core.Game.State.Rebels.Add(rebel);
