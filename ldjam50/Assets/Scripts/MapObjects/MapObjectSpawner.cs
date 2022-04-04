@@ -177,7 +177,7 @@ public class MapObjectSpawner : MonoBehaviour
 
         if (policeTroop == default)
         {
-            policeTroop = GetTroopFromDefault(GameHandler.GameFieldSettings.TroopDefaults[1]);
+            policeTroop = GetTroopFromDefault(GameHandler.GameFieldSettings.TroopDefaults.GetRandomEntry());
         }
         else
         {
