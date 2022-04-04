@@ -14,6 +14,8 @@ public class PalaceDefault : BaseDefault
 
         Pos_x = (1895f / 3840);
         Pos_y = 1f - (1043f / 2160);
+        Range = 0.7f;
+        Repulsion = 1.0f;
         ObjectSize = 0.7f;
     }
 }
