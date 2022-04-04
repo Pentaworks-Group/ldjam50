@@ -8,7 +8,7 @@ public class GameModeSlotBehaviour : MonoBehaviour
 
     public void OnSlotClick()
     {
-        GameHandler.GameFieldSettings = GameFieldSettings;
+        Assets.Scripts.Base.Core.SelectedGameMode = GameFieldSettings;
         Debug.Log("Selected Moode: " + GameFieldSettings.Name);
     }
 }

@@ -22,7 +22,7 @@ namespace Assets.Scripts.Core
 
         protected override GameState InitializeGameState()
         {
-            var gameMode =  GameHandler.GameFieldSettings;
+            var gameMode =  Base.Core.SelectedGameMode;
 
             return new GameState()
             {
