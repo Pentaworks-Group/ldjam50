@@ -28,6 +28,21 @@ namespace Assets.Scripts.Scenes.City
             Base.Core.Game.AmbienceAudioManager.Stop();
 
             shopOverlay.SetActive(true);
+
+            if (!Base.Core.Game.State.Mode.DisableMilitaryBase && GameHandler.MilitaryBase.CoreMapBase.Destroyed)
+            {
+                foreach (Transform child in shopOverlay.transform.Find("ContentArea"))
+                {
+                    if (child.gameObject.name != "SecurityForceSlotTemplate")
+                    {
+                        SecurityForceSlotBehaviour behaviour = child.GetComponent<SecurityForceSlotBehaviour>();
+                        if (behaviour.SecurityForceDefault?.Type == "Army")
+                        {
+                            child.Find("NotAvailable").gameObject.SetActive(true);
+                        }
+                    }
+                }
+            }
         }
 
         public void CloseShop()
@@ -83,6 +98,11 @@ namespace Assets.Scripts.Scenes.City
                     Base.Core.Game.EffectsAudioManager.Play("Error");
                 }
             }
+        }
+
+        public void PlayError()
+        {
+            Base.Core.Game.EffectsAudioManager.Play("Error");
         }
 
         private void Start()

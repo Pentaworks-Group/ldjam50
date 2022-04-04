@@ -1,13 +1,14 @@
 Todo:
 ----------------------------------
  Exceptions:
- 
+ - If base is under attack and game is paused, base is destroyed => gameOver. Next game time does not start
 
  Core:
  - UnitTypes (Rebel & Troops)
- - Blockade/Palisade (#possible movments counter)
  - Change interval calculation to baseIntervall * factor / time 
  - Deactivate Destroyed MilitaryBase (no interaction, no healthbar, destroyed image)
+ - Only Allow Military Units if base alive
+ - Save Palace & Military Base
   
  GamePlay:
  - Balancing
@@ -98,3 +99,4 @@ Done:
  - display mode & exit selection on click 
  - setting for default mode 
  - Sound onButtonclick in Main Menu for ReloadSettings, Modes (and all Modes)
+ - Blockade/Palisade (#possible movments counter)

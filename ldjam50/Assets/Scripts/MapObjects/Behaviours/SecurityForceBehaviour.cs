@@ -94,7 +94,7 @@ public class SecurityForceBehaviour : CoreUnitBehaviour
 
     private void Start()
     {
-        this.keyNumberArea = this.gameObject.transform.Find("KeyNumberArea").gameObject;
+        this.keyNumberArea = this.gameObject.transform.Find("Active/KeyNumberArea").gameObject;
         this.keyNumberText = this.keyNumberArea.transform.Find("KeyNumberText").GetComponent<Text>();
     }
 

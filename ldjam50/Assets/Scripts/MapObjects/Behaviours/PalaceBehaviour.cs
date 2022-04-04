@@ -85,6 +85,9 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
 
     protected override void KillObject()
     {
+        CoreMapBase.Destroyed = true;
+        this.transform.Find("Active").gameObject.SetActive(false);
+        this.transform.Find("Destroyed").gameObject.SetActive(true);
         if (CoreMapBase.GameOverOnDestruction)
         {
             CallGameOver();
