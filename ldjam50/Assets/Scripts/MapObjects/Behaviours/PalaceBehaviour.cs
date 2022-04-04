@@ -28,7 +28,8 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
                 Health = GameHandler.GameFieldSettings.PalaceDefault.Health,
                 MaxHealth = GameHandler.GameFieldSettings.PalaceDefault.MaxHealth,
                 Range = GameHandler.GameFieldSettings.PalaceDefault.Range,
-                Repulsion = GameHandler.GameFieldSettings.PalaceDefault.Repulsion
+                Repulsion = GameHandler.GameFieldSettings.PalaceDefault.Repulsion,
+                ObjectSize = GameHandler.GameFieldSettings.PalaceDefault.ObjectSize
             };
         }
 
