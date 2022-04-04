@@ -1,4 +1,3 @@
-using System;
 
 using Assets.Scripts.Base;
 
@@ -96,23 +95,25 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
                 SendTroopsToLocation(PoliceTroop.Base.Location);
             }
 
-            CheckImageColor(selectedColor);
+            CheckImageColor(this.Image, selectedColor);
         }
         else
         {
-            CheckImageColor(defaultColor);
+            CheckImageColor(this.Image, defaultColor);
         }
+
+        CheckImageColor(this.BackgroundImage, this.PoliceTroop.Color);
 
         CheckForAdjesentRebels();
 
         base.Update();
     }
 
-    private void CheckImageColor(Color colorToCheck)
+    private void CheckImageColor(Image image, Color colorToCheck)
     {
-        if (this.Image?.color != colorToCheck)
+        if (image?.color != colorToCheck)
         {
-            this.Image.color = colorToCheck;
+            image.color = colorToCheck;
         }
     }
 
