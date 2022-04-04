@@ -182,7 +182,14 @@ public class MapObjectSpawner : MonoBehaviour
         }
         else
         {
-            policeTroop.Base = GameHandler.Palace.CoreMapBase; // this should be loaded correctly
+            if(policeTroop.Location.x > 0.7) //If more Bases: Make Better check here
+            {
+                policeTroop.Base = GameHandler.MilitaryBase.CoreMapBase; // this should be loaded correctly
+            }
+            else
+            {
+                policeTroop.Base = GameHandler.Palace.CoreMapBase; // this should be loaded correctly
+            }
         }
 
         GameObject troopOb = InstantiateGameObject(PoliceTroopTemplate, Map.transform);
