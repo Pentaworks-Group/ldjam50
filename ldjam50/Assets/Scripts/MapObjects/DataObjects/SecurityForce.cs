@@ -10,4 +10,5 @@ public class SecurityForce : CoreUnit
     public GameFrame.Core.Media.Color SelectedColor { get; set; }
     public List<String> MarchSounds { get; set; }
     public Int32? AssignedKey { get; set; }
+    public Boolean IsMoveable { get; set; } = true;
 }
