@@ -163,7 +163,7 @@ namespace Assets.Scripts.Scenes.City
 
         void Update()
         {
-            if (Assets.Scripts.Base.Core.Game.State != default)
+            if (Assets.Scripts.Base.Core.Game.State != default && Time.timeScale > 0)
             {
                 if (Input.GetKeyDown(KeyCode.Tab))
                 {
@@ -177,7 +177,7 @@ namespace Assets.Scripts.Scenes.City
                     LoopSecurityForce(isForward);
                 }
 
-                var isControlDown = Input.GetKey(KeyCode.LeftShift);
+                var isControlDown = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftControl);
 
                 if (Input.GetKeyDown(KeyCode.Alpha0) || Input.GetKeyDown(KeyCode.Keypad0))
                 {
