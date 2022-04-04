@@ -66,6 +66,7 @@ public abstract class CoreMapObjectBehaviour : MonoBehaviour
     }
 
     protected abstract void KillObject();
+    protected abstract bool IsMoveable();
 
 
 }

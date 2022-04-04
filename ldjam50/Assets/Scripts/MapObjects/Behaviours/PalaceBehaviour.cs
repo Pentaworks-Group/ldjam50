@@ -28,7 +28,9 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
                 ImageName = "Palace",
                 Healing = GameHandler.GameFieldSettings.PalaceHealing,
                 Health = 10,
-                MaxHealth = 10
+                MaxHealth = 10,
+                Range = 0.2f,
+                Repulsion = 0.2f
             };
 
         }
@@ -49,6 +51,10 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
             float distance = GameHandler.GetDistance(rebel.MapObject.Location, new Vector2(location.X, location.Y));
             min_distance = Math.Min(distance, min_distance);
 
+            if (distance < MapObject.Range)
+            {
+                rebel.Repel(distance, this);
+            }
             //Attack Palace/Base
             GameHandler.Fight(rebel, this, distance);
         }
@@ -63,6 +69,12 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
     {
         CallGameOver(0.0f);
     }
+
+    protected override bool IsMoveable()
+    {
+        return false;
+    }
+
 
     private void CallGameOver(float distance)
     {
