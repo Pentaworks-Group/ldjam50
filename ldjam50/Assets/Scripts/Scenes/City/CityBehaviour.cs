@@ -104,9 +104,6 @@ namespace Assets.Scripts.Scenes.City
 
             if (gameState.Mode.DisableShop)
             {
-                GameObject shopButton = this.transform.Find("Rotatotor/HUD/Top/ShowShopButton").gameObject;
-                shopButton.SetActive(false);
-
                 moneyDisplay.SetActive(false);
             }
             else

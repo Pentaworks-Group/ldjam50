@@ -464,7 +464,7 @@
     ]
   },
   {
-    "Name": "Rebell Collect",
+    "Name": "Rebel Collect",
     "FirstTick": 3,
     "TickInterval": 5,
     "TickIntervalFactor": 0.97,
