@@ -34,6 +34,7 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
             };
 
         }
+
         CoreMapBase = mapBaseObject;
         Init(mapBaseObject);
     }

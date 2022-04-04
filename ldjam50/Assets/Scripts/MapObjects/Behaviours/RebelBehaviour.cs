@@ -27,7 +27,6 @@ public class RebelBehaviour : CoreUnitBehaviour
     {
         //KillRebel();
     }
-   
 
     internal void Repel(float distance, CoreMapObjectBehaviour opponent)
     {
