@@ -55,7 +55,7 @@
           "Yes_Sir",
           "Yes_Sir_2"
         ],
-        "UnitCost": 200,
+        "UnitCost": 1000,
         "Bases": [
           {
             "Pos_x": 0.495,
