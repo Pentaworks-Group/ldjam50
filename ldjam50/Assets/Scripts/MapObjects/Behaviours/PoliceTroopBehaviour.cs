@@ -60,7 +60,7 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
         GameObject.Destroy(gameObject);
     }
-    protected override bool IsMoveable()
+    public override bool IsMoveable()
     {
         return true;
     }

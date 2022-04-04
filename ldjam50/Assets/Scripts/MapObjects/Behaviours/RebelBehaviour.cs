@@ -52,7 +52,7 @@ public class RebelBehaviour : CoreUnitBehaviour
         }
     }
 
-    protected override bool IsMoveable()
+    public override bool IsMoveable()
     {
         return true;
     }

@@ -70,7 +70,7 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
         CallGameOver(0.0f);
     }
 
-    protected override bool IsMoveable()
+    public override bool IsMoveable()
     {
         return false;
     }
