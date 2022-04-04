@@ -1,6 +1,7 @@
 Todo:
 ----------------------------------
  Core:
+ - Save & Load GameMode
  - SpawnSounds for different types
  - display mode & exit selection on click
  - troop number overlay (0-9 for selecting this unit) / fix Tab selection (killed troops)
@@ -13,6 +14,7 @@ Todo:
  - Blockade/Palisade (#possible movments counter)
  - Base/Palace Health
  - Change interval calculation to baseIntervall * factor / time 
+ 
  
  
  
@@ -53,6 +55,7 @@ Ideas:
  - Wave Spawn
  - Unit Movement Queue
  - Restrict Movement Range (eg. Palace Guards)
+ - Buy Health Packages For Palace
  
 Nice to have:
 ----------------------------------
