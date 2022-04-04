@@ -60,15 +60,15 @@ public class GameHandler
         Palace = null;
     }
 
-    public static void Fight(CoreUnitBehaviour opponent1, CoreUnitBehaviour opponent2, float distance)
+    public static void Fight(CoreMapObjectBehaviour opponent1, CoreMapObjectBehaviour opponent2, float distance)
     {
-        if (distance < opponent2.CoreUnit.Range)
+        if (distance < opponent2.MapObject.Range)
         {
-            opponent1.DamageUnit((1 - distance / opponent2.CoreUnit.Range) * opponent2.CoreUnit.Strength);
+            opponent1.DamageObject((1 - distance / opponent2.MapObject.Range) * opponent2.MapObject.Strength);
         }
-        if (distance < opponent1.CoreUnit.Range)
+        if (distance < opponent1.MapObject.Range)
         {
-            opponent2.DamageUnit((1 - distance / opponent1.CoreUnit.Range) * opponent1.CoreUnit.Strength);
+            opponent2.DamageObject((1 - distance / opponent1.MapObject.Range) * opponent1.MapObject.Strength);
         }
     }
 

@@ -21,10 +21,6 @@ public class CoreUnit : CoreMapObject
 
     public CoreMapObject TargetObject { get; set; }
 
-    public float Strength { get; set; }
-    public float Repulsion { get; set; }
-    public float Range { get; set; }
-
     [JsonIgnore]
     public UnityEngine.Vector2 Target { get; set; }
     

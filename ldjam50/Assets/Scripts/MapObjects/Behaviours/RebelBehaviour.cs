@@ -27,15 +27,6 @@ public class RebelBehaviour : CoreUnitBehaviour
     {
         //KillRebel();
     }
-
-
-    private void CallGameOver(float distance)
-    {
-        Core.Game.AmbienceAudioManager.Stop();
-        Assets.Scripts.Base.Core.Game.ChangeScene(SceneNames.GameOver);
-        Debug.Log("You have Lost. Looser!! " + distance);
-    }
-
    
 
     internal void Repel(float distance, CoreUnitBehaviour opponent)
@@ -48,7 +39,7 @@ public class RebelBehaviour : CoreUnitBehaviour
         GameHandler.Fight(opponent, this, distance);
     }
 
-    protected override void KillUnit()
+    protected override void KillObject()
     {
         GameHandler.RemoveRebel(this);
         GameObject.Destroy(gameObject);

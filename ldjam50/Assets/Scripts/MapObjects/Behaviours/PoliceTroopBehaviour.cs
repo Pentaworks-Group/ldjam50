@@ -49,7 +49,7 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
         }
     }
 
-    protected override void KillUnit()
+    protected override void KillObject()
     {
         if (GameHandler.SelectedTroop == this)
         {

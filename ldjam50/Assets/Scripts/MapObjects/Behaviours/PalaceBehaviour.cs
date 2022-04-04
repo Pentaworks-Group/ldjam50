@@ -48,11 +48,26 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
             RebelBehaviour rebel = GameHandler.Rebels[i];
             float distance = GameHandler.GetDistance(rebel.MapObject.Location, new Vector2(location.X, location.Y));
             min_distance = Math.Min(distance, min_distance);
+
+            //Attack Palace/Base
+            GameHandler.Fight(rebel, this, distance);
         }
 
         if (Core.Game.State != default)
         {
             Core.Game.AmbienceAudioManager.Volume = (1.0f - 2 * min_distance) * Core.Game.Options.AmbienceVolume;
         }
+    }
+
+    protected override void KillObject()
+    {
+        CallGameOver(0.0f);
+    }
+
+    private void CallGameOver(float distance)
+    {
+        Core.Game.AmbienceAudioManager.Stop();
+        Assets.Scripts.Base.Core.Game.ChangeScene(SceneNames.GameOver);
+        Debug.Log("You have Lost. Looser!! " + distance);
     }
 }

@@ -54,4 +54,18 @@ public abstract class CoreMapObjectBehaviour : MonoBehaviour
     {
 
     }
+
+    public void DamageObject(float damage)
+    {
+        MapObject.Health -= damage;
+        //Debug.Log("Health: " + CoreUnit.Health + "/" + CoreUnit.MaxHealth + " Damage received: " + damage);
+        if (MapObject.Health <= 0)
+        {
+            KillObject();
+        }
+    }
+
+    protected abstract void KillObject();
+
+
 }
