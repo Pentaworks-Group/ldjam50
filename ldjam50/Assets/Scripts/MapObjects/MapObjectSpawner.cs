@@ -112,13 +112,16 @@ public class MapObjectSpawner : MonoBehaviour
             spawnInterval *= GameHandler.GameFieldSettings.TickIntervalFactor;
         }
 
-        if (currentTime > nextMoneyTick)
+        if (!GameHandler.GameFieldSettings.DisableShop)
         {
-            nextMoneyTick = currentTime + moneyInterval;
+            if (currentTime > nextMoneyTick)
+            {
+                nextMoneyTick = currentTime + moneyInterval;
 
-            Core.Game.State.NextMoneySpawn = nextMoneyTick;
+                Core.Game.State.NextMoneySpawn = nextMoneyTick;
 
-            Core.Game.State.AvailableCredits += GameHandler.GameFieldSettings.MoneyGainPerInterval;
+                Core.Game.State.AvailableCredits += GameHandler.GameFieldSettings.MoneyGainPerInterval;
+            }
         }
 
         if (currentTime > musicChangeTick)
@@ -127,14 +130,6 @@ public class MapObjectSpawner : MonoBehaviour
         }
 
         UpdateTimeDisplay();
-
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            var troop = SpawnTroop();
-
-            GameHandler.AddSecurityForce(troop);
-            GameHandler.SelectTroop(troop);
-        }
     }
 
     public void MoveSelectedTroop(BaseEventData data)
