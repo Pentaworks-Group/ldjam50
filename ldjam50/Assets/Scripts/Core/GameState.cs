@@ -5,11 +5,11 @@ namespace Assets.Scripts.Core
 {
     public class GameState : GameFrame.Core.GameState
     {
+        public Boolean WasShopShown { get; set; }
         public GameFieldSettings Mode { get; set; }
 
         public CoreMapBase Palace { get; set; }
         public CoreMapBase MilitaryBase { get; set; }
-
         public float ElapsedTime { get; set; }
         public float NextRebelSpawn { get; set; }
         public float NextMoneySpawn { get; set; }

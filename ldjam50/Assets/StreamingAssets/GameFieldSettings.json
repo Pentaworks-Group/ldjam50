@@ -7,7 +7,7 @@
     "TickIntervalLogBase": 10,
     "MoneyInterval": 3,
     "MoneyFirstTick": 5,
-    "MoneyGainPerInterval": 20,
+    "MoneyGainPerInterval": 30,
     "MoneyStart": 100,
     "PalaceDefault": {
       "Healing": 30,
@@ -55,14 +55,10 @@
 
         ],
         "MarchSounds": [
-          "Fanfare_1",
-          "March_1",
-          "March_2",
-          "March_3",
-          "March_4",
-          "March_5",
-          "Yes_Sir",
-          "Yes_Sir_2"
+          "Gruezi",
+          "Gruezi_2",
+          "Si_Da_Capo",
+          "Jawoll"
         ],
         "UnitCost": 1000,
         "Bases": [
@@ -86,7 +82,7 @@
         "MaxHealth": 150,
         "Strength": 30,
         "Repulsion": 0.001,
-        "Range": 0.055,
+        "Range": 0.05,
         "BackgroundColor": {
           "Red": 0.251424,
           "Green": 0.3966849,
@@ -167,9 +163,9 @@
         "MaxSpeed": 0.15,
         "Health": 400,
         "MaxHealth": 400,
-        "Strength": 30,
+        "Strength": 40,
         "Repulsion": 0.001,
-        "Range": 0.055,
+        "Range": 0.05,
         "BackgroundColor": {
           "Red": 0,
           "Green": 0.5,
@@ -218,7 +214,7 @@
         "MaxSpeed": 0.007,
         "Health": 100,
         "MaxHealth": 100,
-        "Strength": 20,
+        "Strength": 10,
         "Repulsion": 0.0005,
         "Range": 0.05,
         "ImageNames": [
@@ -243,7 +239,13 @@
           "Whistle_4",
 		  "Rebels_Generic",
 		  "Rebels_Generic_2",
-		  "Rebels_Generic_3"
+		  "Rebels_Generic_3",
+		  "Earth_is_a_cube",
+		  "Glace_Schmöuzt",
+		  "Its_A_Trap",
+		  "No_More_School",
+		  "We_Want_Cake",
+		  "Hello_There"
         ]
       }
     ]
@@ -591,14 +593,10 @@
           "SGuard"
         ],
         "MarchSounds": [
-          "Fanfare_1",
-          "March_1",
-          "March_2",
-          "March_3",
-          "March_4",
-          "March_5",
-          "Yes_Sir",
-          "Yes_Sir_2"
+          "Gruezi",
+          "Gruezi_2",
+          "Si_Da_Capo",
+          "Jawoll"
         ],
         "UnitCost": 200,
         "Bases": [

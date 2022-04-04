@@ -32,14 +32,14 @@ public class PauseMenuBehavior : MonoBehaviour
             {
                 Core.Game.PlayButtonSound();
                 Hide();
-                                
+
                 this.PauseToggled.Invoke(false);
             }
         }
         else
         {
             Core.Game.PlayButtonSound();
-            
+
             this.PauseToggled.Invoke(true);
 
             Show();
@@ -144,11 +144,11 @@ public class PauseMenuBehavior : MonoBehaviour
 
     public void Quit()
     {
+        Time.timeScale = 1;
+
         Core.Game.PlayButtonSound();
         Core.Game.Stop();
         Core.Game.ChangeScene(SceneNames.MainMenu);
-
-        Time.timeScale = 1;
     }
 
     // Start is called before the first frame update
@@ -160,7 +160,7 @@ public class PauseMenuBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Space))
         {
             ToggleMenu();
         }
