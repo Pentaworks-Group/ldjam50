@@ -86,6 +86,11 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
         if (this.PoliceTroop.IsSelected)
         {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                SendTroopsToLocation(PoliceTroop.Base.Location);
+            }
+
             CheckImageColor(selectedColor);
         }
         else

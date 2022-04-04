@@ -3,7 +3,8 @@ Todo:
  Core:
  - SpawnSounds for different types
  - display mode & exit selection on click
- - troop number overlay (0-9 for selecting this unit)
+ - troop number overlay (0-9 for selecting this unit) / fix Tab selection (killed troops)
+
  - setting for default mode
  - use different sprites for rebels (change RebelDefault.ImageName to list)
  - allow setting troop binding (0-9)
@@ -12,7 +13,7 @@ Todo:
  - Blockade/Palisade (#possible movments counter)
  - Base/Palace Health
  - Change interval calculation to baseIntervall * factor / time 
- - SafeZoneRadius into settings
+ 
  
  
  GamePlay:
@@ -84,3 +85,5 @@ Done:
  - disable shop per gamesettings
  - PauseMenuButton sprite
  - Money
+ - SafeZoneRadius into settings
+ - send selectred troop in HeadQuarter when pressing "Q"
