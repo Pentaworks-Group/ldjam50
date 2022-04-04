@@ -49,7 +49,7 @@ public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
         //Debug.Log("Move: " + newLocation + " direction: " + direction);
     }
 
-    public void MoveInDirection(Vector2 direction)
+    public override void MoveInDirection(Vector2 direction)
     {
         var unityLocation = MapObject.Location;
 

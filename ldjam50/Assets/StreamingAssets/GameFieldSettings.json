@@ -26,9 +26,9 @@
           "Red": 0.251424,
           "Green": 0.3966849,
           "Blue": 0.7075472,
-          "Alpha": 0.8196079
+          "Alpha": 0.95
         },
-        "ImageName": "Troops",
+        "ImageName": "Police",
         "MarchSounds": [
           "Fanfare_1",
           "March_1",
@@ -64,9 +64,9 @@
           "Red": 0,
           "Green": 0.5,
           "Blue": 0,
-          "Alpha": 0.8823529
+          "Alpha": 0.95
         },
-        "ImageName": "Riot_M",
+        "ImageName": "Riot_M2",
         "MarchSounds": [
           "Fanfare_1",
           "March_1",
@@ -86,39 +86,38 @@
           }
         ]
       }
-
+    ],
+    "RebelDefaults": [
+      {
+        "Type": "Noobs",
+        "Names": [
+          "Depper Doders",
+          "Hadwi"
         ],
-        "RebelDefaults": [
-            {
-                "Type": "Noobs",
-                "Names": [
-                    "Depper Doders",
-                    "Hadwi"
-                ],
-                "MinSpeed": 0.01,
-                "MaxSpeed": 0.01,
-                "Health": 100,
-                "MaxHealth": 100,
-                "Strength": 20,
-                "Repulsion": 0.0005,
-                "Range": 0.05,
-                "ImageName": "Riots",
-                "KillSounds": [
-                    "Aaah",
-                    "Aww",
-                    "Daeng",
-                    "Nuts",
-                    "Oops"
-                ],
-                "SpawnSounds": [
-                    "Whistle",
-                    "Whistle_2",
-                    "Whistle_3",
-                    "Whistle_4"
-                ]
-            }
+        "MinSpeed": 0.01,
+        "MaxSpeed": 0.01,
+        "Health": 100,
+        "MaxHealth": 100,
+        "Strength": 20,
+        "Repulsion": 0.0005,
+        "Range": 0.05,
+        "ImageName": "Rebel_0",
+        "KillSounds": [
+          "Aaah",
+          "Aww",
+          "Daeng",
+          "Nuts",
+          "Oops"
+        ],
+        "SpawnSounds": [
+          "Whistle",
+          "Whistle_2",
+          "Whistle_3",
+          "Whistle_4"
         ]
-    },
+      }
+    ]
+  },
   {
     "Name": "Push",
     "FirstTick": 3,
@@ -140,7 +139,7 @@
           "Red": 0.251424,
           "Green": 0.3966849,
           "Blue": 0.7075472,
-          "Alpha": 0.8196079
+          "Alpha": 0.95
         },
         "MaxSpeed": 0.6,
         "Health": 200,
@@ -220,7 +219,7 @@
           "Red": 0.251424,
           "Green": 0.3966849,
           "Blue": 0.7075472,
-          "Alpha": 0.8196079
+          "Alpha": 0.95
         },
         "MaxSpeed": 0.4,
         "Health": 200,
@@ -299,7 +298,7 @@
           "Red": 0.251424,
           "Green": 0.3966849,
           "Blue": 0.7075472,
-          "Alpha": 0.8196079
+          "Alpha": 0.95
         },
         "MaxSpeed": 0.6,
         "Health": 1000000,

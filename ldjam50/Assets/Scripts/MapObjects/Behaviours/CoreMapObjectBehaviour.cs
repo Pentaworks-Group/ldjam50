@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public abstract class CoreMapObjectBehaviour : MonoBehaviour
 {
     public Image Image { get; private set; }
+    public Image BackgroundImage { get; private set; }
     public RectTransform RectTransform { get; set; }
 
     public CoreMapObject MapObject { get; set; }
@@ -17,6 +18,7 @@ public abstract class CoreMapObjectBehaviour : MonoBehaviour
     protected void Init(CoreMapObject mapObject)
     {
         RectTransform = this.gameObject.GetComponent<RectTransform>();
+        BackgroundImage = this.gameObject.transform.Find("BackgroundImage").GetComponent<Image>();
         Image = this.gameObject.transform.Find("Image").GetComponent<Image>();
 
         RectTransform.offsetMin = new Vector2(0, 0);
@@ -67,7 +69,7 @@ public abstract class CoreMapObjectBehaviour : MonoBehaviour
 
     public abstract bool IsMoveable();
 
-    public void MoveInDirection(Vector2 direction)
+    public virtual void MoveInDirection(Vector2 direction)
     {
     }
 

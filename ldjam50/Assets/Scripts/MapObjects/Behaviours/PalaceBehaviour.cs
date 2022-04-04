@@ -29,11 +29,12 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
                 Healing = GameHandler.GameFieldSettings.PalaceHealing,
                 Health = 10,
                 MaxHealth = 10,
-                Range = 0.2f,
-                Repulsion = 0.2f
+                Range = 0.1f,
+                Repulsion = 1.0f
             };
 
         }
+
         CoreMapBase = mapBaseObject;
         Init(mapBaseObject);
     }
@@ -48,7 +49,7 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
         for (int i = 0; i < GameHandler.Rebels.Count; i++)
         {
             RebelBehaviour rebel = GameHandler.Rebels[i];
-            float distance = GameHandler.GetDistance(rebel.MapObject.Location, new Vector2(location.X, location.Y));
+            float distance = GameHandler.GetDistance(rebel.MapObject.Location, MapObject.Location/* new Vector2(location.X, location.Y)*/);
             min_distance = Math.Min(distance, min_distance);
 
             if (distance < MapObject.Range)
