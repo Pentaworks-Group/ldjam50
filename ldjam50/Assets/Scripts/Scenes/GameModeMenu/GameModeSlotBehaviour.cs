@@ -10,7 +10,7 @@ public class GameModeSlotBehaviour : MonoBehaviour
     public void OnSlotClick()
     {
         Assets.Scripts.Base.Core.SelectedGameMode = GameFieldSettings;
-        Debug.Log("Selected Moode: " + GameFieldSettings.Name);
         Core.Game.PlayButtonSound();
+        Core.Game.ChangeScene(SceneNames.MainMenu);
     }
 }
