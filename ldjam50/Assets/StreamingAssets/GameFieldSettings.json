@@ -165,7 +165,7 @@
         "MaxHealth": 400,
         "Strength": 40,
         "Repulsion": 0.001,
-        "Range": 0.055,
+        "Range": 0.05,
         "BackgroundColor": {
           "Red": 0,
           "Green": 0.5,
