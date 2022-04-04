@@ -42,7 +42,7 @@ Refactoring:
  
 WIP:
 ----------------------------------
- - Mark Unit not Available if not enought money
+ 
  
 Nice to have:
 ----------------------------------
@@ -116,3 +116,4 @@ Done:
  - If base is under attack and game is paused, base is destroyed => gameOver. Next game time does not start
  - Shop: show more digits for Palace Guards speed.
  - watermark in city
+ - Mark Unit not Available if not enought money

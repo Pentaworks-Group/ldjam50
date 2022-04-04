@@ -1,6 +1,8 @@
 
 using System;
 
+using Assets.Scripts.Base;
+
 using GameFrame.Core.Extensions;
 
 using UnityEngine;
@@ -17,6 +19,8 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
     private KeyValueTextBehaviour maxHealthKeyValue;
     private KeyValueTextBehaviour rangeKeyValue;
     private Text unitCostText;
+    private GameObject notAvailableOverlay;
+    private GameObject notEnoughMoneyText;
 
     private TroopDefault securityForceDefault;
     public TroopDefault SecurityForceDefault
@@ -49,6 +53,8 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
         this.maxHealthKeyValue = this.gameObject.transform.Find("DescriptionArea/MaxHealthKeyValue")?.GetComponent<KeyValueTextBehaviour>();
         this.rangeKeyValue = this.gameObject.transform.Find("DescriptionArea/RangeKeyValue")?.GetComponent<KeyValueTextBehaviour>();
         this.unitCostText = this.gameObject.transform.Find("CostArea/CostText")?.GetComponent<Text>();
+        this.notAvailableOverlay = this.gameObject.transform.Find("NotAvailable").gameObject;
+        this.notEnoughMoneyText = this.gameObject.transform.Find("NotEnoughtMoneyOverlay").gameObject;
 
         UpdateUI();
     }
@@ -61,6 +67,20 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
 
             this.corpsBackgroundImage.color = this.SecurityForceDefault.SelectedColor.ToUnity();
             this.backgroundImage.color = new Color(color.r, color.g, color.b, 0.4f);
+
+            if (!Core.Game.State.Mode.DisableMilitaryBase && Core.Game.State.MilitaryBase.Destroyed)
+            {
+                this.notAvailableOverlay.SetActive(true);
+            }
+            else
+            {
+                this.notAvailableOverlay.SetActive(false);
+            }
+        }
+        else
+        {
+            this.notEnoughMoneyText.SetActive(false);
+            this.notAvailableOverlay.SetActive(false);
         }
 
         this.corpsImage.sprite = GetSprite(this.SecurityForceDefault?.ImageNames?.GetRandomEntry());
@@ -81,5 +101,20 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
         }
 
         return default;
+    }
+
+    private void Update()
+    {
+        if (this.SecurityForceDefault != null && Core.Game.State != default)
+        {
+            if (Core.Game.State.AvailableCredits < this.SecurityForceDefault.UnitCost)
+            {
+                this.notEnoughMoneyText.SetActive(true);
+            }
+            else
+            {
+                this.notEnoughMoneyText.SetActive(false);
+            }
+        }
     }
 }
