@@ -19,6 +19,9 @@ public class CoreMapObject
         }
     }
     public String Name { get; set; }
+    public float Health { get; set; }
+    public float MaxHealth { get; set; }
+
 
     [JsonIgnore]
     public UnityEngine.Vector2 Location { get; set; }
