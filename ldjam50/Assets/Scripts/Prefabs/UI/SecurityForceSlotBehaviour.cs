@@ -57,8 +57,10 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
     {
         if (this.SecurityForceDefault != default)
         {
-            this.corpsBackgroundImage.color = this.SecurityForceDefault.Color.ToUnity();
-            this.backgroundImage.color = new Color(this.SecurityForceDefault.Color.Red, this.SecurityForceDefault.Color.Green, this.SecurityForceDefault.Color.Blue, 0.5f);
+            var color = this.SecurityForceDefault.Color.ToUnity();
+
+            this.corpsBackgroundImage.color = this.SecurityForceDefault.SelectedColor.ToUnity();
+            this.backgroundImage.color = new Color(color.r, color.g, color.b, 0.5f);
         }
 
         this.corpsImage.sprite = GetSprite(this.SecurityForceDefault?.ImageName);
