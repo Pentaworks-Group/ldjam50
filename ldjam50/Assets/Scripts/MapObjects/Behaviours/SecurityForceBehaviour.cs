@@ -68,7 +68,10 @@ public class SecurityForceBehaviour : CoreUnitBehaviour
 
         GameHandler.RemoveSecurityForce(this);
 
-        GameObject.Destroy(gameObject);
+        if (this.gameObject != null)
+        {
+            GameObject.Destroy(gameObject);
+        }
     }
 
     public override bool IsMoveable()

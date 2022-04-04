@@ -52,7 +52,10 @@ public class RebelBehaviour : CoreUnitBehaviour
             Core.Game.AmbienceAudioManager.Stop();
         }
 
-        GameObject.Destroy(gameObject);
+        if (gameObject != null)
+        {
+            GameObject.Destroy(gameObject);
+        }
     }
 
     public override bool IsMoveable()
