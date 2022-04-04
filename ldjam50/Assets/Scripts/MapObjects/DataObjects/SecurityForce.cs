@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
 
-public class PoliceTroop : CoreUnit
+using UnityEngine;
+
+public class SecurityForce : CoreUnit
 {
     public CoreMapBase Base { get; set; }
     public bool IsSelected { get; internal set; }
+    public Color Color { get; set; }
     public List<String> MarchSounds { get; set; }
 }

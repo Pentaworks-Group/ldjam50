@@ -27,8 +27,11 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
                 Healing = GameHandler.GameFieldSettings.PalaceDefault.Healing,
                 Health = GameHandler.GameFieldSettings.PalaceDefault.Health,
                 MaxHealth = GameHandler.GameFieldSettings.PalaceDefault.MaxHealth
+                Range = GameHandler.GameFieldSettings.PalaceDefault.Range,
+                Repulsion = GameHandler.GameFieldSettings.PalaceDefault.Repulsion
             };
         }
+
         CoreMapBase = mapBaseObject;
         Init(mapBaseObject);
     }
@@ -43,13 +46,38 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
         for (int i = 0; i < GameHandler.Rebels.Count; i++)
         {
             RebelBehaviour rebel = GameHandler.Rebels[i];
-            float distance = GameHandler.GetDistance(rebel.MapObject.Location, new Vector2(location.X, location.Y));
+            float distance = GameHandler.GetDistance(rebel.MapObject.Location, MapObject.Location/* new Vector2(location.X, location.Y)*/);
             min_distance = Math.Min(distance, min_distance);
+
+            if (distance < MapObject.Range)
+            {
+                rebel.Repel(distance, this);
+            }
+            //Attack Palace/Base
+            GameHandler.Fight(rebel, this, distance);
         }
 
         if (Core.Game.State != default)
         {
             Core.Game.AmbienceAudioManager.Volume = (1.0f - 2 * min_distance) * Core.Game.Options.AmbienceVolume;
         }
+    }
+
+    protected override void KillObject()
+    {
+        CallGameOver(0.0f);
+    }
+
+    public override bool IsMoveable()
+    {
+        return false;
+    }
+
+
+    private void CallGameOver(float distance)
+    {
+        Core.Game.AmbienceAudioManager.Stop();
+        Assets.Scripts.Base.Core.Game.ChangeScene(SceneNames.GameOver);
+        Debug.Log("You have Lost. Looser!! " + distance);
     }
 }

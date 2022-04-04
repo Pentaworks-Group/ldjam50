@@ -49,7 +49,7 @@ public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
         //Debug.Log("Move: " + newLocation + " direction: " + direction);
     }
 
-    public void MoveInDirection(Vector2 direction)
+    public override void MoveInDirection(Vector2 direction)
     {
         var unityLocation = MapObject.Location;
 
@@ -80,17 +80,7 @@ public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
         }
     }
 
-    public void DamageUnit(float damage)
-    {
-        CoreUnit.Health -= damage;
-        //Debug.Log("Health: " + CoreUnit.Health + "/" + CoreUnit.MaxHealth + " Damage received: " + damage);
-        if (CoreUnit.Health <= 0)
-        {
-            KillUnit();
-        }
-    }
-
-    protected abstract void KillUnit();
+//    protected abstract void KillObject();
 
     protected void AddDistanceAction(float distance, Action<float> action)
     {

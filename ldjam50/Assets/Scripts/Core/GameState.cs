@@ -9,7 +9,7 @@ namespace Assets.Scripts.Core
         public float NextRebelSpawn { get; set; }
         public float NextMoneySpawn { get; set; }
         public List<Rebel> Rebels { get; set; } = new List<Rebel>();
-        public List<PoliceTroop> SecurityForces { get; set; } = new List<PoliceTroop>();
+        public List<SecurityForce> SecurityForces { get; set; } = new List<SecurityForce>();
         public Decimal AvailableCredits { get; set; }
     }
 }

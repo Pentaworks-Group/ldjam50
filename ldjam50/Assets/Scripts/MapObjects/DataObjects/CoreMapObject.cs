@@ -21,6 +21,10 @@ public class CoreMapObject
     public String Name { get; set; }
     public float Health { get; set; }
     public float MaxHealth { get; set; }
+    public float Strength { get; set; }
+    public float Repulsion { get; set; }
+    public float Range { get; set; }
+
 
 
     [JsonIgnore]

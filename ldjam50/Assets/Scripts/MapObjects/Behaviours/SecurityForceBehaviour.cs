@@ -1,4 +1,3 @@
-using System;
 
 using Assets.Scripts.Base;
 
@@ -7,29 +6,28 @@ using GameFrame.Core.Extensions;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PoliceTroopBehaviour : CoreUnitBehaviour
+public class SecurityForceBehaviour : CoreUnitBehaviour
 {
     protected static float sendSoundTick = 0;
 
     private static Color selectedColor = Color.white;
-    private static Color defaultColor = new Color(0.5f, 0.5f, 0.5f, 1f);
 
-    public PoliceTroop PoliceTroop
+    public SecurityForce SecurityForce
     {
         get
         {
-            return this.GetUnit<PoliceTroop>();
+            return this.GetUnit<SecurityForce>();
         }
     }
 
     public void SendTroopsToLocation(Vector2 target)
     {
         playSendSound();
-        PoliceTroop.Speed = PoliceTroop.MaxSpeed;
-        PoliceTroop.Target = target;
+        SecurityForce.Speed = SecurityForce.MaxSpeed;
+        SecurityForce.Target = target;
     }
 
-    public void Init(PoliceTroop policeTroop)
+    public void Init(SecurityForce policeTroop)
     {
         sizeScale = 0.2f;
         AddDistanceAction(0.008f, Stop);
@@ -38,7 +36,7 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     public void Stop(float distance)
     {
-        PoliceTroop.Speed = 0;
+        SecurityForce.Speed = 0;
     }
 
     public void TroopClick()
@@ -49,21 +47,26 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
         }
     }
 
-    protected override void KillUnit()
+    protected override void KillObject()
     {
         if (GameHandler.SelectedTroop == this)
         {
             GameHandler.SelectTroop(null);
         }
 
-        Core.Game.State.SecurityForces.Remove(this.PoliceTroop);
+        GameHandler.RemoveSecurityForce(this);
 
         GameObject.Destroy(gameObject);
     }
 
+    public override bool IsMoveable()
+    {
+        return true;
+    }
+
     protected void playSendSound()
     {
-        AudioClip audioClip = GameFrame.Base.Resources.Manager.Audio.Get(PoliceTroop.MarchSounds.GetRandomEntry());
+        AudioClip audioClip = GameFrame.Base.Resources.Manager.Audio.Get(SecurityForce.MarchSounds.GetRandomEntry());
         float duration = (float)audioClip.samples / audioClip.frequency;
 
         if (Time.time > sendSoundTick)
@@ -79,23 +82,23 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     private new void Update()
     {
-        if (Vector2.Distance(PoliceTroop.Location, PoliceTroop.Base.Location) < 0.08f)
+        if (Vector2.Distance(SecurityForce.Location, SecurityForce.Base.Location) < 0.08f)
         {
             Heal();
         }
 
-        if (this.PoliceTroop.IsSelected)
+        if (this.SecurityForce.IsSelected)
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                SendTroopsToLocation(PoliceTroop.Base.Location);
+                SendTroopsToLocation(SecurityForce.Base.Location);
             }
 
-            CheckImageColor(selectedColor);
+            CheckImageColor(this.BackgroundImage, selectedColor);
         }
         else
         {
-            CheckImageColor(defaultColor);
+            CheckImageColor(this.BackgroundImage, this.SecurityForce.Color);
         }
 
         CheckForAdjesentRebels();
@@ -103,11 +106,11 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
         base.Update();
     }
 
-    private void CheckImageColor(Color colorToCheck)
+    private void CheckImageColor(Image image, Color colorToCheck)
     {
-        if (this.Image?.color != colorToCheck)
+        if (image?.color != colorToCheck)
         {
-            this.Image.color = colorToCheck;
+            image.color = colorToCheck;
         }
     }
 
@@ -117,7 +120,7 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
         {
             RebelBehaviour rebel = GameHandler.Rebels[i];
 
-            float distance = GameHandler.GetDistance(rebel.MapObject.Location, PoliceTroop.Location);
+            float distance = GameHandler.GetDistance(rebel.MapObject.Location, SecurityForce.Location);
 
             if (distance < CoreUnit.Range)
             {
@@ -132,9 +135,9 @@ public class PoliceTroopBehaviour : CoreUnitBehaviour
 
     private void Heal()
     {
-        if (PoliceTroop.Health < PoliceTroop.MaxHealth)
+        if (SecurityForce.Health < SecurityForce.MaxHealth)
         {
-            PoliceTroop.Health += PoliceTroop.Base.Healing * Time.deltaTime;
+            SecurityForce.Health += SecurityForce.Base.Healing * Time.deltaTime;
         }
     }
 }
