@@ -29,7 +29,7 @@ public class RebelBehaviour : CoreUnitBehaviour
     }
    
 
-    internal void Repel(float distance, CoreUnitBehaviour opponent)
+    internal void Repel(float distance, CoreMapObjectBehaviour opponent)
     {
         GameHandler.Repel(opponent, this, distance);
     }
