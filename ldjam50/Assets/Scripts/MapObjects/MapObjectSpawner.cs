@@ -348,12 +348,18 @@ public class MapObjectSpawner : MonoBehaviour
 
     private Vector2 getRandomTarget()
     {
-        var index = Mathf.FloorToInt(UnityEngine.Random.Range(0, 1.99f));
-        if (index == 0)
+        if(GameHandler.MilitaryBase.CoreMapBase.Destroyed)
         {
             return GameHandler.Palace.MapObject.Location;
+        } else
+        {
+            var index = Mathf.FloorToInt(UnityEngine.Random.Range(0, 1.99f));
+            if (index == 0)
+            {
+                return GameHandler.Palace.MapObject.Location;
+            }
+            return GameHandler.MilitaryBase.MapObject.Location;
         }
-        return GameHandler.MilitaryBase.MapObject.Location;
     }
 
 
