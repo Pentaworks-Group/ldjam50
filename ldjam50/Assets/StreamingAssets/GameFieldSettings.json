@@ -3,7 +3,7 @@
     "Name": "Defend Fort Riot",
     "FirstTick": 3,
     "TickInterval": 2.8,
-    "TickIntervalFactor": 0.99,
+    "TickIntervalFactor": 0.995,
     "TickIntervalLogBase": 10,
     "MoneyInterval": 3,
     "MoneyFirstTick": 5,
@@ -262,6 +262,7 @@
       "MaxHealth": 10
     },
     "DisableShop": true,
+	"DisableMilitaryBase": true,
     "TroopDefaults": [
       {
         "Type": "Police",
@@ -361,6 +362,7 @@
       "MaxHealth": 100
     },
     "DisableShop": true,
+	"DisableMilitaryBase": true,
     "TroopDefaults": [
       {
         "Names": [
@@ -457,6 +459,7 @@
       "MaxHealth": 10
     },
     "DisableShop": true,
+	"DisableMilitaryBase": true,
     "TroopDefaults": [
       {
         "Names": [
@@ -553,6 +556,7 @@
       "SafeZoneRadius": 0.2
     },
     "DisableShop": true,
+	"DisableMilitaryBase": true,
     "TroopDefaults": [
       {
         "Type": "Palace Guard",
