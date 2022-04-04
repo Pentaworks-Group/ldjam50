@@ -9,4 +9,5 @@ public class SecurityForce : CoreUnit
     public bool IsSelected { get; internal set; }
     public Color Color { get; set; }
     public List<String> MarchSounds { get; set; }
+    public Int32? AssignedKey { get; set; }
 }

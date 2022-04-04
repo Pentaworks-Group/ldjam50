@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+
 using UnityEngine;
-using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-
     private RectTransform RectTransformBar { get; set; }
     private CoreMapObject CoreMapObject { get; set; }
     private GameObject Display;
@@ -17,25 +15,38 @@ public class HealthBar : MonoBehaviour
         LoadCoreMapObject();
     }
 
-    private void LoadCoreMapObject()
+    private Boolean LoadCoreMapObject()
     {
         CoreMapObjectBehaviour coreUnitBehaviour = this.gameObject.GetComponentInParent<CoreMapObjectBehaviour>();
-        CoreMapObject = coreUnitBehaviour.MapObject;
+
+        if (coreUnitBehaviour?.MapObject != null)
+        {
+            CoreMapObject = coreUnitBehaviour.MapObject;
+
+            return true;
+        }
+
+        return false;
     }
 
     void Update()
     {
-        if (CoreMapObject == default)
+        if (CoreMapObject == null)
         {
-            LoadCoreMapObject();
+            if (!LoadCoreMapObject())
+            {
+                return;
+            }
         }
+
         if (CoreMapObject.Health >= CoreMapObject.MaxHealth)
         {
             if (Display.activeSelf)
             {
                 Display.SetActive(false);
             }
-        } else
+        }
+        else
         {
             if (!Display.activeSelf)
             {
