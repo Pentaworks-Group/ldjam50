@@ -152,6 +152,11 @@ namespace Assets.Scripts.Scenes.City
 
                 forceSlot.gameObject.SetActive(true);
             }
+
+            if (gameState.Mode.MoneyStart > 0)
+            {
+                ShowShop();
+            }
         }
 
         void Update()
