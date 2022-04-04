@@ -177,6 +177,23 @@ public class MapObjectSpawner : MonoBehaviour
         GameHandler.SelectTroop(spawnedTroop);
     }
 
+    public static Vector2 GetRandomTarget()
+    {
+        if (Core.Game.State.Mode.DisableMilitaryBase || GameHandler.MilitaryBase.CoreMapBase.Destroyed)
+        {
+            return GameHandler.Palace.MapObject.Location;
+        }
+        else
+        {
+            var index = Mathf.FloorToInt(UnityEngine.Random.Range(0, 1.99f));
+            if (index == 0)
+            {
+                return GameHandler.Palace.MapObject.Location;
+            }
+            return GameHandler.MilitaryBase.MapObject.Location;
+        }
+    }
+
     private SecurityForceBehaviour SpawnTroop(SecurityForce existingTroop = default)
     {
         var policeTroop = existingTroop;
@@ -274,7 +291,7 @@ public class MapObjectSpawner : MonoBehaviour
                 Name = GetRandomRebelName(),
                 Speed = speed,
                 Location = GetValidRandomLocation(),
-                Target = GameHandler.Palace.MapObject.Location,
+                Target = GetRandomTarget(),
                 ImageName = rebelDefault.ImageNames.GetRandomEntry(),
                 Strength = rebelDefault.Strength,
                 Repulsion = rebelDefault.Repulsion,
@@ -345,7 +362,6 @@ public class MapObjectSpawner : MonoBehaviour
 
         return location;
     }
-
 
     private void InitMilitaryBase()
     {

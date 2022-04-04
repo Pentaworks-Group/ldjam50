@@ -18,8 +18,8 @@ public abstract class CoreMapObjectBehaviour : MonoBehaviour
     protected void Init(CoreMapObject mapObject)
     {
         RectTransform = this.gameObject.GetComponent<RectTransform>();
-        BackgroundImage = this.gameObject.transform.Find("BackgroundImage").GetComponent<Image>();
-        Image = this.gameObject.transform.Find("Image").GetComponent<Image>();
+        BackgroundImage = this.gameObject.transform.Find("Active/BackgroundImage").GetComponent<Image>();
+        Image = this.gameObject.transform.Find("Active/Image").GetComponent<Image>();
 
         RectTransform.offsetMin = new Vector2(0, 0);
         RectTransform.offsetMax = new Vector2(0, 0);

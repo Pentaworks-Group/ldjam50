@@ -76,8 +76,12 @@ public class MainMenuBehaviour : MonoBehaviour
         this.MainMenuContainer.SetActive(mainMenu);
         this.OptionsMenuContainer.SetActive(options);
 
-        this.QuitButton.SetActive(mainMenu);
         this.BackButton.SetActive(!mainMenu);
+
+        if (Application.platform != RuntimePlatform.WebGLPlayer)
+        {
+            this.QuitButton.SetActive(mainMenu);
+        }
     }
 
     // Start is called before the first frame update

@@ -1,26 +1,24 @@
 Todo:
 ----------------------------------
  Exceptions:
- 
+ - If base is under attack and game is paused, base is destroyed => gameOver. Next game time does not start
+ - Shop: show more digits for Palace Guards speed.
 
  Core:
  - UnitTypes (Rebel & Troops)
- - Blockade/Palisade (#possible movments counter)
  - Change interval calculation to baseIntervall * factor / time 
- - Deactivate Destroyed MilitaryBase (no interaction, no healthbar, destroyed image)
   
  GamePlay:
  - Balancing
    
  UI:
  - Revamp UI for Save / Load (Button / Box / Scene)
- - CityScene HUD overhaul (eg. Buttons same size, image background)
  - Background for Menues: GameMode, SaveLoad ...
  
  Audio:
- - Effects
  - Sound Volume
  - SpawnSounds for different types
+ - Kill Sounds for Troops
  
  Itch.io:
  - Add description
@@ -104,3 +102,8 @@ Done:
  - display mode & exit selection on click 
  - setting for default mode 
  - Sound onButtonclick in Main Menu for ReloadSettings, Modes (and all Modes)
+ - Blockade/Palisade (#possible movments counter)
+ - Deactivate Destroyed MilitaryBase (no interaction, no healthbar, destroyed image)
+ - Only Allow Military Units if base alive
+ - CityScene HUD overhaul (eg. Buttons same size, image background)
+ - Save Palace & Military Base

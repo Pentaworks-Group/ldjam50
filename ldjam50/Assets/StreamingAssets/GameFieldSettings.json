@@ -3,19 +3,19 @@
     "Name": "Defend Fort Riot",
     "FirstTick": 3,
     "TickInterval": 2.8,
-    "TickIntervalFactor": 0.99,
+    "TickIntervalFactor": 0.995,
     "TickIntervalLogBase": 10,
     "MoneyInterval": 3,
     "MoneyFirstTick": 5,
-    "MoneyGainPerInterval": 50,
+    "MoneyGainPerInterval": 20,
     "MoneyStart": 100,
     "PalaceDefault": {
-      "Healing": 50,
+      "Healing": 30,
       "Health": 100000,
       "MaxHealth": 100000
     },
     "MilitaryBaseDefault": {
-      "Healing": 50,
+      "Healing": 30,
       "Health": 100000,
       "MaxHealth": 100000
     },
@@ -165,8 +165,8 @@
           "2st Army Corps"
         ],
         "MaxSpeed": 0.15,
-        "Health": 300,
-        "MaxHealth": 300,
+        "Health": 400,
+        "MaxHealth": 400,
         "Strength": 30,
         "Repulsion": 0.001,
         "Range": 0.055,
@@ -195,7 +195,7 @@
           "Yes_Sir",
           "Yes_Sir_2"
         ],
-        "UnitCost": 200,
+        "UnitCost": 500,
         "Bases": [
           {
             "Position": {
@@ -262,6 +262,7 @@
       "MaxHealth": 10
     },
     "DisableShop": true,
+	"DisableMilitaryBase": true,
     "TroopDefaults": [
       {
         "Type": "Police",
@@ -361,6 +362,7 @@
       "MaxHealth": 100
     },
     "DisableShop": true,
+	"DisableMilitaryBase": true,
     "TroopDefaults": [
       {
         "Names": [
@@ -457,6 +459,7 @@
       "MaxHealth": 10
     },
     "DisableShop": true,
+	"DisableMilitaryBase": true,
     "TroopDefaults": [
       {
         "Names": [
@@ -553,6 +556,7 @@
       "SafeZoneRadius": 0.2
     },
     "DisableShop": true,
+	"DisableMilitaryBase": true,
     "TroopDefaults": [
       {
         "Type": "Palace Guard",
