@@ -33,7 +33,7 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
 
     private CoreMapBase GetCoreMapBaseFromDefault(PalaceDefault baseDefault)
     {
-        location = new GameFrame.Core.Math.Vector2(baseDefault.Pos_x, baseDefault.Pos_y);
+        location = baseDefault.Position;
 
         return new CoreMapBase()
         {

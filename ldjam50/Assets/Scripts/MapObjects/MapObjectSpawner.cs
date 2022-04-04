@@ -243,12 +243,13 @@ public class MapObjectSpawner : MonoBehaviour
             Repulsion = troopDefault.Repulsion,
             Health = troopDefault.Health,
             MaxHealth = troopDefault.MaxHealth,
-            Location = new Vector2(troopBase.Pos_x, troopBase.Pos_y),
+            Location = troopBase.Position.ToUnity(),
             ImageName = troopDefault.ImageNames.GetRandomEntry(),
             Range = troopDefault.Range,
             Base = GameHandler.Palace.CoreMapBase,
             MarchSounds = troopDefault.MarchSounds,
-            Color = troopDefault.Color,
+            ForegroundColor = troopDefault.ForegroundColor,
+            BackgroundColor = troopDefault.BackgroundColor,
             SelectedColor = troopDefault.SelectedColor,
             MoveJustOnce = troopDefault.MoveJustOnce
         };
@@ -273,7 +274,7 @@ public class MapObjectSpawner : MonoBehaviour
                 Name = GetRandomRebelName(),
                 Speed = speed,
                 Location = GetValidRandomLocation(),
-                Target = getRandomValidTarget(),
+                Target = getRandomTarget(),
                 ImageName = rebelDefault.ImageNames.GetRandomEntry(),
                 Strength = rebelDefault.Strength,
                 Repulsion = rebelDefault.Repulsion,
@@ -281,7 +282,7 @@ public class MapObjectSpawner : MonoBehaviour
                 Health = rebelDefault.Health,
                 MaxHealth = rebelDefault.MaxHealth,
                 KillSound = rebelDefault.KillSounds.GetRandomEntry(),
-                SpawnSound = rebelDefault.SpawnSounds.GetRandomEntry()
+                SpawnSound = rebelDefault.SpawnSounds.GetRandomEntry(),
             };
 
             Core.Game.State.Rebels.Add(rebel);
@@ -345,15 +346,16 @@ public class MapObjectSpawner : MonoBehaviour
         return location;
     }
 
-    private Vector2 getRandomValidTarget()
+    private Vector2 getRandomTarget()
     {
         var index = Mathf.FloorToInt(UnityEngine.Random.Range(0, 1.99f));
-        if(index==0)
+        if (index == 0)
         {
             return GameHandler.Palace.MapObject.Location;
         }
         return GameHandler.MilitaryBase.MapObject.Location;
     }
+
 
     private void InitMilitaryBase()
     {
@@ -364,12 +366,24 @@ public class MapObjectSpawner : MonoBehaviour
         else
         {
             GameHandler.MilitaryBase = MilitaryBase;
-            GameHandler.MilitaryBase.InitPalaceWithDefault(Core.Game.State.Mode.MilitaryBaseDefault);
+
+            if (Core.Game.State.MilitaryBase == null)
+            {
+                GameHandler.MilitaryBase.InitPalaceWithDefault(Core.Game.State.Mode.MilitaryBaseDefault);
+            }
+            else
+            {
+                GameHandler.MilitaryBase.InitPalace(Core.Game.State.MilitaryBase);
+            }
+
+            Core.Game.State.MilitaryBase = GameHandler.MilitaryBase.CoreMapBase;
         }
     }
     private void InitPalace()
     {
         GameHandler.Palace = Palace;
-        GameHandler.Palace.InitPalace();
+        GameHandler.Palace.InitPalace(Core.Game.State.Palace);
+
+        Core.Game.State.Palace = GameHandler.Palace.CoreMapBase;
     }
 }

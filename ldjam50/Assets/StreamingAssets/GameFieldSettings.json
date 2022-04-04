@@ -4,17 +4,17 @@
     "FirstTick": 3,
     "TickInterval": 2.8,
     "TickIntervalFactor": 0.99,
-	"TickIntervalLogBase": 10,
+    "TickIntervalLogBase": 10,
     "MoneyInterval": 3,
     "MoneyFirstTick": 5,
-    "MoneyGainPerInterval": 50,
-	"MoneyStart": 100,
+    "MoneyGainPerInterval": 20,
+    "MoneyStart": 100,
     "PalaceDefault": {
       "Healing": 50,
       "Health": 100000,
       "MaxHealth": 100000
     },
-	"MilitaryBaseDefault": {
+    "MilitaryBaseDefault": {
       "Healing": 50,
       "Health": 100000,
       "MaxHealth": 100000
@@ -27,12 +27,18 @@
           "Palace Guard"
         ],
         "MaxSpeed": 0.02,
-        "Health": 150,
+        "Health": 200,
         "MaxHealth": 200,
         "Strength": 100,
         "Repulsion": 0.001,
         "Range": 0.055,
-        "Color": {
+        "ForegroundColor": {
+          "Red": 1,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 0.95
+        },
+        "BackgroundColor": {
           "Red": 1,
           "Green": 0,
           "Blue": 0,
@@ -44,7 +50,10 @@
           "Blue": 0,
           "Alpha": 0.45
         },
-        "ImageNames": [ "SGuard" ],
+        "ImageNames": [
+          "SGuard"
+
+        ],
         "MarchSounds": [
           "Fanfare_1",
           "March_1",
@@ -58,8 +67,10 @@
         "UnitCost": 1000,
         "Bases": [
           {
-            "Pos_x": 0.495,
-            "Pos_y": 0.512,
+            "Position": {
+              "X": 0.495,
+              "Y": 0.512
+            },
             "Radius": 0.07
           }
         ]
@@ -70,13 +81,13 @@
           "1st Police Corps",
           "2st Police Corps"
         ],
-        "MaxSpeed": 0.6,
+        "MaxSpeed": 0.4,
         "Health": 150,
-        "MaxHealth": 200,
+        "MaxHealth": 150,
         "Strength": 30,
         "Repulsion": 0.001,
         "Range": 0.055,
-        "Color": {
+        "BackgroundColor": {
           "Red": 0.251424,
           "Green": 0.3966849,
           "Blue": 0.7075472,
@@ -90,20 +101,17 @@
         },
         "ImageNames": [ "Police" ],
         "MarchSounds": [
-          "Fanfare_1",
-          "March_1",
-          "March_2",
-          "March_3",
-          "March_4",
-          "March_5",
-          "Yes_Sir",
-          "Yes_Sir_2"
+          "Police",
+          "Police_2",
+		  "Police_3"
         ],
         "UnitCost": 100,
         "Bases": [
           {
-            "Pos_x": 0.495,
-            "Pos_y": 0.512,
+            "Position": {
+              "X": 0.495,
+              "Y": 0.512
+            },
             "Radius": 0.07
           }
         ]
@@ -120,7 +128,7 @@
         "Strength": 0,
         "Repulsion": 0.003,
         "Range": 0.05,
-        "Color": {
+        "BackgroundColor": {
           "Red": 0.5,
           "Green": 0.5,
           "Blue": 0.5,
@@ -133,27 +141,22 @@
           "Alpha": 0.45
         },
         "ImageNames": [
-		  "Barricade"
+          "Barricade"
         ],
         "MarchSounds": [
-          "Fanfare_1",
-          "March_1",
-          "March_2",
-          "March_3",
-          "March_4",
-          "March_5",
-          "Yes_Sir",
-          "Yes_Sir_2"
+          "Barricade"
         ],
         "UnitCost": 20,
         "Bases": [
           {
-            "Pos_x": 0.495,
-            "Pos_y": 0.512,
+            "Position": {
+              "X": 0.495,
+              "Y": 0.512
+            },
             "Radius": 0.07
           }
         ],
-	    "MoveJustOnce": true
+        "MoveJustOnce": true
       },
       {
         "Type": "Army",
@@ -161,13 +164,13 @@
           "1st Army Corps",
           "2st Army Corps"
         ],
-        "MaxSpeed": 0.2,
-        "Health": 200,
-        "MaxHealth": 200,
+        "MaxSpeed": 0.15,
+        "Health": 400,
+        "MaxHealth": 400,
         "Strength": 30,
         "Repulsion": 0.001,
         "Range": 0.055,
-        "Color": {
+        "BackgroundColor": {
           "Red": 0,
           "Green": 0.5,
           "Blue": 0,
@@ -192,11 +195,13 @@
           "Yes_Sir",
           "Yes_Sir_2"
         ],
-        "UnitCost": 200,
+        "UnitCost": 500,
         "Bases": [
           {
-            "Pos_x": 0.721,
-            "Pos_y": 0.9175,
+            "Position": {
+              "X": 0.721,
+              "Y": 0.9175
+            },
             "Radius": 0.07
           }
         ]
@@ -217,7 +222,12 @@
         "Repulsion": 0.0005,
         "Range": 0.05,
         "ImageNames": [
-          "Rebel_0"
+          "Rebel_0",
+		  "Rebel_1",
+		  "Rebel_2",
+		  "Rebel_3",
+		  "Rebel_4",
+		  "Rebel_5"
         ],
         "KillSounds": [
           "Aaah",
@@ -230,7 +240,10 @@
           "Whistle",
           "Whistle_2",
           "Whistle_3",
-          "Whistle_4"
+          "Whistle_4",
+		  "Rebels_Generic",
+		  "Rebels_Generic_2",
+		  "Rebels_Generic_3"
         ]
       }
     ]
@@ -256,7 +269,7 @@
           "1st Police Corps",
           "2st Police Corps"
         ],
-        "Color": {
+        "BackgroundColor": {
           "Red": 0.251424,
           "Green": 0.3966849,
           "Blue": 0.7075472,
@@ -291,8 +304,10 @@
         "UnitCost": 100,
         "Bases": [
           {
-            "Pos_x": 0.5,
-            "Pos_y": 0.5,
+            "Position": {
+              "X": 0.5,
+              "Y": 0.5
+            },
             "Radius": 0.07
           }
         ]
@@ -352,7 +367,7 @@
           "1st Police Corps",
           "2st Police Corps"
         ],
-        "Color": {
+        "BackgroundColor": {
           "Red": 0.251424,
           "Green": 0.3966849,
           "Blue": 0.7075472,
@@ -387,8 +402,10 @@
         "UnitCost": 100,
         "Bases": [
           {
-            "Pos_x": 0.5,
-            "Pos_y": 0.5,
+            "Position": {
+              "X": 0.5,
+              "Y": 0.5
+            },
             "Radius": 0.07
           }
         ]
@@ -446,7 +463,7 @@
           "1st Police Corps",
           "2st Police Corps"
         ],
-        "Color": {
+        "BackgroundColor": {
           "Red": 0.251424,
           "Green": 0.3966849,
           "Blue": 0.7075472,
@@ -480,8 +497,10 @@
         "UnitCost": 100,
         "Bases": [
           {
-            "Pos_x": 0.5,
-            "Pos_y": 0.5,
+            "Position": {
+              "X": 0.5,
+              "Y": 0.5
+            },
             "Radius": 0.07
           }
         ]
@@ -546,7 +565,13 @@
         "Strength": 100,
         "Repulsion": 0.001,
         "Range": 0.05,
-        "Color": {
+        "ForegroundColor": {
+          "Red": 1,
+          "Green": 0,
+          "Blue": 0,
+          "Alpha": 0.95
+        },
+        "BackgroundColor": {
           "Red": 1,
           "Green": 0,
           "Blue": 0,
@@ -574,8 +599,10 @@
         "UnitCost": 200,
         "Bases": [
           {
-            "Pos_x": 0.495,
-            "Pos_y": 0.512,
+            "Position": {
+              "X": 0.495,
+              "Y": 0.512
+            },
             "Radius": 0.07
           }
         ]

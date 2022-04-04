@@ -168,7 +168,6 @@ public class MainMenuBehaviour : MonoBehaviour
         //}
     }
 
-
     public void LoadGameFieldSettings()
     {
         String filePath = Application.streamingAssetsPath + "/GameFieldSettings.json";
@@ -188,14 +187,12 @@ public class MainMenuBehaviour : MonoBehaviour
         return gameFieldSettings;
     }
 
-
     public void ReloadSettingsClick()
     {
         Core.Game.PlayButtonSound();
         String filePath = Application.streamingAssetsPath + "/GameFieldSettings.json";
         StartCoroutine(GameFrame.Core.Json.Handler.DeserializeObjectFromStreamingAssets<List<GameFieldSettings>>(filePath, SetGameFieldSettingsForce));
     }
-
 
     private List<GameFieldSettings> SetGameFieldSettingsForce(List<GameFieldSettings> gameFieldSettings)
     {

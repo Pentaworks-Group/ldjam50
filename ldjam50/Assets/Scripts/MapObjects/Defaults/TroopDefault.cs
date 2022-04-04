@@ -12,7 +12,8 @@ public class TroopDefault : CoreMapObjectDefault
     public Decimal UnitCost { get; set; }
     public List<String> MarchSounds { get; set; }
     public List<BaseDefault> Bases { get; set; }
-    public Color Color { get; set; }
+    public Color BackgroundColor { get; set; }
+    public Color? ForegroundColor { get; set; }
     public Color SelectedColor { get; set; }
     public Boolean MoveJustOnce { get; set; } = false;
 }
