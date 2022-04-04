@@ -8,23 +8,10 @@ using GameFrame.Core.Extensions;
 
 public class RebelBehaviour : CoreUnitBehaviour
 {
-
-    protected static Lazy<System.Collections.Generic.List<AudioClip>> lazyKillSounds = new Lazy<System.Collections.Generic.List<AudioClip>>(() =>
-    {
-        return new System.Collections.Generic.List<AudioClip>()
-        {
-            GameFrame.Base.Resources.Manager.Audio.Get("Aww"),
-            GameFrame.Base.Resources.Manager.Audio.Get("Daeng"),
-            GameFrame.Base.Resources.Manager.Audio.Get("Nuts"),
-            GameFrame.Base.Resources.Manager.Audio.Get("Aaah"),
-            GameFrame.Base.Resources.Manager.Audio.Get("Oops")
-        };
-    });
-
     public void Init(Rebel rebel)
     {
         sizeScale = 0.2f;
-        AddDistanceAction(rebel.Range, CallGameOver);
+//        AddDistanceAction(rebel.Range, CallGameOver);
         base.Init(rebel);
     }
 

@@ -4,6 +4,7 @@ Todo:
  - SpawnSounds for different types
  - display mode & exit selection on click
  - troop number overlay (0-9 for selecting this unit)
+ - send selectred troop in HeadQuarter when pressing "Q"
  - setting for default mode
  - use different sprites for rebels (change RebelDefault.ImageName to list)
  - allow setting troop binding (0-9)
