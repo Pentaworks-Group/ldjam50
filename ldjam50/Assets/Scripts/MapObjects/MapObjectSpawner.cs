@@ -70,8 +70,11 @@ public class MapObjectSpawner : MonoBehaviour
         }
         else
         {
-            if(Core.Game.State.Mode.MoneyStart==0) 
+            if (gameState.Mode.MoneyStart == 0)
+            {
+                Time.timeScale = 1;
                 SpawnTroopFromDefault(gameState.Mode.TroopDefaults.FirstOrDefault());
+            }
         }
 
         if (gameState.Rebels?.Count > 0)
