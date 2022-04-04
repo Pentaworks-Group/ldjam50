@@ -13,6 +13,8 @@ public class SecurityForceBehaviour : CoreUnitBehaviour
     private GameObject keyNumberArea;
     private Text keyNumberText;
 
+    protected bool moveable = true;
+
     public SecurityForce SecurityForce
     {
         get
@@ -23,9 +25,17 @@ public class SecurityForceBehaviour : CoreUnitBehaviour
 
     public void SendTroopsToLocation(Vector2 target)
     {
-        playSendSound();
-        SecurityForce.Speed = SecurityForce.MaxSpeed;
-        SecurityForce.Target = target;
+        if(IsMoveable())
+        {
+            playSendSound();
+            SecurityForce.Speed = SecurityForce.MaxSpeed;
+            SecurityForce.Target = target;
+
+            if (CoreUnit.MoveJustOnce)
+            {
+                this.moveable = false;
+            }
+        }
     }
 
     public void Init(SecurityForce policeTroop)
@@ -62,7 +72,7 @@ public class SecurityForceBehaviour : CoreUnitBehaviour
 
     public override bool IsMoveable()
     {
-        return true;
+        return moveable;
     }
 
     protected void playSendSound()
