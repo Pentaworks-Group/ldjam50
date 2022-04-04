@@ -220,10 +220,6 @@
         "ImageNames": [
           "Rebel_0",
 		  "Rebel_1",
-		  "Rebel_2",
-		  "Rebel_3",
-		  "Rebel_4",
-		  "Rebel_5"
         ],
         "KillSounds": [
           "Aaah",
@@ -241,11 +237,115 @@
 		  "Rebels_Generic_2",
 		  "Rebels_Generic_3",
 		  "Earth_is_a_cube",
-		  "Glace_Schmöuzt",
-		  "Its_A_Trap",
-		  "No_More_School",
-		  "We_Want_Cake",
 		  "Hello_There"
+        ]
+      },
+	  {
+        "Type": "Noobs",
+        "Names": [
+          "Depper Doders",
+          "Hadwi"
+        ],
+        "MinSpeed": 0.005,
+        "MaxSpeed": 0.007,
+        "Health": 100,
+        "MaxHealth": 100,
+        "Strength": 10,
+        "Repulsion": 0.0005,
+        "Range": 0.05,
+        "ImageNames": [
+		  "Rebel_2",
+        ],
+        "KillSounds": [
+          "Aaah",
+          "Aww",
+          "Daeng",
+          "Nuts",
+          "Oops"
+        ],
+        "SpawnSounds": [
+		  "Its_A_Trap",
+        ]
+      },
+	  {
+        "Type": "Noobs",
+        "Names": [
+          "Depper Doders",
+          "Hadwi"
+        ],
+        "MinSpeed": 0.005,
+        "MaxSpeed": 0.007,
+        "Health": 100,
+        "MaxHealth": 100,
+        "Strength": 10,
+        "Repulsion": 0.0005,
+        "Range": 0.05,
+        "ImageNames": [
+		  "Rebel_3",
+        ],
+        "KillSounds": [
+          "Aaah",
+          "Aww",
+          "Daeng",
+          "Nuts",
+          "Oops"
+        ],
+        "SpawnSounds": [
+		  "Glace_Schmöuzt",
+        ]
+      },
+	  {
+        "Type": "Noobs",
+        "Names": [
+          "Depper Doders",
+          "Hadwi"
+        ],
+        "MinSpeed": 0.005,
+        "MaxSpeed": 0.007,
+        "Health": 100,
+        "MaxHealth": 100,
+        "Strength": 10,
+        "Repulsion": 0.0005,
+        "Range": 0.05,
+        "ImageNames": [
+		  "Rebel_4",
+        ],
+        "KillSounds": [
+          "Aaah",
+          "Aww",
+          "Daeng",
+          "Nuts",
+          "Oops"
+        ],
+        "SpawnSounds": [
+		  "No_More_School",
+        ]
+      },
+	  {
+        "Type": "Noobs",
+        "Names": [
+          "Depper Doders",
+          "Hadwi"
+        ],
+        "MinSpeed": 0.005,
+        "MaxSpeed": 0.007,
+        "Health": 100,
+        "MaxHealth": 100,
+        "Strength": 10,
+        "Repulsion": 0.0005,
+        "Range": 0.05,
+        "ImageNames": [
+		  "Rebel_5",
+        ],
+        "KillSounds": [
+          "Aaah",
+          "Aww",
+          "Daeng",
+          "Nuts",
+          "Oops"
+        ],
+        "SpawnSounds": [
+		  "We_Want_Cake",
         ]
       }
     ]

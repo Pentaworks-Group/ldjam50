@@ -12,7 +12,8 @@ Todo:
    
  UI:
  - Revamp UI for Save / Load (Button / Box / Scene)
- - Background for Menues: GameMode, SaveLoad ...
+ - Clean and standardise different menuScenes
+ 
  
  Audio:
  - Sound Volume
@@ -116,4 +117,5 @@ Done:
  - If base is under attack and game is paused, base is destroyed => gameOver. Next game time does not start
  - Shop: show more digits for Palace Guards speed.
  - watermark in city
+ - Background for Menues: GameMode, SaveLoad ... 
  - Mark Unit not Available if not enought money
