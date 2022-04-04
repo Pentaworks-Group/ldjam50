@@ -587,7 +587,13 @@
         "Repulsion": 0.00005,
         "Range": 0.002,
         "ImageNames": [
-          "Riots"
+          "Riots",
+          "Rebel_0",
+          "Rebel_1",
+          "Rebel_2",
+          "Rebel_3",
+          "Rebel_4",
+          "Rebel_5"
         ]
       }
     ]
