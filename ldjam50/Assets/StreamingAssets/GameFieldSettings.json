@@ -527,7 +527,7 @@
         "Health": 100000000,
         "MaxHealth": 100000000,
         "Strength": 0,
-        "Repulsion": -0.002,
+        "Repulsion": -0.01,
         "Range": 0.05,
         "ImageNames": [
           "Troops"
