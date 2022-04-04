@@ -274,8 +274,11 @@ public class MapObjectSpawner : MonoBehaviour
             Core.Game.State.Rebels.Add(rebel);
 
             Core.Game.AmbienceAudioManager.Resume();
-            AudioClip spawnAudio = GameFrame.Base.Resources.Manager.Audio.Get(rebel.SpawnSound);
-            Core.Game.EffectsAudioManager.Play(spawnAudio);
+            if (rebel.SpawnSound != default)
+            {
+                AudioClip spawnAudio = GameFrame.Base.Resources.Manager.Audio.Get(rebel.SpawnSound);
+                Core.Game.EffectsAudioManager.Play(spawnAudio);
+            }
         }
 
         GameObject rebelOb = InstantiateGameObject(RebelTemplate, Map.transform);

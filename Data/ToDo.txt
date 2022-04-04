@@ -14,6 +14,9 @@ Todo:
  - Base/Palace Health
  - Change interval calculation to baseIntervall * factor / time 
  - Deactivate Destroyed MilitaryBase (no interaction, no healthbar, destroyed image)
+ - Button Sounds in GameModeMenu
+ - Handling of GetRandomEntry on emtpy list?
+ 
  
  
  GamePlay:
