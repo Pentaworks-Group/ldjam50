@@ -18,6 +18,7 @@ Todo:
  
  
  
+ 
  GamePlay:
  - Balancing
    
@@ -46,6 +47,7 @@ Refactoring:
  - replace if (Screen.width < ..hight) with global call
  - Remove hardcoded references to mapsize (mostly unit scaling)
  - UnitScaling with targetSize (relative width, keep ratio?)
+ - Change Pos_x & Pos_y in defaults to GameFrame.Core.Math.Vector2
 
 Ideas:
 ----------------------------------
@@ -62,6 +64,7 @@ Nice to have:
 ----------------------------------
  - Text editor to supply us for JSON data
  - Variable Rebel Strength 
+ - Bases in json (linked via unique ID to troops)
  
 WIP:
 ----------------------------------
