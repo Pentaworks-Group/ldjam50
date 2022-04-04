@@ -3,11 +3,9 @@ Todo:
  Core:
  
  - Money
- - Fix Time Display when rotated
  - Fix Method & var Names
  - SpawnSounds for different types
  - display mode & exit selection on click
- - disable shop per gamesettings
  - troop number overlay (0-9 for selecting this unit)
  - setting for default mode
  - use different sprites for rebels (change RebelDefault.ImageName to list)
@@ -67,5 +65,7 @@ Done:
  - Fixed bug where game resumed in CityScene when Shop was open and pause toggled twice
  - Make palace hitbox != circle (any distance calc)
  - Multiple Modes (Only Push, Fast, Clicker,...?)
-  - Fix rotated image for units in "rotated" mode
+ - Fix rotated image for units in "rotated" mode
  - RebelSound persists in PauseMenu & After Quiting
+ - Fix Time Display when rotated
+ - disable shop per gamesettings
