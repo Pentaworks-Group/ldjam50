@@ -63,7 +63,7 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
             this.backgroundImage.color = new Color(color.r, color.g, color.b, 0.4f);
         }
 
-        this.corpsImage.sprite = GetSprite(this.SecurityForceDefault?.ImageName);
+        this.corpsImage.sprite = GetSprite(this.SecurityForceDefault?.ImageNames?.GetRandomEntry());
 
         this.corpsNameText.text = this.SecurityForceDefault?.Type;
         this.strengthKeyValue.Value = this.SecurityForceDefault?.Strength.ToString("F1");

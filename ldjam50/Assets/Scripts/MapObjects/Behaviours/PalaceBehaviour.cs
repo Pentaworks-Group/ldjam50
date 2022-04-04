@@ -2,6 +2,7 @@ using System;
 
 using Assets.Scripts.Base;
 
+using GameFrame.Core.Extensions;
 
 public class PalaceBehaviour : CoreMapObjectBehaviour
 {
@@ -38,7 +39,7 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
         {
             Name = baseDefault.Name,
             ActualLocation = location,
-            ImageName = baseDefault.ImageName,
+            ImageName = baseDefault.ImageNames.GetRandomEntry(),
             Healing = baseDefault.Healing,
             Health = baseDefault.Health,
             MaxHealth = baseDefault.MaxHealth,

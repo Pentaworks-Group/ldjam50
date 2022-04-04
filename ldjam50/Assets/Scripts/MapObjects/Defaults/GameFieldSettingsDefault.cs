@@ -9,7 +9,7 @@ public class GameFieldSettings
     public float TickInterval { get; set; }
     public float TickIntervalFactor { get; set; } = 2;
     public float TickIntervalLogBase { get; set; } = 5;
-        
+
 
     public bool DisableShop { get; set; }
     public Decimal MoneyGainPerInterval { get; set; }
@@ -21,7 +21,10 @@ public class GameFieldSettings
     public PalaceDefault PalaceDefault { get; set; } = new PalaceDefault()
     {
         Name = "Palace",
-        ImageName = "Palace",
+        ImageNames = new List<String>
+        {
+            "Palace"
+        },
         Healing = 0,
         Health = 100,
         MaxHealth = 100,
@@ -36,7 +39,10 @@ public class GameFieldSettings
     public PalaceDefault MilitaryBaseDefault { get; set; } = new PalaceDefault()
     {
         Name = "MilitaryBase",
-        ImageName = "MBase",
+        ImageNames = new List<String>
+        {
+            "MBase"
+        },
         Healing = 0,
         Health = 100,
         MaxHealth = 100,
@@ -45,7 +51,6 @@ public class GameFieldSettings
         ObjectSize = 0.02f,
         Pos_x = 0.721f,
         Pos_y = 0.9175f
-
     };
 
     public List<RebelDefault> RebelDefaults { get; set; }

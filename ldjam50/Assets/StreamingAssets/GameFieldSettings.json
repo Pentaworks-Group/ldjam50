@@ -37,7 +37,7 @@
           "Blue": 0,
           "Alpha": 0.45
         },
-        "ImageName": "SGuard",
+        "ImageNames": [ "SGuard" ],
         "MarchSounds": [
           "Fanfare_1",
           "March_1",
@@ -81,7 +81,7 @@
           "Blue": 0.7075472,
           "Alpha": 0.45
         },
-        "ImageName": "Police",
+        "ImageNames": [ "Police" ],
         "MarchSounds": [
           "Fanfare_1",
           "March_1",
@@ -125,7 +125,9 @@
           "Blue": 0.5,
           "Alpha": 0.45
         },
-        "ImageName": "Tower",
+        "ImageNames": [
+          "Tower"
+        ],
         "MarchSounds": [
           "Fanfare_1",
           "March_1",
@@ -169,7 +171,9 @@
           "Blue": 0,
           "Alpha": 0.45
         },
-        "ImageName": "Riot_M2",
+        "ImageNames": [
+          "Riot_M2"
+        ],
         "MarchSounds": [
           "Fanfare_1",
           "March_1",
@@ -204,7 +208,9 @@
         "Strength": 20,
         "Repulsion": 0.0005,
         "Range": 0.05,
-        "ImageName": "Rebel_0",
+        "ImageNames": [
+          "Rebel_0"
+        ],
         "KillSounds": [
           "Aaah",
           "Aww",
@@ -260,7 +266,10 @@
         "Strength": 0,
         "Repulsion": 0.01,
         "Range": 0.05,
-        "ImageName": "Troops",
+        "ImageNames": [
+          "Troops"
+
+        ],
         "MarchSounds": [
           "Fanfare_1",
           "March_1",
@@ -295,7 +304,10 @@
         "Strength": 1,
         "Repulsion": 0.0005,
         "Range": 0.0002,
-        "ImageName": "Riots",
+        "ImageNames": [
+          "Riots"
+
+        ],
         "KillSounds": [
           "Aaah",
           "Aww",
@@ -350,7 +362,10 @@
         "Strength": 0,
         "Repulsion": -0.002,
         "Range": 0.05,
-        "ImageName": "Troops",
+        "ImageNames": [
+          "Troops"
+
+        ],
         "MarchSounds": [
           "Fanfare_1",
           "March_1",
@@ -384,7 +399,9 @@
         "Strength": 1,
         "Repulsion": 0.00005,
         "Range": 0.002,
-        "ImageName": "Riots",
+        "ImageNames": [
+          "Riots"
+        ],
         "KillSounds": [
           "Aaah",
           "Aww",
@@ -439,7 +456,9 @@
         "Strength": 100,
         "Repulsion": -0.002,
         "Range": 0.05,
-        "ImageName": "Troops",
+        "ImageNames": [
+          "Troops"
+        ],
         "MarchSounds": [
           "Fanfare_1",
           "March_1",
@@ -473,7 +492,9 @@
         "Strength": 1,
         "Repulsion": 0.00005,
         "Range": 0.002,
-        "ImageName": "Riots",
+        "ImageNames": [
+          "Riots"
+        ],
         "KillSounds": [
           "Aaah",
           "Aww",
@@ -529,7 +550,9 @@
           "Blue": 0,
           "Alpha": 0.45
         },
-        "ImageName": "SGuard",
+        "ImageNames": [
+          "SGuard"
+        ],
         "MarchSounds": [
           "Fanfare_1",
           "March_1",
@@ -563,7 +586,9 @@
         "Strength": 1,
         "Repulsion": 0.00005,
         "Range": 0.002,
-        "ImageName": "Riots"
+        "ImageNames": [
+          "Riots"
+        ]
       }
     ]
   }
