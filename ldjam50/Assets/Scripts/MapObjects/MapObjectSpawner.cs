@@ -105,11 +105,11 @@ public class MapObjectSpawner : MonoBehaviour
         if (currentTime > nextSpawnTick)
         {
             SpawnRebel();
-            nextSpawnTick = currentTime + spawnInterval;
 
             Core.Game.State.NextRebelSpawn = nextSpawnTick;
-
-            spawnInterval *= GameHandler.GameFieldSettings.TickIntervalFactor;
+            spawnInterval = GameHandler.GameFieldSettings.TickIntervalFactor * GameHandler.GameFieldSettings.TickInterval / Mathf.Log(currentTime, GameHandler.GameFieldSettings.TickIntervalLogBase);
+            nextSpawnTick = currentTime + spawnInterval;
+            Debug.Log("Next Spawn: " + nextSpawnTick + "  interval: " + spawnInterval);
         }
 
         if (!GameHandler.GameFieldSettings.DisableShop)

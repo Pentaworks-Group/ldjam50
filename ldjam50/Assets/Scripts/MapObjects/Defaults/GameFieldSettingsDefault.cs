@@ -7,7 +7,8 @@ public class GameFieldSettings
 
     public float FirstTick { get; set; }
     public float TickInterval { get; set; }
-    public float TickIntervalFactor { get; set; }
+    public float TickIntervalFactor { get; set; } = 2;
+    public float TickIntervalLogBase { get; set; } = 5;
     public float MoneyInterval { get; set; }
     public float MoneyFirstTick { get; set; }
     public Decimal MoneyGainPerInterval { get; set; }
