@@ -276,7 +276,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &1682637802365037447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,6 +289,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0022145afc2f07488ca405a608b9da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PauseToggled:
+    m_PersistentCalls:
+      m_Calls: []
   Menu: {fileID: 7451514606345876462}
   GameView: {fileID: 0}
   MenuArea: {fileID: 6866482383246554470}
