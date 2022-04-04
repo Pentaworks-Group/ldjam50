@@ -253,14 +253,17 @@ namespace Assets.Scripts.Scenes.City
         {
             var securityForce = GameHandler.SelectedTroop;
 
-            securityForce.SecurityForce.AssignedKey = key;
+            if (securityForce.IsMoveable())
+            {
+                securityForce.SecurityForce.AssignedKey = key;
 
-            this.boundSecurityForces[key] = securityForce;
+                this.boundSecurityForces[key] = securityForce;
+            }
         }
 
         private void SelectBoundSecurityForce(Int32 keyNumber)
         {
-            if (boundSecurityForces.TryGetValue(keyNumber, out SecurityForceBehaviour securityForce))
+            if (boundSecurityForces.TryGetValue(keyNumber, out SecurityForceBehaviour securityForce) && securityForce.IsMoveable())
             {
                 GameHandler.SelectTroop(securityForce);
             }
