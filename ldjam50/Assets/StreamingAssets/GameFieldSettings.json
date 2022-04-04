@@ -7,7 +7,11 @@
     "MoneyInterval": 3,
     "MoneyFirstTick": 5,
     "MoneyGainPerInterval": 50,
-    "PalaceHealing": 50,
+    "PalaceDefault":{
+    "Healing": 50,
+    "Health": 100000,
+    "MaxHealth": 100000
+	},
     "DisableShop": false,
     "TroopDefaults": [
       {
@@ -201,7 +205,11 @@
     "MoneyInterval": 1000,
     "MoneyFirstTick": 1000,
     "MoneyGainPerInterval": 0,
-    "PalaceHealing": 50,
+    "PalaceDefault":{
+    "Healing": 50,
+    "Health": 100000,
+    "MaxHealth": 100000
+	},
     "DisableShop": true,
     "TroopDefaults": [
       {
@@ -282,7 +290,11 @@
     "MoneyInterval": 1000,
     "MoneyFirstTick": 1000,
     "MoneyGainPerInterval": 0,
-    "PalaceHealing": 50,
+    "PalaceDefault":{
+    "Healing": 50,
+    "Health": 100000,
+    "MaxHealth": 100000
+	},
     "DisableShop": true,
     "TroopDefaults": [
       {
@@ -361,7 +373,11 @@
     "MoneyInterval": 1000,
     "MoneyFirstTick": 1000,
     "MoneyGainPerInterval": 0,
-    "PalaceHealing": 500,
+    "PalaceDefault":{
+    "Healing": 50,
+    "Health": 100000,
+    "MaxHealth": 100000
+	},
     "DisableShop": true,
     "TroopDefaults": [
       {
@@ -434,33 +450,37 @@
   },
   {
     "Name": "Doomsday",
-    "FirstTick": 0.02,
-    "TickInterval": 0.02,
+    "FirstTick": 10,
+    "TickInterval": 10,
     "TickIntervalFactor": 0.99,
     "MoneyInterval": 1000,
     "MoneyFirstTick": 1000,
     "MoneyGainPerInterval": 0,
-    "PalaceHealing": 500,
+    "PalaceDefault":{
+    "Healing": 500,
+    "Health": 1,
+    "MaxHealth": 1
+	},
     "DisableShop": true,
     "TroopDefaults": [
       {
+        "Type": "Palace Guard",
         "Names": [
-          "1st Police Corps",
-          "2st Police Corps"
+          "Palace Guard"
         ],
+        "MaxSpeed": 0.6,
+        "Health": 100000000,
+        "MaxHealth": 100000000,
+        "Strength": 100,
+        "Repulsion": 0.001,
+        "Range": 0.05,
         "Color": {
           "Red": 0.251424,
           "Green": 0.3966849,
           "Blue": 0.7075472,
-          "Alpha": 0.8196079
+          "Alpha": 0.95
         },
-        "MaxSpeed": 0.6,
-        "Health": 1000000,
-        "MaxHealth": 1000000,
-        "Strength": 100,
-        "Repulsion": -0.002,
-        "Range": 0.05,
-        "ImageName": "Troops",
+        "ImageName": "SGuard",
         "MarchSounds": [
           "Fanfare_1",
           "March_1",
@@ -471,11 +491,11 @@
           "Yes_Sir",
           "Yes_Sir_2"
         ],
-        "UnitCost": 100,
+        "UnitCost": 200,
         "Bases": [
           {
-            "Pos_x": 0.5,
-            "Pos_y": 0.5,
+            "Pos_x": 0.495,
+            "Pos_y": 0.512,
             "Radius": 0.07
           }
         ]

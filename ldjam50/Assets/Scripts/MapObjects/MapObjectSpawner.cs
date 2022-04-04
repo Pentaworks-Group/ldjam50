@@ -66,10 +66,7 @@ public class MapObjectSpawner : MonoBehaviour
         }
         else
         {
-            var troop = SpawnTroop(default);
-
-            GameHandler.AddSecurityForce(troop);
-            GameHandler.SelectTroop(troop);
+            SpawnTroopFromDefault(GameHandler.GameFieldSettings.TroopDefaults.FirstOrDefault());
         }
 
         if (Core.Game.State.Rebels?.Count > 0)
