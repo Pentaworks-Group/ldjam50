@@ -128,8 +128,9 @@ public class SecurityForceBehaviour : CoreUnitBehaviour
             if (!keyNumberArea.activeSelf)
             {
                 keyNumberArea.SetActive(true);
-                this.keyNumberText.text = this.SecurityForce.AssignedKey.Value.ToString();
             }
+
+            this.keyNumberText.text = this.SecurityForce.AssignedKey.Value.ToString();
         }
 
         if (keyNumberArea.activeSelf && !this.SecurityForce.AssignedKey.HasValue)
