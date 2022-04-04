@@ -13,8 +13,7 @@ Todo:
  - Blockade/Palisade (#possible movments counter)
  - Base/Palace Health
  - Change interval calculation to baseIntervall * factor / time 
- - SafeZoneRadius into settings
-
+ 
  
  
  GamePlay:
@@ -86,4 +85,5 @@ Done:
  - disable shop per gamesettings
  - PauseMenuButton sprite
  - Money
+ - SafeZoneRadius into settings
  - send selectred troop in HeadQuarter when pressing "Q"
