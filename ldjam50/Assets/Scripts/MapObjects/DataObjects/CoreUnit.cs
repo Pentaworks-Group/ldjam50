@@ -2,6 +2,7 @@
 using GameFrame.Core.Extensions;
 
 using Newtonsoft.Json;
+using System;
 
 public class CoreUnit : CoreMapObject
 {
@@ -20,6 +21,8 @@ public class CoreUnit : CoreMapObject
     }
 
     public CoreMapObject TargetObject { get; set; }
+
+    public Boolean MoveJustOnce { get; set; }
 
     [JsonIgnore]
     public UnityEngine.Vector2 Target { get; set; }

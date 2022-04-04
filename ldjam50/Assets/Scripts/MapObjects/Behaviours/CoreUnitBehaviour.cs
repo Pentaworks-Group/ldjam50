@@ -9,6 +9,7 @@ public abstract class CoreUnitBehaviour : CoreMapObjectBehaviour
     private Dictionary<float, Action<float>> distanceActions = new Dictionary<float, Action<float>>();
 
     private CoreUnit unit;
+
     public CoreUnit CoreUnit
     {
         get
