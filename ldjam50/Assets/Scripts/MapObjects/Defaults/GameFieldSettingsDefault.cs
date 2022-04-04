@@ -28,7 +28,8 @@ public class GameFieldSettings
         Range = 0.07f,
         Repulsion = 1.0f,
         ObjectSize = 0.04f,
-        SafeZoneRadius = 0.13f
+        SafeZoneRadius = 0.13f,
+        GameOverOnDestruction = true
     };
 
     public bool DisableMilitaryBase { get; set; }

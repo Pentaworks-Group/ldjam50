@@ -46,7 +46,8 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
             MaxHealth = baseDefault.MaxHealth,
             Range = baseDefault.Range,
             Repulsion = baseDefault.Repulsion,
-            ObjectSize = baseDefault.ObjectSize
+            ObjectSize = baseDefault.ObjectSize,
+            GameOverOnDestruction = baseDefault.GameOverOnDestruction
         };
     }
 
@@ -85,7 +86,10 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
 
     protected override void KillObject()
     {
-        CallGameOver(0.0f);
+        if (CoreMapBase.GameOverOnDestruction)
+        {
+            CallGameOver();
+        }
     }
 
     public override bool IsMoveable()
@@ -94,10 +98,9 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
     }
 
 
-    private void CallGameOver(float distance)
+    private void CallGameOver()
     {
         Core.Game.AmbienceAudioManager.Stop();
         Assets.Scripts.Base.Core.Game.ChangeScene(SceneNames.GameOver);
-        Debug.Log("You have Lost. Looser!! " + distance);
     }
 }
