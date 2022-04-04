@@ -13,7 +13,7 @@ namespace Assets.Scripts.Scenes.City
         private GameObject shopOverlay;
         private GameObject moneyDisplay;
         private Text moneyText;
-        private SecurityForceSlotBehaviour policeSlot;
+        private SecurityForceSlotBehaviour templateSlot;
 
         public void ShowShop()
         {
@@ -92,7 +92,7 @@ namespace Assets.Scripts.Scenes.City
             {
                 GameObject shopButton = this.transform.Find("Rotatotor/HUD/ShowShopButton").gameObject;
                 shopButton.SetActive(false);
-                                
+
                 moneyDisplay.SetActive(false);
             }
             else
@@ -101,9 +101,28 @@ namespace Assets.Scripts.Scenes.City
             }
 
             this.shopOverlay = this.transform.Find("Rotatotor/HUD/ShopOverlay").gameObject;
-            this.policeSlot = shopOverlay.transform.Find("ContentArea/PoliceSecurityForceSlot").GetComponent<SecurityForceSlotBehaviour>();
 
-            this.policeSlot.SecurityForceDefault = GameHandler.GameFieldSettings.TroopDefaults.FirstOrDefault(d => d.Type == "Police");
+            this.templateSlot = shopOverlay.transform.Find("ContentArea/SecurityForceSlotTemplate").GetComponent<SecurityForceSlotBehaviour>();
+
+            var amount = GameHandler.GameFieldSettings.TroopDefaults.Count;
+
+            float relative = 1f / amount;
+
+            for (int i = 0; i < GameHandler.GameFieldSettings.TroopDefaults.Count; i++)
+            {
+                var forceSlot = GameObject.Instantiate(templateSlot, templateSlot.transform.parent);
+
+                RectTransform rect = forceSlot.GetComponent<RectTransform>();
+
+                rect.anchorMin = new Vector2((float)i * relative, rect.anchorMin.y);
+                rect.anchorMax = new Vector2((float)(i + 1) * relative, rect.anchorMax.y);
+                rect.offsetMin = new Vector2(0, 0);
+                rect.offsetMax = new Vector2(0, 0);
+
+                forceSlot.SecurityForceDefault = GameHandler.GameFieldSettings.TroopDefaults[i];
+
+                forceSlot.gameObject.SetActive(true);
+            }
         }
 
         void Update()

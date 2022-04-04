@@ -197,6 +197,7 @@ public class MapObjectSpawner : MonoBehaviour
     private GameObject InstantiateGameObject(GameObject template, Transform parent)
     {
         Quaternion rotation;
+
         if (Screen.width < Screen.height)
         {
             if (template.transform.rotation.z != template.transform.rotation.w)
@@ -212,6 +213,7 @@ public class MapObjectSpawner : MonoBehaviour
         {
             rotation = Quaternion.identity;
         }
+
         return Instantiate(template, new Vector3(0, 0, 0), rotation, parent);
     }
 
@@ -318,5 +320,3 @@ public class MapObjectSpawner : MonoBehaviour
         GameHandler.Palace.InitPalace();
     }
 }
-
-
