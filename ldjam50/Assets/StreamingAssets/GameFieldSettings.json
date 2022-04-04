@@ -55,14 +55,10 @@
 
         ],
         "MarchSounds": [
-          "Fanfare_1",
-          "March_1",
-          "March_2",
-          "March_3",
-          "March_4",
-          "March_5",
-          "Yes_Sir",
-          "Yes_Sir_2"
+          "Gruezi",
+          "Gruezi_2",
+          "Si_Da_Capo",
+          "Jawoll"
         ],
         "UnitCost": 1000,
         "Bases": [
@@ -244,11 +240,12 @@
 		  "Rebels_Generic",
 		  "Rebels_Generic_2",
 		  "Rebels_Generic_3",
-		  "Earth_is__cube",
+		  "Earth_is_a_cube",
 		  "Glace_Schmöuzt",
 		  "Its_A_Trap",
 		  "No_More_School",
-		  "We_Want_Cake"
+		  "We_Want_Cake",
+		  "Hello_There"
         ]
       }
     ]
@@ -596,14 +593,10 @@
           "SGuard"
         ],
         "MarchSounds": [
-          "Fanfare_1",
-          "March_1",
-          "March_2",
-          "March_3",
-          "March_4",
-          "March_5",
-          "Yes_Sir",
-          "Yes_Sir_2"
+          "Gruezi",
+          "Gruezi_2",
+          "Si_Da_Capo",
+          "Jawoll"
         ],
         "UnitCost": 200,
         "Bases": [
