@@ -359,9 +359,9 @@
   },
   {
     "Name": "Doomsday",
-    "FirstTick": 3,
+    "FirstTick": 0.02,
     "TickInterval": 0.02,
-    "TickIntervalFactor": 0.97,
+    "TickIntervalFactor": 0.99,
     "MoneyInterval": 1000,
     "MoneyFirstTick": 1000,
     "MoneyGainPerInterval": 0,
@@ -412,8 +412,8 @@
           "Depper Doders",
           "Hadwi"
         ],
-        "MinSpeed": 0.0,
-        "MaxSpeed": 0.0,
+        "MinSpeed": 0.01,
+        "MaxSpeed": 0.01,
         "Health": 1,
         "MaxHealth": 1,
         "Strength": 1,
@@ -421,17 +421,10 @@
         "Range": 0.05,
         "ImageName": "Riots",
         "KillSounds": [
-          "Aaah",
-          "Aww",
-          "Daeng",
-          "Nuts",
-          "Oops"
+          "Silence_1sec"
         ],
         "SpawnSounds": [
-          "Whistle",
-          "Whistle_2",
-          "Whistle_3",
-          "Whistle_4"
+          "Silence_1sec"
         ]
       }
     ]
