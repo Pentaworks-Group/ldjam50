@@ -13,8 +13,7 @@ Todo:
  - Change interval calculation to baseIntervall * factor / time 
  - Deactivate Destroyed MilitaryBase (no interaction, no healthbar, destroyed image)
  - Button Sounds in GameModeMenu
- 
- 
+  
  GamePlay:
  - Balancing
    
@@ -65,7 +64,6 @@ Nice to have:
  
 WIP:
 ----------------------------------
- - use different sprites for rebels (change RebelDefault.ImageName to list) (Same for troops)
  
  
 Done:
@@ -97,3 +95,4 @@ Done:
  - Saving Circular Serialization
  - Handling of GetRandomEntry on emtpy list?
  - Save & Load GameMode
+ - use different sprites for rebels (change RebelDefault.ImageName to list) (Same for troops)
