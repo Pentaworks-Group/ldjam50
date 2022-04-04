@@ -236,7 +236,6 @@
 		  "Rebels_Generic",
 		  "Rebels_Generic_2",
 		  "Rebels_Generic_3",
-		  "Earth_is_a_cube",
 		  "Hello_There"
         ]
       },
@@ -347,7 +346,35 @@
         "SpawnSounds": [
 		  "We_Want_Cake",
         ]
-      }
+      },
+	        {
+        "Type": "Noobs",
+        "Names": [
+          "Depper Doders",
+          "Hadwi"
+        ],
+        "MinSpeed": 0.005,
+        "MaxSpeed": 0.007,
+        "Health": 100,
+        "MaxHealth": 100,
+        "Strength": 10,
+        "Repulsion": 0.0005,
+        "Range": 0.05,
+        "ImageNames": [
+          "Rebel_6",
+        ],
+        "KillSounds": [
+          "Aaah",
+          "Aww",
+          "Daeng",
+          "Nuts",
+          "Oops"
+        ],
+        "SpawnSounds": [
+		  "Earth_is_a_cube"
+        ]
+      },
+
     ]
   },
   {
