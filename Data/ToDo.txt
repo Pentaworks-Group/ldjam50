@@ -4,19 +4,15 @@ Todo:
  
 
  Core:
- - SpawnSounds for different types
- - display mode & exit selection on click 
- - setting for default mode
- - use different sprites for rebels (change RebelDefault.ImageName to list) 
  - UnitTypes (Rebel & Troops)
+ - SpawnSounds for different types
+ - setting for default mode 
  - Multiple Bases (MilitaryBase)
  - Blockade/Palisade (#possible movments counter)
  - Base/Palace Health
  - Change interval calculation to baseIntervall * factor / time 
  - Deactivate Destroyed MilitaryBase (no interaction, no healthbar, destroyed image)
  - Button Sounds in GameModeMenu
- - Handling of GetRandomEntry on emtpy list?
- 
  
  
  GamePlay:
@@ -27,6 +23,7 @@ Todo:
  - Revamp MainMenu (eg. protest shield with game mode for starting new game)
  - Display Unit Strength (hover over? Strenght Symbol?)
  - CityScene HUD overhaul (eg. Buttons same size, image background)
+ - display mode & exit selection on click 
  
  Audio:
  - Effects
@@ -68,7 +65,8 @@ Nice to have:
  
 WIP:
 ----------------------------------
- - Save & Load GameMode
+ - use different sprites for rebels (change RebelDefault.ImageName to list) (Same for troops)
+ 
  
 Done:
 ----------------------------------
@@ -97,3 +95,5 @@ Done:
  - allow setting troop binding (0-9)
  - troop number overlay (0-9 for selecting this unit)
  - Saving Circular Serialization
+ - Handling of GetRandomEntry on emtpy list?
+ - Save & Load GameMode
