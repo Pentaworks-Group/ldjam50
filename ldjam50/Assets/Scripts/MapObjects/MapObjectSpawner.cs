@@ -217,6 +217,8 @@ public class MapObjectSpawner : MonoBehaviour
 
     private PoliceTroop GetTroopFromDefault(TroopDefault troopDefault)
     {
+        BaseDefault troopBase = troopDefault.Bases.GetRandomEntry();
+
         var policeTroop = new PoliceTroop()
         {
             Name = troopDefault.Names.GetRandomEntry(),
@@ -226,7 +228,7 @@ public class MapObjectSpawner : MonoBehaviour
             Repulsion = troopDefault.Repulsion,
             Health = troopDefault.Health,
             MaxHealth = troopDefault.MaxHealth,
-            Location = GameHandler.Palace.MapObject.Location,
+            Location = new Vector2(troopBase.Pos_x, troopBase.Pos_y),
             ImageName = troopDefault.ImageName,
             Range = troopDefault.Range,
             Base = GameHandler.Palace.CoreMapBase,

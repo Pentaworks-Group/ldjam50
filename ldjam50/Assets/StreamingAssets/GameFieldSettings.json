@@ -36,8 +36,8 @@
         "UnitCost": 100,
         "Bases": [
           {
-            "Pos_x": 0.5,
-            "Pos_y": 0.5,
+            "Pos_x": 0.495,
+            "Pos_y": 0.512,
             "Radius":  0.07
           }
         ]
