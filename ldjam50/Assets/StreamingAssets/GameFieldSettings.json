@@ -7,7 +7,11 @@
     "MoneyInterval": 3,
     "MoneyFirstTick": 5,
     "MoneyGainPerInterval": 50,
-    "PalaceHealing": 50,
+    "PalaceDefault":{
+    "Healing": 50,
+    "Health": 100000,
+    "MaxHealth": 100000
+	},
     "DisableShop": false,
     "TroopDefaults": [
       {
@@ -201,7 +205,11 @@
     "MoneyInterval": 1000,
     "MoneyFirstTick": 1000,
     "MoneyGainPerInterval": 0,
-    "PalaceHealing": 50,
+    "PalaceDefault":{
+    "Healing": 50,
+    "Health": 100000,
+    "MaxHealth": 100000
+	},
     "DisableShop": true,
     "TroopDefaults": [
       {
@@ -282,7 +290,11 @@
     "MoneyInterval": 1000,
     "MoneyFirstTick": 1000,
     "MoneyGainPerInterval": 0,
-    "PalaceHealing": 50,
+    "PalaceDefault":{
+    "Healing": 50,
+    "Health": 100000,
+    "MaxHealth": 100000
+	},
     "DisableShop": true,
     "TroopDefaults": [
       {
@@ -361,7 +373,11 @@
     "MoneyInterval": 1000,
     "MoneyFirstTick": 1000,
     "MoneyGainPerInterval": 0,
-    "PalaceHealing": 500,
+    "PalaceDefault":{
+    "Healing": 50,
+    "Health": 100000,
+    "MaxHealth": 100000
+	},
     "DisableShop": true,
     "TroopDefaults": [
       {
@@ -440,7 +456,11 @@
     "MoneyInterval": 1000,
     "MoneyFirstTick": 1000,
     "MoneyGainPerInterval": 0,
-    "PalaceHealing": 500,
+    "PalaceDefault":{
+    "Healing": 50,
+    "Health": 100000,
+    "MaxHealth": 100000
+	},
     "DisableShop": true,
     "TroopDefaults": [
       {
