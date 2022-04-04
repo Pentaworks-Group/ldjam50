@@ -116,7 +116,7 @@ public class SecurityForceBehaviour : CoreUnitBehaviour
         }
         else
         {
-            CheckImageColor(this.BackgroundImage, this.SecurityForce.Color.ToUnity());
+            CheckImageColor(this.BackgroundImage, this.SecurityForce.BackgroundColor.ToUnity());
         }
 
         CheckForAdjesentRebels();

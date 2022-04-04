@@ -243,14 +243,14 @@ public class MapObjectSpawner : MonoBehaviour
             Repulsion = troopDefault.Repulsion,
             Health = troopDefault.Health,
             MaxHealth = troopDefault.MaxHealth,
-            Location = new Vector2(troopBase.Pos_x, troopBase.Pos_y),
+            Location = troopBase.Position.ToUnity(),
             ImageName = troopDefault.ImageNames.GetRandomEntry(),
             Range = troopDefault.Range,
             Base = GameHandler.Palace.CoreMapBase,
             MarchSounds = troopDefault.MarchSounds,
-            Color = troopDefault.Color,
-            SelectedColor = troopDefault.SelectedColor,
-            MoveJustOnce = troopDefault.MoveJustOnce
+            ForegroundColor = troopDefault.ForegroundColor,
+            BackgroundColor = troopDefault.BackgroundColor,
+            SelectedColor = troopDefault.SelectedColor
         };
 
         Core.Game.State.SecurityForces.Add(policeTroop);
@@ -273,7 +273,7 @@ public class MapObjectSpawner : MonoBehaviour
                 Name = GetRandomRebelName(),
                 Speed = speed,
                 Location = GetValidRandomLocation(),
-                Target = getRandomValidTarget(),
+                Target = GameHandler.Palace.MapObject.Location,
                 ImageName = rebelDefault.ImageNames.GetRandomEntry(),
                 Strength = rebelDefault.Strength,
                 Repulsion = rebelDefault.Repulsion,
@@ -345,15 +345,6 @@ public class MapObjectSpawner : MonoBehaviour
         return location;
     }
 
-    private Vector2 getRandomValidTarget()
-    {
-        var index = Mathf.FloorToInt(UnityEngine.Random.Range(0, 1.99f));
-        if(index==0)
-        {
-            return GameHandler.Palace.MapObject.Location;
-        }
-        return GameHandler.MilitaryBase.MapObject.Location;
-    }
 
     private void InitMilitaryBase()
     {
