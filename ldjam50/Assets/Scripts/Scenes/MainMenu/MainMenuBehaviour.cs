@@ -1,6 +1,7 @@
 
 using System;
 using System.Collections.Generic;
+
 using Assets.Scripts.Base;
 
 using GameFrame.Core.Audio.Multi;
@@ -170,6 +171,7 @@ public class MainMenuBehaviour : MonoBehaviour
     private List<GameFieldSettings> SetGameFieldSettings(List<GameFieldSettings> gameFieldSettings)
     {
         GameHandler.AvailableGameModes = gameFieldSettings;
+
         if (GameHandler.GameFieldSettings == default)
         {
             GameHandler.GameFieldSettings = gameFieldSettings[0];

@@ -87,15 +87,17 @@ namespace Assets.Scripts.Scenes.City
 
         private void Start()
         {
-            if (GameHandler.GameFieldSettings == null)
+            if (Base.Core.Game.State.Mode == null)
             {
                 return;
             }
 
+            var gameState = Base.Core.Game.State;
+
             this.mapObjectSpawner = this.transform.Find("Rotatotor/MapObjectSpawner").gameObject.GetComponent<MapObjectSpawner>();
             this.moneyDisplay = this.transform.Find("Rotatotor/HUD/MoneyDisplay").gameObject;
 
-            if (GameHandler.GameFieldSettings.DisableShop)
+            if (gameState.Mode.DisableShop)
             {
                 GameObject shopButton = this.transform.Find("Rotatotor/HUD/ShowShopButton").gameObject;
                 shopButton.SetActive(false);
@@ -111,11 +113,11 @@ namespace Assets.Scripts.Scenes.City
 
             this.templateSlot = shopOverlay.transform.Find("ContentArea/SecurityForceSlotTemplate").GetComponent<SecurityForceSlotBehaviour>();
 
-            var amount = GameHandler.GameFieldSettings.TroopDefaults.Count;
+            var amount = gameState.Mode.TroopDefaults.Count;
 
             float relative = 1f / amount;
 
-            for (int i = 0; i < GameHandler.GameFieldSettings.TroopDefaults.Count; i++)
+            for (int i = 0; i < gameState.Mode.TroopDefaults.Count; i++)
             {
                 var forceSlot = GameObject.Instantiate(templateSlot, templateSlot.transform.parent);
 
@@ -126,7 +128,7 @@ namespace Assets.Scripts.Scenes.City
                 rect.offsetMin = new Vector2(0, 0);
                 rect.offsetMax = new Vector2(0, 0);
 
-                forceSlot.SecurityForceDefault = GameHandler.GameFieldSettings.TroopDefaults[i];
+                forceSlot.SecurityForceDefault = gameState.Mode.TroopDefaults[i];
 
                 forceSlot.gameObject.SetActive(true);
             }
@@ -200,7 +202,7 @@ namespace Assets.Scripts.Scenes.City
                     HandleKey(9, isControlDown);
                 }
 
-                if (!GameHandler.GameFieldSettings.DisableShop)
+                if (!Base.Core.Game.State.Mode.DisableShop)
                 {
                     moneyText.text = Base.Core.Game.State.AvailableCredits.ToString("F2");
                 }

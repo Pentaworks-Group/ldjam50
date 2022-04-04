@@ -22,11 +22,14 @@ namespace Assets.Scripts.Core
 
         protected override GameState InitializeGameState()
         {
+            var gameMode =  GameHandler.GameFieldSettings;
+
             return new GameState()
             {
                 CurrentScene = SceneNames.City,
-                NextRebelSpawn = GameHandler.GameFieldSettings.FirstTick,
-                NextMoneySpawn = GameHandler.GameFieldSettings.MoneyFirstTick
+                Mode = gameMode,
+                NextRebelSpawn = gameMode.FirstTick,
+                NextMoneySpawn = gameMode.MoneyFirstTick,                
             };
         }
 

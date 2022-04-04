@@ -17,19 +17,21 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
     {
         if (mapBaseObject == default)
         {
-            location = new GameFrame.Core.Math.Vector2(GameHandler.GameFieldSettings.PalaceDefault.Pos_x, GameHandler.GameFieldSettings.PalaceDefault.Pos_y);
+            var palaceDefault = Core.Game.State.Mode.PalaceDefault;
+
+            location = new GameFrame.Core.Math.Vector2(palaceDefault.Pos_x, palaceDefault.Pos_y);
 
             mapBaseObject = new CoreMapBase()
             {
                 Name = "Palace",
                 ActualLocation = location,
                 ImageName = "Palace",
-                Healing = GameHandler.GameFieldSettings.PalaceDefault.Healing,
-                Health = GameHandler.GameFieldSettings.PalaceDefault.Health,
-                MaxHealth = GameHandler.GameFieldSettings.PalaceDefault.MaxHealth,
-                Range = GameHandler.GameFieldSettings.PalaceDefault.Range,
-                Repulsion = GameHandler.GameFieldSettings.PalaceDefault.Repulsion,
-                ObjectSize = GameHandler.GameFieldSettings.PalaceDefault.ObjectSize
+                Healing = palaceDefault.Healing,
+                Health = palaceDefault.Health,
+                MaxHealth = palaceDefault.MaxHealth,
+                Range = palaceDefault.Range,
+                Repulsion = palaceDefault.Repulsion,
+                ObjectSize = palaceDefault.ObjectSize
             };
         }
 
