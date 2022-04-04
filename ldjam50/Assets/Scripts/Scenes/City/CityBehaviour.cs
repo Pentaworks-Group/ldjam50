@@ -163,7 +163,7 @@ namespace Assets.Scripts.Scenes.City
 
         void Update()
         {
-            if (Assets.Scripts.Base.Core.Game.State != default && Time.timeScale > 0)
+            if (Assets.Scripts.Base.Core.Game.State != default)
             {
                 if (Input.GetKeyDown(KeyCode.Tab))
                 {
