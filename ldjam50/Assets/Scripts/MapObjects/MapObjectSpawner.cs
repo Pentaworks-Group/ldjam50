@@ -179,7 +179,7 @@ public class MapObjectSpawner : MonoBehaviour
 
     public static Vector2 GetRandomTarget()
     {
-        if (GameHandler.MilitaryBase.CoreMapBase.Destroyed)
+        if (Core.Game.State.Mode.DisableMilitaryBase || GameHandler.MilitaryBase.CoreMapBase.Destroyed)
         {
             return GameHandler.Palace.MapObject.Location;
         }
