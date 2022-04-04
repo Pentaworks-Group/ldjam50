@@ -7,7 +7,7 @@
     "TickIntervalLogBase": 10,
     "MoneyInterval": 3,
     "MoneyFirstTick": 5,
-    "MoneyGainPerInterval": 50,
+    "MoneyGainPerInterval": 20,
     "MoneyStart": 100,
     "PalaceDefault": {
       "Healing": 50,
