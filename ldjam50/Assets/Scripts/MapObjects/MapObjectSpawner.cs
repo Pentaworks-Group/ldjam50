@@ -355,12 +355,24 @@ public class MapObjectSpawner : MonoBehaviour
         else
         {
             GameHandler.MilitaryBase = MilitaryBase;
-            GameHandler.MilitaryBase.InitPalaceWithDefault(Core.Game.State.Mode.MilitaryBaseDefault);
+
+            if (Core.Game.State.MilitaryBase == null)
+            {
+                GameHandler.MilitaryBase.InitPalaceWithDefault(Core.Game.State.Mode.MilitaryBaseDefault);
+            }
+            else
+            {
+                GameHandler.MilitaryBase.InitPalace(Core.Game.State.MilitaryBase);
+            }
+
+            Core.Game.State.MilitaryBase = GameHandler.MilitaryBase.CoreMapBase;
         }
     }
     private void InitPalace()
     {
         GameHandler.Palace = Palace;
-        GameHandler.Palace.InitPalace();
+        GameHandler.Palace.InitPalace(Core.Game.State.Palace);
+
+        Core.Game.State.Palace = GameHandler.Palace.CoreMapBase;
     }
 }
