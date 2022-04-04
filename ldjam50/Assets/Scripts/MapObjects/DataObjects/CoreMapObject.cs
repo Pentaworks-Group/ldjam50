@@ -24,7 +24,7 @@ public class CoreMapObject
     public float Strength { get; set; }
     public float Repulsion { get; set; }
     public float Range { get; set; }
-
+    public float ObjectSize { get; set; }
 
 
     [JsonIgnore]
