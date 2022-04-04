@@ -236,7 +236,8 @@ public class MapObjectSpawner : MonoBehaviour
             Range = troopDefault.Range,
             Base = GameHandler.Palace.CoreMapBase,
             MarchSounds = troopDefault.MarchSounds,
-            Color = troopDefault.Color
+            Color = troopDefault.Color,
+            SelectedColor = troopDefault.SelectedColor
         };
 
         Core.Game.State.SecurityForces.Add(policeTroop);
