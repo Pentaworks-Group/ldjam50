@@ -357,5 +357,84 @@
         ]
       }
     ]
+  },
+  {
+    "Name": "Doomsday",
+    "FirstTick": 3,
+    "TickInterval": 0.02,
+    "TickIntervalFactor": 0.97,
+    "MoneyInterval": 1000,
+    "MoneyFirstTick": 1000,
+    "MoneyGainPerInterval": 0,
+    "PalaceHealing": 500,
+    "DisableShop": true,
+    "TroopDefaults": [
+      {
+        "Names": [
+          "1st Police Corps",
+          "2st Police Corps"
+        ],
+        "Color": {
+          "Red": 0.251424,
+          "Green": 0.3966849,
+          "Blue": 0.7075472,
+          "Alpha": 0.8196079
+        },
+        "MaxSpeed": 0.6,
+        "Health": 1000000,
+        "MaxHealth": 1000000,
+        "Strength": 100,
+        "Repulsion": -0.002,
+        "Range": 0.05,
+        "ImageName": "Troops",
+        "MarchSounds": [
+          "Fanfare_1",
+          "March_1",
+          "March_2",
+          "March_3",
+          "March_4",
+          "March_5",
+          "Yes_Sir",
+          "Yes_Sir_2"
+        ],
+        "UnitCost": 100,
+        "Bases": [
+          {
+            "Pos_x": 0.5,
+            "Pos_y": 0.5,
+            "Radius": 0.07
+          }
+        ]
+      }
+    ],
+    "RebelDefaults": [
+      {
+        "Names": [
+          "Depper Doders",
+          "Hadwi"
+        ],
+        "MinSpeed": 0.0,
+        "MaxSpeed": 0.0,
+        "Health": 1,
+        "MaxHealth": 1,
+        "Strength": 1,
+        "Repulsion": 0.00005,
+        "Range": 0.05,
+        "ImageName": "Riots",
+        "KillSounds": [
+          "Aaah",
+          "Aww",
+          "Daeng",
+          "Nuts",
+          "Oops"
+        ],
+        "SpawnSounds": [
+          "Whistle",
+          "Whistle_2",
+          "Whistle_3",
+          "Whistle_4"
+        ]
+      }
+    ]
   }
 ]
