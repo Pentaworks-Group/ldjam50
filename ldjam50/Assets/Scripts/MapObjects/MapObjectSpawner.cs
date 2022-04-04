@@ -321,7 +321,7 @@ public class MapObjectSpawner : MonoBehaviour
     {
         //if ()
         GameHandler.MilitaryBase = MilitaryBase;
-        GameHandler.MilitaryBase.InitPalaceWithDefault(GameHandler.GameFieldSettings.MilitaryBaseDefault);
+        GameHandler.MilitaryBase.InitPalaceWithDefault(Assets.Scripts.Base.Core.SelectedGameMode.MilitaryBaseDefault);
     }
     private void InitPalace()
     {

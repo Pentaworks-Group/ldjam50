@@ -13,6 +13,7 @@ Todo:
  - Blockade/Palisade (#possible movments counter)
  - Base/Palace Health
  - Change interval calculation to baseIntervall * factor / time 
+ - Deactivate Destroyed MilitaryBase (no interaction, no healthbar, destroyed image)
  
  
  GamePlay:

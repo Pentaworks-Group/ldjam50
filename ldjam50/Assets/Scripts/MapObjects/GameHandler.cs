@@ -13,7 +13,6 @@ public class GameHandler
 
     public static SecurityForceBehaviour SelectedTroop { get; private set; }
 
-    public static GameFieldSettings GameFieldSettings { get; set; }
     public static List<GameFieldSettings> AvailableGameModes { get; set; }
 
     public static void AddRebel(RebelBehaviour rebel)
