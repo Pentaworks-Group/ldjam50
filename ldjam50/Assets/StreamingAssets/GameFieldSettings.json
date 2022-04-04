@@ -49,6 +49,44 @@
         ]
       },
       {
+        "Type": "Blockade",
+        "Names": [
+          "1st Blockade",
+          "2st Blockade"
+        ],
+        "MaxSpeed": 0.4,
+        "Health": 150,
+        "MaxHealth": 200,
+        "Strength": 0,
+        "Repulsion": 0.001,
+        "Range": 0.055,
+        "Color": {
+          "Red": 0.251424,
+          "Green": 0.3966849,
+          "Blue": 0.7075472,
+          "Alpha": 0.95
+        },
+        "ImageName": "Tower",
+        "MarchSounds": [
+          "Fanfare_1",
+          "March_1",
+          "March_2",
+          "March_3",
+          "March_4",
+          "March_5",
+          "Yes_Sir",
+          "Yes_Sir_2"
+        ],
+        "UnitCost": 20,
+        "Bases": [
+          {
+            "Pos_x": 0.495,
+            "Pos_y": 0.512,
+            "Radius": 0.07
+          }
+        ]
+      },
+      {
         "Type": "Army",
         "Names": [
           "1st Army Corps",
@@ -77,7 +115,7 @@
           "Yes_Sir",
           "Yes_Sir_2"
         ],
-        "UnitCost": 100,
+        "UnitCost": 200,
         "Bases": [
           {
             "Pos_x": 0.89,
