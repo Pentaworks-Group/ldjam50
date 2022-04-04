@@ -776,9 +776,9 @@ GameObject:
   m_Component:
   - component: {fileID: 905187231}
   - component: {fileID: 905187235}
-  - component: {fileID: 905187234}
   - component: {fileID: 905187233}
   - component: {fileID: 905187232}
+  - component: {fileID: 905187234}
   m_Layer: 0
   m_Name: PauseButton
   m_TagString: Untagged
@@ -894,7 +894,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5da84fa3143a57947beedc1ddc6592b4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e087f35194b94ba449ddc620da621009, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
