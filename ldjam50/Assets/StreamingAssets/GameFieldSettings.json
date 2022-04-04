@@ -331,8 +331,12 @@
         "Repulsion": 0.0005,
         "Range": 0.0002,
         "ImageNames": [
-          "Riots"
-
+          "Rebel_0",
+		  "Rebel_1",
+		  "Rebel_2",
+		  "Rebel_3",
+		  "Rebel_4",
+		  "Rebel_5"
         ],
         "KillSounds": [
           "Aaah",
@@ -345,7 +349,16 @@
           "Whistle",
           "Whistle_2",
           "Whistle_3",
-          "Whistle_4"
+          "Whistle_4",
+		  "Rebels_Generic",
+		  "Rebels_Generic_2",
+		  "Rebels_Generic_3",
+		  "Earth_is_a_cube",
+		  "Glace_Schmöuzt",
+		  "Its_A_Trap",
+		  "No_More_School",
+		  "We_Want_Cake",
+		  "Hello_There"
         ]
       }
     ]
@@ -429,7 +442,12 @@
         "Repulsion": 0.00005,
         "Range": 0.002,
         "ImageNames": [
-          "Riots"
+          "Rebel_0",
+		  "Rebel_1",
+		  "Rebel_2",
+		  "Rebel_3",
+		  "Rebel_4",
+		  "Rebel_5"
         ],
         "KillSounds": [
           "Aaah",
@@ -442,7 +460,16 @@
           "Whistle",
           "Whistle_2",
           "Whistle_3",
-          "Whistle_4"
+          "Whistle_4",
+		  "Rebels_Generic",
+		  "Rebels_Generic_2",
+		  "Rebels_Generic_3",
+		  "Earth_is_a_cube",
+		  "Glace_Schmöuzt",
+		  "Its_A_Trap",
+		  "No_More_School",
+		  "We_Want_Cake",
+		  "Hello_There"
         ]
       }
     ]
@@ -525,7 +552,12 @@
         "Repulsion": 0.00005,
         "Range": 0.002,
         "ImageNames": [
-          "Riots"
+          "Rebel_0",
+		  "Rebel_1",
+		  "Rebel_2",
+		  "Rebel_3",
+		  "Rebel_4",
+		  "Rebel_5"
         ],
         "KillSounds": [
           "Aaah",
@@ -538,7 +570,16 @@
           "Whistle",
           "Whistle_2",
           "Whistle_3",
-          "Whistle_4"
+          "Whistle_4",
+		  "Rebels_Generic",
+		  "Rebels_Generic_2",
+		  "Rebels_Generic_3",
+		  "Earth_is_a_cube",
+		  "Glace_Schmöuzt",
+		  "Its_A_Trap",
+		  "No_More_School",
+		  "We_Want_Cake",
+		  "Hello_There"
         ]
       }
     ]
