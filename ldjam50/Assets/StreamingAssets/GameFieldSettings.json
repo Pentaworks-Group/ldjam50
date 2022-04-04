@@ -82,7 +82,7 @@
         "MaxHealth": 150,
         "Strength": 30,
         "Repulsion": 0.001,
-        "Range": 0.055,
+        "Range": 0.05,
         "BackgroundColor": {
           "Red": 0.251424,
           "Green": 0.3966849,
@@ -163,7 +163,7 @@
         "MaxSpeed": 0.15,
         "Health": 400,
         "MaxHealth": 400,
-        "Strength": 30,
+        "Strength": 40,
         "Repulsion": 0.001,
         "Range": 0.055,
         "BackgroundColor": {
@@ -214,7 +214,7 @@
         "MaxSpeed": 0.007,
         "Health": 100,
         "MaxHealth": 100,
-        "Strength": 20,
+        "Strength": 10,
         "Repulsion": 0.0005,
         "Range": 0.05,
         "ImageNames": [
