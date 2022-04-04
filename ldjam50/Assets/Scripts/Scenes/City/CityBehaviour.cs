@@ -80,7 +80,7 @@ namespace Assets.Scripts.Scenes.City
                 }
                 else
                 {
-                    Base.Core.Game.EffectsAudioManager.Play("Daeng");
+                    Base.Core.Game.EffectsAudioManager.Play("Error");
                 }
             }
         }
