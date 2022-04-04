@@ -6,16 +6,12 @@ Todo:
  Core:
  - UnitTypes (Rebel & Troops)
  - Change interval calculation to baseIntervall * factor / time 
- - Deactivate Destroyed MilitaryBase (no interaction, no healthbar, destroyed image)
- - Only Allow Military Units if base alive
- - Save Palace & Military Base
   
  GamePlay:
  - Balancing
    
  UI:
  - Revamp UI for Save / Load (Button / Box / Scene)
- - CityScene HUD overhaul (eg. Buttons same size, image background)
  - Background for Menues: GameMode, SaveLoad ...
  
  Audio:
@@ -106,3 +102,7 @@ Done:
  - setting for default mode 
  - Sound onButtonclick in Main Menu for ReloadSettings, Modes (and all Modes)
  - Blockade/Palisade (#possible movments counter)
+ - Deactivate Destroyed MilitaryBase (no interaction, no healthbar, destroyed image)
+ - Only Allow Military Units if base alive
+ - CityScene HUD overhaul (eg. Buttons same size, image background)
+ - Save Palace & Military Base
