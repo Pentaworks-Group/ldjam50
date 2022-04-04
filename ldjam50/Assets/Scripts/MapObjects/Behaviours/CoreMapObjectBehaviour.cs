@@ -65,8 +65,12 @@ public abstract class CoreMapObjectBehaviour : MonoBehaviour
         }
     }
 
-    protected abstract void KillObject();
-    protected abstract bool IsMoveable();
+    public abstract bool IsMoveable();
 
+    public void MoveInDirection(Vector2 direction)
+    {
+    }
+
+    protected abstract void KillObject();
 
 }
