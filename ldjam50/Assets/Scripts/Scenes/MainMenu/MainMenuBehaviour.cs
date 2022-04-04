@@ -85,6 +85,15 @@ public class MainMenuBehaviour : MonoBehaviour
     {
         StartAudioManagers();
         LoadGameFieldSettings();
+        HideIfWGL();
+    }
+
+    private void HideIfWGL()
+    {
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            QuitButton.SetActive(false);
+        }
     }
 
     private void StartAudioManagers()
@@ -180,10 +189,10 @@ public class MainMenuBehaviour : MonoBehaviour
     }
 
 
-    public void ReloadSettings()
+    public void ReloadSettingsClick()
     {
+        Core.Game.PlayButtonSound();
         String filePath = Application.streamingAssetsPath + "/GameFieldSettings.json";
-
         StartCoroutine(GameFrame.Core.Json.Handler.DeserializeObjectFromStreamingAssets<List<GameFieldSettings>>(filePath, SetGameFieldSettingsForce));
     }
 
