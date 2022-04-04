@@ -72,7 +72,7 @@ namespace Assets.Scripts.Scenes.City
         {
             if (selectedForce?.SecurityForceDefault != default)
             {
-                if (selectedForce.SecurityForceDefault.UnitCost <= Base.Core.Game.State.AvailableCredits)
+                if (selectedForce.IsPurchasable)
                 {
                     Base.Core.Game.State.AvailableCredits -= selectedForce.SecurityForceDefault.UnitCost;
                     Base.Core.Game.EffectsAudioManager.Play("Buy");
