@@ -12,8 +12,6 @@ namespace Assets.Scripts.Scenes.City
         private GameObject shopOverlay;
         private SecurityForceSlotBehaviour policeSlot;
 
-
-
         public void ShowShop()
         {
             Time.timeScale = 0;
@@ -69,7 +67,16 @@ namespace Assets.Scripts.Scenes.City
         {
             if (selectedForce?.SecurityForceDefault != default)
             {
-                mapObjectSpawner.SpawnTroopFromDefault(selectedForce.SecurityForceDefault);
+                if (selectedForce.SecurityForceDefault.UnitCost < Base.Core.Game.State.AvailableCredits)
+                {
+                    Base.Core.Game.State.AvailableCredits -= selectedForce.SecurityForceDefault.UnitCost;
+                    Base.Core.Game.EffectsAudioManager.Play("Buy");
+                    mapObjectSpawner.SpawnTroopFromDefault(selectedForce.SecurityForceDefault);
+                }
+                else
+                {
+                    Base.Core.Game.EffectsAudioManager.Play("Daeng");
+                }
             }
         }
 

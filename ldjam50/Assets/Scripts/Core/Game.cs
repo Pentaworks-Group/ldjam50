@@ -24,7 +24,9 @@ namespace Assets.Scripts.Core
         {
             return new GameState()
             {
-                CurrentScene = SceneNames.City
+                CurrentScene = SceneNames.City,
+                NextRebelSpawn = GameHandler.GameFieldSettings.FirstTick,
+                NextMoneySpawn = GameHandler.GameFieldSettings.MoneyFirstTick
             };
         }
 

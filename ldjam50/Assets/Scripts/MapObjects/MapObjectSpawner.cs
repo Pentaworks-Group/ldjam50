@@ -18,8 +18,11 @@ public class MapObjectSpawner : MonoBehaviour
     public Text TimeDisplay;
     public PalaceBehaviour Palace;
 
-    private float nextTick = 0f;
     private float spawnInterval = 0f;
+    private float moneyInterval = 0f;
+
+    private float nextSpawnTick = 0f;
+    private float nextMoneyTick = 0f;
     private float currentTime = 0;
 
     private float musicChangeTick = 20.0f;
@@ -34,8 +37,8 @@ public class MapObjectSpawner : MonoBehaviour
             return;
         }
 
-        this.nextTick = GameHandler.GameFieldSettings.FirstTick;
         this.spawnInterval = GameHandler.GameFieldSettings.TickInterval;
+        this.moneyInterval = GameHandler.GameFieldSettings.MoneyInterval;
 
         GameHandler.Clear();
 
@@ -80,13 +83,13 @@ public class MapObjectSpawner : MonoBehaviour
         }
 
         currentTime = Core.Game.State.ElapsedTime;
-        nextTick = Core.Game.State.NextSpawn;
+        nextSpawnTick = Core.Game.State.NextRebelSpawn;
+        nextMoneyTick = Core.Game.State.NextMoneySpawn;
 
         //        Core.Game.BackgroundAudioManager.Stop();
         Core.Game.BackgroundAudioManager.Clips = Core.Game.AudioClipListGame1;
         //        Core.Game.BackgroundAudioManager.Resume();
     }
-
 
 
     // Update is called once per frame
@@ -99,14 +102,23 @@ public class MapObjectSpawner : MonoBehaviour
 
         currentTime += Time.deltaTime;
 
-        if (currentTime > nextTick)
+        if (currentTime > nextSpawnTick)
         {
             SpawnRebel();
-            nextTick = currentTime + spawnInterval;
+            nextSpawnTick = currentTime + spawnInterval;
 
-            Core.Game.State.NextSpawn = nextTick;
+            Core.Game.State.NextRebelSpawn = nextSpawnTick;
 
             spawnInterval *= GameHandler.GameFieldSettings.TickIntervalFactor;
+        }
+
+        if (currentTime > nextMoneyTick)
+        {
+            nextMoneyTick = currentTime + moneyInterval;
+
+            Core.Game.State.NextMoneySpawn = nextMoneyTick;
+
+            Core.Game.State.AvailableCredits += GameHandler.GameFieldSettings.MoneyGainPerInterval;
         }
 
         if (currentTime > musicChangeTick)
