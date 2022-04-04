@@ -186,7 +186,7 @@ public class MapObjectSpawner : MonoBehaviour
         }
         else
         {
-            if(policeTroop.Location.x > 0.7) //If more Bases: Make Better check here
+            if (policeTroop.Location.x > 0.7) //If more Bases: Make Better check here
             {
                 policeTroop.Base = GameHandler.MilitaryBase.CoreMapBase; // this should be loaded correctly
             }
@@ -311,9 +311,11 @@ public class MapObjectSpawner : MonoBehaviour
 
     private Vector2 GetValidRandomLocation()
     {
-        bool valid = false;
         Vector2 location = default;
-        while (!valid)
+        float PalaceSafeZoneRadius = Core.Game.State.Mode.PalaceDefault.SafeZoneRadius;
+        float? MilitarySafeZoneRadius = Core.Game.State.Mode.MilitaryBaseDefault?.SafeZoneRadius;
+
+        while (true)
         {
             float locationX = UnityEngine.Random.Range(0f, 1f);
             float locationY = UnityEngine.Random.Range(0f, 1f);
@@ -321,11 +323,21 @@ public class MapObjectSpawner : MonoBehaviour
             location = new Vector2(locationX, locationY);
 
             float distance = GameHandler.GetDistance(location, GameHandler.Palace.MapObject.Location);
-            if (distance > Core.Game.State.Mode.PalaceDefault.SafeZoneRadius)
+            if (distance < PalaceSafeZoneRadius)
             {
-                valid = true;
+                continue;
             }
 
+            if (!Core.Game.State.Mode.DisableMilitaryBase)
+            {
+                distance = GameHandler.GetDistance(location, GameHandler.MilitaryBase.MapObject.Location);
+                if (distance < MilitarySafeZoneRadius)
+                {
+                    continue;
+                }
+            }
+
+            break;
         }
 
         return location;

@@ -7,9 +7,7 @@ Todo:
  - UnitTypes (Rebel & Troops)
  - SpawnSounds for different types
  - setting for default mode 
- - Multiple Bases (MilitaryBase)
  - Blockade/Palisade (#possible movments counter)
- - Base/Palace Health
  - Change interval calculation to baseIntervall * factor / time 
  - Deactivate Destroyed MilitaryBase (no interaction, no healthbar, destroyed image)
  - Button Sounds in GameModeMenu
@@ -96,3 +94,5 @@ Done:
  - Handling of GetRandomEntry on emtpy list?
  - Save & Load GameMode
  - use different sprites for rebels (change RebelDefault.ImageName to list) (Same for troops)
+ - Base/Palace Health
+ - Multiple Bases (MilitaryBase)
