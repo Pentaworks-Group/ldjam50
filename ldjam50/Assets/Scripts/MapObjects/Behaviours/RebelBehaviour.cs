@@ -24,7 +24,7 @@ public class RebelBehaviour : CoreUnitBehaviour
     public void Init(Rebel rebel)
     {
         sizeScale = 0.2f;
-        AddDistanceAction(rebel.Range, CallGameOver);
+//        AddDistanceAction(rebel.Range, CallGameOver);
         base.Init(rebel);
     }
 
