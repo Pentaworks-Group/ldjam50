@@ -27,7 +27,7 @@ public class GameFieldSettings
         MaxHealth = 100,
         Range = 0.07f,
         Repulsion = 1.0f,
-        ObjectSize = 0.04f,
+        ObjectSize = 0.07f,
         SafeZoneRadius = 0.13f,
         GameOverOnDestruction = true
     };
@@ -42,7 +42,7 @@ public class GameFieldSettings
         MaxHealth = 100,
         Range = 0.07f,
         Repulsion = 1.0f,
-        ObjectSize = 0.04f,
+        ObjectSize = 0.01f,
         Pos_x = 0.721f,
         Pos_y = 0.9175f
 
