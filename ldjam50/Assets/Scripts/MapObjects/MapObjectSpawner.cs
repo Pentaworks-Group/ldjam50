@@ -135,21 +135,25 @@ public class MapObjectSpawner : MonoBehaviour
 
     public void MoveSelectedTroop(BaseEventData data)
     {
-        PointerEventData pointerData = data as PointerEventData;
-        float relPositionX;
-        float relPositionY;
-        if (Screen.width < Screen.height)
+        if (GameHandler.SelectedTroop != null)
         {
-            relPositionX = pointerData.position.y / Screen.height;
-            relPositionY = 1 - (pointerData.position.x / Screen.width);
-        }
-        else
-        {
-            relPositionX = pointerData.position.x / Screen.width;
-            relPositionY = pointerData.position.y / Screen.height;
-        }
+            PointerEventData pointerData = data as PointerEventData;
 
-        GameHandler.SelectedTroop.SendTroopsToLocation(new Vector2(relPositionX, relPositionY));
+            float relPositionX;
+            float relPositionY;
+            if (Screen.width < Screen.height)
+            {
+                relPositionX = pointerData.position.y / Screen.height;
+                relPositionY = 1 - (pointerData.position.x / Screen.width);
+            }
+            else
+            {
+                relPositionX = pointerData.position.x / Screen.width;
+                relPositionY = pointerData.position.y / Screen.height;
+            }
+
+            GameHandler.SelectedTroop.SendTroopsToLocation(new Vector2(relPositionX, relPositionY));
+        }
     }
 
     private void UpdateTimeDisplay()
