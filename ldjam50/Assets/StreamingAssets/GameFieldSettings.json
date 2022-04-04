@@ -3,7 +3,8 @@
     "Name": "Default",
     "FirstTick": 3,
     "TickInterval": 2.8,
-    "TickIntervalFactor": 0.95,
+    "TickIntervalFactor": 0.99,
+	"TickIntervalLogBase": 10,
     "MoneyInterval": 3,
     "MoneyFirstTick": 5,
     "MoneyGainPerInterval": 50,
@@ -111,7 +112,7 @@
         "Health": 5000,
         "MaxHealth": 5000,
         "Strength": 0,
-        "Repulsion": 0.001,
+        "Repulsion": 0.003,
         "Range": 0.05,
         "Color": {
           "Red": 0.5,
@@ -126,7 +127,7 @@
           "Alpha": 0.45
         },
         "ImageNames": [
-          "Tower"
+		  "Barricade"
         ],
         "MarchSounds": [
           "Fanfare_1",
@@ -154,7 +155,7 @@
           "2st Army Corps"
         ],
         "MaxSpeed": 0.4,
-        "Health": 150,
+        "Health": 200,
         "MaxHealth": 200,
         "Strength": 30,
         "Repulsion": 0.001,
@@ -187,8 +188,8 @@
         "UnitCost": 200,
         "Bases": [
           {
-            "Pos_x": 0.89,
-            "Pos_y": 0.42,
+            "Pos_x": 0.721,
+            "Pos_y": 0.9175,
             "Radius": 0.07
           }
         ]
@@ -201,8 +202,8 @@
           "Depper Doders",
           "Hadwi"
         ],
-        "MinSpeed": 0.01,
-        "MaxSpeed": 0.01,
+        "MinSpeed": 0.005,
+        "MaxSpeed": 0.007,
         "Health": 100,
         "MaxHealth": 100,
         "Strength": 20,
