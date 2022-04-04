@@ -3,12 +3,13 @@ Todo:
  Exceptions:
  - If base is under attack and game is paused, base is destroyed => gameOver. Next game time does not start
  - Shop: show more digits for Palace Guards speed.
- - shortkey for shop
- - new shortkey for pause to not conflict with fullscreen
+ - watermark in city
 
  Core:
  - UnitTypes (Rebel & Troops)
  - Change interval calculation to baseIntervall * factor / time 
+ - shortkey for shop
+ - new shortkey for pause to not conflict with fullscreen
   
  GamePlay:
  - Balancing
