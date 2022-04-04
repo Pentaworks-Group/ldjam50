@@ -1,8 +1,8 @@
+using System;
 
 using GameFrame.Core.Extensions;
 
 using Newtonsoft.Json;
-using System;
 
 public class CoreUnit : CoreMapObject
 {
@@ -26,5 +26,5 @@ public class CoreUnit : CoreMapObject
 
     [JsonIgnore]
     public UnityEngine.Vector2 Target { get; set; }
-    
+
 }

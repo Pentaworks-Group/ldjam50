@@ -49,8 +49,7 @@ public class GameFieldSettings
         Repulsion = 1.0f,
         ObjectSize = 0.02f,
         SafeZoneRadius = 0.06f,
-        Pos_x = 0.721f,
-        Pos_y = 0.9175f
+        Position = new GameFrame.Core.Math.Vector2(0.721f, 0.9175f)
     };
 
     public List<RebelDefault> RebelDefaults { get; set; }
