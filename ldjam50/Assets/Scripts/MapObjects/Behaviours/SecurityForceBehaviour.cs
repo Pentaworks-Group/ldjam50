@@ -33,7 +33,8 @@ public class SecurityForceBehaviour : CoreUnitBehaviour
 
             if (CoreUnit.MoveJustOnce)
             {
-                this.moveable = false;
+                BackgroundImage.gameObject.SetActive(false);
+                moveable = false;
             }
         }
     }
@@ -52,7 +53,7 @@ public class SecurityForceBehaviour : CoreUnitBehaviour
 
     public void TroopClick()
     {
-        if (GameHandler.SelectedTroop != this)
+        if (GameHandler.SelectedTroop != this && IsMoveable())
         {
             GameHandler.SelectTroop(this);
         }
