@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 
+using GameFrame.Core.Media;
+
 public class TroopDefault
 {
     public String Type { get; set; }
@@ -15,4 +17,5 @@ public class TroopDefault
     public Decimal UnitCost { get; set; }
     public List<String> MarchSounds { get; set; }
     public List<BaseDefault> Bases { get; set; }
+    public Color Color { get; set; }
 }
