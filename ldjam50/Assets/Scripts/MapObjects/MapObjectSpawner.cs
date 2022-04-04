@@ -301,7 +301,7 @@ public class MapObjectSpawner : MonoBehaviour
             location = new Vector2(locationX, locationY);
 
             float distance = GameHandler.GetDistance(location, GameHandler.Palace.MapObject.Location);
-            if (distance > GameHandler.SafeZoneRadius)
+            if (distance > GameHandler.GameFieldSettings.SafeZoneRadius)
             {
                 valid = true;
             }

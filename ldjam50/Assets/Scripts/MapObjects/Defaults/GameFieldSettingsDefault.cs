@@ -9,12 +9,19 @@ public class GameFieldSettings
     public float TickInterval { get; set; }
     public float TickIntervalFactor { get; set; } = 2;
     public float TickIntervalLogBase { get; set; } = 5;
-    public float MoneyInterval { get; set; }
-    public float MoneyFirstTick { get; set; }
-    public Decimal MoneyGainPerInterval { get; set; }
+
+
+    public  float SafeZoneRadius { get; set; } = 0.06f;
+
+
     public float PalaceHealing { get; set; }
 
+
     public bool DisableShop { get; set; }
+    public Decimal MoneyGainPerInterval { get; set; }
+    public float MoneyInterval { get; set; }
+    public float MoneyFirstTick { get; set; }
+
 
     public List<RebelDefault> RebelDefaults { get; set; }
     public List<TroopDefault> TroopDefaults { get; set; }

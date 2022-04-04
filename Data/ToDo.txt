@@ -51,6 +51,7 @@ Ideas:
  - Display (Selected) troop target
  - Wave Spawn
  - Unit Movement Queue
+ - Restrict Movement Range (eg. Palace Guards)
  
 Nice to have:
 ----------------------------------

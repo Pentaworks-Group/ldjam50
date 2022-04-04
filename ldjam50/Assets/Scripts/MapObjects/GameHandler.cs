@@ -89,8 +89,6 @@ public class GameHandler
         }
     }
 
-    public static float SafeZoneRadius { get; } = 0.06f;
-
     public static float GetDistance(Vector2 location1, Vector2 location2)
     {
         Vector2 loc1 = new Vector2(location1.x * Screen.width, location1.y * Screen.height);
