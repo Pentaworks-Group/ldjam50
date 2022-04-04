@@ -1,11 +1,14 @@
 
 using System;
 
+using GameFrame.Core.Extensions;
+
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SecurityForceSlotBehaviour : MonoBehaviour
 {
+    private Image backgroundImage;
     private Image corpsImage;
     private Text corpsNameText;
     private KeyValueTextBehaviour strengthKeyValue;
@@ -13,7 +16,7 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
     private KeyValueTextBehaviour maxHealthKeyValue;
     private KeyValueTextBehaviour rangeKeyValue;
     private Text unitCostText;
-    
+
     private TroopDefault securityForceDefault;
     public TroopDefault SecurityForceDefault
     {
@@ -35,9 +38,9 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var gameObject = this.gameObject.transform.Find("ImageArea/CorpsImage");
+        this.backgroundImage = this.GetComponent<Image>();
 
-        this.corpsImage = gameObject?.GetComponent<Image>();
+        this.corpsImage = this.gameObject.transform.Find("ImageArea/CorpsImage")?.GetComponent<Image>();
         this.corpsNameText = this.gameObject.transform.Find("NameArea/CorpsName")?.GetComponent<Text>();
         this.strengthKeyValue = this.gameObject.transform.Find("DescriptionArea/StrengthKeyValue")?.GetComponent<KeyValueTextBehaviour>();
         this.maxSpeedKeyValue = this.gameObject.transform.Find("DescriptionArea/MaxSpeedKeyValue")?.GetComponent<KeyValueTextBehaviour>();
@@ -50,6 +53,15 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
 
     private void UpdateUI()
     {
+        if (this.SecurityForceDefault == default)
+        {
+            backgroundImage.color = Color.white;
+        }
+        else
+        {
+            this.backgroundImage.color = this.SecurityForceDefault.Color.ToUnity();
+        }
+
         this.corpsImage.sprite = GetSprite(this.SecurityForceDefault?.ImageName);
 
         this.corpsNameText.text = this.SecurityForceDefault?.Type;

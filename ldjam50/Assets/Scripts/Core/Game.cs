@@ -11,14 +11,14 @@ namespace Assets.Scripts.Core
         public ContinuousAudioManager AmbienceAudioManager { get; set; }
         public ContinuousAudioManager BackgroundAudioManager { get; set; }
         public EffectsAudioManager EffectsAudioManager { get; set; }
-        
+
         public System.Collections.Generic.List<AudioClip> AudioClipListMenu { get; set; }
         public System.Collections.Generic.List<AudioClip> AudioClipListGame1 { get; set; }
         public System.Collections.Generic.List<AudioClip> AudioClipListGame2 { get; set; }
         public System.Collections.Generic.List<AudioClip> AudioClipListTransition { get; set; }
         public System.Collections.Generic.List<AudioClip> AmbientClipList { get; set; }
 
-        public System.Collections.Generic.List<AudioClip> ShopClipList { get; set;}
+        public System.Collections.Generic.List<AudioClip> ShopClipList { get; set; }
 
         protected override GameState InitializeGameState()
         {
@@ -35,8 +35,8 @@ namespace Assets.Scripts.Core
             return new PlayerOptions()
             {
                 AreAnimationsEnabled = true,
-                EffectsVolume = 1f,
-                BackgroundVolume = 0.125f,
+                EffectsVolume = 0.7f,
+                BackgroundVolume = 0.9f,
                 AmbienceVolume = 0.125f
             };
         }
