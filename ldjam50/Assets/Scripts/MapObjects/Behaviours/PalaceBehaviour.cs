@@ -3,6 +3,7 @@ using System;
 using Assets.Scripts.Base;
 
 using GameFrame.Core.Extensions;
+using UnityEngine;
 
 public class PalaceBehaviour : CoreMapObjectBehaviour
 {
@@ -88,6 +89,18 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
         CoreMapBase.Destroyed = true;
         this.transform.Find("Active").gameObject.SetActive(false);
         this.transform.Find("Destroyed").gameObject.SetActive(true);
+
+        for (int i = GameHandler.Rebels.Count - 1; i >= 0; i--)
+        {
+            RebelBehaviour rebel = GameHandler.Rebels[i];
+
+            if (rebel.Rebel.Target.Equals(MapObject.Location))
+            {
+                rebel.Rebel.Target = MapObjectSpawner.GetRandomTarget();
+            }
+        }
+
+
         if (CoreMapBase.GameOverOnDestruction)
         {
             CallGameOver();
