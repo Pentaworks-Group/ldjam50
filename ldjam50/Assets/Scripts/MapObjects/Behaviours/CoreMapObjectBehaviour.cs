@@ -36,15 +36,22 @@ public abstract class CoreMapObjectBehaviour : MonoBehaviour
 
     protected void InitScales()
     {
-        halfImageSizeRelativeX = sizeScale * (Image.sprite.rect.width / 3840) / 2f;
-        halfImageSizeRealtiveY = sizeScale * (Image.sprite.rect.height / 2160) / 2f;
+        if (Image?.sprite != null)
+        {
+            halfImageSizeRelativeX = sizeScale * (Image.sprite.rect.width / 3840) / 2f;
+            halfImageSizeRealtiveY = sizeScale * (Image.sprite.rect.height / 2160) / 2f;
+        }
     }
 
     protected void SetLocation(Vector2 location)
     {
-        RectTransform.anchorMin = new Vector2(location.x - halfImageSizeRelativeX, location.y - halfImageSizeRealtiveY);
-        RectTransform.anchorMax = new Vector2(location.x + halfImageSizeRelativeX, location.y + halfImageSizeRealtiveY);
-        MapObject.Location = location;
+        if (RectTransform != null)
+        {
+            RectTransform.anchorMin = new Vector2(location.x - halfImageSizeRelativeX, location.y - halfImageSizeRealtiveY);
+            RectTransform.anchorMax = new Vector2(location.x + halfImageSizeRelativeX, location.y + halfImageSizeRealtiveY);
+
+            MapObject.Location = location;
+        }
     }
 
     void Start()

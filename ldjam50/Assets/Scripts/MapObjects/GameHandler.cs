@@ -93,9 +93,7 @@ public class GameHandler
             Vector2 repulsion = direction * repulsionStrength * -1;
 
             if (opponent2.IsMoveable())
-            {
                 opponent2.MoveInDirection(repulsion);
-            }
         }
     }
 

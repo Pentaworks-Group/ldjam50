@@ -1,6 +1,6 @@
 [
   {
-    "Name": "Default",
+    "Name": "Defend Fort Riot",
     "FirstTick": 3,
     "TickInterval": 2.8,
     "TickIntervalFactor": 0.99,
@@ -152,7 +152,8 @@
             "Pos_y": 0.512,
             "Radius": 0.07
           }
-        ]
+        ],
+	    "MoveJustOnce": true
       },
       {
         "Type": "Army",

@@ -14,4 +14,5 @@ public class TroopDefault : CoreMapObjectDefault
     public List<BaseDefault> Bases { get; set; }
     public Color Color { get; set; }
     public Color SelectedColor { get; set; }
+    public Boolean MoveJustOnce { get; set; } = false;
 }
