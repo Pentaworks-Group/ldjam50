@@ -6,11 +6,11 @@ using UnityEngine;
 
 public class GameHandler
 {
-    public static List<PoliceTroopBehaviour> SecurityForces { get; } = new List<PoliceTroopBehaviour>();
+    public static List<SecurityForceBehaviour> SecurityForces { get; } = new List<SecurityForceBehaviour>();
     public static List<RebelBehaviour> Rebels { get; } = new List<RebelBehaviour>();
     public static PalaceBehaviour Palace { get; set; }
 
-    public static PoliceTroopBehaviour SelectedTroop { get; private set; }
+    public static SecurityForceBehaviour SelectedTroop { get; private set; }
 
     public static GameFieldSettings GameFieldSettings { get; set; }
     public static List<GameFieldSettings> AvailableGameModes { get; set; }
@@ -26,29 +26,29 @@ public class GameHandler
         Rebels.Remove(rebel);
     }
 
-    public static void AddSecurityForce(PoliceTroopBehaviour policeTroopBehaviour)
+    public static void AddSecurityForce(SecurityForceBehaviour policeTroopBehaviour)
     {
         SecurityForces.Add(policeTroopBehaviour);
     }
 
-    public static void RemoveSecurityForce(PoliceTroopBehaviour policeTroopBehaviour)
+    public static void RemoveSecurityForce(SecurityForceBehaviour policeTroopBehaviour)
     {
-        Core.Game.State.SecurityForces.Remove(policeTroopBehaviour.PoliceTroop);
+        Core.Game.State.SecurityForces.Remove(policeTroopBehaviour.SecurityForce);
         SecurityForces.Remove(policeTroopBehaviour);
     }
 
-    public static void SelectTroop(PoliceTroopBehaviour policeTroopBehaviour)
+    public static void SelectTroop(SecurityForceBehaviour policeTroopBehaviour)
     {
         if (SelectedTroop != null)
         {
-            SelectedTroop.PoliceTroop.IsSelected = false;
+            SelectedTroop.SecurityForce.IsSelected = false;
         }
 
         SelectedTroop = policeTroopBehaviour;
 
-        if (policeTroopBehaviour?.PoliceTroop != default)
+        if (policeTroopBehaviour?.SecurityForce != default)
         {
-            policeTroopBehaviour.PoliceTroop.IsSelected = true;
+            policeTroopBehaviour.SecurityForce.IsSelected = true;
         }
     }
 
