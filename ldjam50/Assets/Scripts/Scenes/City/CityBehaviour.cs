@@ -95,7 +95,7 @@ namespace Assets.Scripts.Scenes.City
             var gameState = Base.Core.Game.State;
 
             this.mapObjectSpawner = this.transform.Find("Rotatotor/MapObjectSpawner").gameObject.GetComponent<MapObjectSpawner>();
-            this.moneyDisplay = this.transform.Find("Rotatotor/HUD/MoneyDisplay").gameObject;
+            this.moneyDisplay = this.transform.Find("Rotatotor/HUD/Top/MoneyDisplay").gameObject;
 
             if (gameState.Mode.DisableShop)
             {
@@ -106,7 +106,7 @@ namespace Assets.Scripts.Scenes.City
             }
             else
             {
-                this.moneyText = moneyDisplay.transform.Find("MoneyText").GetComponent<Text>();
+                this.moneyText = moneyDisplay.transform.Find("Fitter/MoneyText").GetComponent<Text>();
             }
 
             this.shopOverlay = this.transform.Find("Rotatotor/HUD/ShopOverlay").gameObject;
