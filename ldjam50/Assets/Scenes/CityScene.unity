@@ -517,6 +517,7 @@ MonoBehaviour:
   Map: {fileID: 281437110}
   TimeDisplay: {fileID: 1737547585}
   Palace: {fileID: 1272589991}
+  MilitaryBase: {fileID: 1610747824}
 --- !u!1 &409804704 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4059807205447409190, guid: 7efe7b375878db341858ac8b6b72358e, type: 3}

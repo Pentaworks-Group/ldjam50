@@ -17,26 +17,38 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
     {
         if (mapBaseObject == default)
         {
-            var palaceDefault = Core.Game.State.Mode.PalaceDefault;
-
-            location = new GameFrame.Core.Math.Vector2(palaceDefault.Pos_x, palaceDefault.Pos_y);
-
-            mapBaseObject = new CoreMapBase()
-            {
-                Name = "Palace",
-                ActualLocation = location,
-                ImageName = "Palace",
-                Healing = palaceDefault.Healing,
-                Health = palaceDefault.Health,
-                MaxHealth = palaceDefault.MaxHealth,
-                Range = palaceDefault.Range,
-                Repulsion = palaceDefault.Repulsion,
-                ObjectSize = palaceDefault.ObjectSize
-            };
+            mapBaseObject = GetCoreMapBaseFromDefault(Core.Game.State.Mode.PalaceDefault);
         }
 
         CoreMapBase = mapBaseObject;
         Init(mapBaseObject);
+    }
+
+    public void InitPalaceWithDefault(PalaceDefault baseDefault)
+    {
+        CoreMapBase mapBaseObject = GetCoreMapBaseFromDefault(baseDefault);
+
+        CoreMapBase = mapBaseObject;
+        Init(mapBaseObject);
+    }
+
+    private CoreMapBase GetCoreMapBaseFromDefault(PalaceDefault baseDefault)
+    {
+        location = new GameFrame.Core.Math.Vector2(baseDefault.Pos_x, baseDefault.Pos_y);
+
+        return new CoreMapBase()
+        {
+            Name = baseDefault.Name,
+            ActualLocation = location,
+            ImageName = baseDefault.ImageName,
+            Healing = baseDefault.Healing,
+            Health = baseDefault.Health,
+            MaxHealth = baseDefault.MaxHealth,
+            Range = baseDefault.Range,
+            Repulsion = baseDefault.Repulsion,
+            ObjectSize = baseDefault.ObjectSize,
+            GameOverOnDestruction = baseDefault.GameOverOnDestruction
+        };
     }
 
     public void Update()
@@ -74,7 +86,10 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
 
     protected override void KillObject()
     {
-        CallGameOver(0.0f);
+        if (CoreMapBase.GameOverOnDestruction)
+        {
+            CallGameOver();
+        }
     }
 
     public override bool IsMoveable()
@@ -83,10 +98,9 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
     }
 
 
-    private void CallGameOver(float distance)
+    private void CallGameOver()
     {
         Core.Game.AmbienceAudioManager.Stop();
         Assets.Scripts.Base.Core.Game.ChangeScene(SceneNames.GameOver);
-        Debug.Log("You have Lost. Looser!! " + distance);
     }
 }

@@ -9,6 +9,7 @@ public class GameHandler
     public static List<SecurityForceBehaviour> SecurityForces { get; } = new List<SecurityForceBehaviour>();
     public static List<RebelBehaviour> Rebels { get; } = new List<RebelBehaviour>();
     public static PalaceBehaviour Palace { get; set; }
+    public static PalaceBehaviour MilitaryBase { get; set; }
 
     public static SecurityForceBehaviour SelectedTroop { get; private set; }
 
