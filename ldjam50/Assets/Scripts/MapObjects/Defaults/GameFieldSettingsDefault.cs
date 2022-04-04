@@ -43,7 +43,7 @@ public class GameFieldSettings
         {
             "MBase"
         },
-        Healing = 0,
+        Healing = 50,
         Health = 100,
         MaxHealth = 100,
         Range = 0.04f,
