@@ -274,8 +274,11 @@ public class MapObjectSpawner : MonoBehaviour
             Core.Game.State.Rebels.Add(rebel);
 
             Core.Game.AmbienceAudioManager.Resume();
-            AudioClip spawnAudio = GameFrame.Base.Resources.Manager.Audio.Get(rebel.SpawnSound);
-            Core.Game.EffectsAudioManager.Play(spawnAudio);
+            if (rebel.SpawnSound != default)
+            {
+                AudioClip spawnAudio = GameFrame.Base.Resources.Manager.Audio.Get(rebel.SpawnSound);
+                Core.Game.EffectsAudioManager.Play(spawnAudio);
+            }
         }
 
         GameObject rebelOb = InstantiateGameObject(RebelTemplate, Map.transform);
@@ -320,8 +323,15 @@ public class MapObjectSpawner : MonoBehaviour
 
     private void InitMilitaryBase()
     {
-        GameHandler.MilitaryBase = MilitaryBase;
-        GameHandler.MilitaryBase.InitPalaceWithDefault(Core.Game.State.Mode.MilitaryBaseDefault);
+        if (Core.Game.State.Mode.DisableMilitaryBase)
+        {
+            MilitaryBase.gameObject.SetActive(false);
+        }
+        else
+        {
+            GameHandler.MilitaryBase = MilitaryBase;
+            GameHandler.MilitaryBase.InitPalaceWithDefault(Core.Game.State.Mode.MilitaryBaseDefault);
+        }
     }
     private void InitPalace()
     {

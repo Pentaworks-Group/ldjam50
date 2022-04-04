@@ -40,9 +40,9 @@ public class GameFieldSettings
         Healing = 0,
         Health = 100,
         MaxHealth = 100,
-        Range = 0.07f,
+        Range = 0.04f,
         Repulsion = 1.0f,
-        ObjectSize = 0.01f,
+        ObjectSize = 0.02f,
         Pos_x = 0.721f,
         Pos_y = 0.9175f
 
