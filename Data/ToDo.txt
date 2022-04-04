@@ -2,19 +2,14 @@ Todo:
 ----------------------------------
  Core:
  - SpawnSounds for different types
- - display mode & exit selection on click
- - troop number overlay (0-9 for selecting this unit) / fix Tab selection (killed troops)
-
+ - display mode & exit selection on click 
  - setting for default mode
- - use different sprites for rebels (change RebelDefault.ImageName to list)
- - allow setting troop binding (0-9)
+ - use different sprites for rebels (change RebelDefault.ImageName to list) 
  - UnitTypes (Rebel & Troops)
  - Multiple Bases (MilitaryBase)
  - Blockade/Palisade (#possible movments counter)
  - Base/Palace Health
  - Change interval calculation to baseIntervall * factor / time 
- 
- 
  
  GamePlay:
  - Balancing
@@ -61,7 +56,7 @@ Nice to have:
  
 WIP:
 ----------------------------------
- 
+ - troop number overlay (0-9 for selecting this unit)
  
  
 Done:
@@ -87,3 +82,5 @@ Done:
  - Money
  - SafeZoneRadius into settings
  - send selectred troop in HeadQuarter when pressing "Q"
+ - fix Tab selection (killed troops)
+ - allow setting troop binding (0-9)
