@@ -42,13 +42,7 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
 
     private Boolean isDisabled = false;
     private Boolean hasSufficientFunds = false;
-    public Boolean IsPurchasable
-    {
-        get
-        {
-            return (!isDisabled) && hasSufficientFunds;
-        }
-    }
+    public Boolean IsPurchasable { get; private set; }
 
     // Start is called before the first frame update
     void Start()
@@ -133,5 +127,7 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
                 this.notAvailableOverlay.SetActive(false);
             }
         }
+
+        this.IsPurchasable = (!isDisabled && hasSufficientFunds);
     }
 }
