@@ -307,7 +307,7 @@
         "MinSpeed": 0.025,
         "MaxSpeed": 0.05,
         "Health": 1,
-        "MaxHealth": 100,
+        "MaxHealth": 1,
         "Strength": 0,
         "Repulsion": 0.00005,
         "Range": 0.05,
