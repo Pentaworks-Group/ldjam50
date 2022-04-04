@@ -433,7 +433,7 @@
           "Blue": 0.7075472,
           "Alpha": 0.45
         },
-        "MaxSpeed": 0.6,
+        "MaxSpeed": 0.4,
         "Health": 1000000,
         "MaxHealth": 1000000,
         "Strength": 100,
