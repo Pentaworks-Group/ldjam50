@@ -315,13 +315,19 @@ public class MapObjectSpawner : MonoBehaviour
 
         return location;
     }
-    
 
-        private void InitMilitaryBase()
+
+    private void InitMilitaryBase()
     {
-        //if ()
-        GameHandler.MilitaryBase = MilitaryBase;
-        GameHandler.MilitaryBase.InitPalaceWithDefault(GameHandler.GameFieldSettings.MilitaryBaseDefault);
+        if (GameHandler.GameFieldSettings.DisableMilitaryBase)
+        {
+            MilitaryBase.gameObject.SetActive(false);
+        }
+        else
+        {
+            GameHandler.MilitaryBase = MilitaryBase;
+            GameHandler.MilitaryBase.InitPalaceWithDefault(GameHandler.GameFieldSettings.MilitaryBaseDefault);
+        }
     }
     private void InitPalace()
     {
