@@ -108,7 +108,7 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
 
     private void Update()
     {
-        if (this.SecurityForceDefault != null && Core.Game.State != default && this.IsPurchasable)
+        if (this.SecurityForceDefault != null && Core.Game.State != default)
         {
             if (Core.Game.State.AvailableCredits < this.SecurityForceDefault.UnitCost)
             {
