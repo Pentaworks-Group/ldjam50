@@ -26,7 +26,7 @@ public abstract class CoreMapObjectBehaviour : MonoBehaviour
 
         gameObject.name = mapObject.Name;
 
-        Sprite sprite = GameFrame.Base.Resources.Manager.Sprites.Get(mapObject.ImageName);
+        Sprite sprite = GameFrame.Base.Resources.Manager.Sprites.Get(mapObject?.ImageName);
         Image.sprite = sprite;
         MapObject = mapObject;
         InitScales();
