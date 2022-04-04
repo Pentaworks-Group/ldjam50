@@ -55,7 +55,10 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
     {
         if (MapObject != null)
         {
-            updateRebelDistance();
+            if (Time.timeScale != 0)
+            {
+                updateRebelDistance();
+            }
         }
     }
 
