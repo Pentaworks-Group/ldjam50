@@ -14,4 +14,5 @@ public class TroopDefault
     public String ImageName { get; set; }
     public Decimal UnitCost { get; set; }
     public List<String> MarchSounds { get; set; }
+    public List<BaseDefault> Bases { get; set; }
 }
