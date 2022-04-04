@@ -36,7 +36,7 @@ namespace Assets.Scripts.Core
             {
                 AreAnimationsEnabled = true,
                 EffectsVolume = 1f,
-                BackgroundVolume = 0.125f,
+                BackgroundVolume = 0.9f,
                 AmbienceVolume = 0.125f
             };
         }
