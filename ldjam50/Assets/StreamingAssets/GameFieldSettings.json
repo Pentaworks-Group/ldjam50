@@ -1,80 +1,79 @@
 [
-    {
-        "Name": "Default",
-        "FirstTick": 3,
-        "TickInterval": 0.1,
-        "TickIntervalFactor": 0.95,
-        "SafeZoneRadius": 0.07,
-        "MoneyInterval": 3,
-        "MoneyFirstTick": 5,
-        "MoneyGainPerInterval": 50,
-        "PalaceHealing": 50,
-        "DisableShop": false,
-        "TroopDefaults": [
-            {
-                "Type": "Police",
-                "Names": [
-                    "1st Police Corps",
-                    "2st Police Corps"
-                ],
-                "MaxSpeed": 0.4,
-                "Health": 150,
-                "MaxHealth": 200,
-                "Strength": 30,
-                "Repulsion": 0.001,
-                "Range": 0.055,
-                "ImageName": "Troops",
-                "MarchSounds": [
-                    "Fanfare_1",
-                    "March_1",
-                    "March_2",
-                    "March_3",
-                    "March_4",
-                    "March_5",
-                    "Yes_Sir",
-                    "Yes_Sir_2"
-                ],
-                "UnitCost": 100,
-                "Bases": [
-                    {
-                        "Pos_x": 0.495,
-                        "Pos_y": 0.512,
-                        "Radius": 0.07
-                    }
-                ]
-            },
-            {
-                "Type": "Army",
-                "Names": [
-                    "1st Army Corps",
-                    "2st Army Corps"
-                ],
-                "MaxSpeed": 0.4,
-                "Health": 150,
-                "MaxHealth": 200,
-                "Strength": 30,
-                "Repulsion": 0.001,
-                "Range": 0.055,
-                "ImageName": "Riot_M",
-                "MarchSounds": [
-                    "Fanfare_1",
-                    "March_1",
-                    "March_2",
-                    "March_3",
-                    "March_4",
-                    "March_5",
-                    "Yes_Sir",
-                    "Yes_Sir_2"
-                ],
-                "UnitCost": 100,
-                "Bases": [
-                    {
-                        "Pos_x": 0.795,
-                        "Pos_y": 0.512,
-                        "Radius": 0.07
-                    }
-                ]
-            }
+  {
+    "Name": "Default",
+    "FirstTick": 3,
+    "TickInterval": 2.8,
+    "TickIntervalFactor": 0.95,
+    "MoneyInterval": 3,
+    "MoneyFirstTick": 5,
+    "MoneyGainPerInterval": 50,
+    "PalaceHealing": 50,
+    "DisableShop": false,
+    "TroopDefaults": [
+      {
+        "Type": "Police",
+        "Names": [
+          "1st Police Corps",
+          "2st Police Corps"
+        ],
+        "MaxSpeed": 0.4,
+        "Health": 150,
+        "MaxHealth": 200,
+        "Strength": 30,
+        "Repulsion": 0.001,
+        "Range": 0.055,
+        "ImageName": "Troops",
+        "MarchSounds": [
+          "Fanfare_1",
+          "March_1",
+          "March_2",
+          "March_3",
+          "March_4",
+          "March_5",
+          "Yes_Sir",
+          "Yes_Sir_2"
+        ],
+        "UnitCost": 100,
+        "Bases": [
+          {
+            "Pos_x": 0.495,
+            "Pos_y": 0.512,
+            "Radius":  0.07
+          }
+        ]
+      },
+	  {
+        "Type": "Army",
+        "Names": [
+          "1st Army Corps",
+          "2st Army Corps"
+        ],
+        "MaxSpeed": 0.4,
+        "Health": 150,
+        "MaxHealth": 200,
+        "Strength": 30,
+        "Repulsion": 0.001,
+        "Range": 0.055,
+        "ImageName": "Riot_M",
+        "MarchSounds": [
+          "Fanfare_1",
+          "March_1",
+          "March_2",
+          "March_3",
+          "March_4",
+          "March_5",
+          "Yes_Sir",
+          "Yes_Sir_2"
+        ],
+        "UnitCost": 100,
+        "Bases": [
+          {
+            "Pos_x": 0.89,
+            "Pos_y": 0.42,
+            "Radius":  0.07
+          }
+        ]
+      }
 
         ],
         "RebelDefaults": [

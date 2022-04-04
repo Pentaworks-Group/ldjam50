@@ -26,7 +26,9 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
                 Name = "Palace",
                 ActualLocation = location,
                 ImageName = "Palace",
-                Healing = GameHandler.GameFieldSettings.PalaceHealing
+                Healing = GameHandler.GameFieldSettings.PalaceHealing,
+                Health = 10,
+                MaxHealth = 10
             };
 
         }

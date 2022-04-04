@@ -12,7 +12,8 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
     private KeyValueTextBehaviour maxSpeedKeyValue;
     private KeyValueTextBehaviour maxHealthKeyValue;
     private KeyValueTextBehaviour rangeKeyValue;
-
+    private Text unitCostText;
+    
     private TroopDefault securityForceDefault;
     public TroopDefault SecurityForceDefault
     {
@@ -42,6 +43,7 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
         this.maxSpeedKeyValue = this.gameObject.transform.Find("DescriptionArea/MaxSpeedKeyValue")?.GetComponent<KeyValueTextBehaviour>();
         this.maxHealthKeyValue = this.gameObject.transform.Find("DescriptionArea/MaxHealthKeyValue")?.GetComponent<KeyValueTextBehaviour>();
         this.rangeKeyValue = this.gameObject.transform.Find("DescriptionArea/RangeKeyValue")?.GetComponent<KeyValueTextBehaviour>();
+        this.unitCostText = this.gameObject.transform.Find("CostArea/CostText")?.GetComponent<Text>();
 
         UpdateUI();
     }
@@ -55,6 +57,7 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
         this.maxSpeedKeyValue.Value = this.SecurityForceDefault?.MaxSpeed.ToString("F1");
         this.maxHealthKeyValue.Value = this.SecurityForceDefault?.MaxHealth.ToString("F1");
         this.rangeKeyValue.Value = this.SecurityForceDefault?.Range.ToString("F1");
+        this.unitCostText.text = this.SecurityForceDefault?.UnitCost.ToString("F1");
     }
 
     private Sprite GetSprite(String resourceName)

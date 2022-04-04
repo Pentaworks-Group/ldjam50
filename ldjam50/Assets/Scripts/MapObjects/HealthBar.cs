@@ -7,19 +7,19 @@ public class HealthBar : MonoBehaviour
 {
 
     private RectTransform RectTransformBar { get; set; }
-    private CoreUnit CoreUnit { get; set; }
+    private CoreMapObject CoreMapObject { get; set; }
 
     void Start()
     {
         RectTransformBar = this.gameObject.transform.GetChild(0).GetChild(0).GetComponent<RectTransform>();
-        CoreUnitBehaviour coreUnitBehaviour = this.gameObject.GetComponentInParent<CoreUnitBehaviour>();
-        CoreUnit = coreUnitBehaviour.CoreUnit;
+        CoreMapObjectBehaviour coreUnitBehaviour = this.gameObject.GetComponentInParent<CoreMapObjectBehaviour>();
+        CoreMapObject = coreUnitBehaviour.MapObject;
     }
 
     void Update()
     {
         GameObject display = gameObject.transform.GetChild(0).gameObject;
-        if (CoreUnit.Health >= CoreUnit.MaxHealth)
+        if (CoreMapObject.Health >= CoreMapObject.MaxHealth)
         {
             if (display.activeSelf)
             {
@@ -31,7 +31,7 @@ public class HealthBar : MonoBehaviour
             {
                 display.SetActive(true);
             }
-            float percentage = CoreUnit.Health / CoreUnit.MaxHealth;
+            float percentage = CoreMapObject.Health / CoreMapObject.MaxHealth;
             RectTransformBar.anchorMax = new Vector2(percentage, 1);
         }
     }
