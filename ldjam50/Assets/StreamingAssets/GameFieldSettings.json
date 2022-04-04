@@ -176,8 +176,8 @@
           "Depper Doders",
           "Hadwi"
         ],
-        "MinSpeed": 0.025,
-        "MaxSpeed": 0.05,
+        "MinSpeed": 0.01,
+        "MaxSpeed": 0.01,
         "Health": 100,
         "MaxHealth": 100,
         "Strength": 0,
@@ -255,8 +255,8 @@
           "Depper Doders",
           "Hadwi"
         ],
-        "MinSpeed": 0.025,
-        "MaxSpeed": 0.05,
+        "MinSpeed": 0.01,
+        "MaxSpeed": 0.01,
         "Health": 100,
         "MaxHealth": 100,
         "Strength": 0,
@@ -334,8 +334,8 @@
           "Depper Doders",
           "Hadwi"
         ],
-        "MinSpeed": 0.025,
-        "MaxSpeed": 0.05,
+        "MinSpeed": 0.01,
+        "MaxSpeed": 0.01,
         "Health": 1,
         "MaxHealth": 1,
         "Strength": 0,
