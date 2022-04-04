@@ -192,15 +192,16 @@ public class MapObjectSpawner : MonoBehaviour
         Quaternion rotation;
         if (Screen.width < Screen.height)
         {
-            Quaternion rotateY = new Quaternion(0, 0, 1f, 1f);
             if (template.transform.rotation.z != template.transform.rotation.w)
             {
                 rotation = Quaternion.identity;
-            } else
-            {
-                rotation = rotateY;
             }
-        } else
+            else
+            {
+                rotation = new Quaternion(0, 0, 1f, 1f);
+            }
+        }
+        else
         {
             rotation = Quaternion.identity;
         }

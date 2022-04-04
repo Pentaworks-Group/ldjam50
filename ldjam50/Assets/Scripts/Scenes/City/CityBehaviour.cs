@@ -82,11 +82,11 @@ namespace Assets.Scripts.Scenes.City
                 GameObject shopButton = this.transform.Find("Rotatotor/HUD/ShowShopButton").gameObject;
                 shopButton.SetActive(false);
             }
+
             this.shopOverlay = this.transform.Find("Rotatotor/HUD/ShopOverlay").gameObject;
             this.policeSlot = shopOverlay.transform.Find("ContentArea/PoliceSecurityForceSlot").GetComponent<SecurityForceSlotBehaviour>();
 
             this.policeSlot.SecurityForceDefault = GameHandler.GameFieldSettings.TroopDefaults.FirstOrDefault(d => d.Type == "Police");
-            
         }
 
         void Update()
