@@ -231,24 +231,41 @@ namespace Assets.Scripts.Scenes.City
         private void LoopSecurityForce(Boolean isForward)
         {
             var index = GameHandler.SecurityForces.IndexOf(GameHandler.SelectedTroop);
+            var startIndex = index;
 
             if (isForward)
             {
-                index++;
-
-                if (index > GameHandler.SecurityForces.Count - 1)
+                do
                 {
-                    index = 0;
+                    index++;
+                    if (index > GameHandler.SecurityForces.Count - 1)
+                    {
+                        index = 0;
+                    }
+                    if (index == startIndex)
+                    {
+                        break;
+                    }
                 }
+                while (!GameHandler.SecurityForces[index].IsMoveable());
+
             }
             else
             {
-                index--;
-
-                if (index < 0)
+                do
                 {
-                    index = GameHandler.SecurityForces.Count - 1;
+                    index--;
+
+                    if (index < 0)
+                    {
+                        index = GameHandler.SecurityForces.Count - 1;
+                    }
+                    if (index == startIndex)
+                    {
+                        break;
+                    }
                 }
+                while (!GameHandler.SecurityForces[index].IsMoveable());
             }
 
             if (index >= 0 && GameHandler.SecurityForces.Count > index)
