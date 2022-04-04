@@ -9,8 +9,6 @@ public class TroopDefault : CoreMapObjectDefault
     public List<String> Names { get; set; }
     public float MaxSpeed { get; set; }
     public float Strength { get; set; }
-    public float Repulsion { get; set; }
-    public float Range { get; set; }
     public Decimal UnitCost { get; set; }
     public List<String> MarchSounds { get; set; }
     public List<BaseDefault> Bases { get; set; }

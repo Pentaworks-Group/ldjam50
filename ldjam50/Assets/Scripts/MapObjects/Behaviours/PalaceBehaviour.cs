@@ -26,7 +26,7 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
                 ImageName = "Palace",
                 Healing = GameHandler.GameFieldSettings.PalaceDefault.Healing,
                 Health = GameHandler.GameFieldSettings.PalaceDefault.Health,
-                MaxHealth = GameHandler.GameFieldSettings.PalaceDefault.MaxHealth
+                MaxHealth = GameHandler.GameFieldSettings.PalaceDefault.MaxHealth,
                 Range = GameHandler.GameFieldSettings.PalaceDefault.Range,
                 Repulsion = GameHandler.GameFieldSettings.PalaceDefault.Repulsion
             };

@@ -8,6 +8,4 @@ public class RebelDefault : CoreMapObjectDefault
     public float MinSpeed { get; set; }
     public float MaxSpeed { get; set; }
     public float Strength { get; set; }
-    public float Repulsion { get; set; }
-    public float Range { get; set; }
 }
