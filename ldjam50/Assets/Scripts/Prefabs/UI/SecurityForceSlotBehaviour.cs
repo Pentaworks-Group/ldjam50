@@ -40,7 +40,15 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
         }
     }
 
-    public Boolean IsPurchasable { get; private set; } = true;
+    private Boolean isDisabled = false;
+    private Boolean hasSufficientFunds = false;
+    public Boolean IsPurchasable
+    {
+        get
+        {
+            return (!isDisabled) && hasSufficientFunds;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -63,22 +71,15 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
 
     private void UpdateUI()
     {
+        hasSufficientFunds = false;
+        isDisabled = false;
+
         if (this.SecurityForceDefault != default)
         {
             var color = this.SecurityForceDefault.BackgroundColor.ToUnity();
 
             this.corpsBackgroundImage.color = this.SecurityForceDefault.SelectedColor.ToUnity();
             this.backgroundImage.color = new Color(color.r, color.g, color.b, 0.4f);
-
-            if ((this.SecurityForceDefault.Type == "Army") && Core.Game.State.Mode.DisableMilitaryBase && Core.Game.State.MilitaryBase.Destroyed)
-            {
-                this.notAvailableOverlay.SetActive(true);
-                IsPurchasable = false;
-            }
-            else
-            {
-                this.notAvailableOverlay.SetActive(false);
-            }
         }
         else
         {
@@ -112,12 +113,24 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
         {
             if (Core.Game.State.AvailableCredits < this.SecurityForceDefault.UnitCost)
             {
-                IsPurchasable = false;
+                hasSufficientFunds = false;
                 this.notEnoughMoneyText.SetActive(true);
             }
             else
             {
+                hasSufficientFunds = true;
                 this.notEnoughMoneyText.SetActive(false);
+            }
+
+            if ((this.SecurityForceDefault.Type == "Army") && Core.Game.State.Mode.DisableMilitaryBase && Core.Game.State.MilitaryBase.Destroyed)
+            {
+                this.notAvailableOverlay.SetActive(true);
+                isDisabled = true;
+            }
+            else
+            {
+                isDisabled = false;
+                this.notAvailableOverlay.SetActive(false);
             }
         }
     }
