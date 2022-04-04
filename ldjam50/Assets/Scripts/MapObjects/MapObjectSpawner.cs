@@ -38,18 +38,20 @@ public class MapObjectSpawner : MonoBehaviour
             return;
         }
 
-        this.spawnInterval = GameHandler.GameFieldSettings.TickInterval;
-        this.moneyInterval = GameHandler.GameFieldSettings.MoneyInterval;
+        var gameState = Core.Game.State;
+
+        this.spawnInterval = gameState.Mode.TickInterval;
+        this.moneyInterval = gameState.Mode.MoneyInterval;
 
         GameHandler.Clear();
 
-        Debug.Log("GameFieldSettings: " + GameHandler.GameFieldSettings.Name);
+        Debug.Log("GameFieldSettings: " + gameState.Mode.Name);
         InitPalace();
         InitMilitaryBase();
 
-        if (Core.Game.State.SecurityForces?.Count > 0)
+        if (gameState.SecurityForces?.Count > 0)
         {
-            foreach (var securityForce in Core.Game.State.SecurityForces)
+            foreach (var securityForce in gameState.SecurityForces)
             {
                 var spawnedTroop = SpawnTroop(securityForce);
 
@@ -68,12 +70,12 @@ public class MapObjectSpawner : MonoBehaviour
         }
         else
         {
-            SpawnTroopFromDefault(GameHandler.GameFieldSettings.TroopDefaults.FirstOrDefault());
+            SpawnTroopFromDefault(gameState.Mode.TroopDefaults.FirstOrDefault());
         }
 
-        if (Core.Game.State.Rebels?.Count > 0)
+        if (gameState.Rebels?.Count > 0)
         {
-            foreach (var rebel in Core.Game.State.Rebels)
+            foreach (var rebel in gameState.Rebels)
             {
                 var spawnedRebel = SpawnRebel(rebel);
 
@@ -81,15 +83,12 @@ public class MapObjectSpawner : MonoBehaviour
             }
         }
 
-        currentTime = Core.Game.State.ElapsedTime;
-        nextSpawnTick = Core.Game.State.NextRebelSpawn;
-        nextMoneyTick = Core.Game.State.NextMoneySpawn;
+        currentTime = gameState.ElapsedTime;
+        nextSpawnTick = gameState.NextRebelSpawn;
+        nextMoneyTick = gameState.NextMoneySpawn;
 
-        //        Core.Game.BackgroundAudioManager.Stop();
         Core.Game.BackgroundAudioManager.Clips = Core.Game.AudioClipListGame1;
-        //        Core.Game.BackgroundAudioManager.Resume();
     }
-
 
     // Update is called once per frame
     void Update()
@@ -99,27 +98,30 @@ public class MapObjectSpawner : MonoBehaviour
             return;
         }
 
+        var gameState = Core.Game.State;
+
         currentTime += Time.deltaTime;
 
         if (currentTime > nextSpawnTick)
         {
             SpawnRebel();
 
-            Core.Game.State.NextRebelSpawn = nextSpawnTick;
-            spawnInterval = GameHandler.GameFieldSettings.TickIntervalFactor * GameHandler.GameFieldSettings.TickInterval / Mathf.Log(currentTime, GameHandler.GameFieldSettings.TickIntervalLogBase);
+            gameState.NextRebelSpawn = nextSpawnTick;
+
+            spawnInterval = gameState.Mode.TickIntervalFactor * gameState.Mode.TickInterval / Mathf.Log(currentTime, gameState.Mode.TickIntervalLogBase);
             nextSpawnTick = currentTime + spawnInterval;
             //Debug.Log("Next Spawn: " + nextSpawnTick + "  interval: " + spawnInterval);
         }
 
-        if (!GameHandler.GameFieldSettings.DisableShop)
+        if (!gameState.Mode.DisableShop)
         {
             if (currentTime > nextMoneyTick)
             {
                 nextMoneyTick = currentTime + moneyInterval;
 
-                Core.Game.State.NextMoneySpawn = nextMoneyTick;
+                gameState.NextMoneySpawn = nextMoneyTick;
 
-                Core.Game.State.AvailableCredits += GameHandler.GameFieldSettings.MoneyGainPerInterval;
+                gameState.AvailableCredits += gameState.Mode.MoneyGainPerInterval;
             }
         }
 
@@ -176,7 +178,7 @@ public class MapObjectSpawner : MonoBehaviour
 
         if (policeTroop == default)
         {
-            policeTroop = GetTroopFromDefault(GameHandler.GameFieldSettings.TroopDefaults.GetRandomEntry());
+            policeTroop = GetTroopFromDefault(Core.Game.State.Mode.TroopDefaults.GetRandomEntry());
         }
         else
         {
@@ -234,7 +236,7 @@ public class MapObjectSpawner : MonoBehaviour
             Range = troopDefault.Range,
             Base = GameHandler.Palace.CoreMapBase,
             MarchSounds = troopDefault.MarchSounds,
-            Color = troopDefault.Color.ToUnity()
+            Color = troopDefault.Color
         };
 
         Core.Game.State.SecurityForces.Add(policeTroop);
@@ -249,7 +251,7 @@ public class MapObjectSpawner : MonoBehaviour
         if (rebel == null)
         {
             //float speed = 0;
-            RebelDefault rebelDefault = GameHandler.GameFieldSettings.RebelDefaults.GetRandomEntry();
+            RebelDefault rebelDefault = Core.Game.State.Mode.RebelDefaults.GetRandomEntry();
             float speed = UnityEngine.Random.Range(rebelDefault.MinSpeed, rebelDefault.MaxSpeed);
             //Debug.Log("Speed: " + speed);
             rebel = new Rebel()
@@ -269,6 +271,7 @@ public class MapObjectSpawner : MonoBehaviour
             };
 
             Core.Game.State.Rebels.Add(rebel);
+
             Core.Game.AmbienceAudioManager.Resume();
             AudioClip spawnAudio = GameFrame.Base.Resources.Manager.Audio.Get(rebel.SpawnSound);
             Core.Game.EffectsAudioManager.Play(spawnAudio);
@@ -299,10 +302,11 @@ public class MapObjectSpawner : MonoBehaviour
         {
             float locationX = UnityEngine.Random.Range(0f, 1f);
             float locationY = UnityEngine.Random.Range(0f, 1f);
+
             location = new Vector2(locationX, locationY);
 
             float distance = GameHandler.GetDistance(location, GameHandler.Palace.MapObject.Location);
-            if (distance > GameHandler.GameFieldSettings.PalaceDefault.SafeZoneRadius)
+            if (distance > Core.Game.State.Mode.PalaceDefault.SafeZoneRadius)
             {
                 valid = true;
             }

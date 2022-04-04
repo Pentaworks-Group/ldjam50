@@ -5,6 +5,8 @@ namespace Assets.Scripts.Core
 {
     public class GameState : GameFrame.Core.GameState
     {
+        public GameFieldSettings Mode { get; set; }
+
         public float ElapsedTime { get; set; }
         public float NextRebelSpawn { get; set; }
         public float NextMoneySpawn { get; set; }
