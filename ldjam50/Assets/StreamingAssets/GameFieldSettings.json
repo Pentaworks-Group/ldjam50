@@ -450,16 +450,17 @@
   },
   {
     "Name": "Doomsday",
-    "FirstTick": 10,
-    "TickInterval": 10,
-    "TickIntervalFactor": 0.99,
+    "FirstTick": 2,
+    "TickInterval": 0.0001,
+    "TickIntervalFactor": 0.97,
     "MoneyInterval": 1000,
     "MoneyFirstTick": 1000,
     "MoneyGainPerInterval": 0,
     "PalaceDefault":{
     "Healing": 500,
-    "Health": 1,
-    "MaxHealth": 1
+    "Health": 100,
+    "MaxHealth": 100,
+	"SafeZoneRadius": 0.2
 	},
     "DisableShop": true,
     "TroopDefaults": [
@@ -468,7 +469,7 @@
         "Names": [
           "Palace Guard"
         ],
-        "MaxSpeed": 0.6,
+        "MaxSpeed": 0.1,
         "Health": 100000000,
         "MaxHealth": 100000000,
         "Strength": 100,
@@ -497,7 +498,7 @@
             "Pos_x": 0.495,
             "Pos_y": 0.512,
             "Radius": 0.07
-          }
+		  }
         ]
       }
     ],
@@ -513,13 +514,13 @@
         "MaxHealth": 1,
         "Strength": 1,
         "Repulsion": 0.00005,
-        "Range": 0.05,
+        "Range": 0.002,
         "ImageName": "Riots",
         "KillSounds": [
-          "Silence_1sec"
+          false
         ],
         "SpawnSounds": [
-          "Silence_1sec"
+          false
         ]
       }
     ]
