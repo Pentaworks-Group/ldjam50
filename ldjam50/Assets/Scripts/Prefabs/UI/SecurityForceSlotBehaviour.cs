@@ -66,10 +66,10 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
         this.corpsImage.sprite = GetSprite(this.SecurityForceDefault?.ImageNames?.GetRandomEntry());
 
         this.corpsNameText.text = this.SecurityForceDefault?.Type;
-        this.strengthKeyValue.Value = this.SecurityForceDefault?.Strength.ToString("F1");
+        this.strengthKeyValue.Value = this.SecurityForceDefault?.Strength.ToString("F2");
         this.maxSpeedKeyValue.Value = this.SecurityForceDefault?.MaxSpeed.ToString("F1");
         this.maxHealthKeyValue.Value = this.SecurityForceDefault?.MaxHealth.ToString("F1");
-        this.rangeKeyValue.Value = this.SecurityForceDefault?.Range.ToString("F1");
+        this.rangeKeyValue.Value = this.SecurityForceDefault?.Range.ToString("F3");
         this.unitCostText.text = this.SecurityForceDefault?.UnitCost.ToString("F1");
     }
 

@@ -1,15 +1,10 @@
 Todo:
 ----------------------------------
  Exceptions:
- - If base is under attack and game is paused, base is destroyed => gameOver. Next game time does not start
- - Shop: show more digits for Palace Guards speed.
- - watermark in city
-
+ 
  Core:
  - UnitTypes (Rebel & Troops)
- - Change interval calculation to baseIntervall * factor / time 
- - shortkey for shop
- - new shortkey for pause to not conflict with fullscreen
+ - Change interval calculation to baseIntervall * factor / time  
  - Buttons for shortkey (Q)
   
  GamePlay:
@@ -47,7 +42,7 @@ Refactoring:
  
 WIP:
 ----------------------------------
-
+ - Mark Unit not Available if not enought money
  
 Nice to have:
 ----------------------------------
@@ -55,7 +50,6 @@ Nice to have:
  - Variable Rebel Strength 
  - Bases in json (linked via unique ID to troops)
  - Display Unit Strength (hover over? Strenght Symbol?)
- - Mark Unit not Available if not enought money
  - statistics which mode was played how often
  - buttons for 0-9 keys (doubleClick for setting, singleClick for selecting)
  
@@ -115,3 +109,10 @@ Done:
  - CityScene HUD overhaul (eg. Buttons same size, image background)
  - Save Palace & Military Base
  - SpawnSounds for different types
+ - shortkey for shop
+ - new shortkey for pause to not conflict with fullscreen
+ - shortkey for shop
+ - new shortkey for pause to not conflict with fullscreen
+ - If base is under attack and game is paused, base is destroyed => gameOver. Next game time does not start
+ - Shop: show more digits for Palace Guards speed.
+ - watermark in city
