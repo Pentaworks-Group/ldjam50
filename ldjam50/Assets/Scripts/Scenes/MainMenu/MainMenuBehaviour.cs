@@ -167,7 +167,6 @@ public class MainMenuBehaviour : MonoBehaviour
         StartCoroutine(GameFrame.Core.Json.Handler.DeserializeObjectFromStreamingAssets<List<GameFieldSettings>>(filePath, SetGameFieldSettings));
     }
 
-
     private List<GameFieldSettings> SetGameFieldSettings(List<GameFieldSettings> gameFieldSettings)
     {
         GameHandler.AvailableGameModes = gameFieldSettings;
