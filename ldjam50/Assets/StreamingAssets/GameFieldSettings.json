@@ -3,7 +3,7 @@
     "Name": "Default",
     "FirstTick": 3,
     "TickInterval": 2.8,
-    "TickIntervalFactor": 0.95,
+    "TickIntervalFactor": 0.98,
     "MoneyInterval": 3,
     "MoneyFirstTick": 5,
     "MoneyGainPerInterval": 50,
@@ -111,7 +111,7 @@
         "Health": 5000,
         "MaxHealth": 5000,
         "Strength": 0,
-        "Repulsion": 0.001,
+        "Repulsion": 0.003,
         "Range": 0.05,
         "Color": {
           "Red": 0.5,
@@ -126,7 +126,7 @@
           "Alpha": 0.45
         },
         "ImageNames": [
-          "Tower"
+		  "Barricade"
         ],
         "MarchSounds": [
           "Fanfare_1",
@@ -201,8 +201,8 @@
           "Depper Doders",
           "Hadwi"
         ],
-        "MinSpeed": 0.01,
-        "MaxSpeed": 0.01,
+        "MinSpeed": 0.005,
+        "MaxSpeed": 0.007,
         "Health": 100,
         "MaxHealth": 100,
         "Strength": 20,
