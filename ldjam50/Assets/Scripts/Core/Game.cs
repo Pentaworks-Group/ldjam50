@@ -35,7 +35,7 @@ namespace Assets.Scripts.Core
             return new PlayerOptions()
             {
                 AreAnimationsEnabled = true,
-                EffectsVolume = 1f,
+                EffectsVolume = 0.7f,
                 BackgroundVolume = 0.9f,
                 AmbienceVolume = 0.125f
             };
