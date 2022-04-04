@@ -153,8 +153,10 @@ namespace Assets.Scripts.Scenes.City
                 forceSlot.gameObject.SetActive(true);
             }
 
-            if (gameState.Mode.MoneyStart > 0)
+            if (gameState.Mode.MoneyStart > 0 && (!gameState.WasShopShown))
             {
+                gameState.WasShopShown = true;
+
                 ShowShop();
             }
         }
@@ -230,6 +232,18 @@ namespace Assets.Scripts.Scenes.City
                 if (!Base.Core.Game.State.Mode.DisableShop)
                 {
                     moneyText.text = Base.Core.Game.State.AvailableCredits.ToString("F2");
+
+                    if (Input.GetKeyDown(KeyCode.S))
+                    {
+                        if (shopOverlay.activeSelf)
+                        {
+                            CloseShop();
+                        }
+                        else
+                        {
+                            ShowShop();
+                        }
+                    }
                 }
             }
         }
