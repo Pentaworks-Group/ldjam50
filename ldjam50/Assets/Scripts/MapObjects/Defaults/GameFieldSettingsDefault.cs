@@ -16,7 +16,7 @@ public class GameFieldSettings
     public float MoneyInterval { get; set; }
     public float MoneyFirstTick { get; set; }
 
-    public PalaceDefault PalaceDefault { get; set; }
+    public PalaceDefault PalaceDefault { get; set; } = new PalaceDefault();
 
     public List<RebelDefault> RebelDefaults { get; set; }
     public List<TroopDefault> TroopDefaults { get; set; }
