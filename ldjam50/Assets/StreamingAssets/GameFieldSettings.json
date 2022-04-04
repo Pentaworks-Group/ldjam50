@@ -90,14 +90,9 @@
         },
         "ImageNames": [ "Police" ],
         "MarchSounds": [
-          "Fanfare_1",
-          "March_1",
-          "March_2",
-          "March_3",
-          "March_4",
-          "March_5",
-          "Yes_Sir",
-          "Yes_Sir_2"
+          "Police",
+          "Police_2",
+		  "Police_3"
         ],
         "UnitCost": 100,
         "Bases": [
@@ -136,14 +131,7 @@
 		  "Barricade"
         ],
         "MarchSounds": [
-          "Fanfare_1",
-          "March_1",
-          "March_2",
-          "March_3",
-          "March_4",
-          "March_5",
-          "Yes_Sir",
-          "Yes_Sir_2"
+          "Barricade"
         ],
         "UnitCost": 20,
         "Bases": [
@@ -217,7 +205,12 @@
         "Repulsion": 0.0005,
         "Range": 0.05,
         "ImageNames": [
-          "Rebel_0"
+          "Rebel_0",
+		  "Rebel_1",
+		  "Rebel_2",
+		  "Rebel_3",
+		  "Rebel_4",
+		  "Rebel_5"
         ],
         "KillSounds": [
           "Aaah",
@@ -230,7 +223,10 @@
           "Whistle",
           "Whistle_2",
           "Whistle_3",
-          "Whistle_4"
+          "Whistle_4",
+		  "Rebels_Generic",
+		  "Rebels_Generic_2",
+		  "Rebels_Generic_3"
         ]
       }
     ]
