@@ -67,7 +67,7 @@ public abstract class CoreMapObjectBehaviour : MonoBehaviour
 
     public abstract bool IsMoveable();
 
-    public void MoveInDirection(Vector2 direction)
+    public virtual void MoveInDirection(Vector2 direction)
     {
     }
 
