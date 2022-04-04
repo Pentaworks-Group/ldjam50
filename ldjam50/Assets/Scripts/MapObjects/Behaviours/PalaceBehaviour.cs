@@ -17,24 +17,37 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
     {
         if (mapBaseObject == default)
         {
-            location = new GameFrame.Core.Math.Vector2(GameHandler.GameFieldSettings.PalaceDefault.Pos_x, GameHandler.GameFieldSettings.PalaceDefault.Pos_y);
-
-            mapBaseObject = new CoreMapBase()
-            {
-                Name = "Palace",
-                ActualLocation = location,
-                ImageName = "Palace",
-                Healing = GameHandler.GameFieldSettings.PalaceDefault.Healing,
-                Health = GameHandler.GameFieldSettings.PalaceDefault.Health,
-                MaxHealth = GameHandler.GameFieldSettings.PalaceDefault.MaxHealth,
-                Range = GameHandler.GameFieldSettings.PalaceDefault.Range,
-                Repulsion = GameHandler.GameFieldSettings.PalaceDefault.Repulsion,
-                ObjectSize = GameHandler.GameFieldSettings.PalaceDefault.ObjectSize
-            };
+            mapBaseObject = GetCoreMapBaseFromDefault(GameHandler.GameFieldSettings.PalaceDefault);
         }
 
         CoreMapBase = mapBaseObject;
         Init(mapBaseObject);
+    }
+
+    public void InitPalaceWithDefault(PalaceDefault baseDefault)
+    {
+        CoreMapBase mapBaseObject = GetCoreMapBaseFromDefault(baseDefault);
+
+        CoreMapBase = mapBaseObject;
+        Init(mapBaseObject);
+    }
+
+    private CoreMapBase GetCoreMapBaseFromDefault(PalaceDefault baseDefault)
+    {
+        location = new GameFrame.Core.Math.Vector2(baseDefault.Pos_x, baseDefault.Pos_y);
+
+        return new CoreMapBase()
+        {
+            Name = baseDefault.Name,
+            ActualLocation = location,
+            ImageName = baseDefault.ImageName,
+            Healing = baseDefault.Healing,
+            Health = baseDefault.Health,
+            MaxHealth = baseDefault.MaxHealth,
+            Range = baseDefault.Range,
+            Repulsion = baseDefault.Repulsion,
+            ObjectSize = baseDefault.ObjectSize
+        };
     }
 
     public void Update()

@@ -17,6 +17,7 @@ public class MapObjectSpawner : MonoBehaviour
 
     public Text TimeDisplay;
     public PalaceBehaviour Palace;
+    public PalaceBehaviour MilitaryBase;
 
     private float spawnInterval = 0f;
     private float moneyInterval = 0f;
@@ -44,6 +45,7 @@ public class MapObjectSpawner : MonoBehaviour
 
         Debug.Log("GameFieldSettings: " + GameHandler.GameFieldSettings.Name);
         InitPalace();
+        InitMilitaryBase();
 
         if (Core.Game.State.SecurityForces?.Count > 0)
         {
@@ -309,7 +311,14 @@ public class MapObjectSpawner : MonoBehaviour
 
         return location;
     }
+    
 
+        private void InitMilitaryBase()
+    {
+        //if ()
+        GameHandler.MilitaryBase = MilitaryBase;
+        GameHandler.MilitaryBase.InitPalaceWithDefault(GameHandler.GameFieldSettings.MilitaryBaseDefault);
+    }
     private void InitPalace()
     {
         GameHandler.Palace = Palace;

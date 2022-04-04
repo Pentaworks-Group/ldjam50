@@ -18,10 +18,34 @@ public class GameFieldSettings
 
 
 
-    public PalaceDefault PalaceDefault { get; set; } = new PalaceDefault();
+    public PalaceDefault PalaceDefault { get; set; } = new PalaceDefault()
+    {
+        Name = "Palace",
+        ImageName = "Palace",
+        Healing = 0,
+        Health = 100,
+        MaxHealth = 100,
+        Range = 0.07f,
+        Repulsion = 1.0f,
+        ObjectSize = 0.04f,
+        SafeZoneRadius = 0.13f
+    };
 
     public bool DisableMilitaryBase { get; set; }
-    public PalaceDefault MilitaryBaseDefault { get; set; } = new PalaceDefault();
+    public PalaceDefault MilitaryBaseDefault { get; set; } = new PalaceDefault()
+    {
+        Name = "MilitaryBase",
+        ImageName = "MBase",
+        Healing = 0,
+        Health = 100,
+        MaxHealth = 100,
+        Range = 0.07f,
+        Repulsion = 1.0f,
+        ObjectSize = 0.04f,
+        Pos_x = 0.721f,
+        Pos_y = 0.9175f
+
+    };
 
     public List<RebelDefault> RebelDefaults { get; set; }
     public List<TroopDefault> TroopDefaults { get; set; }
