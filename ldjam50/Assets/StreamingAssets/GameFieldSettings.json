@@ -107,12 +107,12 @@
           "1st Blockade",
           "2st Blockade"
         ],
-        "MaxSpeed": 1,
-        "Health": 150,
-        "MaxHealth": 200,
+        "MaxSpeed": 1.5,
+        "Health": 5000,
+        "MaxHealth": 5000,
         "Strength": 0,
         "Repulsion": 0.001,
-        "Range": 0.055,
+        "Range": 0.05,
         "Color": {
           "Red": 0.5,
           "Green": 0.5,
