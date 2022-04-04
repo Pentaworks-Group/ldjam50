@@ -1,6 +1,6 @@
 ﻿
 using System;
-using System.Linq;
+using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +9,8 @@ namespace Assets.Scripts.Scenes.City
 {
     public class CityBehaviour : MonoBehaviour
     {
+        private Dictionary<Int32, SecurityForceBehaviour> boundSecurityForces = new Dictionary<Int32, SecurityForceBehaviour>();
+
         private MapObjectSpawner mapObjectSpawner;
         private GameObject shopOverlay;
         private GameObject moneyDisplay;
@@ -85,6 +87,11 @@ namespace Assets.Scripts.Scenes.City
 
         private void Start()
         {
+            if (GameHandler.GameFieldSettings == null)
+            {
+                return;
+            }
+
             this.mapObjectSpawner = this.transform.Find("Rotatotor/MapObjectSpawner").gameObject.GetComponent<MapObjectSpawner>();
             this.moneyDisplay = this.transform.Find("Rotatotor/HUD/MoneyDisplay").gameObject;
 
@@ -133,7 +140,7 @@ namespace Assets.Scripts.Scenes.City
                 {
                     var isForward = true;
 
-                    if (Input.GetKeyDown(KeyCode.LeftShift))
+                    if (Input.GetKey(KeyCode.LeftShift))
                     {
                         isForward = false;
                     }
@@ -141,54 +148,56 @@ namespace Assets.Scripts.Scenes.City
                     LoopSecurityForce(isForward);
                 }
 
-                if (IsAnyDown(KeyCode.Alpha0, KeyCode.Keypad0))
+                var isControlDown = Input.GetKey(KeyCode.LeftShift);
+
+                if (Input.GetKeyDown(KeyCode.Alpha0) || Input.GetKeyDown(KeyCode.Keypad0))
                 {
-                    SelectSecurityForce(9);
+                    HandleKey(0, isControlDown);
                 }
 
-                if (IsAnyDown(KeyCode.Alpha1, KeyCode.Keypad1))
+                if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
                 {
-                    SelectSecurityForce(0);
+                    HandleKey(1, isControlDown);
                 }
 
-                if (IsAnyDown(KeyCode.Alpha2, KeyCode.Keypad2))
+                if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
                 {
-                    SelectSecurityForce(1);
+                    HandleKey(2, isControlDown);
                 }
 
-                if (IsAnyDown(KeyCode.Alpha3, KeyCode.Keypad3))
+                if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
                 {
-                    SelectSecurityForce(2);
+                    HandleKey(3, isControlDown);
                 }
 
-                if (IsAnyDown(KeyCode.Alpha4, KeyCode.Keypad4))
+                if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))
                 {
-                    SelectSecurityForce(3);
+                    HandleKey(4, isControlDown);
                 }
 
-                if (IsAnyDown(KeyCode.Alpha5, KeyCode.Keypad5))
+                if (Input.GetKeyDown(KeyCode.Alpha5) || Input.GetKeyDown(KeyCode.Keypad5))
                 {
-                    SelectSecurityForce(4);
+                    HandleKey(5, isControlDown);
                 }
 
-                if (IsAnyDown(KeyCode.Alpha6, KeyCode.Keypad6))
+                if (Input.GetKeyDown(KeyCode.Alpha6) || Input.GetKeyDown(KeyCode.Keypad6))
                 {
-                    SelectSecurityForce(5);
+                    HandleKey(6, isControlDown);
                 }
 
-                if (IsAnyDown(KeyCode.Alpha7, KeyCode.Keypad7))
+                if (Input.GetKeyDown(KeyCode.Alpha7) || Input.GetKeyDown(KeyCode.Keypad7))
                 {
-                    SelectSecurityForce(6);
+                    HandleKey(7, isControlDown);
                 }
 
-                if (IsAnyDown(KeyCode.Alpha8, KeyCode.Keypad8))
+                if (Input.GetKeyDown(KeyCode.Alpha8) || Input.GetKeyDown(KeyCode.Keypad8))
                 {
-                    SelectSecurityForce(7);
+                    HandleKey(8, isControlDown);
                 }
 
-                if (IsAnyDown(KeyCode.Alpha9, KeyCode.Keypad9))
+                if (Input.GetKeyDown(KeyCode.Alpha9) || Input.GetKeyDown(KeyCode.Keypad9))
                 {
-                    SelectSecurityForce(8);
+                    HandleKey(9, isControlDown);
                 }
 
                 if (!GameHandler.GameFieldSettings.DisableShop)
@@ -197,17 +206,6 @@ namespace Assets.Scripts.Scenes.City
                 }
             }
         }
-
-        private Boolean IsAnyDown(params KeyCode[] keycodes)
-        {
-            if (keycodes?.Length > 0)
-            {
-                return keycodes.Any(k => Input.GetKeyDown(k));
-            }
-
-            return false;
-        }
-
         private void LoopSecurityForce(Boolean isForward)
         {
             var index = GameHandler.SecurityForces.IndexOf(GameHandler.SelectedTroop);
@@ -231,15 +229,38 @@ namespace Assets.Scripts.Scenes.City
                 }
             }
 
-            SelectSecurityForce(index);
-        }
-
-        private void SelectSecurityForce(int index)
-        {
             if (index >= 0 && GameHandler.SecurityForces.Count > index)
             {
-                Debug.Log($"Selecting Securityforce at index {index}");
                 GameHandler.SelectTroop(GameHandler.SecurityForces[index]);
+            }
+        }
+
+        private void HandleKey(Int32 keyNumber, Boolean isControlDown)
+        {
+            if (isControlDown)
+            {
+                AssignSecurityForce(keyNumber);
+            }
+            else
+            {
+                SelectBoundSecurityForce(keyNumber);
+            }
+        }
+
+        private void AssignSecurityForce(Int32 key)
+        {
+            var securityForce = GameHandler.SelectedTroop;
+
+            //securityForce.AssignedKey = key;
+
+            this.boundSecurityForces[key] = securityForce;
+        }
+
+        private void SelectBoundSecurityForce(Int32 keyNumber)
+        {
+            if (boundSecurityForces.TryGetValue(keyNumber, out SecurityForceBehaviour securityForce))
+            {
+                GameHandler.SelectTroop(securityForce);
             }
         }
     }

@@ -62,13 +62,15 @@ public class GameHandler
 
     public static void Fight(CoreMapObjectBehaviour opponent1, CoreMapObjectBehaviour opponent2, float distance)
     {
-        if (distance < opponent2.MapObject.Range)
+        //Reduce Distance by Object sizes
+        float d = distance - opponent1.MapObject.ObjectSize - opponent2.MapObject.ObjectSize;
+        if (d < opponent2.MapObject.Range)
         {
-            opponent1.DamageObject((1 - distance / opponent2.MapObject.Range) * opponent2.MapObject.Strength);
+            opponent1.DamageObject((1 - d / opponent2.MapObject.Range) * opponent2.MapObject.Strength);
         }
-        if (distance < opponent1.MapObject.Range)
+        if (d < opponent1.MapObject.Range)
         {
-            opponent2.DamageObject((1 - distance / opponent1.MapObject.Range) * opponent1.MapObject.Strength);
+            opponent2.DamageObject((1 - d / opponent1.MapObject.Range) * opponent1.MapObject.Strength);
         }
     }
 

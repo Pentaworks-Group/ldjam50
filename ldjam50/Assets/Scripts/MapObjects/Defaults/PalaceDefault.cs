@@ -9,11 +9,13 @@ public class PalaceDefault : BaseDefault
     public PalaceDefault()
     {
         Healing = 50;
-        Health = 10;
-        MaxHealth = 10;
+        Health = 1e7f;
+        MaxHealth = 1e7f;
 
         Pos_x = (1895f / 3840);
         Pos_y = 1f - (1043f / 2160);
-        ObjectSize = 0.7f;
+        Range = 0.07f;
+        Repulsion = 1.0f;
+        ObjectSize = 0.07f;
     }
 }
