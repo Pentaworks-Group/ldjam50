@@ -31,12 +31,7 @@
           "Blue": 0,
           "Alpha": 0.95
         },
-		"SelectedColor": {
-			"Red": 0.455,
-			"Green": 0.329,
-			"Blue": 0.329,
-			"Alpha": 0.95
-		},
+		
         "ImageName": "SGuard",
         "MarchSounds": [
           "Fanfare_1",
