@@ -10,12 +10,12 @@
     "MoneyGainPerInterval": 20,
     "MoneyStart": 100,
     "PalaceDefault": {
-      "Healing": 50,
+      "Healing": 30,
       "Health": 100000,
       "MaxHealth": 100000
     },
     "MilitaryBaseDefault": {
-      "Healing": 50,
+      "Healing": 30,
       "Health": 100000,
       "MaxHealth": 100000
     },
