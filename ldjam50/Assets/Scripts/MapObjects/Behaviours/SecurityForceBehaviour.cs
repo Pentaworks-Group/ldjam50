@@ -13,8 +13,6 @@ public class SecurityForceBehaviour : CoreUnitBehaviour
     private GameObject keyNumberArea;
     private Text keyNumberText;
 
-    protected bool moveable = true;
-
     public SecurityForce SecurityForce
     {
         get
@@ -25,16 +23,15 @@ public class SecurityForceBehaviour : CoreUnitBehaviour
 
     public void SendTroopsToLocation(Vector2 target)
     {
-        if(IsMoveable())
+        if (IsMoveable())
         {
             playSendSound();
             SecurityForce.Speed = SecurityForce.MaxSpeed;
             SecurityForce.Target = target;
 
-            if (CoreUnit.MoveJustOnce)
+            if (CoreUnit.MoveJustOnce && SecurityForce.IsMoveable)
             {
-                BackgroundImage.gameObject.SetActive(false);
-                moveable = false;
+                SecurityForce.IsMoveable = false;
             }
         }
     }
@@ -77,7 +74,12 @@ public class SecurityForceBehaviour : CoreUnitBehaviour
 
     public override bool IsMoveable()
     {
-        return moveable;
+        if (SecurityForce != default)
+        {
+            return SecurityForce.IsMoveable;
+        }
+
+        return false;
     }
 
     protected void playSendSound()
@@ -133,6 +135,11 @@ public class SecurityForceBehaviour : CoreUnitBehaviour
         if (keyNumberArea.activeSelf && !this.SecurityForce.AssignedKey.HasValue)
         {
             keyNumberArea.SetActive(false);
+        }
+
+        if (!IsMoveable())
+        {
+            BackgroundImage.gameObject.SetActive(false);
         }
 
         base.Update();
