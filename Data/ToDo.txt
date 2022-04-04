@@ -1,5 +1,8 @@
 Todo:
 ----------------------------------
+ Exceptions:
+ - Saving Circular Serialization
+
  Core:
  - Save & Load GameMode
  - SpawnSounds for different types
