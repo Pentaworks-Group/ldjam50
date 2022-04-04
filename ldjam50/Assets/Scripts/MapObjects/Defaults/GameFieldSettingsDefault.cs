@@ -11,7 +11,7 @@ public class GameFieldSettings
     public float TickIntervalLogBase { get; set; } = 5;
 
 
-    public  float SafeZoneRadius { get; set; } = 0.06f;
+    public  float SafeZoneRadius { get; set; } = 0.13f;
 
 
     public float PalaceHealing { get; set; }
