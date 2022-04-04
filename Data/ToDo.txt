@@ -68,8 +68,7 @@ Nice to have:
  
 WIP:
 ----------------------------------
- - troop number overlay (0-9 for selecting this unit)
- 
+  
  
 Done:
 ----------------------------------
@@ -96,3 +95,4 @@ Done:
  - send selectred troop in HeadQuarter when pressing "Q"
  - fix Tab selection (killed troops)
  - allow setting troop binding (0-9)
+ - troop number overlay (0-9 for selecting this unit)
