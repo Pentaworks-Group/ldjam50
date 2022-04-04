@@ -28,6 +28,12 @@ Todo:
  - Revamp style
  - Change name
  
+ LDJam.com:
+ - Add description 
+ - Revamp style
+ - Change name
+ - Add itch.io link
+ 
 Refactoring:
 ----------------------------------
  - Fix Method & var Names
