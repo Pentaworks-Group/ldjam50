@@ -1,15 +1,18 @@
 Todo:
 ----------------------------------
  Core:
- 
- - Money
- - Fix Method & var Names
  - SpawnSounds for different types
  - display mode & exit selection on click
  - troop number overlay (0-9 for selecting this unit)
  - setting for default mode
  - use different sprites for rebels (change RebelDefault.ImageName to list)
  - allow setting troop binding (0-9)
+ - UnitTypes (Rebel & Troops)
+ - Multiple Bases (MilitaryBase)
+ - Blockade/Palisade (#possible movments counter)
+ - Base/Palace Health
+ - Change interval calculation to baseIntervall * factor / time 
+ - SafeZoneRadius into settings
  
  
  GamePlay:
@@ -18,7 +21,8 @@ Todo:
  UI:
  - Revamp UI for Save / Load (Button / Box / Scene)
  - Revamp MainMenu (eg. protest shield with game mode for starting new game)
- - PauseMenuButton sprite
+ - Display Unit Strength (hover over? Strenght Symbol?)
+ - CityScene HUD overhaul (eg. Buttons same size, image background)
  
  Audio:
  - Effects
@@ -29,25 +33,33 @@ Todo:
  - Add ldjam link
  - Revamp style
  - Change name
-
-Ideas:
-----------------------------------
- - Text editor to supply us for JSON data
- - Power Ups
- - Upload/Download/Sending GameModes (to collect from "Modders")
-
  
-Nice to have:
+Refactoring:
 ----------------------------------
+ - Fix Method & var Names
  - Move Rotatotor & click fix to GameFrame
  - InstantiateGameObject: alternatives turn templates? move to central code location
  - replace if (Screen.width < ..hight) with global call
  - Remove hardcoded references to mapsize (mostly unit scaling)
  - UnitScaling with targetSize (relative width, keep ratio?)
+
+Ideas:
+----------------------------------
+ - Power Ups
+ - Upload/Download/Sending GameModes (to collect from "Modders")
+ - Drag & Drop for sending units
+ - Display (Selected) troop target
+ - Wave Spawn
+ - Unit Movement Queue
+ 
+Nice to have:
+----------------------------------
+ - Text editor to supply us for JSON data
+ - Variable Rebel Strength 
  
 WIP:
 ----------------------------------
- EG:
+ 
  
  
 Done:
@@ -69,3 +81,5 @@ Done:
  - RebelSound persists in PauseMenu & After Quiting
  - Fix Time Display when rotated
  - disable shop per gamesettings
+ - PauseMenuButton sprite
+ - Money
