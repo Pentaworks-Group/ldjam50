@@ -28,7 +28,7 @@
           "Blue": 0.7075472,
           "Alpha": 0.8196079
         },
-        "ImageName": "Troops",
+        "ImageName": "Police",
         "MarchSounds": [
           "Fanfare_1",
           "March_1",
@@ -66,7 +66,7 @@
           "Blue": 0,
           "Alpha": 0.8823529
         },
-        "ImageName": "Riot_M",
+        "ImageName": "Riot_M2",
         "MarchSounds": [
           "Fanfare_1",
           "March_1",
@@ -86,39 +86,38 @@
           }
         ]
       }
-
+    ],
+    "RebelDefaults": [
+      {
+        "Type": "Noobs",
+        "Names": [
+          "Depper Doders",
+          "Hadwi"
         ],
-        "RebelDefaults": [
-            {
-                "Type": "Noobs",
-                "Names": [
-                    "Depper Doders",
-                    "Hadwi"
-                ],
-                "MinSpeed": 0.01,
-                "MaxSpeed": 0.01,
-                "Health": 100,
-                "MaxHealth": 100,
-                "Strength": 20,
-                "Repulsion": 0.0005,
-                "Range": 0.05,
-                "ImageName": "Riots",
-                "KillSounds": [
-                    "Aaah",
-                    "Aww",
-                    "Daeng",
-                    "Nuts",
-                    "Oops"
-                ],
-                "SpawnSounds": [
-                    "Whistle",
-                    "Whistle_2",
-                    "Whistle_3",
-                    "Whistle_4"
-                ]
-            }
+        "MinSpeed": 0.01,
+        "MaxSpeed": 0.01,
+        "Health": 100,
+        "MaxHealth": 100,
+        "Strength": 20,
+        "Repulsion": 0.0005,
+        "Range": 0.05,
+        "ImageName": "Rebel_0",
+        "KillSounds": [
+          "Aaah",
+          "Aww",
+          "Daeng",
+          "Nuts",
+          "Oops"
+        ],
+        "SpawnSounds": [
+          "Whistle",
+          "Whistle_2",
+          "Whistle_3",
+          "Whistle_4"
         ]
-    },
+      }
+    ]
+  },
   {
     "Name": "Push",
     "FirstTick": 3,

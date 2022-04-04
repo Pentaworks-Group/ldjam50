@@ -234,7 +234,8 @@ public class MapObjectSpawner : MonoBehaviour
             ImageName = troopDefault.ImageName,
             Range = troopDefault.Range,
             Base = GameHandler.Palace.CoreMapBase,
-            MarchSounds = troopDefault.MarchSounds
+            MarchSounds = troopDefault.MarchSounds,
+            Color = troopDefault.Color.ToUnity()
         };
 
         Core.Game.State.SecurityForces.Add(policeTroop);
@@ -273,7 +274,6 @@ public class MapObjectSpawner : MonoBehaviour
             AudioClip spawnAudio = GameFrame.Base.Resources.Manager.Audio.Get(rebel.SpawnSound);
             Core.Game.EffectsAudioManager.Play(spawnAudio);
         }
-
 
         GameObject rebelOb = InstantiateGameObject(RebelTemplate, Map.transform);
 

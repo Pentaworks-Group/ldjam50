@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class SecurityForceSlotBehaviour : MonoBehaviour
 {
     private Image backgroundImage;
+    private Image corpsBackgroundImage;
     private Image corpsImage;
     private Text corpsNameText;
     private KeyValueTextBehaviour strengthKeyValue;
@@ -40,6 +41,7 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
     {
         this.backgroundImage = this.GetComponent<Image>();
 
+        this.corpsBackgroundImage = this.gameObject.transform.Find("ImageArea/BackgroundImage")?.GetComponent<Image>();
         this.corpsImage = this.gameObject.transform.Find("ImageArea/CorpsImage")?.GetComponent<Image>();
         this.corpsNameText = this.gameObject.transform.Find("NameArea/CorpsName")?.GetComponent<Text>();
         this.strengthKeyValue = this.gameObject.transform.Find("DescriptionArea/StrengthKeyValue")?.GetComponent<KeyValueTextBehaviour>();
@@ -53,13 +55,10 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
 
     private void UpdateUI()
     {
-        if (this.SecurityForceDefault == default)
+        if (this.SecurityForceDefault != default)
         {
-            backgroundImage.color = Color.white;
-        }
-        else
-        {
-            this.backgroundImage.color = this.SecurityForceDefault.Color.ToUnity();
+            this.corpsBackgroundImage.color = this.SecurityForceDefault.Color.ToUnity();
+            this.backgroundImage.color = new Color(this.SecurityForceDefault.Color.Red, this.SecurityForceDefault.Color.Green, this.SecurityForceDefault.Color.Blue, 0.5f);
         }
 
         this.corpsImage.sprite = GetSprite(this.SecurityForceDefault?.ImageName);
