@@ -21,7 +21,6 @@ Todo:
  
  Audio:
  - Sound Volume
- - SpawnSounds for different types
  - Kill Sounds for Troops
  
  Itch.io:
@@ -115,3 +114,4 @@ Done:
  - Only Allow Military Units if base alive
  - CityScene HUD overhaul (eg. Buttons same size, image background)
  - Save Palace & Military Base
+ - SpawnSounds for different types
