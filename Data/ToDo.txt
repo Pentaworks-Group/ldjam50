@@ -23,6 +23,7 @@ Todo:
  Audio:
  - Effects
  - Sound Volume
+ - Sound onButtonclick in Main Menu for ReloadSettings, Modes (and all Modes)
  
  Itch.io:
  - Add description
