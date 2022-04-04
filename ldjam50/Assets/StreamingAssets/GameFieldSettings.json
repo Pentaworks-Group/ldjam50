@@ -13,6 +13,11 @@
       "Health": 100000,
       "MaxHealth": 100000
     },
+	"MilitaryBaseDefault": {
+      "Healing": 50,
+      "Health": 100000,
+      "MaxHealth": 100000
+    },
     "DisableShop": false,
     "TroopDefaults": [
       {
@@ -20,10 +25,10 @@
         "Names": [
           "Palace Guard"
         ],
-        "MaxSpeed": 0.2,
+        "MaxSpeed": 0.02,
         "Health": 150,
         "MaxHealth": 200,
-        "Strength": 30,
+        "Strength": 100,
         "Repulsion": 0.001,
         "Range": 0.055,
         "Color": {
@@ -154,7 +159,7 @@
           "1st Army Corps",
           "2st Army Corps"
         ],
-        "MaxSpeed": 0.4,
+        "MaxSpeed": 0.2,
         "Health": 200,
         "MaxHealth": 200,
         "Strength": 30,
