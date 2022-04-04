@@ -251,7 +251,7 @@ namespace Assets.Scripts.Scenes.City
         {
             var securityForce = GameHandler.SelectedTroop;
 
-            //securityForce.AssignedKey = key;
+            securityForce.SecurityForce.AssignedKey = key;
 
             this.boundSecurityForces[key] = securityForce;
         }

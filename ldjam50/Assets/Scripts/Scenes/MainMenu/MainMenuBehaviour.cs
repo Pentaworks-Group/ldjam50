@@ -158,31 +158,44 @@ public class MainMenuBehaviour : MonoBehaviour
         //}
     }
 
+
     public void LoadGameFieldSettings()
     {
         String filePath = Application.streamingAssetsPath + "/GameFieldSettings.json";
 
         StartCoroutine(GameFrame.Core.Json.Handler.DeserializeObjectFromStreamingAssets<List<GameFieldSettings>>(filePath, SetGameFieldSettings));
     }
+
+
     private List<GameFieldSettings> SetGameFieldSettings(List<GameFieldSettings> gameFieldSettings)
     {
         GameHandler.AvailableGameModes = gameFieldSettings;
         if (GameHandler.GameFieldSettings == default)
         {
-            foreach (GameFieldSettings gameFieldSetting in gameFieldSettings)
-            {
-                if (gameFieldSetting.Name == "Default")
-                {
-                    GameHandler.GameFieldSettings = gameFieldSetting;
-                    return gameFieldSettings;
-                }
-
-            }
+            GameHandler.GameFieldSettings = gameFieldSettings[0];
         }
 
         return gameFieldSettings;
     }
 
+
+    public void ReloadSettings()
+    {
+        String filePath = Application.streamingAssetsPath + "/GameFieldSettings.json";
+
+        StartCoroutine(GameFrame.Core.Json.Handler.DeserializeObjectFromStreamingAssets<List<GameFieldSettings>>(filePath, SetGameFieldSettingsForce));
+    }
+
+
+    private List<GameFieldSettings> SetGameFieldSettingsForce(List<GameFieldSettings> gameFieldSettings)
+    {
+        GameHandler.AvailableGameModes = gameFieldSettings;
+
+        GameHandler.GameFieldSettings = gameFieldSettings[0];
+
+
+        return gameFieldSettings;
+    }
 
     // Update is called once per frame
     void Update()

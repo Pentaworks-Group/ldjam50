@@ -1,7 +1,7 @@
 Todo:
 ----------------------------------
  Exceptions:
- - Saving Circular Serialization
+ 
 
  Core:
  - Save & Load GameMode
@@ -14,9 +14,6 @@ Todo:
  - Blockade/Palisade (#possible movments counter)
  - Base/Palace Health
  - Change interval calculation to baseIntervall * factor / time 
- 
- 
- 
  
  
  GamePlay:
@@ -68,8 +65,7 @@ Nice to have:
  
 WIP:
 ----------------------------------
- - troop number overlay (0-9 for selecting this unit)
- 
+  - Saving Circular Serialization
  
 Done:
 ----------------------------------
@@ -96,3 +92,4 @@ Done:
  - send selectred troop in HeadQuarter when pressing "Q"
  - fix Tab selection (killed troops)
  - allow setting troop binding (0-9)
+ - troop number overlay (0-9 for selecting this unit)

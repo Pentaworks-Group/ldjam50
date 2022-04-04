@@ -39,14 +39,19 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
 
     public void Update()
     {
-        updateRebelDistance();
+        if (MapObject != null)
+        {
+            updateRebelDistance();
+        }
     }
+
     private void updateRebelDistance()
     {
         float min_distance = 1000.0f;
         for (int i = 0; i < GameHandler.Rebels.Count; i++)
         {
             RebelBehaviour rebel = GameHandler.Rebels[i];
+
             float distance = GameHandler.GetDistance(rebel.MapObject.Location, MapObject.Location/* new Vector2(location.X, location.Y)*/);
             min_distance = Math.Min(distance, min_distance);
 
@@ -54,6 +59,7 @@ public class PalaceBehaviour : CoreMapObjectBehaviour
             {
                 rebel.Repel(distance, this);
             }
+
             //Attack Palace/Base
             GameHandler.Fight(rebel, this, distance);
         }

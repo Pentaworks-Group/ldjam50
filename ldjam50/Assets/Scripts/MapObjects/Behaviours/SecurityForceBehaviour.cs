@@ -9,8 +9,10 @@ using UnityEngine.UI;
 public class SecurityForceBehaviour : CoreUnitBehaviour
 {
     protected static float sendSoundTick = 0;
-
     private static Color selectedColor = Color.white;
+
+    private GameObject keyNumberArea;
+    private Text keyNumberText;
 
     public SecurityForce SecurityForce
     {
@@ -78,6 +80,8 @@ public class SecurityForceBehaviour : CoreUnitBehaviour
 
     private void Start()
     {
+        this.keyNumberArea = this.gameObject.transform.Find("KeyNumberArea").gameObject;
+        this.keyNumberText = this.keyNumberArea.transform.Find("KeyNumberText").GetComponent<Text>();
     }
 
     private new void Update()
@@ -98,10 +102,24 @@ public class SecurityForceBehaviour : CoreUnitBehaviour
         }
         else
         {
-            CheckImageColor(this.BackgroundImage, this.SecurityForce.Color);
+            CheckImageColor(this.BackgroundImage, this.SecurityForce.Color.ToUnity());
         }
 
         CheckForAdjesentRebels();
+
+        if (this.SecurityForce.AssignedKey.HasValue)
+        {
+            if (!keyNumberArea.activeSelf)
+            {
+                keyNumberArea.SetActive(true);
+                this.keyNumberText.text = this.SecurityForce.AssignedKey.Value.ToString();
+            }
+        }
+
+        if (keyNumberArea.activeSelf && !this.SecurityForce.AssignedKey.HasValue)
+        {
+            keyNumberArea.SetActive(false);
+        }
 
         base.Update();
     }
