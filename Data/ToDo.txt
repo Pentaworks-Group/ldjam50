@@ -19,9 +19,9 @@ Todo:
  - Background for Menues: GameMode, SaveLoad ...
  
  Audio:
- - Effects
  - Sound Volume
  - SpawnSounds for different types
+ - Kill Sounds for Troops
  
  Itch.io:
  - Add description
