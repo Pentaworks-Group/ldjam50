@@ -1,67 +1,66 @@
-![Police_troop.png](///raw/568/e3/z/4ad48.png)
-
-## Defend Fort Riot
----
-You are a dictator and want to stay in power with all your might.
-Your people are dissatisfied and want to overthrow you. **How long can you delay the inevitable?** More and more rebels will attack your fortress. Sooner or later you **will** lose. Want to bet?  
-
-
-
-### Defend your fortress. (1)
-If the fortress falls, you have lost.
-
-### Use the military (2)
-The most versatile troops are in the military base. But be careful: If the military base falls, you lose your most efficient force.
-
-### Use the store (3)
-Buy new troops or blockades in the store.
-You will automatically get more money. After all, a dictator collects taxes.
-
-![Main-Screen.png](///raw/ded/d3/z/4b25b.png)
-
-
-## Shop
----
-### Palace guard
-The Swiss Guard works for you as a palace guard. They are your best unit. Unfortunately, the Swiss demand a lot of wages and are not the fastest...
-
-### Police
-The police units are fast, but unfortunately weak and perish quickly.
-
-### Blockade
-Blockades are very cheap and can give you some breathing room. Unfortunately, you only hold off the rebels for a certain amount of time. 
-Attention: Blockades can only be moved once.
-
-### Army
-The army is much stronger than the police, but unfortunately also slower. 
-Attention: If the military base falls, you can't buy a new military unit.
-
-
-![Capture.PNG](///raw/ded/d3/z/4b28a.png)
-
-
-## Shortcuts
----
-
-| Key|      Effect
-|----------|:-------------:|
-| **q** |  Run back to base 
-| **s** |    Open shop   
-| **Space / ESC** | Pause
-| **Ctrl / Shift + [1-0]** | Assign selected troop to the number
-| **[1-0]** | Select the assigned troop
-| **Left click** | Select / move selected troop (dragging the selected unit is also possible)
-
-
-## Game Modes
----
-Be sure to try out our other, hopefully also, fun game modes:
-
-**Doomsday**: You have exactly one palace guard, which is indestructible, but unfortunately slow and there are far too many rebels coming at the same time. You have no change... 
-
-**Instant Kill**: This time you have an indestructible police unit. Rebels are wiped out immediately. At the beginning everything is relaxed. The few rebellions are quickly eliminated. Unfortunately, the rebels reorganize again and again. More and more are coming. How long can you delay the defeat? 
-
-**Rebel Collect**: You can't destroy the attackers. You have a police unit, but it is much too nice. The police simply take the rebels with them. But be careful, if you move away too fast, the rebels can escape again. Also, you can't collect an infinite number of rebels. Keep the attackers away from the fortress if possible, otherwise you have lost. 
-
-**Push**: Again, you only have one police unit. This one is very scary. The rebels are retreating. So you can't wound them. As soon as you move away, the rebels approach your seat of government again. It is hopeless...
-
+<h2 id="defend-fort-riot">Defend Fort Riot</h2>
+<hr>
+<p>You are a dictator and want to stay in power with all your might.
+Your people are dissatisfied and want to overthrow you. <strong>How long can you delay the inevitable?</strong> More and more rebels will attack your fortress. Sooner or later you <strong>will</strong> lose. Want to bet?  </p>
+<h3 id="defend-your-fortress-1-">Defend your fortress. (1)</h3>
+<p>If the fortress falls, you have lost.</p>
+<h3 id="use-the-military-2-">Use the military (2)</h3>
+<p>The most versatile troops are in the military base. But be careful: If the military base falls, you lose your most efficient force.</p>
+<h3 id="use-the-store-3-">Use the store (3)</h3>
+<p>Buy new troops or blockades in the store.
+You will automatically get more money. After all, a dictator collects taxes.</p>
+<h2 id="shop">Shop</h2>
+<hr>
+<h3 id="palace-guard">Palace guard</h3>
+<p>The Swiss Guard works for you as a palace guard. They are your best unit. Unfortunately, the Swiss demand a lot of wages and are not the fastest...</p>
+<h3 id="police">Police</h3>
+<p>The police units are fast, but unfortunately weak and perish quickly.</p>
+<h3 id="blockade">Blockade</h3>
+<p>Blockades are very cheap and can give you some breathing room. Unfortunately, you only hold off the rebels for a certain amount of time. 
+Attention: Blockades can only be moved once.</p>
+<h3 id="army">Army</h3>
+<p>The army is much stronger than the police, but unfortunately also slower. 
+Attention: If the military base falls, you can&#39;t buy a new military unit.</p>
+<h2 id="shortcuts">Shortcuts</h2>
+<hr>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th style="text-align:center">Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>q</strong></td>
+<td style="text-align:center">Run back to base </td>
+</tr>
+<tr>
+<td><strong>s</strong></td>
+<td style="text-align:center">Open shop   </td>
+</tr>
+<tr>
+<td><strong>Space / ESC</strong></td>
+<td style="text-align:center">Pause</td>
+</tr>
+<tr>
+<td><strong>Ctrl / Shift + [1-0]</strong></td>
+<td style="text-align:center">Assign selected troop to the number</td>
+</tr>
+<tr>
+<td><strong>[1-0]</strong></td>
+<td style="text-align:center">Select the assigned troop</td>
+</tr>
+<tr>
+<td><strong>Left click</strong></td>
+<td style="text-align:center">Select / move selected troop (dragging the selected unit is also possible)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="game-modes">Game Modes</h2>
+<hr>
+<p>Be sure to try out our other, hopefully also, fun game modes:</p>
+<p><strong>Doomsday</strong>: You have exactly one palace guard, which is indestructible, but unfortunately slow and there are far too many rebels coming at the same time. You have no change... </p>
+<p><strong>Instant Kill</strong>: This time you have an indestructible police unit. Rebels are wiped out immediately. At the beginning everything is relaxed. The few rebellions are quickly eliminated. Unfortunately, the rebels reorganize again and again. More and more are coming. How long can you delay the defeat? </p>
+<p><strong>Rebel Collect</strong>: You can&#39;t destroy the attackers. You have a police unit, but it is much too nice. The police simply take the rebels with them. But be careful, if you move away too fast, the rebels can escape again. Also, you can&#39;t collect an infinite number of rebels. Keep the attackers away from the fortress if possible, otherwise you have lost. </p>
+<p><strong>Push</strong>: Again, you only have one police unit. This one is very scary. The rebels are retreating. So you can&#39;t wound them. As soon as you move away, the rebels approach your seat of government again. It is hopeless...</p>
