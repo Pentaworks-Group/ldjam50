@@ -6,6 +6,7 @@ Todo:
  - UnitTypes (Rebel & Troops)
  - Change interval calculation to baseIntervall * factor / time  
  - Buttons for shortkey (Q)
+ - Boss Spawns
   
  GamePlay:
  - Balancing
@@ -51,6 +52,7 @@ Nice to have:
  - Variable Rebel Strength 
  - Bases in json (linked via unique ID to troops)
  - Display Unit Strength (hover over? Strenght Symbol?)
+ - Display Range (option?)
  - statistics which mode was played how often
  - buttons for 0-9 keys (doubleClick for setting, singleClick for selecting)
  
@@ -59,12 +61,12 @@ Ideas:
 ----------------------------------
  - Power Ups
  - Upload/Download/Sending GameModes (to collect from "Modders")
- - Drag & Drop for sending units
  - Display (Selected) troop target
  - Wave Spawn
  - Unit Movement Queue
  - Restrict Movement Range (eg. Palace Guards)
  - Buy Health Packages For Palace
+ - Ingame KeyBinings (Options)
  
  
 Done:
@@ -119,3 +121,4 @@ Done:
  - watermark in city
  - Background for Menues: GameMode, SaveLoad ... 
  - Mark Unit not Available if not enought money
+ - Drag & Drop for sending units
