@@ -561,6 +561,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ReloadSettings
       objectReference: {fileID: 0}
+    - target: {fileID: 5452424541030572497, guid: e0df95721f8e6f94180d7572f8d7dd35, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5865278983240936799, guid: e0df95721f8e6f94180d7572f8d7dd35, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -595,7 +599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5865278983240936799, guid: e0df95721f8e6f94180d7572f8d7dd35, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 71.111115
       objectReference: {fileID: 0}
     - target: {fileID: 5865278983240936799, guid: e0df95721f8e6f94180d7572f8d7dd35, type: 3}
       propertyPath: m_LocalScale.x
