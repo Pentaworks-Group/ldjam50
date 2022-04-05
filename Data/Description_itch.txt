@@ -59,7 +59,11 @@ Attention: If the military base falls, you can&#39;t buy a new military unit.</p
 </table>
 <h2 id="game-modes">Game Modes</h2>
 <hr>
-<p>Be sure to try out our other, hopefully also, fun game modes:</p>
+<h3 id="defend-fort-riot">Defend Fort Riot</h3>
+<p>Default game mode, where you have to buy troops to defend your palace.
+The game is over once the palace health reaches 0.</p>
+<h3 id="other-hopefully-also-fun-game-modes-">Other, hopefully also, fun game modes:</h3>
+<p><strong>1v1</strong>: Try to survive 1 vs 1. Good luck.</p>
 <p><strong>Doomsday</strong>: You have exactly one palace guard, which is indestructible, but unfortunately slow and there are far too many rebels coming at the same time. You have no change... </p>
 <p><strong>Instant Kill</strong>: This time you have an indestructible police unit. Rebels are wiped out immediately. At the beginning everything is relaxed. The few rebellions are quickly eliminated. Unfortunately, the rebels reorganize again and again. More and more are coming. How long can you delay the defeat? </p>
 <p><strong>Rebel Collect</strong>: You can&#39;t destroy the attackers. You have a police unit, but it is much too nice. The police simply take the rebels with them. But be careful, if you move away too fast, the rebels can escape again. Also, you can&#39;t collect an infinite number of rebels. Keep the attackers away from the fortress if possible, otherwise you have lost. </p>
