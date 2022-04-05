@@ -1,919 +1,920 @@
 [
-  {
-    "Name": "Defend Fort Riot",
-    "FirstTick": 3,
-    "TickInterval": 2.8,
-    "TickIntervalFactor": 0.995,
-    "TickIntervalLogBase": 10,
-    "MoneyInterval": 3,
-    "MoneyFirstTick": 5,
-    "MoneyGainPerInterval": 30,
-    "MoneyStart": 100,
-    "PalaceDefault": {
-      "Healing": 30,
-      "Health": 100000,
-      "MaxHealth": 100000
-    },
-    "MilitaryBaseDefault": {
-      "Healing": 30,
-      "Health": 100000,
-      "MaxHealth": 100000
-    },
-    "DisableShop": false,
-    "TroopDefaults": [
-      {
-        "Type": "Palace Guard",
-        "Names": [
-          "Palace Guard"
-        ],
-        "MaxSpeed": 0.02,
-        "Health": 200,
-        "MaxHealth": 200,
-        "Strength": 100,
-        "Repulsion": 0.001,
-        "Range": 0.055,
-        "ForegroundColor": {
-          "Red": 1,
-          "Green": 0,
-          "Blue": 0,
-          "Alpha": 0.95
+    {
+        "Name": "Defend Fort Riot",
+        "FirstTick": 3,
+        "TickInterval": 2.8,
+        "TickIntervalFactor": 0.995,
+        "TickIntervalLogBase": 10,
+        "MoneyInterval": 3,
+        "MoneyFirstTick": 5,
+        "MoneyGainPerInterval": 30,
+        "MoneyStart": 100,
+        "PalaceDefault": {
+            "Healing": 30,
+            "Health": 100000,
+            "MaxHealth": 100000
         },
-        "BackgroundColor": {
-          "Red": 1,
-          "Green": 0,
-          "Blue": 0,
-          "Alpha": 0.95
+        "MilitaryBaseDefault": {
+            "Healing": 30,
+            "Health": 100000,
+            "MaxHealth": 100000
         },
-        "SelectedColor": {
-          "Red": 1,
-          "Green": 0,
-          "Blue": 0,
-          "Alpha": 0.45
-        },
-        "ImageNames": [
-          "SGuard"
+        "DisableShop": false,
+        "TroopDefaults": [
+            {
+                "Type": "Palace Guard",
+                "Names": [
+                    "Palace Guard"
+                ],
+                "MaxSpeed": 0.02,
+                "Health": 200,
+                "MaxHealth": 200,
+                "Strength": 100,
+                "Repulsion": 0.001,
+                "Range": 0.055,
+                "ForegroundColor": {
+                    "Red": 1,
+                    "Green": 0,
+                    "Blue": 0,
+                    "Alpha": 0.95
+                },
+                "BackgroundColor": {
+                    "Red": 1,
+                    "Green": 0,
+                    "Blue": 0,
+                    "Alpha": 0.95
+                },
+                "SelectedColor": {
+                    "Red": 1,
+                    "Green": 0,
+                    "Blue": 0,
+                    "Alpha": 0.45
+                },
+                "ImageNames": [
+                    "SGuard"
 
-        ],
-        "MarchSounds": [
-          "Gruezi",
-          "Gruezi_2",
-          "Si_Da_Capo",
-          "Jawoll"
-        ],
-        "UnitCost": 1000,
-        "Bases": [
-          {
-            "Position": {
-              "X": 0.495,
-              "Y": 0.512
+                ],
+                "MarchSounds": [
+                    "Gruezi",
+                    "Gruezi_2",
+                    "Si_Da_Capo",
+                    "Jawoll"
+                ],
+                "UnitCost": 1000,
+                "Bases": [
+                    {
+                        "Position": {
+                            "X": 0.495,
+                            "Y": 0.512
+                        },
+                        "Radius": 0.07
+                    }
+                ]
             },
-            "Radius": 0.07
-          }
-        ]
-      },
-      {
-        "Type": "Police",
-        "Names": [
-          "1st Police Corps",
-          "2st Police Corps"
-        ],
-        "MaxSpeed": 0.4,
-        "Health": 150,
-        "MaxHealth": 150,
-        "Strength": 30,
-        "Repulsion": 0.001,
-        "Range": 0.05,
-        "BackgroundColor": {
-          "Red": 0.251424,
-          "Green": 0.3966849,
-          "Blue": 0.7075472,
-          "Alpha": 0.95
-        },
-        "SelectedColor": {
-          "Red": 0.251424,
-          "Green": 0.3966849,
-          "Blue": 0.7075472,
-          "Alpha": 0.45
-        },
-        "ImageNames": [ "Police" ],
-        "MarchSounds": [
-          "Police",
-          "Police_2",
-          "Police_3"
-        ],
-        "UnitCost": 100,
-        "Bases": [
-          {
-            "Position": {
-              "X": 0.495,
-              "Y": 0.512
+            {
+                "Type": "Police",
+                "Names": [
+                    "1st Police Corps",
+                    "2st Police Corps"
+                ],
+                "MaxSpeed": 0.4,
+                "Health": 150,
+                "MaxHealth": 150,
+                "Strength": 30,
+                "Repulsion": 0.001,
+                "Range": 0.05,
+                "BackgroundColor": {
+                    "Red": 0.251424,
+                    "Green": 0.3966849,
+                    "Blue": 0.7075472,
+                    "Alpha": 0.95
+                },
+                "SelectedColor": {
+                    "Red": 0.251424,
+                    "Green": 0.3966849,
+                    "Blue": 0.7075472,
+                    "Alpha": 0.45
+                },
+                "ImageNames": [ "Police" ],
+                "MarchSounds": [
+                    "Police",
+                    "Police_2",
+                    "Police_3"
+                ],
+                "UnitCost": 100,
+                "Bases": [
+                    {
+                        "Position": {
+                            "X": 0.495,
+                            "Y": 0.512
+                        },
+                        "Radius": 0.07
+                    }
+                ]
             },
-            "Radius": 0.07
-          }
-        ]
-      },
-      {
-        "Type": "Blockade",
-        "Names": [
-          "1st Blockade",
-          "2st Blockade"
-        ],
-        "MaxSpeed": 1.5,
-        "Health": 5000,
-        "MaxHealth": 5000,
-        "Strength": 0,
-        "Repulsion": 0.003,
-        "Range": 0.05,
-        "BackgroundColor": {
-          "Red": 0.5,
-          "Green": 0.5,
-          "Blue": 0.5,
-          "Alpha": 0.95
-        },
-        "SelectedColor": {
-          "Red": 0.5,
-          "Green": 0.5,
-          "Blue": 0.5,
-          "Alpha": 0.45
-        },
-        "ImageNames": [
-          "Barricade"
-        ],
-        "MarchSounds": [
-          "Barricade"
-        ],
-        "UnitCost": 20,
-        "Bases": [
-          {
-            "Position": {
-              "X": 0.495,
-              "Y": 0.512
+            {
+                "Type": "Blockade",
+                "Names": [
+                    "1st Blockade",
+                    "2st Blockade"
+                ],
+                "MaxSpeed": 1.5,
+                "Health": 5000,
+                "MaxHealth": 5000,
+                "Strength": 0,
+                "Repulsion": 0.003,
+                "Range": 0.05,
+                "BackgroundColor": {
+                    "Red": 0.5,
+                    "Green": 0.5,
+                    "Blue": 0.5,
+                    "Alpha": 0.95
+                },
+                "SelectedColor": {
+                    "Red": 0.5,
+                    "Green": 0.5,
+                    "Blue": 0.5,
+                    "Alpha": 0.45
+                },
+                "ImageNames": [
+                    "Barricade"
+                ],
+                "MarchSounds": [
+                    "Barricade"
+                ],
+                "UnitCost": 20,
+                "Bases": [
+                    {
+                        "Position": {
+                            "X": 0.495,
+                            "Y": 0.512
+                        },
+                        "Radius": 0.07
+                    }
+                ],
+                "MoveJustOnce": true
             },
-            "Radius": 0.07
-          }
+            {
+                "Type": "Army",
+                "Names": [
+                    "1st Army Corps",
+                    "2st Army Corps"
+                ],
+                "MaxSpeed": 0.15,
+                "Health": 400,
+                "MaxHealth": 400,
+                "Strength": 40,
+                "Repulsion": 0.001,
+                "Range": 0.05,
+                "BackgroundColor": {
+                    "Red": 0,
+                    "Green": 0.5,
+                    "Blue": 0,
+                    "Alpha": 0.95
+                },
+                "SelectedColor": {
+                    "Red": 0,
+                    "Green": 0.5,
+                    "Blue": 0,
+                    "Alpha": 0.45
+                },
+                "ImageNames": [
+                    "Riot_M2"
+                ],
+                "MarchSounds": [
+                    "Fanfare_1",
+                    "March_1",
+                    "March_2",
+                    "March_3",
+                    "March_4",
+                    "March_5",
+                    "Yes_Sir",
+                    "Yes_Sir_2"
+                ],
+                "UnitCost": 500,
+                "Bases": [
+                    {
+                        "Position": {
+                            "X": 0.721,
+                            "Y": 0.9175
+                        },
+                        "Radius": 0.07
+                    }
+                ]
+            }
         ],
-        "MoveJustOnce": true
-      },
-      {
-        "Type": "Army",
-        "Names": [
-          "1st Army Corps",
-          "2st Army Corps"
-        ],
-        "MaxSpeed": 0.15,
-        "Health": 400,
-        "MaxHealth": 400,
-        "Strength": 40,
-        "Repulsion": 0.001,
-        "Range": 0.05,
-        "BackgroundColor": {
-          "Red": 0,
-          "Green": 0.5,
-          "Blue": 0,
-          "Alpha": 0.95
-        },
-        "SelectedColor": {
-          "Red": 0,
-          "Green": 0.5,
-          "Blue": 0,
-          "Alpha": 0.45
-        },
-        "ImageNames": [
-          "Riot_M2"
-        ],
-        "MarchSounds": [
-          "Fanfare_1",
-          "March_1",
-          "March_2",
-          "March_3",
-          "March_4",
-          "March_5",
-          "Yes_Sir",
-          "Yes_Sir_2"
-        ],
-        "UnitCost": 500,
-        "Bases": [
-          {
-            "Position": {
-              "X": 0.721,
-              "Y": 0.9175
+        "RebelDefaults": [
+            {
+                "Type": "Noobs",
+                "Names": [
+                    "Depper Doders",
+                    "Hadwi"
+                ],
+                "MinSpeed": 0.005,
+                "MaxSpeed": 0.007,
+                "Health": 100,
+                "MaxHealth": 100,
+                "Strength": 10,
+                "Repulsion": 0.0005,
+                "Range": 0.05,
+                "ImageNames": [
+                    "Rebel_0",
+                    "Rebel_1"
+                ],
+                "KillSounds": [
+                    "Aaah",
+                    "Aww",
+                    "Daeng",
+                    "Nuts",
+                    "Oops"
+                ],
+                "SpawnSounds": [
+                    "Whistle",
+                    "Whistle_2",
+                    "Whistle_3",
+                    "Whistle_4",
+                    "Rebels_Generic",
+                    "Rebels_Generic_2",
+                    "Rebels_Generic_3",
+                    "Hello_There"
+                ]
             },
-            "Radius": 0.07
-          }
-        ]
-      }
-    ],
-    "RebelDefaults": [
-      {
-        "Type": "Noobs",
-        "Names": [
-          "Depper Doders",
-          "Hadwi"
-        ],
-        "MinSpeed": 0.005,
-        "MaxSpeed": 0.007,
-        "Health": 100,
-        "MaxHealth": 100,
-        "Strength": 10,
-        "Repulsion": 0.0005,
-        "Range": 0.05,
-        "ImageNames": [
-          "Rebel_0",
-          "Rebel_1",
-        ],
-        "KillSounds": [
-          "Aaah",
-          "Aww",
-          "Daeng",
-          "Nuts",
-          "Oops"
-        ],
-        "SpawnSounds": [
-          "Whistle",
-          "Whistle_2",
-          "Whistle_3",
-          "Whistle_4",
-          "Rebels_Generic",
-          "Rebels_Generic_2",
-          "Rebels_Generic_3",
-          "Hello_There"
-        ]
-      },
-      {
-        "Type": "Noobs",
-        "Names": [
-          "Depper Doders",
-          "Hadwi"
-        ],
-        "MinSpeed": 0.005,
-        "MaxSpeed": 0.007,
-        "Health": 100,
-        "MaxHealth": 100,
-        "Strength": 10,
-        "Repulsion": 0.0005,
-        "Range": 0.05,
-        "ImageNames": [
-          "Rebel_2",
-        ],
-        "KillSounds": [
-          "Aaah",
-          "Aww",
-          "Daeng",
-          "Nuts",
-          "Oops"
-        ],
-        "SpawnSounds": [
-          "Its_A_Trap",
-        ]
-      },
-      {
-        "Type": "Noobs",
-        "Names": [
-          "Depper Doders",
-          "Hadwi"
-        ],
-        "MinSpeed": 0.005,
-        "MaxSpeed": 0.007,
-        "Health": 100,
-        "MaxHealth": 100,
-        "Strength": 10,
-        "Repulsion": 0.0005,
-        "Range": 0.05,
-        "ImageNames": [
-          "Rebel_3"
-        ],
-        "KillSounds": [
-          "Aaah",
-          "Aww",
-          "Daeng",
-          "Nuts",
-          "Oops"
-        ],
-        "SpawnSounds": [
-          "Glace_Schmöuzt"
-        ]
-      },
-      {
-        "Type": "Noobs",
-        "Names": [
-          "Depper Doders",
-          "Hadwi"
-        ],
-        "MinSpeed": 0.005,
-        "MaxSpeed": 0.007,
-        "Health": 100,
-        "MaxHealth": 100,
-        "Strength": 10,
-        "Repulsion": 0.0005,
-        "Range": 0.05,
-        "ImageNames": [
-          "Rebel_4"
-        ],
-        "KillSounds": [
-          "Aaah",
-          "Aww",
-          "Daeng",
-          "Nuts",
-          "Oops"
-        ],
-        "SpawnSounds": [
-          "No_More_School"
-        ]
-      },
-      {
-        "Type": "Noobs",
-        "Names": [
-          "Depper Doders",
-          "Hadwi"
-        ],
-        "MinSpeed": 0.005,
-        "MaxSpeed": 0.007,
-        "Health": 100,
-        "MaxHealth": 100,
-        "Strength": 10,
-        "Repulsion": 0.0005,
-        "Range": 0.05,
-        "ImageNames": [
-          "Rebel_5",
-        ],
-        "KillSounds": [
-          "Aaah",
-          "Aww",
-          "Daeng",
-          "Nuts",
-          "Oops"
-        ],
-        "SpawnSounds": [
-          "We_Want_Cake"
-        ]
-      },
-      {
-        "Type": "Noobs",
-        "Names": [
-          "Depper Doders",
-          "Hadwi"
-        ],
-        "MinSpeed": 0.005,
-        "MaxSpeed": 0.007,
-        "Health": 100,
-        "MaxHealth": 100,
-        "Strength": 10,
-        "Repulsion": 0.0005,
-        "Range": 0.05,
-        "ImageNames": [
-          "Rebel_6"
-        ],
-        "KillSounds": [
-          "Aaah",
-          "Aww",
-          "Daeng",
-          "Nuts",
-          "Oops"
-        ],
-        "SpawnSounds": [
-          "Earth_is_a_cube"
-        ]
-      },
+            {
+                "Type": "Noobs",
+                "Names": [
+                    "Depper Doders",
+                    "Hadwi"
+                ],
+                "MinSpeed": 0.005,
+                "MaxSpeed": 0.007,
+                "Health": 100,
+                "MaxHealth": 100,
+                "Strength": 10,
+                "Repulsion": 0.0005,
+                "Range": 0.05,
+                "ImageNames": [
+                    "Rebel_2"
+                ],
+                "KillSounds": [
+                    "Aaah",
+                    "Aww",
+                    "Daeng",
+                    "Nuts",
+                    "Oops"
+                ],
+                "SpawnSounds": [
+                    "Its_A_Trap"
+                ]
+            },
+            {
+                "Type": "Noobs",
+                "Names": [
+                    "Depper Doders",
+                    "Hadwi"
+                ],
+                "MinSpeed": 0.005,
+                "MaxSpeed": 0.007,
+                "Health": 100,
+                "MaxHealth": 100,
+                "Strength": 10,
+                "Repulsion": 0.0005,
+                "Range": 0.05,
+                "ImageNames": [
+                    "Rebel_3"
+                ],
+                "KillSounds": [
+                    "Aaah",
+                    "Aww",
+                    "Daeng",
+                    "Nuts",
+                    "Oops"
+                ],
+                "SpawnSounds": [
+                    "Glace_Schmöuzt"
+                ]
+            },
+            {
+                "Type": "Noobs",
+                "Names": [
+                    "Depper Doders",
+                    "Hadwi"
+                ],
+                "MinSpeed": 0.005,
+                "MaxSpeed": 0.007,
+                "Health": 100,
+                "MaxHealth": 100,
+                "Strength": 10,
+                "Repulsion": 0.0005,
+                "Range": 0.05,
+                "ImageNames": [
+                    "Rebel_4"
+                ],
+                "KillSounds": [
+                    "Aaah",
+                    "Aww",
+                    "Daeng",
+                    "Nuts",
+                    "Oops"
+                ],
+                "SpawnSounds": [
+                    "No_More_School"
+                ]
+            },
+            {
+                "Type": "Noobs",
+                "Names": [
+                    "Depper Doders",
+                    "Hadwi"
+                ],
+                "MinSpeed": 0.005,
+                "MaxSpeed": 0.007,
+                "Health": 100,
+                "MaxHealth": 100,
+                "Strength": 10,
+                "Repulsion": 0.0005,
+                "Range": 0.05,
+                "ImageNames": [
+                    "Rebel_5"
+                ],
+                "KillSounds": [
+                    "Aaah",
+                    "Aww",
+                    "Daeng",
+                    "Nuts",
+                    "Oops"
+                ],
+                "SpawnSounds": [
+                    "We_Want_Cake"
+                ]
+            },
+            {
+                "Type": "Noobs",
+                "Names": [
+                    "Depper Doders",
+                    "Hadwi"
+                ],
+                "MinSpeed": 0.005,
+                "MaxSpeed": 0.007,
+                "Health": 100,
+                "MaxHealth": 100,
+                "Strength": 10,
+                "Repulsion": 0.0005,
+                "Range": 0.05,
+                "ImageNames": [
+                    "Rebel_6"
+                ],
+                "KillSounds": [
+                    "Aaah",
+                    "Aww",
+                    "Daeng",
+                    "Nuts",
+                    "Oops"
+                ],
+                "SpawnSounds": [
+                    "Earth_is_a_cube"
+                ]
+            }
 
-    ]
-  },
-  {
-    "Name": "Push",
-    "FirstTick": 3,
-    "TickInterval": 5,
-    "TickIntervalFactor": 0.97,
-    "MoneyInterval": 1000,
-    "MoneyFirstTick": 1000,
-    "MoneyGainPerInterval": 0,
-    "PalaceDefault": {
-      "Healing": 50,
-      "Health": 10,
-      "MaxHealth": 10
+        ]
     },
-    "DisableShop": true,
-    "DisableMilitaryBase": true,
-    "TroopDefaults": [
-      {
-        "Type": "Police",
-        "Names": [
-          "1st Police Corps",
-          "2st Police Corps"
-        ],
-        "BackgroundColor": {
-          "Red": 0.251424,
-          "Green": 0.3966849,
-          "Blue": 0.7075472,
-          "Alpha": 0.95
+    {
+        "Name": "Push",
+        "FirstTick": 3,
+        "TickInterval": 5,
+        "TickIntervalFactor": 0.97,
+        "MoneyInterval": 1000,
+        "MoneyFirstTick": 1000,
+        "MoneyGainPerInterval": 0,
+        "PalaceDefault": {
+            "Healing": 50,
+            "Health": 10,
+            "MaxHealth": 10
         },
-        "SelectedColor": {
-          "Red": 0.251424,
-          "Green": 0.3966849,
-          "Blue": 0.7075472,
-          "Alpha": 0.45
-        },
-        "MaxSpeed": 0.6,
-        "Health": 100000000,
-        "MaxHealth": 100000000,
-        "Strength": 0,
-        "Repulsion": 0.01,
-        "Range": 0.05,
-        "ImageNames": [
-          "Troops"
+        "DisableShop": true,
+        "DisableMilitaryBase": true,
+        "TroopDefaults": [
+            {
+                "Type": "Police",
+                "Names": [
+                    "1st Police Corps",
+                    "2st Police Corps"
+                ],
+                "BackgroundColor": {
+                    "Red": 0.251424,
+                    "Green": 0.3966849,
+                    "Blue": 0.7075472,
+                    "Alpha": 0.95
+                },
+                "SelectedColor": {
+                    "Red": 0.251424,
+                    "Green": 0.3966849,
+                    "Blue": 0.7075472,
+                    "Alpha": 0.45
+                },
+                "MaxSpeed": 0.6,
+                "Health": 100000000,
+                "MaxHealth": 100000000,
+                "Strength": 0,
+                "Repulsion": 0.01,
+                "Range": 0.05,
+                "ImageNames": [
+                    "Troops"
 
+                ],
+                "MarchSounds": [
+                    "Fanfare_1",
+                    "March_1",
+                    "March_2",
+                    "March_3",
+                    "March_4",
+                    "March_5",
+                    "Yes_Sir",
+                    "Yes_Sir_2"
+                ],
+                "UnitCost": 100,
+                "Bases": [
+                    {
+                        "Position": {
+                            "X": 0.5,
+                            "Y": 0.5
+                        },
+                        "Radius": 0.07
+                    }
+                ]
+            }
         ],
-        "MarchSounds": [
-          "Fanfare_1",
-          "March_1",
-          "March_2",
-          "March_3",
-          "March_4",
-          "March_5",
-          "Yes_Sir",
-          "Yes_Sir_2"
-        ],
-        "UnitCost": 100,
-        "Bases": [
-          {
-            "Position": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "Radius": 0.07
-          }
+        "RebelDefaults": [
+            {
+                "Type": "Noobs",
+                "Names": [
+                    "Depper Doders",
+                    "Hadwi"
+                ],
+                "MinSpeed": 0.001,
+                "MaxSpeed": 0.01,
+                "Health": 100,
+                "MaxHealth": 100,
+                "Strength": 1,
+                "Repulsion": 0.0005,
+                "Range": 0.0002,
+                "ImageNames": [
+                    "Rebel_0",
+                    "Rebel_1",
+                    "Rebel_2",
+                    "Rebel_3",
+                    "Rebel_4",
+                    "Rebel_5"
+                ],
+                "KillSounds": [
+                    "Aaah",
+                    "Aww",
+                    "Daeng",
+                    "Nuts",
+                    "Oops"
+                ],
+                "SpawnSounds": [
+                    "Whistle",
+                    "Whistle_2",
+                    "Whistle_3",
+                    "Whistle_4",
+                    "Rebels_Generic",
+                    "Rebels_Generic_2",
+                    "Rebels_Generic_3",
+                    "Earth_is_a_cube",
+                    "Glace_Schmöuzt",
+                    "Its_A_Trap",
+                    "No_More_School",
+                    "We_Want_Cake",
+                    "Hello_There"
+                ]
+            }
         ]
-      }
-    ],
-    "RebelDefaults": [
-      {
-        "Type": "Noobs",
-        "Names": [
-          "Depper Doders",
-          "Hadwi"
-        ],
-        "MinSpeed": 0.001,
-        "MaxSpeed": 0.01,
-        "Health": 100,
-        "MaxHealth": 100,
-        "Strength": 1,
-        "Repulsion": 0.0005,
-        "Range": 0.0002,
-        "ImageNames": [
-          "Rebel_0",
-          "Rebel_1",
-          "Rebel_2",
-          "Rebel_3",
-          "Rebel_4",
-          "Rebel_5"
-        ],
-        "KillSounds": [
-          "Aaah",
-          "Aww",
-          "Daeng",
-          "Nuts",
-          "Oops"
-        ],
-        "SpawnSounds": [
-          "Whistle",
-          "Whistle_2",
-          "Whistle_3",
-          "Whistle_4",
-          "Rebels_Generic",
-          "Rebels_Generic_2",
-          "Rebels_Generic_3",
-          "Earth_is_a_cube",
-          "Glace_Schmöuzt",
-          "Its_A_Trap",
-          "No_More_School",
-          "We_Want_Cake",
-          "Hello_There"
-        ]
-      }
-    ]
-  },
-  {
-    "Name": "Rebel Collect",
-    "FirstTick": 3,
-    "TickInterval": 5,
-    "TickIntervalFactor": 0.97,
-    "MoneyInterval": 1000,
-    "MoneyFirstTick": 1000,
-    "MoneyGainPerInterval": 0,
-    "PalaceDefault": {
-      "Healing": 50,
-      "Health": 100,
-      "MaxHealth": 100
     },
-    "DisableShop": true,
-    "DisableMilitaryBase": true,
-    "TroopDefaults": [
-      {
-        "Names": [
-          "1st Police Corps",
-          "2st Police Corps"
-        ],
-        "BackgroundColor": {
-          "Red": 0.251424,
-          "Green": 0.3966849,
-          "Blue": 0.7075472,
-          "Alpha": 0.95
+    {
+        "Name": "Rebel Collect",
+        "FirstTick": 3,
+        "TickInterval": 5,
+        "TickIntervalFactor": 0.97,
+        "MoneyInterval": 1000,
+        "MoneyFirstTick": 1000,
+        "MoneyGainPerInterval": 0,
+        "PalaceDefault": {
+            "Healing": 50,
+            "Health": 100,
+            "MaxHealth": 100
         },
-        "SelectedColor": {
-          "Red": 0.251424,
-          "Green": 0.3966849,
-          "Blue": 0.7075472,
-          "Alpha": 0.45
-        },
-        "MaxSpeed": 0.4,
-        "Health": 100000000,
-        "MaxHealth": 100000000,
-        "Strength": 0,
-        "Repulsion": -0.01,
-        "Range": 0.05,
-        "ImageNames": [
-          "Troops"
+        "DisableShop": true,
+        "DisableMilitaryBase": true,
+        "TroopDefaults": [
+            {
+                "Names": [
+                    "1st Police Corps",
+                    "2st Police Corps"
+                ],
+                "BackgroundColor": {
+                    "Red": 0.251424,
+                    "Green": 0.3966849,
+                    "Blue": 0.7075472,
+                    "Alpha": 0.95
+                },
+                "SelectedColor": {
+                    "Red": 0.251424,
+                    "Green": 0.3966849,
+                    "Blue": 0.7075472,
+                    "Alpha": 0.45
+                },
+                "MaxSpeed": 0.4,
+                "Health": 100000000,
+                "MaxHealth": 100000000,
+                "Strength": 0,
+                "Repulsion": -0.01,
+                "Range": 0.05,
+                "ImageNames": [
+                    "Troops"
 
+                ],
+                "MarchSounds": [
+                    "Fanfare_1",
+                    "March_1",
+                    "March_2",
+                    "March_3",
+                    "March_4",
+                    "March_5",
+                    "Yes_Sir",
+                    "Yes_Sir_2"
+                ],
+                "UnitCost": 100,
+                "Bases": [
+                    {
+                        "Position": {
+                            "X": 0.5,
+                            "Y": 0.5
+                        },
+                        "Radius": 0.07
+                    }
+                ]
+            }
         ],
-        "MarchSounds": [
-          "Fanfare_1",
-          "March_1",
-          "March_2",
-          "March_3",
-          "March_4",
-          "March_5",
-          "Yes_Sir",
-          "Yes_Sir_2"
-        ],
-        "UnitCost": 100,
-        "Bases": [
-          {
-            "Position": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "Radius": 0.07
-          }
+        "RebelDefaults": [
+            {
+                "Names": [
+                    "Depper Doders",
+                    "Hadwi"
+                ],
+                "MinSpeed": 0.01,
+                "MaxSpeed": 0.01,
+                "Health": 100,
+                "MaxHealth": 100,
+                "Strength": 1,
+                "Repulsion": 0.00005,
+                "Range": 0.002,
+                "ImageNames": [
+                    "Rebel_0",
+                    "Rebel_1",
+                    "Rebel_2",
+                    "Rebel_3",
+                    "Rebel_4",
+                    "Rebel_5"
+                ],
+                "KillSounds": [
+                    "Aaah",
+                    "Aww",
+                    "Daeng",
+                    "Nuts",
+                    "Oops"
+                ],
+                "SpawnSounds": [
+                    "Whistle",
+                    "Whistle_2",
+                    "Whistle_3",
+                    "Whistle_4",
+                    "Rebels_Generic",
+                    "Rebels_Generic_2",
+                    "Rebels_Generic_3",
+                    "Earth_is_a_cube",
+                    "Glace_Schmöuzt",
+                    "Its_A_Trap",
+                    "No_More_School",
+                    "We_Want_Cake",
+                    "Hello_There"
+                ]
+            }
         ]
-      }
-    ],
-    "RebelDefaults": [
-      {
-        "Names": [
-          "Depper Doders",
-          "Hadwi"
-        ],
-        "MinSpeed": 0.01,
-        "MaxSpeed": 0.01,
-        "Health": 100,
-        "MaxHealth": 100,
-        "Strength": 1,
-        "Repulsion": 0.00005,
-        "Range": 0.002,
-        "ImageNames": [
-          "Rebel_0",
-          "Rebel_1",
-          "Rebel_2",
-          "Rebel_3",
-          "Rebel_4",
-          "Rebel_5"
-        ],
-        "KillSounds": [
-          "Aaah",
-          "Aww",
-          "Daeng",
-          "Nuts",
-          "Oops"
-        ],
-        "SpawnSounds": [
-          "Whistle",
-          "Whistle_2",
-          "Whistle_3",
-          "Whistle_4",
-          "Rebels_Generic",
-          "Rebels_Generic_2",
-          "Rebels_Generic_3",
-          "Earth_is_a_cube",
-          "Glace_Schmöuzt",
-          "Its_A_Trap",
-          "No_More_School",
-          "We_Want_Cake",
-          "Hello_There"
-        ]
-      }
-    ]
-  },
-  {
-    "Name": "Instant Kill",
-    "FirstTick": 3,
-    "TickInterval": 2,
-    "TickIntervalFactor": 0.97,
-    "MoneyInterval": 1000,
-    "MoneyFirstTick": 1000,
-    "MoneyGainPerInterval": 0,
-    "PalaceDefault": {
-      "Healing": 50,
-      "Health": 10,
-      "MaxHealth": 10
     },
-    "DisableShop": true,
-    "DisableMilitaryBase": true,
-    "TroopDefaults": [
-      {
-        "Names": [
-          "1st Police Corps",
-          "2st Police Corps"
-        ],
-        "BackgroundColor": {
-          "Red": 0.251424,
-          "Green": 0.3966849,
-          "Blue": 0.7075472,
-          "Alpha": 0.95
+    {
+        "Name": "Instant Kill",
+        "FirstTick": 3,
+        "TickInterval": 2,
+        "TickIntervalFactor": 0.97,
+        "MoneyInterval": 1000,
+        "MoneyFirstTick": 1000,
+        "MoneyGainPerInterval": 0,
+        "PalaceDefault": {
+            "Healing": 50,
+            "Health": 10,
+            "MaxHealth": 10
         },
-        "SelectedColor": {
-          "Red": 0.251424,
-          "Green": 0.3966849,
-          "Blue": 0.7075472,
-          "Alpha": 0.45
-        },
-        "MaxSpeed": 0.4,
-        "Health": 1000000,
-        "MaxHealth": 1000000,
-        "Strength": 100,
-        "Repulsion": -0.002,
-        "Range": 0.05,
-        "ImageNames": [
-          "Troops"
+        "DisableShop": true,
+        "DisableMilitaryBase": true,
+        "TroopDefaults": [
+            {
+                "Names": [
+                    "1st Police Corps",
+                    "2st Police Corps"
+                ],
+                "BackgroundColor": {
+                    "Red": 0.251424,
+                    "Green": 0.3966849,
+                    "Blue": 0.7075472,
+                    "Alpha": 0.95
+                },
+                "SelectedColor": {
+                    "Red": 0.251424,
+                    "Green": 0.3966849,
+                    "Blue": 0.7075472,
+                    "Alpha": 0.45
+                },
+                "MaxSpeed": 0.4,
+                "Health": 1000000,
+                "MaxHealth": 1000000,
+                "Strength": 100,
+                "Repulsion": -0.002,
+                "Range": 0.05,
+                "ImageNames": [
+                    "Troops"
+                ],
+                "MarchSounds": [
+                    "Fanfare_1",
+                    "March_1",
+                    "March_2",
+                    "March_3",
+                    "March_4",
+                    "March_5",
+                    "Yes_Sir",
+                    "Yes_Sir_2"
+                ],
+                "UnitCost": 100,
+                "Bases": [
+                    {
+                        "Position": {
+                            "X": 0.5,
+                            "Y": 0.5
+                        },
+                        "Radius": 0.07
+                    }
+                ]
+            }
         ],
-        "MarchSounds": [
-          "Fanfare_1",
-          "March_1",
-          "March_2",
-          "March_3",
-          "March_4",
-          "March_5",
-          "Yes_Sir",
-          "Yes_Sir_2"
-        ],
-        "UnitCost": 100,
-        "Bases": [
-          {
-            "Position": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "Radius": 0.07
-          }
+        "RebelDefaults": [
+            {
+                "Names": [
+                    "Depper Doders",
+                    "Hadwi"
+                ],
+                "MinSpeed": 0.05,
+                "MaxSpeed": 0.08,
+                "Health": 1,
+                "MaxHealth": 1,
+                "Strength": 1,
+                "Repulsion": 0.00005,
+                "Range": 0.002,
+                "ImageNames": [
+                    "Rebel_0",
+                    "Rebel_1",
+                    "Rebel_2",
+                    "Rebel_3",
+                    "Rebel_4",
+                    "Rebel_5"
+                ],
+                "KillSounds": [
+                    "Aaah",
+                    "Aww",
+                    "Daeng",
+                    "Nuts",
+                    "Oops"
+                ],
+                "SpawnSounds": [
+                    "Whistle",
+                    "Whistle_2",
+                    "Whistle_3",
+                    "Whistle_4",
+                    "Rebels_Generic",
+                    "Rebels_Generic_2",
+                    "Rebels_Generic_3",
+                    "Earth_is_a_cube",
+                    "Glace_Schmöuzt",
+                    "Its_A_Trap",
+                    "No_More_School",
+                    "We_Want_Cake",
+                    "Hello_There"
+                ]
+            }
         ]
-      }
-    ],
-    "RebelDefaults": [
-      {
-        "Names": [
-          "Depper Doders",
-          "Hadwi"
-        ],
-        "MinSpeed": 0.05,
-        "MaxSpeed": 0.08,
-        "Health": 1,
-        "MaxHealth": 1,
-        "Strength": 1,
-        "Repulsion": 0.00005,
-        "Range": 0.002,
-        "ImageNames": [
-          "Rebel_0",
-          "Rebel_1",
-          "Rebel_2",
-          "Rebel_3",
-          "Rebel_4",
-          "Rebel_5"
-        ],
-        "KillSounds": [
-          "Aaah",
-          "Aww",
-          "Daeng",
-          "Nuts",
-          "Oops"
-        ],
-        "SpawnSounds": [
-          "Whistle",
-          "Whistle_2",
-          "Whistle_3",
-          "Whistle_4",
-          "Rebels_Generic",
-          "Rebels_Generic_2",
-          "Rebels_Generic_3",
-          "Earth_is_a_cube",
-          "Glace_Schmöuzt",
-          "Its_A_Trap",
-          "No_More_School",
-          "We_Want_Cake",
-          "Hello_There"
-        ]
-      }
-    ]
-  },
-  {
-    "Name": "Doomsday",
-    "FirstTick": 2,
-    "TickInterval": 0.0001,
-    "TickIntervalFactor": 0.97,
-    "MoneyInterval": 1000,
-    "MoneyFirstTick": 1000,
-    "MoneyGainPerInterval": 0,
-    "PalaceDefault": {
-      "Healing": 500,
-      "Health": 100,
-      "MaxHealth": 100,
-      "SafeZoneRadius": 0.2
     },
-    "DisableShop": true,
-    "DisableMilitaryBase": true,
-    "TroopDefaults": [
-      {
-        "Type": "Palace Guard",
-        "Names": [
-          "Palace Guard"
-        ],
-        "MaxSpeed": 0.1,
-        "Health": 100000000,
-        "MaxHealth": 100000000,
-        "Strength": 100,
-        "Repulsion": 0.001,
-        "Range": 0.05,
-        "ForegroundColor": {
-          "Red": 1,
-          "Green": 0,
-          "Blue": 0,
-          "Alpha": 0.95
+    {
+        "Name": "Doomsday",
+        "FirstTick": 2,
+        "TickInterval": 0.0001,
+        "TickIntervalFactor": 0.97,
+        "MoneyInterval": 1000,
+        "MoneyFirstTick": 1000,
+        "MoneyGainPerInterval": 0,
+        "PalaceDefault": {
+            "Healing": 500,
+            "Health": 100,
+            "MaxHealth": 100,
+            "SafeZoneRadius": 0.2
         },
-        "BackgroundColor": {
-          "Red": 1,
-          "Green": 0,
-          "Blue": 0,
-          "Alpha": 0.95
-        },
-        "SelectedColor": {
-          "Red": 1,
-          "Green": 0,
-          "Blue": 0,
-          "Alpha": 0.45
-        },
-        "ImageNames": [
-          "SGuard"
+        "DisableShop": true,
+        "DisableMilitaryBase": true,
+        "TroopDefaults": [
+            {
+                "Type": "Palace Guard",
+                "Names": [
+                    "Palace Guard"
+                ],
+                "MaxSpeed": 0.1,
+                "Health": 100000000,
+                "MaxHealth": 100000000,
+                "Strength": 100,
+                "Repulsion": 0.001,
+                "Range": 0.05,
+                "ForegroundColor": {
+                    "Red": 1,
+                    "Green": 0,
+                    "Blue": 0,
+                    "Alpha": 0.95
+                },
+                "BackgroundColor": {
+                    "Red": 1,
+                    "Green": 0,
+                    "Blue": 0,
+                    "Alpha": 0.95
+                },
+                "SelectedColor": {
+                    "Red": 1,
+                    "Green": 0,
+                    "Blue": 0,
+                    "Alpha": 0.45
+                },
+                "ImageNames": [
+                    "SGuard"
+                ],
+                "MarchSounds": [
+                    "Gruezi",
+                    "Gruezi_2",
+                    "Si_Da_Capo",
+                    "Jawoll"
+                ],
+                "UnitCost": 200,
+                "Bases": [
+                    {
+                        "Position": {
+                            "X": 0.495,
+                            "Y": 0.512
+                        },
+                        "Radius": 0.07
+                    }
+                ]
+            }
         ],
-        "MarchSounds": [
-          "Gruezi",
-          "Gruezi_2",
-          "Si_Da_Capo",
-          "Jawoll"
-        ],
-        "UnitCost": 200,
-        "Bases": [
-          {
-            "Position": {
-              "X": 0.495,
-              "Y": 0.512
-            },
-            "Radius": 0.07
-          }
+        "RebelDefaults": [
+            {
+                "Names": [
+                    "Depper Doders",
+                    "Hadwi"
+                ],
+                "MinSpeed": 0.01,
+                "MaxSpeed": 0.01,
+                "Health": 1,
+                "MaxHealth": 1,
+                "Strength": 1,
+                "Repulsion": 0.00005,
+                "Range": 0.002,
+                "ImageNames": [
+                    "Riots",
+                    "Rebel_0",
+                    "Rebel_1",
+                    "Rebel_2",
+                    "Rebel_3",
+                    "Rebel_4",
+                    "Rebel_5"
+                ]
+            }
         ]
-      }
-    ],
-    "RebelDefaults": [
-      {
-        "Names": [
-          "Depper Doders",
-          "Hadwi"
-        ],
-        "MinSpeed": 0.01,
-        "MaxSpeed": 0.01,
-        "Health": 1,
-        "MaxHealth": 1,
-        "Strength": 1,
-        "Repulsion": 0.00005,
-        "Range": 0.002,
-        "ImageNames": [
-          "Riots",
-          "Rebel_0",
-          "Rebel_1",
-          "Rebel_2",
-          "Rebel_3",
-          "Rebel_4",
-          "Rebel_5"
-        ]
-      }
-    ]
-  },
-  {
-    "Name": "1v1",
-    "FirstTick": 3,
-    "TickInterval": 500,
-    "TickIntervalFactor": 0.97,
-    "MoneyInterval": 1000,
-    "MoneyFirstTick": 1000,
-    "MoneyGainPerInterval": 0,
-    "PalaceDefault": {
-      "Healing": 50,
-      "Health": 10,
-      "MaxHealth": 10
     },
-    "DisableShop": true,
-    "DisableMilitaryBase": true,
-    "TroopDefaults": [
-      {
-        "Type": "Police",
-        "Names": [
-          "1st Police Corps",
-          "2st Police Corps"
-        ],
-        "BackgroundColor": {
-          "Red": 0.251424,
-          "Green": 0.3966849,
-          "Blue": 0.7075472,
-          "Alpha": 0.95
+    {
+        "Name": "1v1",
+        "FirstTick": 3,
+        "TickInterval": 500,
+        "TickIntervalFactor": 0.97,
+        "MoneyInterval": 1000,
+        "MoneyFirstTick": 1000,
+        "MoneyGainPerInterval": 0,
+        "PalaceDefault": {
+            "Healing": 50,
+            "Health": 10,
+            "MaxHealth": 10,
+            "SafeZoneRadius": 0.2
         },
-        "SelectedColor": {
-          "Red": 0.251424,
-          "Green": 0.3966849,
-          "Blue": 0.7075472,
-          "Alpha": 0.45
-        },
-        "MaxSpeed": 0.6,
-        "Health": 100000000,
-        "MaxHealth": 100000000,
-        "Strength": 0,
-        "Repulsion": 0.01,
-        "Range": 0.05,
-        "ImageNames": [
-          "Troops"
+        "DisableShop": true,
+        "DisableMilitaryBase": true,
+        "TroopDefaults": [
+            {
+                "Type": "Police",
+                "Names": [
+                    "1st Police Corps",
+                    "2st Police Corps"
+                ],
+                "BackgroundColor": {
+                    "Red": 0.251424,
+                    "Green": 0.3966849,
+                    "Blue": 0.7075472,
+                    "Alpha": 0.95
+                },
+                "SelectedColor": {
+                    "Red": 0.251424,
+                    "Green": 0.3966849,
+                    "Blue": 0.7075472,
+                    "Alpha": 0.45
+                },
+                "MaxSpeed": 0.5,
+                "Health": 100000000,
+                "MaxHealth": 100000000,
+                "Strength": 0,
+                "Repulsion": 0.01,
+                "Range": 0.05,
+                "ImageNames": [
+                    "Troops"
 
+                ],
+                "MarchSounds": [
+                    "Fanfare_1",
+                    "March_1",
+                    "March_2",
+                    "March_3",
+                    "March_4",
+                    "March_5",
+                    "Yes_Sir",
+                    "Yes_Sir_2"
+                ],
+                "UnitCost": 100,
+                "Bases": [
+                    {
+                        "Position": {
+                            "X": 0.5,
+                            "Y": 0.5
+                        },
+                        "Radius": 0.07
+                    }
+                ]
+            }
         ],
-        "MarchSounds": [
-          "Fanfare_1",
-          "March_1",
-          "March_2",
-          "March_3",
-          "March_4",
-          "March_5",
-          "Yes_Sir",
-          "Yes_Sir_2"
-        ],
-        "UnitCost": 100,
-        "Bases": [
-          {
-            "Position": {
-              "X": 0.5,
-              "Y": 0.5
-            },
-            "Radius": 0.07
-          }
+        "RebelDefaults": [
+            {
+                "Type": "Noobs",
+                "Names": [
+                    "Depper Doders",
+                    "Hadwi"
+                ],
+                "MinSpeed": 0.1,
+                "MaxSpeed": 0.1,
+                "Health": 100,
+                "MaxHealth": 100,
+                "Strength": 1,
+                "Repulsion": 0.01,
+                "Range": 0.05,
+                "ImageNames": [
+                    "Rebel_0",
+                    "Rebel_1",
+                    "Rebel_2",
+                    "Rebel_3",
+                    "Rebel_4",
+                    "Rebel_5"
+                ],
+                "KillSounds": [
+                    "Aaah",
+                    "Aww",
+                    "Daeng",
+                    "Nuts",
+                    "Oops"
+                ],
+                "SpawnSounds": [
+                    "Whistle",
+                    "Whistle_2",
+                    "Whistle_3",
+                    "Whistle_4",
+                    "Rebels_Generic",
+                    "Rebels_Generic_2",
+                    "Rebels_Generic_3",
+                    "Earth_is_a_cube",
+                    "Glace_Schmöuzt",
+                    "Its_A_Trap",
+                    "No_More_School",
+                    "We_Want_Cake",
+                    "Hello_There"
+                ]
+            }
         ]
-      }
-    ],
-    "RebelDefaults": [
-      {
-        "Type": "Noobs",
-        "Names": [
-          "Depper Doders",
-          "Hadwi"
-        ],
-        "MinSpeed": 0.03,
-        "MaxSpeed": 0.03,
-        "Health": 100,
-        "MaxHealth": 100,
-        "Strength": 1,
-        "Repulsion": 0.0005,
-        "Range": 0.0002,
-        "ImageNames": [
-          "Rebel_0",
-          "Rebel_1",
-          "Rebel_2",
-          "Rebel_3",
-          "Rebel_4",
-          "Rebel_5"
-        ],
-        "KillSounds": [
-          "Aaah",
-          "Aww",
-          "Daeng",
-          "Nuts",
-          "Oops"
-        ],
-        "SpawnSounds": [
-          "Whistle",
-          "Whistle_2",
-          "Whistle_3",
-          "Whistle_4",
-          "Rebels_Generic",
-          "Rebels_Generic_2",
-          "Rebels_Generic_3",
-          "Earth_is_a_cube",
-          "Glace_Schmöuzt",
-          "Its_A_Trap",
-          "No_More_School",
-          "We_Want_Cake",
-          "Hello_There"
-        ]
-      }
-    ]
-  }
+    }
 ]
