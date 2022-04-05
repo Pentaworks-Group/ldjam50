@@ -99,7 +99,7 @@
         "MarchSounds": [
           "Police",
           "Police_2",
-		  "Police_3"
+          "Police_3"
         ],
         "UnitCost": 100,
         "Bases": [
@@ -219,7 +219,7 @@
         "Range": 0.05,
         "ImageNames": [
           "Rebel_0",
-		  "Rebel_1",
+          "Rebel_1",
         ],
         "KillSounds": [
           "Aaah",
@@ -233,13 +233,13 @@
           "Whistle_2",
           "Whistle_3",
           "Whistle_4",
-		  "Rebels_Generic",
-		  "Rebels_Generic_2",
-		  "Rebels_Generic_3",
-		  "Hello_There"
+          "Rebels_Generic",
+          "Rebels_Generic_2",
+          "Rebels_Generic_3",
+          "Hello_There"
         ]
       },
-	  {
+      {
         "Type": "Noobs",
         "Names": [
           "Depper Doders",
@@ -253,7 +253,7 @@
         "Repulsion": 0.0005,
         "Range": 0.05,
         "ImageNames": [
-		  "Rebel_2",
+          "Rebel_2",
         ],
         "KillSounds": [
           "Aaah",
@@ -263,10 +263,10 @@
           "Oops"
         ],
         "SpawnSounds": [
-		  "Its_A_Trap",
+          "Its_A_Trap",
         ]
       },
-	  {
+      {
         "Type": "Noobs",
         "Names": [
           "Depper Doders",
@@ -280,7 +280,7 @@
         "Repulsion": 0.0005,
         "Range": 0.05,
         "ImageNames": [
-		  "Rebel_3",
+          "Rebel_3",
         ],
         "KillSounds": [
           "Aaah",
@@ -290,10 +290,10 @@
           "Oops"
         ],
         "SpawnSounds": [
-		  "Glace_Schmöuzt",
+          "Glace_Schmöuzt",
         ]
       },
-	  {
+      {
         "Type": "Noobs",
         "Names": [
           "Depper Doders",
@@ -307,7 +307,7 @@
         "Repulsion": 0.0005,
         "Range": 0.05,
         "ImageNames": [
-		  "Rebel_4",
+          "Rebel_4",
         ],
         "KillSounds": [
           "Aaah",
@@ -317,10 +317,10 @@
           "Oops"
         ],
         "SpawnSounds": [
-		  "No_More_School",
+          "No_More_School",
         ]
       },
-	  {
+      {
         "Type": "Noobs",
         "Names": [
           "Depper Doders",
@@ -334,7 +334,7 @@
         "Repulsion": 0.0005,
         "Range": 0.05,
         "ImageNames": [
-		  "Rebel_5",
+          "Rebel_5",
         ],
         "KillSounds": [
           "Aaah",
@@ -344,10 +344,10 @@
           "Oops"
         ],
         "SpawnSounds": [
-		  "We_Want_Cake",
+          "We_Want_Cake"
         ]
       },
-	        {
+      {
         "Type": "Noobs",
         "Names": [
           "Depper Doders",
@@ -361,7 +361,7 @@
         "Repulsion": 0.0005,
         "Range": 0.05,
         "ImageNames": [
-          "Rebel_6",
+          "Rebel_6"
         ],
         "KillSounds": [
           "Aaah",
@@ -371,10 +371,9 @@
           "Oops"
         ],
         "SpawnSounds": [
-		  "Earth_is_a_cube"
+          "Earth_is_a_cube"
         ]
-      },
-
+      }
     ]
   },
   {
@@ -391,7 +390,7 @@
       "MaxHealth": 10
     },
     "DisableShop": true,
-	"DisableMilitaryBase": true,
+    "DisableMilitaryBase": true,
     "TroopDefaults": [
       {
         "Type": "Police",
@@ -459,11 +458,11 @@
         "Range": 0.0002,
         "ImageNames": [
           "Rebel_0",
-		  "Rebel_1",
-		  "Rebel_2",
-		  "Rebel_3",
-		  "Rebel_4",
-		  "Rebel_5"
+          "Rebel_1",
+          "Rebel_2",
+          "Rebel_3",
+          "Rebel_4",
+          "Rebel_5"
         ],
         "KillSounds": [
           "Aaah",
@@ -477,15 +476,15 @@
           "Whistle_2",
           "Whistle_3",
           "Whistle_4",
-		  "Rebels_Generic",
-		  "Rebels_Generic_2",
-		  "Rebels_Generic_3",
-		  "Earth_is_a_cube",
-		  "Glace_Schmöuzt",
-		  "Its_A_Trap",
-		  "No_More_School",
-		  "We_Want_Cake",
-		  "Hello_There"
+          "Rebels_Generic",
+          "Rebels_Generic_2",
+          "Rebels_Generic_3",
+          "Earth_is_a_cube",
+          "Glace_Schmöuzt",
+          "Its_A_Trap",
+          "No_More_School",
+          "We_Want_Cake",
+          "Hello_There"
         ]
       }
     ]
@@ -504,7 +503,7 @@
       "MaxHealth": 100
     },
     "DisableShop": true,
-	"DisableMilitaryBase": true,
+    "DisableMilitaryBase": true,
     "TroopDefaults": [
       {
         "Names": [
@@ -570,11 +569,11 @@
         "Range": 0.002,
         "ImageNames": [
           "Rebel_0",
-		  "Rebel_1",
-		  "Rebel_2",
-		  "Rebel_3",
-		  "Rebel_4",
-		  "Rebel_5"
+          "Rebel_1",
+          "Rebel_2",
+          "Rebel_3",
+          "Rebel_4",
+          "Rebel_5"
         ],
         "KillSounds": [
           "Aaah",
@@ -588,15 +587,15 @@
           "Whistle_2",
           "Whistle_3",
           "Whistle_4",
-		  "Rebels_Generic",
-		  "Rebels_Generic_2",
-		  "Rebels_Generic_3",
-		  "Earth_is_a_cube",
-		  "Glace_Schmöuzt",
-		  "Its_A_Trap",
-		  "No_More_School",
-		  "We_Want_Cake",
-		  "Hello_There"
+          "Rebels_Generic",
+          "Rebels_Generic_2",
+          "Rebels_Generic_3",
+          "Earth_is_a_cube",
+          "Glace_Schmöuzt",
+          "Its_A_Trap",
+          "No_More_School",
+          "We_Want_Cake",
+          "Hello_There"
         ]
       }
     ]
@@ -615,7 +614,7 @@
       "MaxHealth": 10
     },
     "DisableShop": true,
-	"DisableMilitaryBase": true,
+    "DisableMilitaryBase": true,
     "TroopDefaults": [
       {
         "Names": [
@@ -680,11 +679,11 @@
         "Range": 0.002,
         "ImageNames": [
           "Rebel_0",
-		  "Rebel_1",
-		  "Rebel_2",
-		  "Rebel_3",
-		  "Rebel_4",
-		  "Rebel_5"
+          "Rebel_1",
+          "Rebel_2",
+          "Rebel_3",
+          "Rebel_4",
+          "Rebel_5"
         ],
         "KillSounds": [
           "Aaah",
@@ -698,15 +697,15 @@
           "Whistle_2",
           "Whistle_3",
           "Whistle_4",
-		  "Rebels_Generic",
-		  "Rebels_Generic_2",
-		  "Rebels_Generic_3",
-		  "Earth_is_a_cube",
-		  "Glace_Schmöuzt",
-		  "Its_A_Trap",
-		  "No_More_School",
-		  "We_Want_Cake",
-		  "Hello_There"
+          "Rebels_Generic",
+          "Rebels_Generic_2",
+          "Rebels_Generic_3",
+          "Earth_is_a_cube",
+          "Glace_Schmöuzt",
+          "Its_A_Trap",
+          "No_More_School",
+          "We_Want_Cake",
+          "Hello_There"
         ]
       }
     ]
@@ -726,7 +725,7 @@
       "SafeZoneRadius": 0.2
     },
     "DisableShop": true,
-	"DisableMilitaryBase": true,
+    "DisableMilitaryBase": true,
     "TroopDefaults": [
       {
         "Type": "Palace Guard",
