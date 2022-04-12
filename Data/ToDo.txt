@@ -10,6 +10,7 @@ Todo:
  - Change interval calculation to baseIntervall * factor / time  
  - Buttons for shortkey (Q)
  - Boss Spawns
+ - Missing millitary base is overwritten by money mechanic in shop
   
  GamePlay:
  - Balancing
@@ -22,11 +23,6 @@ Todo:
  - Sound Volume
  - Kill Sounds for Troops
  
- Itch.io:
- - Add description
- - Add ldjam link
- - Revamp style
- - Change name
   
 Refactoring:
 ----------------------------------
@@ -43,7 +39,7 @@ WIP:
  
 Nice to have:
 ----------------------------------
- - Text editor to supply us for JSON data
+ - revamp mode editor
  - Variable Rebel Strength 
  - Bases in json (linked via unique ID to troops)
  - Display Unit Strength (hover over? Strenght Symbol?)
@@ -121,3 +117,4 @@ Done:
  - Fix Audio Volume bug
  - Fix Load bug (where a unit is spawned, e.g. 1v1 => 1v2)
  - SelectedColor can be set for any SecurityForce (in Json)
+ - Text editor to supply us for JSON data
