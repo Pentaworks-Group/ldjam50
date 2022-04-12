@@ -110,10 +110,9 @@ public class MapObjectSpawner : MonoBehaviour
         {
             SpawnRebel();
 
-            gameState.NextRebelSpawn = nextSpawnTick;
-
             spawnInterval = gameState.Mode.TickIntervalFactor * gameState.Mode.TickInterval / Mathf.Log(currentTime, gameState.Mode.TickIntervalLogBase);
             nextSpawnTick = currentTime + spawnInterval;
+            gameState.NextRebelSpawn = nextSpawnTick;
             //Debug.Log("Next Spawn: " + nextSpawnTick + "  interval: " + spawnInterval);
         }
 
