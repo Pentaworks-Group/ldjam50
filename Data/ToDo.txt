@@ -15,7 +15,6 @@ Todo:
  - Revamp UI for Save / Load (Button / Box / Scene)
  - Clean and standardise different menuScenes
  
- 
  Audio:
  - Sound Volume
  - Kill Sounds for Troops
@@ -25,13 +24,7 @@ Todo:
  - Add ldjam link
  - Revamp style
  - Change name
- 
- LDJam.com:
- - Add description 
- - Revamp style
- - Change name
- - Add itch.io link
- 
+  
 Refactoring:
 ----------------------------------
  - Fix Method & var Names
@@ -39,8 +32,7 @@ Refactoring:
  - InstantiateGameObject: alternatives turn templates? move to central code location
  - replace if (Screen.width < ..hight) with global call
  - Remove hardcoded references to mapsize (mostly unit scaling)
- - UnitScaling with targetSize (relative width, keep ratio?)
- - Change Pos_x & Pos_y in defaults to GameFrame.Core.Math.Vector2
+ - UnitScaling with targetSize (relative width, keep ratio?) 
  
 WIP:
 ----------------------------------
@@ -122,3 +114,7 @@ Done:
  - Background for Menues: GameMode, SaveLoad ... 
  - Mark Unit not Available if not enought money
  - Drag & Drop for sending units
+ - Change Pos_x & Pos_y in defaults to GameFrame.Core.Math.Vector2
+ - Fix Audio Volume bug
+ - Fix Load bug (where a unit is spawned, e.g. 1v1 => 1v2)
+ - SelectedColor can be set for any SecurityForce (in Json)
