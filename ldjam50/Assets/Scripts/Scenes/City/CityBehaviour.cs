@@ -229,6 +229,7 @@ namespace Assets.Scripts.Scenes.City
                 }
             }
         }
+
         private void LoopSecurityForce(Boolean isForward)
         {
             var index = GameHandler.SecurityForces.IndexOf(GameHandler.SelectedTroop);

@@ -116,7 +116,7 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
                 this.notEnoughMoneyText.SetActive(false);
             }
 
-            if ((this.SecurityForceDefault.Type == "Army") && Core.Game.State.Mode.DisableMilitaryBase && Core.Game.State.MilitaryBase.Destroyed)
+            if (!Core.Game.State.Mode.DisableMilitaryBase && Core.Game.State.MilitaryBase.Destroyed && (this.SecurityForceDefault.Type == "Army"))
             {
                 this.notAvailableOverlay.SetActive(true);
                 isDisabled = true;
