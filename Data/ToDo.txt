@@ -1,8 +1,7 @@
 Todo:
 ----------------------------------
  Bugs:
- - Control group is rendered after laod / overwrite
- 
+  
  Exceptions:
  
  Core:
@@ -118,3 +117,4 @@ Done:
  - Fix Load bug (where a unit is spawned, e.g. 1v1 => 1v2)
  - SelectedColor can be set for any SecurityForce (in Json)
  - Text editor to supply us for JSON data
+ - Control group is rendered after laod / overwrite
