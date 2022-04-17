@@ -116,6 +116,17 @@ namespace Assets.Scripts.Scenes.City
 
             this.templateSlot = shopOverlay.transform.Find("ContentArea/SecurityForceSlotTemplate").GetComponent<SecurityForceSlotBehaviour>();
 
+            if (gameState.SecurityForces?.Count > 0)
+            {
+                foreach (var securityForce in gameState.SecurityForces)
+                {
+                    if (securityForce.AssignedKey.HasValue)
+                    {
+                        AssignSecurityForce(securityForce.AssignedKey.Value, securityForce);
+                    }
+                }
+            }
+
             var amount = gameState.Mode.TroopDefaults.Count;
 
             float relative = 1f / amount;
@@ -289,20 +300,30 @@ namespace Assets.Scripts.Scenes.City
             }
         }
 
-        private void AssignSecurityForce(Int32 key)
+        private void AssignSecurityForce(Int32 key, SecurityForce securityForce = default)
         {
-            var securityForce = GameHandler.SelectedTroop;
+            var securityForceBehaviour = GameHandler.SelectedTroop;
 
-            if (securityForce.IsMoveable())
+            if (securityForce != default)
+            {
+                var matchingForceBehaviour = GameHandler.SecurityForces.Find(s => s.SecurityForce == securityForce);
+
+                if (matchingForceBehaviour != null)
+                {
+                    securityForceBehaviour = matchingForceBehaviour;
+                }
+            }
+
+            if (securityForceBehaviour.IsMoveable())
             {
                 if (this.boundSecurityForces.TryGetValue(key, out var existingSecurityForce))
                 {
                     existingSecurityForce.SecurityForce.AssignedKey = default;
                 }
 
-                securityForce.SecurityForce.AssignedKey = key;
+                securityForceBehaviour.SecurityForce.AssignedKey = key;
 
-                this.boundSecurityForces[key] = securityForce;
+                this.boundSecurityForces[key] = securityForceBehaviour;
             }
         }
 
