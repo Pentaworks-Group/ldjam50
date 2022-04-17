@@ -63,6 +63,7 @@ namespace Assets.Scripts.Scenes.City
                     {
                         Base.Core.Game.AmbienceAudioManager.Resume();
                     }
+
                     Time.timeScale = 1;
                 }
             }
@@ -294,6 +295,11 @@ namespace Assets.Scripts.Scenes.City
 
             if (securityForce.IsMoveable())
             {
+                if (this.boundSecurityForces.TryGetValue(key, out var existingSecurityForce))
+                {
+                    existingSecurityForce.SecurityForce.AssignedKey = default;
+                }
+
                 securityForce.SecurityForce.AssignedKey = key;
 
                 this.boundSecurityForces[key] = securityForce;
