@@ -10,6 +10,10 @@ public class GameModeMenuBehaviour : BaseMenuBehaviour
 {
     public GameObject GameModeSlotTemplate;
     public GameObject CreateNewModeButton;
+    public GameObject OwnModesButton;
+    public GameObject GlobalModesButton;
+    private Color32 selectedColor;
+    private Color32 notSelectedColor;
     private int MaxSlosts = 10;
     private List<GameModeSlotBehaviour> modeSlots = new List<GameModeSlotBehaviour>();
     private bool ownMode = false;
@@ -17,6 +21,12 @@ public class GameModeMenuBehaviour : BaseMenuBehaviour
     void Start()
     {
         LoadGlobalModes();
+    }
+
+    private void Awake()
+    {
+        selectedColor = GlobalModesButton.GetComponent<Image>().color;
+        notSelectedColor = OwnModesButton.GetComponent<Image>().color;
     }
 
     private void CreateAndFillSlot(int index, GameFieldSettings gameFieldSettings)
@@ -85,6 +95,8 @@ public class GameModeMenuBehaviour : BaseMenuBehaviour
 
     public void LoadGlobalModes()
     {
+        GlobalModesButton.GetComponent<Image>().color = selectedColor;
+        OwnModesButton.GetComponent<Image>().color = notSelectedColor;
         ownMode = false;
         CreateNewModeButton.SetActive(false);
         LoadGameModes(GameHandler.AvailableGameModes);
@@ -92,6 +104,8 @@ public class GameModeMenuBehaviour : BaseMenuBehaviour
 
     public void LoadOwnModes()
     {
+        GlobalModesButton.GetComponent<Image>().color = notSelectedColor;
+        OwnModesButton.GetComponent<Image>().color = selectedColor;
         ownMode = true;
         CreateNewModeButton.SetActive(true);
         String ownModesJson = PlayerPrefs.GetString("OwnModes");
