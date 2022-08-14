@@ -9,7 +9,7 @@ Todo:
  - Change interval calculation to baseIntervall * factor / time  
  - Buttons for shortkey (Q)
  - Boss Spawns
- - Missing millitary base is overwritten by money mechanic in shop
+ 
   
  GamePlay:
  - Balancing
@@ -118,3 +118,4 @@ Done:
  - SelectedColor can be set for any SecurityForce (in Json)
  - Text editor to supply us for JSON data
  - Control group is rendered after laod / overwrite
+ - Missing millitary base is overwritten by money mechanic in shop

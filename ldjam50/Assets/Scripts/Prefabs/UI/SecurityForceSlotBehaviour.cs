@@ -105,17 +105,6 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
     {
         if (this.SecurityForceDefault != null && Core.Game.State != default)
         {
-            if (Core.Game.State.AvailableCredits < this.SecurityForceDefault.UnitCost)
-            {
-                hasSufficientFunds = false;
-                this.notEnoughMoneyText.SetActive(true);
-            }
-            else
-            {
-                hasSufficientFunds = true;
-                this.notEnoughMoneyText.SetActive(false);
-            }
-
             if (!Core.Game.State.Mode.DisableMilitaryBase && Core.Game.State.MilitaryBase.Destroyed && (this.SecurityForceDefault.Type == "Army"))
             {
                 this.notAvailableOverlay.SetActive(true);
@@ -125,6 +114,24 @@ public class SecurityForceSlotBehaviour : MonoBehaviour
             {
                 isDisabled = false;
                 this.notAvailableOverlay.SetActive(false);
+            }
+
+            if (!isDisabled)
+            {
+                if (Core.Game.State.AvailableCredits < this.SecurityForceDefault.UnitCost)
+                {
+                    hasSufficientFunds = false;
+                    this.notEnoughMoneyText.SetActive(true);
+                }
+                else
+                {
+                    hasSufficientFunds = true;
+                    this.notEnoughMoneyText.SetActive(false);
+                }
+            }
+            else
+            {
+                this.notEnoughMoneyText.SetActive(false);
             }
         }
 

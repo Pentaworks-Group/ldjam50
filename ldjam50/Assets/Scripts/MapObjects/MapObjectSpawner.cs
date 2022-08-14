@@ -188,10 +188,12 @@ public class MapObjectSpawner : MonoBehaviour
         else
         {
             var index = Mathf.FloorToInt(UnityEngine.Random.Range(0, 1.99f));
+
             if (index == 0)
             {
                 return GameHandler.Palace.MapObject.Location;
             }
+
             return GameHandler.MilitaryBase.MapObject.Location;
         }
     }
